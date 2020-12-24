@@ -1,0 +1,306 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+	Logger log = Logger.getLogger(getClass());
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+terminal PROGRAM, BREAK, CLASS, ENUM, ELSE, CONST, IF;
+terminal SWITCH, DO, WHILE, NEW, PRINT, READ, RETURN;
+terminal VOID, EXTENDS, CONTINUE, CASE;
+terminal String IDENT;
+terminal Integer NUM_CONST;
+terminal Character CHAR_CONST;
+terminal Boolean BOOL_CONST;
+terminal PLUS, MINUS, MUL, DIV, MOD;
+terminal EQUAL, NOT_EQUAL, GREATER, GREATER_EQUAL, LESSER, LESSER_EQUAL;
+terminal AND, OR, ASSIGNMENT, INC, DEC, SEMICOLON, COMMA, FULL_STOP;
+terminal LPAREN, RPAREN, LSQUARE, RSQUARE, LBRACE, RBRACE;
+terminal QUESTION_MARK, COLON;
+
+nonterminal Program;
+nonterminal ConstDeclList, VarDeclList, ClassDeclList, MethodDeclList;
+nonterminal Type, ConstList, ConstPart, Value;
+
+Program ::= (Program) PROGRAM IDENT ProgramDeclarations LBRACE MethodDeclList RBRACE;
+
+ProgramDeclarations ::= (ProgramDeclMulti) ProgramDeclarations ProgramDeclaration
+						|
+						(ProgramDeclSingle) ProgramDeclaration;
+						
+ProgramDeclaration ::= (PartConstDeclaration) ConstDecl
+					   |
+					   (PartVarDeclaration) VarDecl
+					   |
+					   (PartClassDeclaration) ClassDecl;
+
+ConstDecl ::= (ConstDeclaration) CONST Type ConstList SEMICOLON;
+
+ConstList ::= (ConstMulti) ConstList COMMA ConstPart
+			  |
+			  (ConstSingle) ConstPart;
+			  
+ConstPart ::= (ConstPart) IDENT ASSIGNMENT Value;
+
+Value ::= (NumConst) NUM_CONST
+		  |
+		  (BoolConst) BOOL_CONST
+		  |
+		  (CharConst) CHAR_CONST;
+				
+VarDecl ::= (VarDeclaration) Type VarList SEMICOLON;
+
+VarList ::= (VarMulti) VarList COMMA VarPart
+			|
+			(VarSingle) VarPart;
+			
+VarPart ::= (VarNormal) IDENT 
+			|
+			(VarArray)IDENT LSQUARE RSQUARE;
+
+ClassDecl ::= (ClassDecl0) CLASS IDENT EXTENDS Type LBRACE VarDeclList LBRACE MethodDeclList RBRACE RBRACE
+			  |
+			  (ClassDecl1) CLASS IDENT LBRACE VarDeclList LBRACE MethodDeclList RBRACE RBRACE
+			  |
+			  (ClassDecl2) CLASS IDENT EXTENDS Type LBRACE VarDeclList RBRACE
+			  |
+			  (ClassDecl3) CLASS IDENT LBRACE VarDeclList RBRACE;
+			  |
+			  (ClassDecl4) CLASS IDENT EXTENDS Type LBRACE LBRACE MethodDeclList RBRACE RBRACE
+			  |
+			  (ClassDecl5) CLASS IDENT LBRACE LBRACE MethodDeclList RBRACE RBRACE
+			  |
+			  (ClassDecl6) CLASS IDENT EXTENDS Type LBRACE RBRACE
+			  |
+			  (ClassDecl7) CLASS IDENT LBRACE RBRACE;
+			  
+VarDeclList ::= (VarDeclMulti) VarDeclList VarDecl
+				|
+				(VarDeclSingle) VarDecl;
+				
+MethodDeclList ::= (MethodDecMulti) MethodDeclList MethodDec
+				   |
+				   (MethodDeclSingle) MethodDec;
+				   
+MethodDec ::= (MethodVoidDecl) MethodVoidDecl
+			  |
+			  (MethodTypeDecl) MethodTypeDecl;
+			  
+MethodVoidDecl ::= (MethodVoid0) IDENT LPAREN FormParams RPAREN VarDeclList LBRACE StatementList RBRACE
+				   |
+				   (MethodVoid1) IDENT LPAREN FormParams RPAREN VarDeclList LBRACE RBRACE
+				   |
+				   (MethodVoid2) IDENT LPAREN FormParams RPAREN LBRACE StatementList RBRACE
+				   |
+				   (MethodVoid3) IDENT LPAREN FormParams RPAREN LBRACE RBRACE
+				   |
+				   (MethodVoid4) IDENT LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE
+				   |
+				   (MethodVoid5) IDENT LPAREN RPAREN VarDeclList LBRACE RBRACE
+				   |
+				   (MethodVoid6) IDENT LPAREN RPAREN LBRACE StatementList RBRACE
+				   |
+				   (MethodVoid7) IDENT LPAREN RPAREN LBRACE RBRACE
+				   
+MethodTypeDecl ::= (MethodType0) IDENT LPAREN FormParams RPAREN VarDeclList LBRACE StatementList RBRACE
+				   |
+				   (MethodType1) IDENT LPAREN FormParams RPAREN VarDeclList LBRACE RBRACE
+				   |
+				   (MethodType2) IDENT LPAREN FormParams RPAREN LBRACE StatementList RBRACE
+				   |
+				   (MethodType3) IDENT LPAREN FormParams RPAREN LBRACE RBRACE
+				   |
+				   (MethodType4) IDENT LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE
+				   |
+				   (MethodType5) IDENT LPAREN RPAREN VarDeclList LBRACE RBRACE
+				   |
+				   (MethodType6) IDENT LPAREN RPAREN LBRACE StatementList RBRACE
+				   |
+				   (MethodType7) IDENT LPAREN RPAREN LBRACE RBRACE
+
+FormParams ::= (ParamMulti) FormParams COMMA FormParam
+			   |
+			   (ParamSingle) FormParam;
+			   
+FormParam ::= (ParamNormal) Type IDENT
+		      |
+		      (ParamArray) Type IDENT LSQUARE RSQUARE;
+		      
+Type ::= (Type) IDENT;
+
+StatementList ::= (StatementMulti) StatementList Statement
+				  |
+				  (StatementSingle) Statement;
+				  
+Statement ::= (StmtDesign) DesignatorStatement SEMICOLON
+			  |
+			  (StmtIf) IF LPAREN Condition RPAREN Statement
+			  |
+			  (StmtIfElse) IF LPAREN Condition RPAREN Statement ELSE Statement
+			  |
+			  (StmtDoWhile) DO Statement WHILE LPAREN Condition RPAREN SEMICOLON
+			  |
+			  (StmtSwitchNoCase) LPAREN Expr RPAREN LBRACE RBRACE
+			  |
+			  (StmtSwitch) LPAREN Expr RPAREN LBRACE CaseList RBRACE
+			  |
+			  (StmtBreak) BREAK SEMICOLON
+			  |
+			  (StmtContinue) CONTINUE SEMICOLON
+			  |
+			  (StmtReturnExpr) RETURN Expr SEMICOLON
+			  |
+			  (StmtReturn) RETURN SEMICOLON
+			  |
+			  (StmtRead) READ LPAREN Designator RPAREN SEMICOLON
+			  |
+			  (StmtPrintNumConst) PRINT LPAREN Expr COMMA NUM_CONST RPAREN SEMICOLON
+			  |
+			  (StmtPrint) PRINT LPAREN Expr RPAREN SEMICOLON
+			  |
+			  (Stmt) LBRACE StatementList RBRACE;
+			  
+CaseList ::= (CaseMulti) CaseList CasePart
+			 |
+			 (CaseSingle) CasePart;
+			 
+CasePart ::= (CasePart) CASE NUM_CONST COLON StatementList;
+
+DesignatorStatement ::= (Assignment) Designator Assignop Expr
+						|
+						(MethodCall0) Designator LPAREN ActPars RPAREN
+						|
+						(MethodCall1) Designator RPAREN RPAREN
+						|
+						(Increment) Designator INC
+						|
+						(Decrement) Designator DEC;
+
+ActPars ::= (ActParsMulti) ActPars COMMA Expr
+			|
+			(ActParsSingle) Expr;
+			
+Condition ::= (CondTwo) Condition OR CondTerm
+			  |
+			  (CondOne) CondTerm;
+			  
+CondTerm ::= (CondTermTwo) CondTerm AND CondFact
+			 |
+			 (CondTermOne) CondFact;
+			  			 			  
+CondFact ::= (CondFactTwo) Expr Relop Expr
+			 |
+			 (CondFactOne) Expr;
+			 
+Expr ::= (ExprNegMulti) MINUS Term TermList
+		 | 
+		 (ExprNegSingle) MINUS Term
+		 |
+		 (ExprMulti) Term TermList
+		 |
+		 (ExprSingle) Term
+		 |
+		 (ExprTernary) Condition QUESTION_MARK Expr COLON Expr;
+		 
+TermList ::= (TermListMulti) TermList TermPart
+			 |
+			 (TermListSingle) TermPart;
+		 
+TermPart ::= (TermPart) Addop Term;
+
+Term :: (TermMulti) Factor FactorList
+		|
+		(TermSingle) Factor;
+		
+FactorList ::= (FactorListMulti) FactorList FactorPart
+			   |
+			   (FactorListSingle) FactorPart;
+			   
+FactorPart ::= (FactorPart) Mulop Factor;
+
+Factor ::= (FactorDesigMethCall0) Designator LAPREN ActPars RPAREN
+		   |
+		   (FactorDesigMethCall1) Designator LAPREN RPAREN
+		   |
+		   (FactorDesignator) Designator
+		   |
+		   (FactorNumConst) NUM_CONST
+		   | 
+		   (FactorCharConst) CHAR_CONST
+		   | 
+		   (FactorBoolConst) BOOL_CONST
+		   |
+		   (FactorNew) NEW type
+		   |
+		   (FactorNewArray) NEW type LSQUARE Expr RSQUARE
+		   | 
+		   (FactorExpr) LPAREN Expr RPAREN;
+
+Designator ::= (Designator0) IDENT
+			   |
+			   (Designator1) IDENT DesignatorList;
+
+DesignatorList ::= (DesignatorListMulti) DesignatorList DesignatorPart
+				   |
+				   (DesignatorListSingle) DesignatorPart;
+				   
+DesignatorPart ::= (DesignatorPart0) FULL_STOP IDENT
+				   |
+				   (DesignatorPart1) LSQUARE Expr RSQUARE;
+				   
+Assignop ::= (Assignop) ASSIGNMENT;
+
+Relop ::= (RelopEQ) EQUAL
+		  |
+		  (RelopNE) NOT_EQUAL
+		  |
+		  (RelopGT) GREATER
+		  |
+		  (RelopGE) GREATER_EQUAL
+		  |
+		  (RelopLT) LESSER
+		  |
+		  (RelopLE) LESSER_EQUAL;
+
+Addop ::= (AddopPlus) PLUS 
+		  | 
+		  (AddopMinus) MINUS;
+
+Mulop ::= (MulopMul) MUL 
+		   | 
+		   (MulopDiv) DIV 
+		   | 
+		   (MulopMod) MOD;
+
