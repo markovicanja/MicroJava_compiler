@@ -1,7 +1,9 @@
 program MJProgram
-	int x, y;
+	int x; int y;
 {
 	void main() {
-		x = 1; $
+		print(1);
+		
+		print(2);
 	}
 }

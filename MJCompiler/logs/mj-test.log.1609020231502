@@ -1,0 +1,70 @@
+INFO  23:02:42,839 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  23:02:42,881 - #2 program
+INFO  23:02:42,881 - #20 MJProgram
+INFO  23:02:42,881 - #20 int
+INFO  23:02:42,881 - #20 x
+INFO  23:02:42,881 - #41 ,
+INFO  23:02:42,882 - #20 y
+INFO  23:02:42,882 - #40 ;
+INFO  23:02:42,882 - #47 {
+INFO  23:02:42,882 - #16 void
+INFO  23:02:42,882 - #20 main
+INFO  23:02:42,883 - #43 (
+INFO  23:02:42,883 - #44 )
+INFO  23:02:42,883 - #47 {
+INFO  23:02:42,883 - #20 x
+INFO  23:02:42,883 - #37 =
+INFO  23:02:42,883 - #21 1
+INFO  23:02:42,884 - #40 ;
+INFO  23:02:42,884 - #48 }
+INFO  23:02:42,885 - #48 }
+INFO  23:02:42,886 - Program(
+ MJProgram
+  ProgramDeclSingle(
+    PartVarDeclaration(
+      VarDeclaration(
+        Type(
+         int
+        ) [Type]
+        VarMulti(
+          VarSingle(
+            VarNormal(
+             x
+            ) [VarNormal]
+          ) [VarSingle]
+          VarNormal(
+           y
+          ) [VarNormal]
+        ) [VarMulti]
+      ) [VarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclSingle]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid6(
+       main
+        StatementSingle(
+          StmtDesign(
+            Assignment(
+              Designator0(
+               x
+              ) [Designator0]
+              Assignop(
+              ) [Assignop]
+              ExprSingle(
+                TermSingle(
+                  FactorNumConst(
+                   1
+                  ) [FactorNumConst]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [Assignment]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  23:02:42,886 - ===================================
+INFO  23:02:42,888 -  Print count calls = 0
+INFO  23:02:42,888 -  Deklarisanih promenljivih ima = 0
