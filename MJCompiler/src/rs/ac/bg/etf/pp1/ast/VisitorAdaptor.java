@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/11/2020 22:54:5
+// 27/11/2020 17:21:55
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -24,6 +24,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(VarList VarList) { }
     public void visit(ConstList ConstList) { }
     public void visit(Designator Designator) { }
+    public void visit(StatementIf StatementIf) { }
     public void visit(Term Term) { }
     public void visit(Condition Condition) { }
     public void visit(MethodDec MethodDec) { }
@@ -31,6 +32,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Value Value) { }
     public void visit(FormParams FormParams) { }
     public void visit(DesignatorPart DesignatorPart) { }
+    public void visit(StatementIfBody StatementIfBody) { }
     public void visit(VarDeclList VarDeclList) { }
     public void visit(Expr Expr) { }
     public void visit(ActPars ActPars) { }
@@ -77,6 +79,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(TermMulti TermMulti) { visit(); }
     public void visit(TermListSingle TermListSingle) { visit(); }
     public void visit(TermListMulti TermListMulti) { visit(); }
+    public void visit(ExprError ExprError) { visit(); }
     public void visit(ExprSingle ExprSingle) { visit(); }
     public void visit(ExprMulti ExprMulti) { visit(); }
     public void visit(ExprNegSingle ExprNegSingle) { visit(); }
@@ -97,6 +100,9 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(CasePart CasePart) { visit(); }
     public void visit(CaseSingle CaseSingle) { visit(); }
     public void visit(CaseMulti CaseMulti) { visit(); }
+    public void visit(StmtIfBody StmtIfBody) { visit(); }
+    public void visit(StmtIfHead StmtIfHead) { visit(); }
+    public void visit(StmtIf StmtIf) { visit(); }
     public void visit(Stmt Stmt) { visit(); }
     public void visit(StmtPrint StmtPrint) { visit(); }
     public void visit(StmtPrintNumConst StmtPrintNumConst) { visit(); }
@@ -111,6 +117,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StatementSingle StatementSingle) { visit(); }
     public void visit(StatementMulti StatementMulti) { visit(); }
     public void visit(Type Type) { visit(); }
+    public void visit(ParamError ParamError) { visit(); }
     public void visit(ParamArray ParamArray) { visit(); }
     public void visit(ParamNormal ParamNormal) { visit(); }
     public void visit(ParamSingle ParamSingle) { visit(); }
@@ -145,6 +152,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ClassDecl2 ClassDecl2) { visit(); }
     public void visit(ClassDecl1 ClassDecl1) { visit(); }
     public void visit(ClassDecl0 ClassDecl0) { visit(); }
+    public void visit(VarError VarError) { visit(); }
     public void visit(VarArray VarArray) { visit(); }
     public void visit(VarNormal VarNormal) { visit(); }
     public void visit(VarSingle VarSingle) { visit(); }

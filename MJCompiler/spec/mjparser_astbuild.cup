@@ -5,6 +5,11 @@ import org.apache.log4j.*;
 import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
+
+	private boolean errorDetected = false;
+	private Symbol currSymbol = null;		
+	private Symbol errorSymbol = null;
+	
 	Logger log = Logger.getLogger(getClass());
    
     // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
@@ -23,18 +28,51 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
+    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
-    	if (info instanceof Symbol)
-            msg.append (" na liniji ").append(((Symbol)info).left);
+    	if (info instanceof Symbol) {			
+			errorSymbol = (Symbol) info;
+            msg.append(" na liniji ").append(errorSymbol.left);
+			msg.append(", koloni ").append(errorSymbol.right);
+			if (errorSymbol.value != null) {
+				msg.append(" za simbol \"").append(errorSymbol.value.toString()).append("\"");
+			}			
+			msg.append("!");
+		}
         log.error(msg.toString());
     }
+    
+    public void report_info(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol) {
+            msg.append(" na liniji ").append(((Symbol)info).left);
+			msg.append(", koloni ").append(((Symbol)info).right);
+			if (errorSymbol.value != null) {
+				msg.append(" za simbol \"").append(((Symbol)info).value.toString()).append("\"");
+			}
+		}
+        log.info(msg.toString());
+    }
+	
+	public boolean isErrorDetected() {
+		return errorDetected;
+	}
+    
+	public Symbol getCurrSymbol() {
+		return currSymbol;
+	}
+	
+	public Symbol getErrorSymbol() {
+		return errorSymbol;
+	}
 :}
 
 scan with {:
-	Symbol s = this.getScanner().next_token();
-	if (s != null && s.value != null) 
-		log.info(s.toString() + " " + s.value.toString());
-	return s;
+	currSymbol = this.getScanner().next_token();
+	if (currSymbol != null && currSymbol.value != null) {
+		log.info(currSymbol.toString() + " " + currSymbol.value.toString());
+	}
+	return currSymbol;
 :}
 
 terminal PROGRAM, BREAK, CLASS, ENUM, ELSE, CONST, IF;
@@ -71,6 +109,8 @@ nonterminal FormParam FormParam;
 nonterminal Type Type;
 nonterminal StatementList StatementList;
 nonterminal Statement Statement;
+nonterminal StatementIf StatementIf;
+nonterminal StatementIfBody StatementIfBody;
 nonterminal CaseList CaseList;
 nonterminal CasePart CasePart;
 nonterminal DesignatorStatement DesignatorStatement;
@@ -127,7 +167,10 @@ VarList ::= (VarMulti) VarList:V1 COMMA VarPart:V2 {: RESULT=new VarMulti(V1, V2
 			
 VarPart ::= (VarNormal) IDENT:I1 {: RESULT=new VarNormal(I1); RESULT.setLine(I1left); :} 
 			|
-			(VarArray)IDENT:I1 LSQUARE RSQUARE {: RESULT=new VarArray(I1); RESULT.setLine(I1left); :};
+			(VarArray)IDENT:I1 LSQUARE RSQUARE {: RESULT=new VarArray(I1); RESULT.setLine(I1left); :}
+			|
+			(VarError) error {: parser.report_error("Sintaksna greska - neispravna deklaracija promenljive", parser.getErrorSymbol()); :} {: RESULT=new VarError(); :};
+			
 
 ClassDecl ::= (ClassDecl0) CLASS IDENT:I1 EXTENDS Type:T2 LBRACE VarDeclList:V3 LBRACE MethodDeclList:M4 RBRACE RBRACE {: RESULT=new ClassDecl0(I1, T2, V3, M4); RESULT.setLine(I1left); :}
 			  |
@@ -195,7 +238,10 @@ FormParams ::= (ParamMulti) FormParams:F1 COMMA FormParam:F2 {: RESULT=new Param
 			   
 FormParam ::= (ParamNormal) Type:T1 IDENT:I2 {: RESULT=new ParamNormal(T1, I2); RESULT.setLine(T1left); :}
 		      |
-		      (ParamArray) Type:T1 IDENT:I2 LSQUARE RSQUARE {: RESULT=new ParamArray(T1, I2); RESULT.setLine(T1left); :};
+		      (ParamArray) Type:T1 IDENT:I2 LSQUARE RSQUARE {: RESULT=new ParamArray(T1, I2); RESULT.setLine(T1left); :}
+		      |
+		      (ParamError) error {: this.parser.report_error("Sintaksna greska - neispravni parametri funkcije", this.parser.getErrorSymbol()); :} {: RESULT=new ParamError(); :};					
+					 
 		      
 Type ::= (Type) IDENT:I1 {: RESULT=new Type(I1); RESULT.setLine(I1left); :};				   
 
@@ -223,7 +269,13 @@ Statement ::= (StmtDesign) DesignatorStatement:D1 SEMICOLON {: RESULT=new StmtDe
 			  |
 			  (StmtPrint) PRINT LPAREN Expr:E1 RPAREN SEMICOLON {: RESULT=new StmtPrint(E1); RESULT.setLine(E1left); :}
 			  |
-			  (Stmt) LBRACE StatementList:S1 RBRACE {: RESULT=new Stmt(S1); RESULT.setLine(S1left); :};
+			  (Stmt) LBRACE StatementList:S1 RBRACE {: RESULT=new Stmt(S1); RESULT.setLine(S1left); :}			
+			  |
+			  (StmtIf) StatementIf:S1 StatementIfBody:S2 {: RESULT=new StmtIf(S1, S2); RESULT.setLine(S1left); :};
+			  
+StatementIf ::= (StmtIfHead) IF {: RESULT=new StmtIfHead(); :};
+			  
+StatementIfBody ::= (StmtIfBody) LPAREN Condition:C1 RPAREN Statement:S2 {: RESULT=new StmtIfBody(C1, S2); RESULT.setLine(C1left); :};	
 		
 CaseList ::= (CaseMulti) CaseList:C1 CasePart:C2 {: RESULT=new CaseMulti(C1, C2); RESULT.setLine(C1left); :}
 			 |
@@ -263,7 +315,10 @@ Expr ::= (ExprNegMulti) MINUS Term:T1 TermList:T2 {: RESULT=new ExprNegMulti(T1,
 		 |
 		 (ExprMulti) Term:T1 TermList:T2 {: RESULT=new ExprMulti(T1, T2); RESULT.setLine(T1left); :}
 		 |
-		 (ExprSingle) Term:T1 {: RESULT=new ExprSingle(T1); RESULT.setLine(T1left); :};
+		 (ExprSingle) Term:T1 {: RESULT=new ExprSingle(T1); RESULT.setLine(T1left); :}
+		 |
+		 (ExprError) error {: this.parser.report_error("Sintaksna greska - neispravan izraz", this.parser.getErrorSymbol()); :} {: RESULT=new ExprError(); :};
+		 
 		 
 TermList ::= (TermListMulti) TermList:T1 TermPart:T2 {: RESULT=new TermListMulti(T1, T2); RESULT.setLine(T1left); :}
 			 |

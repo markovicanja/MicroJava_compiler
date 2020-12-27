@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/11/2020 22:54:5
+// 27/11/2020 17:21:55
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -24,6 +24,7 @@ public interface Visitor {
     public void visit(VarList VarList);
     public void visit(ConstList ConstList);
     public void visit(Designator Designator);
+    public void visit(StatementIf StatementIf);
     public void visit(Term Term);
     public void visit(Condition Condition);
     public void visit(MethodDec MethodDec);
@@ -31,6 +32,7 @@ public interface Visitor {
     public void visit(Value Value);
     public void visit(FormParams FormParams);
     public void visit(DesignatorPart DesignatorPart);
+    public void visit(StatementIfBody StatementIfBody);
     public void visit(VarDeclList VarDeclList);
     public void visit(Expr Expr);
     public void visit(ActPars ActPars);
@@ -77,6 +79,7 @@ public interface Visitor {
     public void visit(TermMulti TermMulti);
     public void visit(TermListSingle TermListSingle);
     public void visit(TermListMulti TermListMulti);
+    public void visit(ExprError ExprError);
     public void visit(ExprSingle ExprSingle);
     public void visit(ExprMulti ExprMulti);
     public void visit(ExprNegSingle ExprNegSingle);
@@ -97,6 +100,9 @@ public interface Visitor {
     public void visit(CasePart CasePart);
     public void visit(CaseSingle CaseSingle);
     public void visit(CaseMulti CaseMulti);
+    public void visit(StmtIfBody StmtIfBody);
+    public void visit(StmtIfHead StmtIfHead);
+    public void visit(StmtIf StmtIf);
     public void visit(Stmt Stmt);
     public void visit(StmtPrint StmtPrint);
     public void visit(StmtPrintNumConst StmtPrintNumConst);
@@ -111,6 +117,7 @@ public interface Visitor {
     public void visit(StatementSingle StatementSingle);
     public void visit(StatementMulti StatementMulti);
     public void visit(Type Type);
+    public void visit(ParamError ParamError);
     public void visit(ParamArray ParamArray);
     public void visit(ParamNormal ParamNormal);
     public void visit(ParamSingle ParamSingle);
@@ -145,6 +152,7 @@ public interface Visitor {
     public void visit(ClassDecl2 ClassDecl2);
     public void visit(ClassDecl1 ClassDecl1);
     public void visit(ClassDecl0 ClassDecl0);
+    public void visit(VarError VarError);
     public void visit(VarArray VarArray);
     public void visit(VarNormal VarNormal);
     public void visit(VarSingle VarSingle);

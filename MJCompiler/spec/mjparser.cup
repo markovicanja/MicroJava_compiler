@@ -5,6 +5,11 @@ import org.apache.log4j.*;
 import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
+
+	private boolean errorDetected = false;
+	private Symbol currSymbol = null;		
+	private Symbol errorSymbol = null;
+	
 	Logger log = Logger.getLogger(getClass());
    
     // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
@@ -23,18 +28,51 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
+    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
-    	if (info instanceof Symbol)
-            msg.append (" na liniji ").append(((Symbol)info).left);
+    	if (info instanceof Symbol) {			
+			errorSymbol = (Symbol) info;
+            msg.append(" na liniji ").append(errorSymbol.left);
+			msg.append(", koloni ").append(errorSymbol.right);
+			if (errorSymbol.value != null) {
+				msg.append(" za simbol \"").append(errorSymbol.value.toString()).append("\"");
+			}			
+			msg.append("!");
+		}
         log.error(msg.toString());
     }
+    
+    public void report_info(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol) {
+            msg.append(" na liniji ").append(((Symbol)info).left);
+			msg.append(", koloni ").append(((Symbol)info).right);
+			if (errorSymbol.value != null) {
+				msg.append(" za simbol \"").append(((Symbol)info).value.toString()).append("\"");
+			}
+		}
+        log.info(msg.toString());
+    }
+	
+	public boolean isErrorDetected() {
+		return errorDetected;
+	}
+    
+	public Symbol getCurrSymbol() {
+		return currSymbol;
+	}
+	
+	public Symbol getErrorSymbol() {
+		return errorSymbol;
+	}
 :}
 
 scan with {:
-	Symbol s = this.getScanner().next_token();
-	if (s != null && s.value != null) 
-		log.info(s.toString() + " " + s.value.toString());
-	return s;
+	currSymbol = this.getScanner().next_token();
+	if (currSymbol != null && currSymbol.value != null) {
+		log.info(currSymbol.toString() + " " + currSymbol.value.toString());
+	}
+	return currSymbol;
 :}
 
 terminal PROGRAM, BREAK, CLASS, ENUM, ELSE, CONST, IF;
@@ -54,7 +92,7 @@ nonterminal Program, ProgramDeclarations, ProgramDeclaration;
 nonterminal ConstDecl, ConstList, ConstPart, ClassDecl;
 nonterminal Value, VarDecl, VarList, VarPart, VarDeclList;
 nonterminal MethodDeclList, MethodDec, MethodVoidDecl, MethodTypeDecl;
-nonterminal FormParams, FormParam, Type, StatementList, Statement;
+nonterminal FormParams, FormParam, Type, StatementList, Statement, StatementIf, StatementIfBody;
 nonterminal CaseList, CasePart, DesignatorStatement;
 nonterminal ActPars, Condition, CondTerm, CondFact;
 nonterminal Expr, TermList, TermPart, Term;
@@ -96,7 +134,10 @@ VarList ::= (VarMulti) VarList COMMA VarPart
 			
 VarPart ::= (VarNormal) IDENT 
 			|
-			(VarArray)IDENT LSQUARE RSQUARE;
+			(VarArray)IDENT LSQUARE RSQUARE
+			|
+			(VarError) error {: parser.report_error("Sintaksna greska - neispravna deklaracija promenljive", parser.getErrorSymbol()); :};
+			
 
 ClassDecl ::= (ClassDecl0) CLASS IDENT EXTENDS Type LBRACE VarDeclList LBRACE MethodDeclList RBRACE RBRACE
 			  |
@@ -164,7 +205,10 @@ FormParams ::= (ParamMulti) FormParams COMMA FormParam
 			   
 FormParam ::= (ParamNormal) Type IDENT
 		      |
-		      (ParamArray) Type IDENT LSQUARE RSQUARE;
+		      (ParamArray) Type IDENT LSQUARE RSQUARE
+		      |
+		      (ParamError) error 
+		      {: this.parser.report_error("Sintaksna greska - neispravni parametri funkcije", this.parser.getErrorSymbol()); :};
 		      
 Type ::= (Type) IDENT;				   
 
@@ -192,7 +236,13 @@ Statement ::= (StmtDesign) DesignatorStatement SEMICOLON
 			  |
 			  (StmtPrint) PRINT LPAREN Expr RPAREN SEMICOLON
 			  |
-			  (Stmt) LBRACE StatementList RBRACE;
+			  (Stmt) LBRACE StatementList RBRACE			
+			  |
+			  (StmtIf) StatementIf StatementIfBody;
+			  
+StatementIf ::= (StmtIfHead) IF;
+			  
+StatementIfBody ::= (StmtIfBody) LPAREN Condition RPAREN Statement;	
 		
 CaseList ::= (CaseMulti) CaseList CasePart
 			 |
@@ -233,6 +283,11 @@ Expr ::= (ExprNegMulti) MINUS Term TermList
 		 (ExprMulti) Term TermList
 		 |
 		 (ExprSingle) Term;
+ /*
+ |
+ (ExprError) error 
+ {: this.parser.report_error("Sintaksna greska - neispravan izraz", this.parser.getErrorSymbol()); :};
+ */
 		 
 TermList ::= (TermListMulti) TermList TermPart
 			 |
