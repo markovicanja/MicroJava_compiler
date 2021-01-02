@@ -88,11 +88,11 @@ terminal AND, OR, ASSIGNMENT, INC, DEC, SEMICOLON, COMMA, FULL_STOP;
 terminal LPAREN, RPAREN, LSQUARE, RSQUARE, LBRACE, RBRACE;
 terminal QUESTION_MARK, COLON;
 
-nonterminal Program, ProgramDeclarations, ProgramDeclaration;
+nonterminal ProgramDeclarations, ProgramDeclaration;
 nonterminal ConstDecl, ConstList, ConstPart, ClassDecl;
 nonterminal Value, VarDecl, VarList, VarPart, VarDeclList;
 nonterminal MethodDeclList, MethodDec, MethodVoidDecl, MethodTypeDecl;
-nonterminal FormParams, FormParam, Type, StatementList, Statement, StatementIf, StatementIfBody;
+nonterminal FormParams, FormParam, StatementList, Statement, StatementIf, StatementIfBody;
 nonterminal CaseList, CasePart, DesignatorStatement;
 nonterminal ActPars, Condition, CondTerm, CondFact;
 nonterminal Expr, TermList, TermPart, Term;
@@ -100,7 +100,12 @@ nonterminal FactorList, FactorPart, Factor;
 nonterminal Designator, DesignatorList, DesignatorPart;
 nonterminal Assignop, Relop, Addop, Mulop;
 
-Program ::= (Program) PROGRAM IDENT ProgramDeclarations LBRACE MethodDeclList RBRACE;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+
+Program ::= (Program) PROGRAM ProgName:p ProgramDeclarations LBRACE MethodDeclList RBRACE;
+
+ProgName ::= (ProgName) IDENT:progName;
 
 ProgramDeclarations ::= (ProgramDeclMulti) ProgramDeclarations ProgramDeclaration
 						|
@@ -126,7 +131,7 @@ Value ::= (NumConst) NUM_CONST
 		  |
 		  (CharConst) CHAR_CONST;
 				
-VarDecl ::= (VarDeclaration) Type VarList SEMICOLON;
+VarDecl ::= (VarDeclaration) Type:varType VarList SEMICOLON;
 
 VarList ::= (VarMulti) VarList COMMA VarPart
 			|
@@ -210,7 +215,7 @@ FormParam ::= (ParamNormal) Type IDENT
 		      (ParamError) error 
 		      {: this.parser.report_error("Sintaksna greska - neispravni parametri funkcije", this.parser.getErrorSymbol()); :};
 		      
-Type ::= (Type) IDENT;				   
+Type ::= (Type) IDENT:typeName;				   
 
 StatementList ::= (StatementMulti) StatementList Statement
 				  |

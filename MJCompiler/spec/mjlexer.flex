@@ -94,8 +94,7 @@ import java_cup.runtime.Symbol;
 [0-9]+ {return new_symbol(sym.NUM_CONST, new Integer(yytext()));}
 "'"[\040-\176]"'" {return new_symbol(sym.CHAR_CONST, new Character(yytext().charAt(1)));}
 
-. { System.err.println("Leksicka greska ("+yytext()+") u liniji "+(yyline+1)); }
-
+. { System.err.println("Leksicka greska (" + yytext() + ") na liniji " + (yyline + 1) + " i koloni " + (yycolumn + 1)); }
 
 
 
