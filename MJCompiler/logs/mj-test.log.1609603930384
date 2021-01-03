@@ -1,0 +1,92 @@
+INFO  17:09:27,812 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  17:09:27,862 - #2 program
+INFO  17:09:27,862 - #20 MJProgram
+INFO  17:09:27,862 - #20 int
+INFO  17:09:27,863 - #20 x
+INFO  17:09:27,865 - #40 ;
+INFO  17:09:27,866 - #20 int
+INFO  17:09:27,866 - #20 y
+INFO  17:09:27,866 - #40 ;
+INFO  17:09:27,866 - #47 {
+INFO  17:09:27,866 - #16 void
+INFO  17:09:27,866 - #20 main
+INFO  17:09:27,867 - #43 (
+INFO  17:09:27,867 - #44 )
+INFO  17:09:27,867 - #47 {
+INFO  17:09:27,867 - #13 print
+INFO  17:09:27,867 - #43 (
+INFO  17:09:27,867 - #21 1
+INFO  17:09:27,867 - #44 )
+INFO  17:09:27,868 - #40 ;
+INFO  17:09:27,868 - #13 print
+INFO  17:09:27,868 - #43 (
+INFO  17:09:27,869 - #21 2
+INFO  17:09:27,869 - #44 )
+INFO  17:09:27,869 - #40 ;
+INFO  17:09:27,869 - #48 }
+INFO  17:09:27,869 - #48 }
+INFO  17:09:27,871 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartVarDeclaration(
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+          VarSingle(
+            VarNormal(
+             x
+            ) [VarNormal]
+          ) [VarSingle]
+        ) [VarDeclaration]
+      ) [PartVarDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      VarDeclaration(
+        Type(
+         int
+        ) [Type]
+        VarSingle(
+          VarNormal(
+           y
+          ) [VarNormal]
+        ) [VarSingle]
+      ) [VarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid6(
+       main
+        StatementMulti(
+          StatementSingle(
+            StmtPrint(
+              ExprSingle(
+                TermSingle(
+                  FactorNumConst(
+                   1
+                  ) [FactorNumConst]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [StmtPrint]
+          ) [StatementSingle]
+          StmtPrint(
+            ExprSingle(
+              TermSingle(
+                FactorNumConst(
+                 2
+                ) [FactorNumConst]
+              ) [TermSingle]
+            ) [ExprSingle]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  17:09:27,872 - ===================================
+INFO  17:09:27,875 -  Print count calls = 2
+INFO  17:09:27,875 -  Deklarisanih promenljivih ima = 0

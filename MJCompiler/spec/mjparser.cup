@@ -95,13 +95,15 @@ nonterminal MethodDeclList, MethodDec, MethodVoidDecl, MethodTypeDecl;
 nonterminal FormParams, FormParam, StatementList, Statement, StatementIf, StatementIfBody;
 nonterminal CaseList, CasePart, DesignatorStatement;
 nonterminal ActPars, Condition, CondTerm, CondFact;
-nonterminal Expr, TermList, TermPart, Term;
+nonterminal Expr, Expr1, TermList, TermPart, Term;
 nonterminal FactorList, FactorPart, Factor;
 nonterminal Designator, DesignatorList, DesignatorPart;
-nonterminal Assignop, Relop, Addop, Mulop;
+nonterminal Relop, Addop, Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+
+precedence left ELSE;
 
 Program ::= (Program) PROGRAM ProgName:p ProgramDeclarations LBRACE MethodDeclList RBRACE;
 
@@ -142,7 +144,7 @@ VarPart ::= (VarNormal) IDENT
 			(VarArray)IDENT LSQUARE RSQUARE
 			|
 			(VarError) error {: parser.report_error("Sintaksna greska - neispravna deklaracija promenljive", parser.getErrorSymbol()); :};
-			
+			/* A1 definicija globalne promenljive */
 
 ClassDecl ::= (ClassDecl0) CLASS IDENT EXTENDS Type LBRACE VarDeclList LBRACE MethodDeclList RBRACE RBRACE
 			  |
@@ -214,6 +216,7 @@ FormParam ::= (ParamNormal) Type IDENT
 		      |
 		      (ParamError) error 
 		      {: this.parser.report_error("Sintaksna greska - neispravni parametri funkcije", this.parser.getErrorSymbol()); :};
+		      /* B1 definicija formalnih parametara */
 		      
 Type ::= (Type) IDENT:typeName;				   
 
@@ -243,6 +246,8 @@ Statement ::= (StmtDesign) DesignatorStatement SEMICOLON
 			  |
 			  (Stmt) LBRACE StatementList RBRACE			
 			  |
+			  (StmtIfElse) StatementIf StatementIfBody ELSE Statement
+			  |
 			  (StmtIf) StatementIf StatementIfBody;
 			  
 StatementIf ::= (StmtIfHead) IF;
@@ -255,7 +260,7 @@ CaseList ::= (CaseMulti) CaseList CasePart
 			 
 CasePart ::= (CasePart) CASE NUM_CONST COLON StatementList;
 
-DesignatorStatement ::= (Assignment) Designator Assignop Expr
+DesignatorStatement ::= (Assignment) Designator ASSIGNMENT Expr
 						|
 						(MethodCall0) Designator LPAREN ActPars RPAREN
 						|
@@ -271,7 +276,7 @@ ActPars ::= (ActParsMulti) ActPars COMMA Expr
 			
 Condition ::= (CondTwo) Condition OR CondTerm
 			  |
-			  (CondOne) CondTerm;   
+			  (CondOne) CondTerm;
 			  
 CondTerm ::= (CondTermTwo) CondTerm AND CondFact
 			 |
@@ -281,22 +286,27 @@ CondFact ::= (CondFactTwo) Expr Relop Expr
 			 |
 			 (CondFactOne) Expr;
 			 
-Expr ::= (ExprNegMulti) MINUS Term TermList
+Expr ::= (ExprTernary) Expr1 QUESTION_MARK Expr1 COLON Expr1
+		 |
+		 (ExprOne) Expr1;
+			 
+Expr1 ::= (ExprNegMulti) MINUS Term TermList
 		 | 
 		 (ExprNegSingle) MINUS Term
 		 |
 		 (ExprMulti) Term TermList
 		 |
-		 (ExprSingle) Term;
- /*
- |
- (ExprError) error 
- {: this.parser.report_error("Sintaksna greska - neispravan izraz", this.parser.getErrorSymbol()); :};
- */
+		 (ExprSingle) Term
+		 |
+		 (ExprError) error 
+		 {: this.parser.report_error("Sintaksna greska - neispravan izraz", this.parser.getErrorSymbol()); :};
+		 /* A2 konstrukcija iskaza dodele */
 		 
 TermList ::= (TermListMulti) TermList TermPart
 			 |
 			 (TermListSingle) TermPart;
+			 
+TermPart ::= (TermPart) Addop Term;
 		 
 Term ::= (TermMulti) Factor FactorList
 		 |
@@ -337,8 +347,6 @@ DesignatorList ::= (DesignatorListMulti) DesignatorList DesignatorPart
 DesignatorPart ::= (DesignatorPart0) FULL_STOP IDENT
 				   |
 				   (DesignatorPart1) LSQUARE Expr RSQUARE;
-				   
-Assignop ::= (Assignop) ASSIGNMENT;
 
 Relop ::= (RelopEQ) EQUAL
 		  |

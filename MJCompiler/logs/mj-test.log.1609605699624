@@ -1,0 +1,326 @@
+INFO  17:41:16,891 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  17:41:16,956 - #2 program
+INFO  17:41:16,957 - #20 MJProgram
+INFO  17:41:16,957 - #20 int
+INFO  17:41:16,957 - #20 x
+INFO  17:41:16,958 - #40 ;
+INFO  17:41:16,958 - #20 int
+INFO  17:41:16,959 - #20 y
+INFO  17:41:16,959 - #40 ;
+INFO  17:41:16,959 - #7 const
+INFO  17:41:16,959 - #20 int
+INFO  17:41:16,959 - #20 nula
+INFO  17:41:16,959 - #37 =
+INFO  17:41:16,959 - #21 0
+INFO  17:41:16,960 - #40 ;
+INFO  17:41:16,960 - #7 const
+INFO  17:41:16,961 - #20 int
+INFO  17:41:16,961 - #20 jedan
+INFO  17:41:16,961 - #37 =
+INFO  17:41:16,961 - #21 1
+INFO  17:41:16,961 - #40 ;
+INFO  17:41:16,962 - #7 const
+INFO  17:41:16,968 - #20 int
+INFO  17:41:16,968 - #20 pet
+INFO  17:41:16,968 - #37 =
+INFO  17:41:16,968 - #21 5
+INFO  17:41:16,968 - #40 ;
+INFO  17:41:16,968 - #20 int
+INFO  17:41:16,968 - #20 niz
+INFO  17:41:16,968 - #45 [
+INFO  17:41:16,968 - #46 ]
+INFO  17:41:16,968 - #40 ;
+INFO  17:41:16,969 - #20 char
+INFO  17:41:16,969 - #20 nizch
+INFO  17:41:16,969 - #45 [
+INFO  17:41:16,969 - #46 ]
+INFO  17:41:16,969 - #40 ;
+INFO  17:41:16,969 - #47 {
+INFO  17:41:16,969 - #16 void
+INFO  17:41:16,969 - #20 main
+INFO  17:41:16,969 - #43 (
+INFO  17:41:16,969 - #44 )
+INFO  17:41:16,969 - #20 int
+INFO  17:41:16,970 - #20 bodovi
+INFO  17:41:16,970 - #40 ;
+INFO  17:41:16,970 - #20 bool
+INFO  17:41:16,970 - #20 bt
+INFO  17:41:16,970 - #40 ;
+INFO  17:41:16,970 - #47 {
+INFO  17:41:16,971 - #13 print
+INFO  17:41:16,971 - #43 (
+INFO  17:41:16,971 - #21 1
+INFO  17:41:16,971 - #44 )
+INFO  17:41:16,971 - #40 ;
+INFO  17:41:16,971 - #13 print
+INFO  17:41:16,972 - #43 (
+INFO  17:41:16,972 - #21 2
+INFO  17:41:16,972 - #44 )
+INFO  17:41:16,972 - #40 ;
+INFO  17:41:16,972 - #20 bodovi
+INFO  17:41:16,972 - #37 =
+INFO  17:41:16,973 - #21 0
+INFO  17:41:16,973 - #40 ;
+INFO  17:41:16,973 - #20 bodovi
+INFO  17:41:16,973 - #38 ++
+INFO  17:41:16,973 - #40 ;
+INFO  17:41:16,974 - #20 bodovi
+INFO  17:41:16,974 - #37 =
+INFO  17:41:16,974 - #20 bodovi
+INFO  17:41:16,974 - #26 *
+INFO  17:41:16,974 - #20 pet
+INFO  17:41:16,975 - #40 ;
+INFO  17:41:16,976 - #20 bodovi
+INFO  17:41:16,976 - #39 --
+INFO  17:41:16,976 - #40 ;
+INFO  17:41:16,977 - #13 print
+INFO  17:41:16,977 - #43 (
+INFO  17:41:16,977 - #20 bodovi
+INFO  17:41:16,977 - #44 )
+INFO  17:41:16,977 - #40 ;
+INFO  17:41:16,977 - #48 }
+INFO  17:41:16,977 - #48 }
+INFO  17:41:16,980 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclMulti(
+      ProgramDeclMulti(
+        ProgramDeclMulti(
+          ProgramDeclMulti(
+            ProgramDeclMulti(
+              ProgramDeclSingle(
+                PartVarDeclaration(
+                  VarDeclaration(
+                    Type(
+                     int
+                    ) [Type]
+                    VarSingle(
+                      VarNormal(
+                       x
+                      ) [VarNormal]
+                    ) [VarSingle]
+                  ) [VarDeclaration]
+                ) [PartVarDeclaration]
+              ) [ProgramDeclSingle]
+              PartVarDeclaration(
+                VarDeclaration(
+                  Type(
+                   int
+                  ) [Type]
+                  VarSingle(
+                    VarNormal(
+                     y
+                    ) [VarNormal]
+                  ) [VarSingle]
+                ) [VarDeclaration]
+              ) [PartVarDeclaration]
+            ) [ProgramDeclMulti]
+            PartConstDeclaration(
+              ConstDeclaration(
+                Type(
+                 int
+                ) [Type]
+                ConstSingle(
+                  ConstPart(
+                   nula
+                    NumConst(
+                     0
+                    ) [NumConst]
+                  ) [ConstPart]
+                ) [ConstSingle]
+              ) [ConstDeclaration]
+            ) [PartConstDeclaration]
+          ) [ProgramDeclMulti]
+          PartConstDeclaration(
+            ConstDeclaration(
+              Type(
+               int
+              ) [Type]
+              ConstSingle(
+                ConstPart(
+                 jedan
+                  NumConst(
+                   1
+                  ) [NumConst]
+                ) [ConstPart]
+              ) [ConstSingle]
+            ) [ConstDeclaration]
+          ) [PartConstDeclaration]
+        ) [ProgramDeclMulti]
+        PartConstDeclaration(
+          ConstDeclaration(
+            Type(
+             int
+            ) [Type]
+            ConstSingle(
+              ConstPart(
+               pet
+                NumConst(
+                 5
+                ) [NumConst]
+              ) [ConstPart]
+            ) [ConstSingle]
+          ) [ConstDeclaration]
+        ) [PartConstDeclaration]
+      ) [ProgramDeclMulti]
+      PartVarDeclaration(
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+          VarSingle(
+            VarArray(
+             niz
+            ) [VarArray]
+          ) [VarSingle]
+        ) [VarDeclaration]
+      ) [PartVarDeclaration]
+    ) [ProgramDeclMulti]
+    PartVarDeclaration(
+      VarDeclaration(
+        Type(
+         char
+        ) [Type]
+        VarSingle(
+          VarArray(
+           nizch
+          ) [VarArray]
+        ) [VarSingle]
+      ) [VarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+       main
+        VarDeclMulti(
+          VarDeclSingle(
+            VarDeclaration(
+              Type(
+               int
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bodovi
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclSingle]
+          VarDeclaration(
+            Type(
+             bool
+            ) [Type]
+            VarSingle(
+              VarNormal(
+               bt
+              ) [VarNormal]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementMulti(
+                StatementMulti(
+                  StatementMulti(
+                    StatementSingle(
+                      StmtPrint(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [StmtPrint]
+                    ) [StatementSingle]
+                    StmtPrint(
+                      ExprSingle(
+                        TermSingle(
+                          FactorNumConst(
+                           2
+                          ) [FactorNumConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [StmtPrint]
+                  ) [StatementMulti]
+                  StmtDesign(
+                    Assignment(
+                      Designator0(
+                       bodovi
+                      ) [Designator0]
+                      ExprSingle(
+                        TermSingle(
+                          FactorNumConst(
+                           0
+                          ) [FactorNumConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [Assignment]
+                  ) [StmtDesign]
+                ) [StatementMulti]
+                StmtDesign(
+                  Increment(
+                    Designator0(
+                     bodovi
+                    ) [Designator0]
+                  ) [Increment]
+                ) [StmtDesign]
+              ) [StatementMulti]
+              StmtDesign(
+                Assignment(
+                  Designator0(
+                   bodovi
+                  ) [Designator0]
+                  ExprSingle(
+                    TermMulti(
+                      FactorDesignator(
+                        Designator0(
+                         bodovi
+                        ) [Designator0]
+                      ) [FactorDesignator]
+                      FactorListSingle(
+                        FactorPart(
+                          MulopMul(
+                          ) [MulopMul]
+                          FactorDesignator(
+                            Designator0(
+                             pet
+                            ) [Designator0]
+                          ) [FactorDesignator]
+                        ) [FactorPart]
+                      ) [FactorListSingle]
+                    ) [TermMulti]
+                  ) [ExprSingle]
+                ) [Assignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDesign(
+              Decrement(
+                Designator0(
+                 bodovi
+                ) [Designator0]
+              ) [Decrement]
+            ) [StmtDesign]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprSingle(
+              TermSingle(
+                FactorDesignator(
+                  Designator0(
+                   bodovi
+                  ) [Designator0]
+                ) [FactorDesignator]
+              ) [TermSingle]
+            ) [ExprSingle]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  17:41:16,980 - ===================================
+INFO  17:41:16,984 -  Print count calls = 3
+INFO  17:41:16,984 -  Deklarisanih promenljivih ima = 6
