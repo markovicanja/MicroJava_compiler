@@ -126,7 +126,7 @@ ConstList ::= (ConstMulti) ConstList COMMA ConstPart
 			  |
 			  (ConstSingle) ConstPart;
 			  
-ConstPart ::= (ConstPart) IDENT ASSIGNMENT Value;
+ConstPart ::= (ConstPart) IDENT:constName ASSIGNMENT Value;
 
 Value ::= (NumConst) NUM_CONST
 		  |
@@ -140,9 +140,9 @@ VarList ::= (VarMulti) VarList COMMA VarPart
 			|
 			(VarSingle) VarPart;
 			
-VarPart ::= (VarNormal) IDENT 
+VarPart ::= (VarNormal) IDENT:varName
 			|
-			(VarArray) IDENT LSQUARE RSQUARE;
+			(VarArray) IDENT:varName LSQUARE RSQUARE;
 			
 GlobalVarDecl ::= (GlobalVarDeclaration) Type GlobalVarList SEMICOLON;
 
@@ -150,9 +150,9 @@ GlobalVarList ::= (GlobalVarMulti) GlobalVarList COMMA GlobalVarPart
 				  |
 				  (GlobalVarSingle) GlobalVarPart;
 			
-GlobalVarPart ::= (GlobalVarNormal) IDENT 
+GlobalVarPart ::= (GlobalVarNormal) IDENT:varName 
 				  |
-				  (GlobalVarArray) IDENT LSQUARE RSQUARE
+				  (GlobalVarArray) IDENT:varName LSQUARE RSQUARE
 				  |
 				  (VarError) error {: parser.report_error("Oporavak od greske u deklaraciji globalne promenljive", parser.getErrorSymbol()); :};
 				  /* A1 definicija globalne promenljive */ 

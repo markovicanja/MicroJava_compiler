@@ -749,124 +749,124 @@ class Yylex implements java_cup.runtime.Scanner {
           { return new_symbol(sym.IF, yytext());
           }
         case 66: break;
-        case 1: 
-          { System.err.println("Leksicka greska (" + yytext() + ") na liniji " + (yyline + 1) + " i koloni " + yycolumn);
-          }
-        case 67: break;
         case 7: 
           { return new_symbol(sym.DIV, yytext());
           }
-        case 68: break;
+        case 67: break;
         case 50: 
           { return new_symbol(sym.SWITCH, yytext());
           }
-        case 69: break;
+        case 68: break;
         case 5: 
           { return new_symbol(sym.MINUS, yytext());
           }
-        case 70: break;
+        case 69: break;
         case 30: 
           { return new_symbol(sym.NOT_EQUAL, yytext());
           }
-        case 71: break;
+        case 70: break;
         case 43: 
           { return new_symbol(sym.VOID, yytext());
           }
-        case 72: break;
+        case 71: break;
         case 35: 
           { yybegin(YYINITIAL);
           }
-        case 73: break;
+        case 72: break;
         case 46: 
           { return new_symbol(sym.CONST, yytext());
           }
-        case 74: break;
+        case 73: break;
         case 3: 
           { return new_symbol(sym.IDENT, yytext());
           }
-        case 75: break;
+        case 74: break;
         case 33: 
           { return new_symbol(sym.AND, yytext());
           }
-        case 76: break;
+        case 75: break;
         case 15: 
           { return new_symbol(sym.LPAREN, yytext());
           }
-        case 77: break;
+        case 76: break;
         case 29: 
           { return new_symbol(sym.EQUAL, yytext());
           }
-        case 78: break;
+        case 77: break;
         case 11: 
           { return new_symbol(sym.LESSER, yytext());
           }
-        case 79: break;
+        case 78: break;
         case 24: 
           { yybegin(COMMENT);
           }
-        case 80: break;
+        case 79: break;
         case 17: 
           { return new_symbol(sym.LSQUARE, yytext());
           }
-        case 81: break;
+        case 80: break;
         case 40: 
           { return new_symbol(sym.ENUM, yytext());
           }
-        case 82: break;
+        case 81: break;
         case 8: 
           { return new_symbol(sym.MOD, yytext());
           }
-        case 83: break;
+        case 82: break;
         case 6: 
           { return new_symbol(sym.MUL, yytext());
           }
-        case 84: break;
+        case 83: break;
         case 45: 
           { return new_symbol(sym.BREAK, yytext());
           }
-        case 85: break;
+        case 84: break;
         case 41: 
           { return new_symbol(sym.CASE, yytext());
           }
-        case 86: break;
+        case 85: break;
         case 19: 
           { return new_symbol(sym.LBRACE, yytext());
           }
-        case 87: break;
+        case 86: break;
         case 38: 
           { return new_symbol(sym.READ, yytext());
           }
-        case 88: break;
+        case 87: break;
         case 27: 
           { return new_symbol(sym.INC, yytext());
           }
-        case 89: break;
+        case 88: break;
         case 10: 
           { return new_symbol(sym.GREATER, yytext());
           }
-        case 90: break;
+        case 89: break;
         case 42: 
           { return new_symbol(sym.BOOL_CONST, new Boolean(yytext()));
           }
-        case 91: break;
+        case 90: break;
         case 48: 
           { return new_symbol(sym.WHILE, yytext());
           }
-        case 92: break;
+        case 91: break;
         case 31: 
           { return new_symbol(sym.GREATER_EQUAL, yytext());
           }
-        case 93: break;
+        case 92: break;
         case 44: 
           { return new_symbol(sym.PRINT, yytext());
           }
-        case 94: break;
+        case 93: break;
         case 26: 
           { return new_symbol(sym.DO, yytext());
           }
-        case 95: break;
+        case 94: break;
         case 47: 
           { return new_symbol(sym.CLASS, yytext());
+          }
+        case 95: break;
+        case 1: 
+          { System.err.println("Leksicka greska (" + yytext() + ") na liniji " + (yyline + 1) + " i koloni " + (yycolumn + 1));
           }
         case 96: break;
         case 18: 

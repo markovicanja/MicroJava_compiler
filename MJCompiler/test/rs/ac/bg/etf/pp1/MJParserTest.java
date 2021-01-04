@@ -40,14 +40,6 @@ public class MJParserTest {
 			// ispis sintaksnog stabla
 			log.info(prog.toString(""));
 			log.info("===================================");
-
-			// ispis prepoznatih programskih konstrukcija
-			RuleVisitor v = new RuleVisitor();
-			prog.traverseBottomUp(v); 
-	      
-			log.info(" Print count calls = " + v.printCallCount);
-			log.info(" Deklarisanih promenljivih ima = " + v.varDeclCount);
-		
 		} 
 		finally {
 			if (br != null) try { br.close(); } catch (IOException e1) { log.error(e1.getMessage(), e1); }

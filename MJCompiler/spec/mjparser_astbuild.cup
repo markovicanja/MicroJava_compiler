@@ -161,7 +161,7 @@ ConstList ::= (ConstMulti) ConstList:C1 COMMA ConstPart:C2 {: RESULT=new ConstMu
 			  |
 			  (ConstSingle) ConstPart:C1 {: RESULT=new ConstSingle(C1); RESULT.setLine(C1left); :};
 			  
-ConstPart ::= (ConstPart) IDENT:I1 ASSIGNMENT Value:V2 {: RESULT=new ConstPart(I1, V2); RESULT.setLine(I1left); :};
+ConstPart ::= (ConstPart) IDENT:constName ASSIGNMENT Value:V1 {: RESULT=new ConstPart(constName, V1); RESULT.setLine(constNameleft); :};
 
 Value ::= (NumConst) NUM_CONST:N1 {: RESULT=new NumConst(N1); RESULT.setLine(N1left); :}
 		  |
@@ -175,9 +175,9 @@ VarList ::= (VarMulti) VarList:V1 COMMA VarPart:V2 {: RESULT=new VarMulti(V1, V2
 			|
 			(VarSingle) VarPart:V1 {: RESULT=new VarSingle(V1); RESULT.setLine(V1left); :};
 			
-VarPart ::= (VarNormal) IDENT:I1 {: RESULT=new VarNormal(I1); RESULT.setLine(I1left); :} 
+VarPart ::= (VarNormal) IDENT:varName {: RESULT=new VarNormal(varName); RESULT.setLine(varNameleft); :}
 			|
-			(VarArray) IDENT:I1 LSQUARE RSQUARE {: RESULT=new VarArray(I1); RESULT.setLine(I1left); :};
+			(VarArray) IDENT:varName LSQUARE RSQUARE {: RESULT=new VarArray(varName); RESULT.setLine(varNameleft); :};
 			
 GlobalVarDecl ::= (GlobalVarDeclaration) Type:T1 GlobalVarList:G2 SEMICOLON {: RESULT=new GlobalVarDeclaration(T1, G2); RESULT.setLine(T1left); :};
 
@@ -185,9 +185,9 @@ GlobalVarList ::= (GlobalVarMulti) GlobalVarList:G1 COMMA GlobalVarPart:G2 {: RE
 				  |
 				  (GlobalVarSingle) GlobalVarPart:G1 {: RESULT=new GlobalVarSingle(G1); RESULT.setLine(G1left); :};
 			
-GlobalVarPart ::= (GlobalVarNormal) IDENT:I1 {: RESULT=new GlobalVarNormal(I1); RESULT.setLine(I1left); :} 
+GlobalVarPart ::= (GlobalVarNormal) IDENT:varName {: RESULT=new GlobalVarNormal(varName); RESULT.setLine(varNameleft); :} 
 				  |
-				  (GlobalVarArray) IDENT:I1 LSQUARE RSQUARE {: RESULT=new GlobalVarArray(I1); RESULT.setLine(I1left); :}
+				  (GlobalVarArray) IDENT:varName LSQUARE RSQUARE {: RESULT=new GlobalVarArray(varName); RESULT.setLine(varNameleft); :}
 				  |
 				  (VarError) error {: parser.report_error("Oporavak od greske u deklaraciji globalne promenljive", parser.getErrorSymbol()); :} {: RESULT=new VarError(); :};
 				  /* A1 definicija globalne promenljive */ 

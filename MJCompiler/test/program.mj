@@ -1,26 +1,10 @@
 program MJProgram
-	int ; // oporavak od greske za globalne promenljive
-
-
+	const int m=1;
+	int global, globarArr[];
 {
-	void main() 
-	// int a +; // greska jer nije globalna promenljiva
+	void main() int b, a[];
+	char a; // error - vec definisana
 	{
-		a = 1 + ; // greska u konstrukciji iskaza dodele
-		
-		if (a < b + ) {
-			// greska logickog izraza unutar if konstrukcije
-			a = 1;
-		}
-		
-		if (a < b +;) // greska logickog izraza unutar if konstrukcije
-			a = 1;
-		else 
-			a = 2;
-			
-		do {
-			a++;
-		}
-		while (a < b); // while (a < b+); ovo nece da se oporavi
+		b = 1;
 	}
 }
