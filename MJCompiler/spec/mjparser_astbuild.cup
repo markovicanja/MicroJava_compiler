@@ -99,6 +99,9 @@ nonterminal VarDecl VarDecl;
 nonterminal VarList VarList;
 nonterminal VarPart VarPart;
 nonterminal VarDeclList VarDeclList;
+nonterminal GlobalVarDecl GlobalVarDecl;
+nonterminal GlobalVarList GlobalVarList;
+nonterminal GlobalVarPart GlobalVarPart;
 nonterminal MethodDeclList MethodDeclList;
 nonterminal MethodDec MethodDec;
 nonterminal MethodVoidDecl MethodVoidDecl;
@@ -112,10 +115,12 @@ nonterminal StatementIfBody StatementIfBody;
 nonterminal CaseList CaseList;
 nonterminal CasePart CasePart;
 nonterminal DesignatorStatement DesignatorStatement;
+nonterminal Assignment Assignment;
 nonterminal ActPars ActPars;
 nonterminal Condition Condition;
 nonterminal CondTerm CondTerm;
 nonterminal CondFact CondFact;
+nonterminal IfCondition IfCondition;
 nonterminal Expr Expr;
 nonterminal Expr1 Expr1;
 nonterminal TermList TermList;
@@ -146,7 +151,7 @@ ProgramDeclarations ::= (ProgramDeclMulti) ProgramDeclarations:P1 ProgramDeclara
 						
 ProgramDeclaration ::= (PartConstDeclaration) ConstDecl:C1 {: RESULT=new PartConstDeclaration(C1); RESULT.setLine(C1left); :}
 					   |
-					   (PartVarDeclaration) VarDecl:V1 {: RESULT=new PartVarDeclaration(V1); RESULT.setLine(V1left); :}
+					   (PartVarDeclaration) GlobalVarDecl:G1 {: RESULT=new PartVarDeclaration(G1); RESULT.setLine(G1left); :}
 					   |
 					   (PartClassDeclaration) ClassDecl:C1 {: RESULT=new PartClassDeclaration(C1); RESULT.setLine(C1left); :};
 
@@ -164,7 +169,7 @@ Value ::= (NumConst) NUM_CONST:N1 {: RESULT=new NumConst(N1); RESULT.setLine(N1l
 		  |
 		  (CharConst) CHAR_CONST:C1 {: RESULT=new CharConst(C1); RESULT.setLine(C1left); :};
 				
-VarDecl ::= (VarDeclaration) Type:varType VarList:V1 SEMICOLON {: RESULT=new VarDeclaration(varType, V1); RESULT.setLine(varTypeleft); :};
+VarDecl ::= (VarDeclaration) Type:T1 VarList:V2 SEMICOLON {: RESULT=new VarDeclaration(T1, V2); RESULT.setLine(T1left); :};
 
 VarList ::= (VarMulti) VarList:V1 COMMA VarPart:V2 {: RESULT=new VarMulti(V1, V2); RESULT.setLine(V1left); :}
 			|
@@ -172,10 +177,20 @@ VarList ::= (VarMulti) VarList:V1 COMMA VarPart:V2 {: RESULT=new VarMulti(V1, V2
 			
 VarPart ::= (VarNormal) IDENT:I1 {: RESULT=new VarNormal(I1); RESULT.setLine(I1left); :} 
 			|
-			(VarArray)IDENT:I1 LSQUARE RSQUARE {: RESULT=new VarArray(I1); RESULT.setLine(I1left); :}
-			|
-			(VarError) error {: parser.report_error("Sintaksna greska - neispravna deklaracija promenljive", parser.getErrorSymbol()); :} {: RESULT=new VarError(); :};
-			/* A1 definicija globalne promenljive */
+			(VarArray) IDENT:I1 LSQUARE RSQUARE {: RESULT=new VarArray(I1); RESULT.setLine(I1left); :};
+			
+GlobalVarDecl ::= (GlobalVarDeclaration) Type:T1 GlobalVarList:G2 SEMICOLON {: RESULT=new GlobalVarDeclaration(T1, G2); RESULT.setLine(T1left); :};
+
+GlobalVarList ::= (GlobalVarMulti) GlobalVarList:G1 COMMA GlobalVarPart:G2 {: RESULT=new GlobalVarMulti(G1, G2); RESULT.setLine(G1left); :}
+				  |
+				  (GlobalVarSingle) GlobalVarPart:G1 {: RESULT=new GlobalVarSingle(G1); RESULT.setLine(G1left); :};
+			
+GlobalVarPart ::= (GlobalVarNormal) IDENT:I1 {: RESULT=new GlobalVarNormal(I1); RESULT.setLine(I1left); :} 
+				  |
+				  (GlobalVarArray) IDENT:I1 LSQUARE RSQUARE {: RESULT=new GlobalVarArray(I1); RESULT.setLine(I1left); :}
+				  |
+				  (VarError) error {: parser.report_error("Oporavak od greske u deklaraciji globalne promenljive", parser.getErrorSymbol()); :} {: RESULT=new VarError(); :};
+				  /* A1 definicija globalne promenljive */ 
 
 ClassDecl ::= (ClassDecl0) CLASS IDENT:I1 EXTENDS Type:T2 LBRACE VarDeclList:V3 LBRACE MethodDeclList:M4 RBRACE RBRACE {: RESULT=new ClassDecl0(I1, T2, V3, M4); RESULT.setLine(I1left); :}
 			  |
@@ -246,7 +261,7 @@ FormParam ::= (ParamNormal) Type:T1 IDENT:I2 {: RESULT=new ParamNormal(T1, I2); 
 		      (ParamArray) Type:T1 IDENT:I2 LSQUARE RSQUARE {: RESULT=new ParamArray(T1, I2); RESULT.setLine(T1left); :}
 		      |
 		      (ParamError) error 
-		      {: this.parser.report_error("Sintaksna greska - neispravni parametri funkcije", this.parser.getErrorSymbol()); :} {: RESULT=new ParamError(); :};
+		      {: this.parser.report_error("Oporavak od greske u definiciji formalnih parametara funkcije", this.parser.getErrorSymbol()); :} {: RESULT=new ParamError(); :};
 		      /* B1 definicija formalnih parametara */
 		      
 Type ::= (Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :};				   
@@ -257,9 +272,9 @@ StatementList ::= (StatementMulti) StatementList:S1 Statement:S2 {: RESULT=new S
 				  
 Statement ::= (StmtDesign) DesignatorStatement:D1 SEMICOLON {: RESULT=new StmtDesign(D1); RESULT.setLine(D1left); :}
 			  |
-			  (StmtSwitchNoCase) LPAREN Expr:E1 RPAREN LBRACE RBRACE {: RESULT=new StmtSwitchNoCase(E1); RESULT.setLine(E1left); :}
+			  (StmtSwitchNoCase) SWITCH LPAREN Expr:E1 RPAREN LBRACE RBRACE {: RESULT=new StmtSwitchNoCase(E1); RESULT.setLine(E1left); :}
 			  |
-			  (StmtSwitch) LPAREN Expr:E1 RPAREN LBRACE CaseList:C2 RBRACE {: RESULT=new StmtSwitch(E1, C2); RESULT.setLine(E1left); :}
+			  (StmtSwitch) SWITCH LPAREN Expr:E1 RPAREN LBRACE CaseList:C2 RBRACE {: RESULT=new StmtSwitch(E1, C2); RESULT.setLine(E1left); :}
 			  |
 			  (StmtBreak) BREAK SEMICOLON {: RESULT=new StmtBreak(); :}
 			  |
@@ -277,30 +292,42 @@ Statement ::= (StmtDesign) DesignatorStatement:D1 SEMICOLON {: RESULT=new StmtDe
 			  |
 			  (Stmt) LBRACE StatementList:S1 RBRACE {: RESULT=new Stmt(S1); RESULT.setLine(S1left); :}			
 			  |
-			  (StmtIfElse) StatementIf:S1 StatementIfBody:S2 ELSE Statement:S3 {: RESULT=new StmtIfElse(S1, S2, S3); RESULT.setLine(S1left); :}
+			  (StmtIfElse) IF StatementIfBody:S1 ELSE Statement:S2 {: RESULT=new StmtIfElse(S1, S2); RESULT.setLine(S1left); :}
 			  |
-			  (StmtIf) StatementIf:S1 StatementIfBody:S2 {: RESULT=new StmtIf(S1, S2); RESULT.setLine(S1left); :};
+			  (StmtIf) IF StatementIfBody:S1 {: RESULT=new StmtIf(S1); RESULT.setLine(S1left); :}
+			  |
+			  (StmtDoWhile) DO Statement:S1 WHILE LPAREN Condition:C2 RPAREN SEMICOLON {: RESULT=new StmtDoWhile(S1, C2); RESULT.setLine(S1left); :};
 			  
-StatementIf ::= (StmtIfHead) IF {: RESULT=new StmtIfHead(); :};
-			  
-StatementIfBody ::= (StmtIfBody) LPAREN Condition:C1 RPAREN Statement:S2 {: RESULT=new StmtIfBody(C1, S2); RESULT.setLine(C1left); :};	
-		
+StatementIfBody ::= (StmtIfBody) IfCondition:I1 Statement:S2 {: RESULT=new StmtIfBody(I1, S2); RESULT.setLine(I1left); :};	
+
+IfCondition ::= (IfCond) LPAREN Condition:C1 RPAREN {: RESULT=new IfCond(C1); RESULT.setLine(C1left); :}
+				|
+				(IfCondError) LPAREN error RPAREN
+                {: this.parser.report_error("Oporavak od greske u logickom izrazu if konstrukcije", this.parser.getErrorSymbol()); :} {: RESULT=new IfCondError(); :};
+				/* B2 greska logickog izraza unutar if konstrukcije */
+				
 CaseList ::= (CaseMulti) CaseList:C1 CasePart:C2 {: RESULT=new CaseMulti(C1, C2); RESULT.setLine(C1left); :}
 			 |
 			 (CaseSingle) CasePart:C1 {: RESULT=new CaseSingle(C1); RESULT.setLine(C1left); :};
 			 
 CasePart ::= (CasePart) CASE NUM_CONST:N1 COLON StatementList:S2 {: RESULT=new CasePart(N1, S2); RESULT.setLine(N1left); :};
 
-DesignatorStatement ::= (Assignment) Designator:D1 ASSIGNMENT Expr:E2 {: RESULT=new Assignment(D1, E2); RESULT.setLine(D1left); :}
+DesignatorStatement ::= (DesignatorAssignment) Designator:D1 Assignment:A2 {: RESULT=new DesignatorAssignment(D1, A2); RESULT.setLine(D1left); :}
 						|
-						(MethodCall0) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new MethodCall0(D1, A2); RESULT.setLine(D1left); :}
+						(DesignatorMethodCall0) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignatorMethodCall0(D1, A2); RESULT.setLine(D1left); :}
 						|
-						(MethodCall1) Designator:D1 RPAREN RPAREN {: RESULT=new MethodCall1(D1); RESULT.setLine(D1left); :}
+						(DesignatorMethodCall1) Designator:D1 RPAREN RPAREN {: RESULT=new DesignatorMethodCall1(D1); RESULT.setLine(D1left); :}
 						|
-						(Increment) Designator:D1 INC {: RESULT=new Increment(D1); RESULT.setLine(D1left); :}
+						(DesignatorIncrement) Designator:D1 INC {: RESULT=new DesignatorIncrement(D1); RESULT.setLine(D1left); :}
 						|
-						(Decrement) Designator:D1 DEC {: RESULT=new Decrement(D1); RESULT.setLine(D1left); :};
-
+						(DesignatorDecrement) Designator:D1 DEC {: RESULT=new DesignatorDecrement(D1); RESULT.setLine(D1left); :};
+						
+Assignment ::= (AssignmentExpr) ASSIGNMENT Expr:E1 {: RESULT=new AssignmentExpr(E1); RESULT.setLine(E1left); :}
+               |
+               (AssignmentError) ASSIGNMENT error
+               {: this.parser.report_error("Oporavak od greske u konstrukciji iskaza dodele", this.parser.getErrorSymbol()); :} {: RESULT=new AssignmentError(); :};
+			   /* A2 konstrukcija iskaza dodele */
+		 
 ActPars ::= (ActParsMulti) ActPars:A1 COMMA Expr:E2 {: RESULT=new ActParsMulti(A1, E2); RESULT.setLine(A1left); :}
 			|
 			(ActParsSingle) Expr:E1 {: RESULT=new ActParsSingle(E1); RESULT.setLine(E1left); :};
@@ -327,11 +354,7 @@ Expr1 ::= (ExprNegMulti) MINUS Term:T1 TermList:T2 {: RESULT=new ExprNegMulti(T1
 		 |
 		 (ExprMulti) Term:T1 TermList:T2 {: RESULT=new ExprMulti(T1, T2); RESULT.setLine(T1left); :}
 		 |
-		 (ExprSingle) Term:T1 {: RESULT=new ExprSingle(T1); RESULT.setLine(T1left); :}
-		 |
-		 (ExprError) error 
-		 {: this.parser.report_error("Sintaksna greska - neispravan izraz", this.parser.getErrorSymbol()); :} {: RESULT=new ExprError(); :};
-		 /* A2 konstrukcija iskaza dodele */
+		 (ExprSingle) Term:T1 {: RESULT=new ExprSingle(T1); RESULT.setLine(T1left); :};
 		 
 TermList ::= (TermListMulti) TermList:T1 TermPart:T2 {: RESULT=new TermListMulti(T1, T2); RESULT.setLine(T1left); :}
 			 |

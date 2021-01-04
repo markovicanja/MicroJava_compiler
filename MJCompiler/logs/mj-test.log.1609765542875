@@ -1,0 +1,77 @@
+INFO  14:02:37,244 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:02:37,290 - #2 program
+INFO  14:02:37,290 - #20 MJProgram
+INFO  14:02:37,291 - #20 int
+INFO  14:02:37,291 - #40 ;
+ERROR 14:02:37,291 - 
+Sintaksna greska na liniji 2, koloni 5 za simbol ";"!
+INFO  14:02:37,292 - #47 {
+INFO  14:02:37,292 - #16 void
+INFO  14:02:37,292 - #20 main
+ERROR 14:02:37,293 - Oporavak od greske u deklaraciji globalne promenljive na liniji 2, koloni 5 za simbol ";"!
+INFO  14:02:37,293 - #43 (
+INFO  14:02:37,293 - #44 )
+INFO  14:02:37,294 - #47 {
+INFO  14:02:37,294 - #20 a
+INFO  14:02:37,294 - #37 =
+INFO  14:02:37,294 - #21 1
+INFO  14:02:37,294 - #24 +
+INFO  14:02:37,294 - #40 ;
+ERROR 14:02:37,294 - 
+Sintaksna greska na liniji 9, koloni 10 za simbol ";"!
+INFO  14:02:37,295 - #8 if
+INFO  14:02:37,295 - #43 (
+INFO  14:02:37,295 - #20 a
+ERROR 14:02:37,295 - Oporavak od greske u konstrukciji iskaza dodele na liniji 9, koloni 10 za simbol ";"!
+INFO  14:02:37,295 - #33 <
+INFO  14:02:37,296 - #20 b
+INFO  14:02:37,296 - #24 +
+INFO  14:02:37,296 - #44 )
+ERROR 14:02:37,296 - 
+Sintaksna greska na liniji 11, koloni 14 za simbol ")"!
+INFO  14:02:37,297 - #47 {
+INFO  14:02:37,297 - #20 a
+INFO  14:02:37,297 - #37 =
+ERROR 14:02:37,297 - Oporavak od greske u logickom izrazu if konstrukcije na liniji 11, koloni 14 za simbol ")"!
+INFO  14:02:37,297 - #21 1
+INFO  14:02:37,297 - #40 ;
+INFO  14:02:37,297 - #48 }
+INFO  14:02:37,297 - #8 if
+INFO  14:02:37,298 - #43 (
+INFO  14:02:37,298 - #20 a
+INFO  14:02:37,298 - #33 <
+INFO  14:02:37,298 - #20 b
+INFO  14:02:37,298 - #24 +
+INFO  14:02:37,298 - #40 ;
+ERROR 14:02:37,298 - 
+Sintaksna greska na liniji 16, koloni 13 za simbol ";"!
+INFO  14:02:37,298 - #44 )
+INFO  14:02:37,298 - #20 a
+INFO  14:02:37,298 - #37 =
+INFO  14:02:37,298 - #21 1
+ERROR 14:02:37,298 - Oporavak od greske u logickom izrazu if konstrukcije na liniji 16, koloni 13 za simbol ";"!
+INFO  14:02:37,299 - #40 ;
+INFO  14:02:37,299 - #6 else
+INFO  14:02:37,299 - #20 a
+INFO  14:02:37,299 - #37 =
+INFO  14:02:37,299 - #21 2
+INFO  14:02:37,299 - #40 ;
+INFO  14:02:37,299 - #10 do
+INFO  14:02:37,299 - #47 {
+INFO  14:02:37,299 - #20 a
+INFO  14:02:37,300 - #38 ++
+INFO  14:02:37,300 - #40 ;
+INFO  14:02:37,300 - #48 }
+INFO  14:02:37,300 - #11 while
+INFO  14:02:37,300 - #43 (
+INFO  14:02:37,300 - #20 a
+INFO  14:02:37,300 - #33 <
+INFO  14:02:37,300 - #20 b
+INFO  14:02:37,300 - #24 +
+INFO  14:02:37,300 - #44 )
+ERROR 14:02:37,301 - 
+Sintaksna greska na liniji 24, koloni 15 za simbol ")"!
+INFO  14:02:37,301 - #40 ;
+INFO  14:02:37,301 - #48 }
+INFO  14:02:37,301 - #48 }
+ERROR 14:02:37,301 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 26, koloni 1!

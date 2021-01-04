@@ -1,31 +1,20 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/0/2021 15:48:49
+// 4/0/2021 13:57:25
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class StmtIfElse extends Statement {
 
-    private StatementIf StatementIf;
     private StatementIfBody StatementIfBody;
     private Statement Statement;
 
-    public StmtIfElse (StatementIf StatementIf, StatementIfBody StatementIfBody, Statement Statement) {
-        this.StatementIf=StatementIf;
-        if(StatementIf!=null) StatementIf.setParent(this);
+    public StmtIfElse (StatementIfBody StatementIfBody, Statement Statement) {
         this.StatementIfBody=StatementIfBody;
         if(StatementIfBody!=null) StatementIfBody.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
-    }
-
-    public StatementIf getStatementIf() {
-        return StatementIf;
-    }
-
-    public void setStatementIf(StatementIf StatementIf) {
-        this.StatementIf=StatementIf;
     }
 
     public StatementIfBody getStatementIfBody() {
@@ -49,20 +38,17 @@ public class StmtIfElse extends Statement {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(StatementIf!=null) StatementIf.accept(visitor);
         if(StatementIfBody!=null) StatementIfBody.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(StatementIf!=null) StatementIf.traverseTopDown(visitor);
         if(StatementIfBody!=null) StatementIfBody.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(StatementIf!=null) StatementIf.traverseBottomUp(visitor);
         if(StatementIfBody!=null) StatementIfBody.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
         accept(visitor);
@@ -72,12 +58,6 @@ public class StmtIfElse extends Statement {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("StmtIfElse(\n");
-
-        if(StatementIf!=null)
-            buffer.append(StatementIf.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
 
         if(StatementIfBody!=null)
             buffer.append(StatementIfBody.toString("  "+tab));

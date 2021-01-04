@@ -1,0 +1,26 @@
+INFO  13:47:32,351 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  13:47:32,396 - #2 program
+INFO  13:47:32,396 - #20 MJProgram
+INFO  13:47:32,396 - #20 int
+INFO  13:47:32,397 - #20 a
+INFO  13:47:32,397 - #40 ;
+INFO  13:47:32,397 - #20 int
+INFO  13:47:32,397 - #40 ;
+ERROR 13:47:32,397 - 
+Sintaksna greska na liniji 3, koloni 5 za simbol ";"!
+INFO  13:47:32,398 - #47 {
+INFO  13:47:32,398 - #16 void
+INFO  13:47:32,398 - #20 main
+ERROR 13:47:32,399 - Oporavak od greske u deklaraciji globalne promenljive na liniji 3, koloni 5 za simbol ";"!
+INFO  13:47:32,400 - #43 (
+INFO  13:47:32,400 - #44 )
+INFO  13:47:32,400 - #20 int
+INFO  13:47:32,400 - #20 a
+INFO  13:47:32,400 - #24 +
+ERROR 13:47:32,401 - 
+Sintaksna greska na liniji 6, koloni 19 za simbol "+"!
+INFO  13:47:32,401 - #40 ;
+INFO  13:47:32,401 - #47 {
+INFO  13:47:32,401 - #48 }
+INFO  13:47:32,401 - #48 }
+ERROR 13:47:32,401 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 10, koloni 1!

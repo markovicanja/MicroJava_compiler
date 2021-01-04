@@ -1,0 +1,20 @@
+INFO  11:48:07,073 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  11:48:07,154 - #2 program
+INFO  11:48:07,155 - #20 cond
+INFO  11:48:07,155 - #7 const
+INFO  11:48:07,155 - #20 int
+INFO  11:48:07,156 - #20 max
+INFO  11:48:07,156 - #37 =
+INFO  11:48:07,156 - #21 12
+INFO  11:48:07,156 - #40 ;
+INFO  11:48:07,157 - #20 char
+INFO  11:48:07,158 - #20 c
+INFO  11:48:07,158 - #40 ;
+INFO  11:48:07,158 - #20 int
+INFO  11:48:07,158 - #20 i
+INFO  11:48:07,158 - #40 ;
+INFO  11:48:07,158 - #47 {
+INFO  11:48:07,158 - #48 }
+ERROR 11:48:07,159 - 
+Sintaksna greska na liniji 6, koloni 0 za simbol "}"!
+ERROR 11:48:07,159 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 6, koloni 0 za simbol "}"!

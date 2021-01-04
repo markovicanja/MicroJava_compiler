@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/0/2021 15:48:49
+// 4/0/2021 13:57:25
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class VarError extends VarPart {
+public class VarError extends GlobalVarPart {
 
     public VarError () {
     }

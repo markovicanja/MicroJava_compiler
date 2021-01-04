@@ -1,0 +1,21 @@
+INFO  12:07:30,032 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  12:07:30,075 - #2 program
+INFO  12:07:30,075 - #20 MJProgram
+INFO  12:07:30,075 - #20 int
+INFO  12:07:30,075 - #20 a
+INFO  12:07:30,076 - #40 ;
+INFO  12:07:30,076 - #20 int
+INFO  12:07:30,076 - #40 ;
+ERROR 12:07:30,076 - 
+Sintaksna greska na liniji 3, koloni 5 za simbol ";"!
+INFO  12:07:30,076 - #20 int
+INFO  12:07:30,076 - #20 a
+INFO  12:07:30,077 - #45 [
+ERROR 12:07:30,077 - Sintaksna greska - neispravna deklaracija promenljive na liniji 3, koloni 5 za simbol ";"!
+INFO  12:07:30,077 - #46 ]
+INFO  12:07:30,078 - #40 ;
+INFO  12:07:30,078 - #20 int
+INFO  12:07:30,078 - #21 1
+ERROR 12:07:30,078 - 
+Sintaksna greska na liniji 5, koloni 5 za simbol "1"!
+ERROR 12:07:30,078 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 5, koloni 5 za simbol "1"!

@@ -1,0 +1,199 @@
+INFO  12:09:19,491 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  12:09:19,536 - #2 program
+INFO  12:09:19,536 - #20 MJProgram
+INFO  12:09:19,536 - #20 int
+INFO  12:09:19,536 - #20 a
+INFO  12:09:19,537 - #40 ;
+INFO  12:09:19,537 - #20 int
+INFO  12:09:19,537 - #40 ;
+ERROR 12:09:19,537 - 
+Sintaksna greska na liniji 3, koloni 5 za simbol ";"!
+INFO  12:09:19,537 - #20 int
+INFO  12:09:19,537 - #20 a
+INFO  12:09:19,537 - #45 [
+ERROR 12:09:19,538 - Sintaksna greska - neispravna deklaracija promenljive na liniji 3, koloni 5 za simbol ";"!
+INFO  12:09:19,539 - #46 ]
+INFO  12:09:19,539 - #40 ;
+INFO  12:09:19,539 - #20 char
+INFO  12:09:19,539 - #20 b1
+INFO  12:09:19,539 - #40 ;
+INFO  12:09:19,539 - #20 int
+INFO  12:09:19,540 - #20 a
+INFO  12:09:19,540 - #24 +
+ERROR 12:09:19,540 - 
+Sintaksna greska na liniji 7, koloni 7 za simbol "+"!
+INFO  12:09:19,540 - #40 ;
+INFO  12:09:19,540 - #20 int
+INFO  12:09:19,540 - #20 a
+INFO  12:09:19,540 - #41 ,
+ERROR 12:09:19,540 - Sintaksna greska - neispravna deklaracija promenljive na liniji 7, koloni 7 za simbol "+"!
+INFO  12:09:19,540 - #20 b
+INFO  12:09:19,540 - #40 ;
+INFO  12:09:19,540 - #20 abc
+INFO  12:09:19,540 - #20 b
+INFO  12:09:19,540 - #40 ;
+INFO  12:09:19,541 - #20 int
+INFO  12:09:19,541 - #20 a11
+INFO  12:09:19,541 - #40 ;
+INFO  12:09:19,541 - #20 bool
+INFO  12:09:19,541 - #20 b
+INFO  12:09:19,541 - #37 =
+ERROR 12:09:19,541 - 
+Sintaksna greska na liniji 12, koloni 8 za simbol "="!
+INFO  12:09:19,541 - #23 true
+INFO  12:09:19,541 - #40 ;
+INFO  12:09:19,541 - #20 abc
+INFO  12:09:19,541 - #21 22
+INFO  12:09:19,541 - #40 ;
+INFO  12:09:19,541 - #47 {
+INFO  12:09:19,541 - #16 void
+INFO  12:09:19,541 - #20 main
+ERROR 12:09:19,542 - Sintaksna greska - neispravna deklaracija promenljive na liniji 12, koloni 8 za simbol "="!
+INFO  12:09:19,542 - #43 (
+INFO  12:09:19,542 - #44 )
+INFO  12:09:19,542 - #47 {
+INFO  12:09:19,542 - #48 }
+INFO  12:09:19,542 - #48 }
+INFO  12:09:19,543 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclMulti(
+      ProgramDeclMulti(
+        ProgramDeclMulti(
+          ProgramDeclMulti(
+            ProgramDeclMulti(
+              ProgramDeclMulti(
+                ProgramDeclMulti(
+                  ProgramDeclSingle(
+                    PartVarDeclaration(
+                      VarDeclaration(
+                        Type(
+                         int
+                        ) [Type]
+                        VarSingle(
+                          VarNormal(
+                           a
+                          ) [VarNormal]
+                        ) [VarSingle]
+                      ) [VarDeclaration]
+                    ) [PartVarDeclaration]
+                  ) [ProgramDeclSingle]
+                  PartVarDeclaration(
+                    VarDeclaration(
+                      Type(
+                       int
+                      ) [Type]
+                      VarSingle(
+                        VarError(
+                        ) [VarError]
+                      ) [VarSingle]
+                    ) [VarDeclaration]
+                  ) [PartVarDeclaration]
+                ) [ProgramDeclMulti]
+                PartVarDeclaration(
+                  VarDeclaration(
+                    Type(
+                     int
+                    ) [Type]
+                    VarSingle(
+                      VarArray(
+                       a
+                      ) [VarArray]
+                    ) [VarSingle]
+                  ) [VarDeclaration]
+                ) [PartVarDeclaration]
+              ) [ProgramDeclMulti]
+              PartVarDeclaration(
+                VarDeclaration(
+                  Type(
+                   char
+                  ) [Type]
+                  VarSingle(
+                    VarNormal(
+                     b1
+                    ) [VarNormal]
+                  ) [VarSingle]
+                ) [VarDeclaration]
+              ) [PartVarDeclaration]
+            ) [ProgramDeclMulti]
+            PartVarDeclaration(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarSingle(
+                  VarError(
+                  ) [VarError]
+                ) [VarSingle]
+              ) [VarDeclaration]
+            ) [PartVarDeclaration]
+          ) [ProgramDeclMulti]
+          PartVarDeclaration(
+            VarDeclaration(
+              Type(
+               int
+              ) [Type]
+              VarMulti(
+                VarSingle(
+                  VarNormal(
+                   a
+                  ) [VarNormal]
+                ) [VarSingle]
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarMulti]
+            ) [VarDeclaration]
+          ) [PartVarDeclaration]
+        ) [ProgramDeclMulti]
+        PartVarDeclaration(
+          VarDeclaration(
+            Type(
+             abc
+            ) [Type]
+            VarSingle(
+              VarNormal(
+               b
+              ) [VarNormal]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [PartVarDeclaration]
+      ) [ProgramDeclMulti]
+      PartVarDeclaration(
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+          VarSingle(
+            VarNormal(
+             a11
+            ) [VarNormal]
+          ) [VarSingle]
+        ) [VarDeclaration]
+      ) [PartVarDeclaration]
+    ) [ProgramDeclMulti]
+    PartVarDeclaration(
+      VarDeclaration(
+        Type(
+         bool
+        ) [Type]
+        VarSingle(
+          VarError(
+          ) [VarError]
+        ) [VarSingle]
+      ) [VarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid7(
+       main
+      ) [MethodVoid7]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  12:09:19,544 - ===================================
+INFO  12:09:19,547 -  Print count calls = 0
+INFO  12:09:19,547 -  Deklarisanih promenljivih ima = 9

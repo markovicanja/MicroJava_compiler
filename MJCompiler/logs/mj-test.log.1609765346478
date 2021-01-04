@@ -1,0 +1,173 @@
+INFO  14:01:51,156 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:01:51,205 - #2 program
+INFO  14:01:51,205 - #20 MJProgram
+INFO  14:01:51,206 - #20 int
+INFO  14:01:51,206 - #40 ;
+ERROR 14:01:51,206 - 
+Sintaksna greska na liniji 2, koloni 5 za simbol ";"!
+INFO  14:01:51,206 - #47 {
+INFO  14:01:51,207 - #16 void
+INFO  14:01:51,207 - #20 main
+ERROR 14:01:51,207 - Oporavak od greske u deklaraciji globalne promenljive na liniji 2, koloni 5 za simbol ";"!
+INFO  14:01:51,208 - #43 (
+INFO  14:01:51,208 - #44 )
+INFO  14:01:51,208 - #47 {
+INFO  14:01:51,209 - #20 a
+INFO  14:01:51,209 - #37 =
+INFO  14:01:51,209 - #21 1
+INFO  14:01:51,209 - #24 +
+INFO  14:01:51,209 - #40 ;
+ERROR 14:01:51,210 - 
+Sintaksna greska na liniji 9, koloni 10 za simbol ";"!
+INFO  14:01:51,210 - #8 if
+INFO  14:01:51,210 - #43 (
+INFO  14:01:51,210 - #20 a
+ERROR 14:01:51,210 - Oporavak od greske u konstrukciji iskaza dodele na liniji 9, koloni 10 za simbol ";"!
+INFO  14:01:51,210 - #33 <
+INFO  14:01:51,211 - #20 b
+INFO  14:01:51,211 - #24 +
+INFO  14:01:51,212 - #44 )
+ERROR 14:01:51,212 - 
+Sintaksna greska na liniji 11, koloni 14 za simbol ")"!
+INFO  14:01:51,212 - #47 {
+INFO  14:01:51,212 - #20 a
+INFO  14:01:51,212 - #37 =
+ERROR 14:01:51,212 - Oporavak od greske u logickom izrazu if konstrukcije na liniji 11, koloni 14 za simbol ")"!
+INFO  14:01:51,212 - #21 1
+INFO  14:01:51,212 - #40 ;
+INFO  14:01:51,213 - #48 }
+INFO  14:01:51,213 - #8 if
+INFO  14:01:51,213 - #43 (
+INFO  14:01:51,213 - #20 a
+INFO  14:01:51,213 - #33 <
+INFO  14:01:51,213 - #20 b
+INFO  14:01:51,213 - #24 +
+INFO  14:01:51,213 - #40 ;
+ERROR 14:01:51,213 - 
+Sintaksna greska na liniji 16, koloni 13 za simbol ";"!
+INFO  14:01:51,214 - #44 )
+INFO  14:01:51,214 - #20 a
+INFO  14:01:51,214 - #37 =
+INFO  14:01:51,214 - #21 1
+ERROR 14:01:51,214 - Oporavak od greske u logickom izrazu if konstrukcije na liniji 16, koloni 13 za simbol ";"!
+INFO  14:01:51,214 - #40 ;
+INFO  14:01:51,214 - #6 else
+INFO  14:01:51,214 - #20 a
+INFO  14:01:51,214 - #37 =
+INFO  14:01:51,215 - #21 2
+INFO  14:01:51,215 - #40 ;
+INFO  14:01:51,215 - #48 }
+INFO  14:01:51,215 - #48 }
+INFO  14:01:51,217 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclSingle(
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          VarError(
+          ) [VarError]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclSingle]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid6(
+       main
+        StatementMulti(
+          StatementMulti(
+            StatementSingle(
+              StmtDesign(
+                DesignatorAssignment(
+                  Designator0(
+                   a
+                  ) [Designator0]
+                  AssignmentError(
+                  ) [AssignmentError]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementSingle]
+            StmtIf(
+              StmtIfBody(
+                IfCondError(
+                ) [IfCondError]
+                Stmt(
+                  StatementSingle(
+                    StmtDesign(
+                      DesignatorAssignment(
+                        Designator0(
+                         a
+                        ) [Designator0]
+                        AssignmentExpr(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorNumConst(
+                                 1
+                                ) [FactorNumConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [AssignmentExpr]
+                      ) [DesignatorAssignment]
+                    ) [StmtDesign]
+                  ) [StatementSingle]
+                ) [Stmt]
+              ) [StmtIfBody]
+            ) [StmtIf]
+          ) [StatementMulti]
+          StmtIfElse(
+            StmtIfBody(
+              IfCondError(
+              ) [IfCondError]
+              StmtDesign(
+                DesignatorAssignment(
+                  Designator0(
+                   a
+                  ) [Designator0]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorNumConst(
+                           1
+                          ) [FactorNumConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StmtIfBody]
+            StmtDesign(
+              DesignatorAssignment(
+                Designator0(
+                 a
+                ) [Designator0]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         2
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StmtIfElse]
+        ) [StatementMulti]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:01:51,218 - ===================================
+INFO  14:01:51,220 -  Print count calls = 0
+INFO  14:01:51,220 -  Deklarisanih promenljivih ima = 0

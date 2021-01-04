@@ -1,0 +1,8 @@
+INFO  11:13:36,232 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  11:13:36,293 - #2 program
+INFO  11:13:36,293 - #20 MJCompiler
+INFO  11:13:36,293 - #20 int
+INFO  11:13:36,293 - #21 1
+ERROR 11:13:36,294 - 
+Sintaksna greska na liniji 2, koloni 4 za simbol "1"!
+ERROR 11:13:36,294 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 2, koloni 4 za simbol "1"!

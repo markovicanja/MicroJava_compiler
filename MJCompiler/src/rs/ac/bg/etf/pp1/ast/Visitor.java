@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/0/2021 15:48:49
+// 4/0/2021 13:57:25
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -22,6 +22,7 @@ public interface Visitor {
     public void visit(CondTerm CondTerm);
     public void visit(VarList VarList);
     public void visit(ConstList ConstList);
+    public void visit(GlobalVarDecl GlobalVarDecl);
     public void visit(Designator Designator);
     public void visit(StatementIf StatementIf);
     public void visit(Term Term);
@@ -30,6 +31,7 @@ public interface Visitor {
     public void visit(CaseList CaseList);
     public void visit(Value Value);
     public void visit(FormParams FormParams);
+    public void visit(IfCondition IfCondition);
     public void visit(DesignatorPart DesignatorPart);
     public void visit(StatementIfBody StatementIfBody);
     public void visit(VarDeclList VarDeclList);
@@ -38,12 +40,15 @@ public interface Visitor {
     public void visit(ActPars ActPars);
     public void visit(DesignatorList DesignatorList);
     public void visit(DesignatorStatement DesignatorStatement);
+    public void visit(Assignment Assignment);
+    public void visit(GlobalVarPart GlobalVarPart);
     public void visit(Statement Statement);
     public void visit(VarDecl VarDecl);
     public void visit(ClassDecl ClassDecl);
     public void visit(ConstDecl ConstDecl);
     public void visit(CondFact CondFact);
     public void visit(MethodDeclList MethodDeclList);
+    public void visit(GlobalVarList GlobalVarList);
     public void visit(FormParam FormParam);
     public void visit(MulopMod MulopMod);
     public void visit(MulopDiv MulopDiv);
@@ -79,7 +84,6 @@ public interface Visitor {
     public void visit(TermPart TermPart);
     public void visit(TermListSingle TermListSingle);
     public void visit(TermListMulti TermListMulti);
-    public void visit(ExprError ExprError);
     public void visit(ExprSingle ExprSingle);
     public void visit(ExprMulti ExprMulti);
     public void visit(ExprNegSingle ExprNegSingle);
@@ -94,16 +98,20 @@ public interface Visitor {
     public void visit(CondTwo CondTwo);
     public void visit(ActParsSingle ActParsSingle);
     public void visit(ActParsMulti ActParsMulti);
-    public void visit(Decrement Decrement);
-    public void visit(Increment Increment);
-    public void visit(MethodCall1 MethodCall1);
-    public void visit(MethodCall0 MethodCall0);
-    public void visit(Assignment Assignment);
+    public void visit(AssignmentError AssignmentError);
+    public void visit(AssignmentExpr AssignmentExpr);
+    public void visit(DesignatorDecrement DesignatorDecrement);
+    public void visit(DesignatorIncrement DesignatorIncrement);
+    public void visit(DesignatorMethodCall1 DesignatorMethodCall1);
+    public void visit(DesignatorMethodCall0 DesignatorMethodCall0);
+    public void visit(DesignatorAssignment DesignatorAssignment);
     public void visit(CasePart CasePart);
     public void visit(CaseSingle CaseSingle);
     public void visit(CaseMulti CaseMulti);
+    public void visit(IfCondError IfCondError);
+    public void visit(IfCond IfCond);
     public void visit(StmtIfBody StmtIfBody);
-    public void visit(StmtIfHead StmtIfHead);
+    public void visit(StmtDoWhile StmtDoWhile);
     public void visit(StmtIf StmtIf);
     public void visit(StmtIfElse StmtIfElse);
     public void visit(Stmt Stmt);
@@ -156,6 +164,11 @@ public interface Visitor {
     public void visit(ClassDecl1 ClassDecl1);
     public void visit(ClassDecl0 ClassDecl0);
     public void visit(VarError VarError);
+    public void visit(GlobalVarArray GlobalVarArray);
+    public void visit(GlobalVarNormal GlobalVarNormal);
+    public void visit(GlobalVarSingle GlobalVarSingle);
+    public void visit(GlobalVarMulti GlobalVarMulti);
+    public void visit(GlobalVarDeclaration GlobalVarDeclaration);
     public void visit(VarArray VarArray);
     public void visit(VarNormal VarNormal);
     public void visit(VarSingle VarSingle);

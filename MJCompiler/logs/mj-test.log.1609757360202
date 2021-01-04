@@ -1,0 +1,83 @@
+INFO  11:48:43,128 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  11:48:43,202 - #2 program
+INFO  11:48:43,202 - #20 cond
+INFO  11:48:43,202 - #7 const
+INFO  11:48:43,203 - #20 int
+INFO  11:48:43,203 - #20 max
+INFO  11:48:43,203 - #37 =
+INFO  11:48:43,203 - #21 12
+INFO  11:48:43,203 - #40 ;
+INFO  11:48:43,204 - #20 char
+INFO  11:48:43,204 - #20 c
+INFO  11:48:43,204 - #40 ;
+INFO  11:48:43,205 - #20 int
+INFO  11:48:43,205 - #20 i
+INFO  11:48:43,205 - #40 ;
+INFO  11:48:43,205 - #47 {
+INFO  11:48:43,206 - #16 void
+INFO  11:48:43,206 - #20 main
+INFO  11:48:43,206 - #43 (
+INFO  11:48:43,206 - #44 )
+INFO  11:48:43,206 - #47 {
+INFO  11:48:43,206 - #48 }
+INFO  11:48:43,206 - #48 }
+INFO  11:48:43,208 - Program(
+  ProgName(
+   cond
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclMulti(
+      ProgramDeclSingle(
+        PartConstDeclaration(
+          ConstDeclaration(
+            Type(
+             int
+            ) [Type]
+            ConstSingle(
+              ConstPart(
+               max
+                NumConst(
+                 12
+                ) [NumConst]
+              ) [ConstPart]
+            ) [ConstSingle]
+          ) [ConstDeclaration]
+        ) [PartConstDeclaration]
+      ) [ProgramDeclSingle]
+      PartVarDeclaration(
+        VarDeclaration(
+          Type(
+           char
+          ) [Type]
+          VarSingle(
+            VarNormal(
+             c
+            ) [VarNormal]
+          ) [VarSingle]
+        ) [VarDeclaration]
+      ) [PartVarDeclaration]
+    ) [ProgramDeclMulti]
+    PartVarDeclaration(
+      VarDeclaration(
+        Type(
+         int
+        ) [Type]
+        VarSingle(
+          VarNormal(
+           i
+          ) [VarNormal]
+        ) [VarSingle]
+      ) [VarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid7(
+       main
+      ) [MethodVoid7]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  11:48:43,208 - ===================================
+INFO  11:48:43,210 -  Print count calls = 0
+INFO  11:48:43,210 -  Deklarisanih promenljivih ima = 2

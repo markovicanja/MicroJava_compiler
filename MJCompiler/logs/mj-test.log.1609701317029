@@ -1,0 +1,742 @@
+INFO  20:14:42,206 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  20:14:42,247 - #2 program
+INFO  20:14:42,247 - #20 test302
+INFO  20:14:42,248 - #7 const
+INFO  20:14:42,248 - #20 int
+INFO  20:14:42,248 - #20 jedan
+INFO  20:14:42,248 - #37 =
+INFO  20:14:42,248 - #21 1
+INFO  20:14:42,249 - #40 ;
+INFO  20:14:42,249 - #20 int
+INFO  20:14:42,249 - #20 i
+INFO  20:14:42,250 - #40 ;
+INFO  20:14:42,250 - #20 bool
+INFO  20:14:42,250 - #20 ibool
+INFO  20:14:42,250 - #40 ;
+INFO  20:14:42,250 - #20 int
+INFO  20:14:42,250 - #20 niz
+INFO  20:14:42,250 - #45 [
+INFO  20:14:42,251 - #46 ]
+INFO  20:14:42,251 - #40 ;
+INFO  20:14:42,251 - #47 {
+INFO  20:14:42,251 - #20 int
+INFO  20:14:42,251 - #20 sum
+INFO  20:14:42,251 - #43 (
+INFO  20:14:42,251 - #20 int
+INFO  20:14:42,251 - #20 z
+INFO  20:14:42,252 - #41 ,
+INFO  20:14:42,252 - #20 int
+INFO  20:14:42,252 - #20 d
+INFO  20:14:42,252 - #44 )
+INFO  20:14:42,252 - #47 {
+INFO  20:14:42,252 - #15 return
+INFO  20:14:42,252 - #20 z
+INFO  20:14:42,252 - #24 +
+INFO  20:14:42,252 - #20 d
+INFO  20:14:42,253 - #40 ;
+INFO  20:14:42,254 - #48 }
+INFO  20:14:42,254 - #20 int
+INFO  20:14:42,254 - #20 inkrement
+INFO  20:14:42,254 - #43 (
+INFO  20:14:42,254 - #20 int
+INFO  20:14:42,254 - #20 a
+INFO  20:14:42,254 - #41 ,
+INFO  20:14:42,254 - #20 int
+INFO  20:14:42,254 - #20 inc
+INFO  20:14:42,254 - #44 )
+INFO  20:14:42,254 - #20 int
+INFO  20:14:42,254 - #20 pom
+INFO  20:14:42,255 - #40 ;
+INFO  20:14:42,255 - #47 {
+INFO  20:14:42,255 - #8 if
+INFO  20:14:42,255 - #43 (
+INFO  20:14:42,256 - #20 inc
+INFO  20:14:42,256 - #29 ==
+INFO  20:14:42,256 - #20 jedan
+INFO  20:14:42,257 - #44 )
+INFO  20:14:42,257 - #20 pom
+INFO  20:14:42,257 - #37 =
+INFO  20:14:42,257 - #21 1
+INFO  20:14:42,257 - #40 ;
+INFO  20:14:42,258 - #6 else
+INFO  20:14:42,258 - #8 if
+INFO  20:14:42,258 - #43 (
+INFO  20:14:42,258 - #20 inc
+INFO  20:14:42,258 - #29 ==
+INFO  20:14:42,258 - #21 2
+INFO  20:14:42,258 - #44 )
+INFO  20:14:42,258 - #20 pom
+INFO  20:14:42,259 - #37 =
+INFO  20:14:42,259 - #20 a
+INFO  20:14:42,259 - #40 ;
+INFO  20:14:42,259 - #15 return
+INFO  20:14:42,259 - #20 sum
+INFO  20:14:42,259 - #43 (
+INFO  20:14:42,259 - #20 a
+INFO  20:14:42,259 - #41 ,
+INFO  20:14:42,259 - #20 pom
+INFO  20:14:42,259 - #44 )
+INFO  20:14:42,260 - #40 ;
+INFO  20:14:42,260 - #48 }
+INFO  20:14:42,260 - #20 bool
+INFO  20:14:42,261 - #20 verify
+INFO  20:14:42,261 - #43 (
+INFO  20:14:42,261 - #44 )
+INFO  20:14:42,261 - #47 {
+INFO  20:14:42,261 - #13 print
+INFO  20:14:42,261 - #43 (
+INFO  20:14:42,261 - #22 v
+INFO  20:14:42,261 - #44 )
+INFO  20:14:42,261 - #40 ;
+INFO  20:14:42,261 - #15 return
+INFO  20:14:42,261 - #23 false
+INFO  20:14:42,262 - #40 ;
+INFO  20:14:42,262 - #48 }
+INFO  20:14:42,262 - #16 void
+INFO  20:14:42,262 - #20 main
+INFO  20:14:42,262 - #43 (
+INFO  20:14:42,262 - #44 )
+INFO  20:14:42,262 - #47 {
+INFO  20:14:42,262 - #8 if
+INFO  20:14:42,262 - #43 (
+INFO  20:14:42,262 - #21 1
+INFO  20:14:42,262 - #30 !=
+INFO  20:14:42,262 - #21 1
+INFO  20:14:42,263 - #44 )
+INFO  20:14:42,263 - #13 print
+INFO  20:14:42,263 - #43 (
+INFO  20:14:42,263 - #25 -
+INFO  20:14:42,263 - #21 6
+INFO  20:14:42,263 - #44 )
+INFO  20:14:42,263 - #40 ;
+INFO  20:14:42,263 - #6 else
+INFO  20:14:42,264 - #13 print
+INFO  20:14:42,264 - #43 (
+INFO  20:14:42,264 - #21 0
+INFO  20:14:42,264 - #44 )
+INFO  20:14:42,264 - #40 ;
+INFO  20:14:42,264 - #20 ibool
+INFO  20:14:42,264 - #37 =
+INFO  20:14:42,264 - #23 false
+INFO  20:14:42,264 - #40 ;
+INFO  20:14:42,264 - #20 i
+INFO  20:14:42,264 - #37 =
+INFO  20:14:42,265 - #21 0
+INFO  20:14:42,265 - #40 ;
+INFO  20:14:42,265 - #8 if
+INFO  20:14:42,265 - #43 (
+INFO  20:14:42,266 - #21 1
+INFO  20:14:42,266 - #30 !=
+INFO  20:14:42,267 - #21 1
+INFO  20:14:42,267 - #44 )
+INFO  20:14:42,267 - #13 print
+INFO  20:14:42,267 - #43 (
+INFO  20:14:42,267 - #25 -
+INFO  20:14:42,270 - #21 6
+INFO  20:14:42,270 - #44 )
+INFO  20:14:42,270 - #40 ;
+INFO  20:14:42,270 - #6 else
+INFO  20:14:42,271 - #13 print
+INFO  20:14:42,271 - #43 (
+INFO  20:14:42,271 - #21 0
+INFO  20:14:42,271 - #44 )
+INFO  20:14:42,271 - #40 ;
+INFO  20:14:42,271 - #20 ibool
+INFO  20:14:42,271 - #37 =
+INFO  20:14:42,271 - #23 false
+INFO  20:14:42,271 - #40 ;
+INFO  20:14:42,271 - #20 i
+INFO  20:14:42,271 - #37 =
+INFO  20:14:42,271 - #21 0
+INFO  20:14:42,271 - #40 ;
+INFO  20:14:42,271 - #10 do
+INFO  20:14:42,271 - #47 {
+INFO  20:14:42,271 - #20 i
+INFO  20:14:42,271 - #38 ++
+INFO  20:14:42,271 - #40 ;
+INFO  20:14:42,272 - #48 }
+INFO  20:14:42,272 - #11 while
+INFO  20:14:42,272 - #43 (
+INFO  20:14:42,272 - #20 i
+INFO  20:14:42,272 - #33 <
+INFO  20:14:42,272 - #21 5
+INFO  20:14:42,272 - #44 )
+INFO  20:14:42,272 - #40 ;
+INFO  20:14:42,272 - #48 }
+INFO  20:14:42,272 - #48 }
+INFO  20:14:42,275 - Program(
+  ProgName(
+   test302
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclMulti(
+      ProgramDeclMulti(
+        ProgramDeclSingle(
+          PartConstDeclaration(
+            ConstDeclaration(
+              Type(
+               int
+              ) [Type]
+              ConstSingle(
+                ConstPart(
+                 jedan
+                  NumConst(
+                   1
+                  ) [NumConst]
+                ) [ConstPart]
+              ) [ConstSingle]
+            ) [ConstDeclaration]
+          ) [PartConstDeclaration]
+        ) [ProgramDeclSingle]
+        PartVarDeclaration(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarNormal(
+               i
+              ) [VarNormal]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [PartVarDeclaration]
+      ) [ProgramDeclMulti]
+      PartVarDeclaration(
+        VarDeclaration(
+          Type(
+           bool
+          ) [Type]
+          VarSingle(
+            VarNormal(
+             ibool
+            ) [VarNormal]
+          ) [VarSingle]
+        ) [VarDeclaration]
+      ) [PartVarDeclaration]
+    ) [ProgramDeclMulti]
+    PartVarDeclaration(
+      VarDeclaration(
+        Type(
+         int
+        ) [Type]
+        VarSingle(
+          VarArray(
+           niz
+          ) [VarArray]
+        ) [VarSingle]
+      ) [VarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDecMulti(
+      MethodDecMulti(
+        MethodDeclSingle(
+          MethodTypeDeclaration(
+            MethodType2(
+              Type(
+               int
+              ) [Type]
+             sum
+              ParamMulti(
+                ParamSingle(
+                  ParamNormal(
+                    Type(
+                     int
+                    ) [Type]
+                   z
+                  ) [ParamNormal]
+                ) [ParamSingle]
+                ParamNormal(
+                  Type(
+                   int
+                  ) [Type]
+                 d
+                ) [ParamNormal]
+              ) [ParamMulti]
+              StatementSingle(
+                StmtReturnExpr(
+                  ExprOne(
+                    ExprMulti(
+                      TermSingle(
+                        FactorDesignator(
+                          Designator0(
+                           z
+                          ) [Designator0]
+                        ) [FactorDesignator]
+                      ) [TermSingle]
+                      TermListSingle(
+                        TermPart(
+                          AddopPlus(
+                          ) [AddopPlus]
+                          TermSingle(
+                            FactorDesignator(
+                              Designator0(
+                               d
+                              ) [Designator0]
+                            ) [FactorDesignator]
+                          ) [TermSingle]
+                        ) [TermPart]
+                      ) [TermListSingle]
+                    ) [ExprMulti]
+                  ) [ExprOne]
+                ) [StmtReturnExpr]
+              ) [StatementSingle]
+            ) [MethodType2]
+          ) [MethodTypeDeclaration]
+        ) [MethodDeclSingle]
+        MethodTypeDeclaration(
+          MethodType0(
+            Type(
+             int
+            ) [Type]
+           inkrement
+            ParamMulti(
+              ParamSingle(
+                ParamNormal(
+                  Type(
+                   int
+                  ) [Type]
+                 a
+                ) [ParamNormal]
+              ) [ParamSingle]
+              ParamNormal(
+                Type(
+                 int
+                ) [Type]
+               inc
+              ) [ParamNormal]
+            ) [ParamMulti]
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarSingle(
+                  VarNormal(
+                   pom
+                  ) [VarNormal]
+                ) [VarSingle]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            StatementMulti(
+              StatementSingle(
+                StmtIfElse(
+                  StmtIfHead(
+                  ) [StmtIfHead]
+                  StmtIfBody(
+                    CondOne(
+                      CondTermOne(
+                        CondFactTwo(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorDesignator(
+                                  Designator0(
+                                   inc
+                                  ) [Designator0]
+                                ) [FactorDesignator]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                          RelopEQ(
+                          ) [RelopEQ]
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorDesignator(
+                                  Designator0(
+                                   jedan
+                                  ) [Designator0]
+                                ) [FactorDesignator]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [CondFactTwo]
+                      ) [CondTermOne]
+                    ) [CondOne]
+                    StmtDesign(
+                      Assignment(
+                        Designator0(
+                         pom
+                        ) [Designator0]
+                        ExprOne(
+                          ExprSingle(
+                            TermSingle(
+                              FactorNumConst(
+                               1
+                              ) [FactorNumConst]
+                            ) [TermSingle]
+                          ) [ExprSingle]
+                        ) [ExprOne]
+                      ) [Assignment]
+                    ) [StmtDesign]
+                  ) [StmtIfBody]
+                  StmtIf(
+                    StmtIfHead(
+                    ) [StmtIfHead]
+                    StmtIfBody(
+                      CondOne(
+                        CondTermOne(
+                          CondFactTwo(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorDesignator(
+                                    Designator0(
+                                     inc
+                                    ) [Designator0]
+                                  ) [FactorDesignator]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                            RelopEQ(
+                            ) [RelopEQ]
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorNumConst(
+                                   2
+                                  ) [FactorNumConst]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [CondFactTwo]
+                        ) [CondTermOne]
+                      ) [CondOne]
+                      StmtDesign(
+                        Assignment(
+                          Designator0(
+                           pom
+                          ) [Designator0]
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorDesignator(
+                                  Designator0(
+                                   a
+                                  ) [Designator0]
+                                ) [FactorDesignator]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [Assignment]
+                      ) [StmtDesign]
+                    ) [StmtIfBody]
+                  ) [StmtIf]
+                ) [StmtIfElse]
+              ) [StatementSingle]
+              StmtReturnExpr(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesigMethCall0(
+                        Designator0(
+                         sum
+                        ) [Designator0]
+                        ActParsMulti(
+                          ActParsSingle(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorDesignator(
+                                    Designator0(
+                                     a
+                                    ) [Designator0]
+                                  ) [FactorDesignator]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [ActParsSingle]
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorDesignator(
+                                  Designator0(
+                                   pom
+                                  ) [Designator0]
+                                ) [FactorDesignator]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [ActParsMulti]
+                      ) [FactorDesigMethCall0]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [StmtReturnExpr]
+            ) [StatementMulti]
+          ) [MethodType0]
+        ) [MethodTypeDeclaration]
+      ) [MethodDecMulti]
+      MethodTypeDeclaration(
+        MethodType6(
+          Type(
+           bool
+          ) [Type]
+         verify
+          StatementMulti(
+            StatementSingle(
+              StmtPrint(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorCharConst(
+                       v
+                      ) [FactorCharConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [StmtPrint]
+            ) [StatementSingle]
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorBoolConst(
+                     false
+                    ) [FactorBoolConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementMulti]
+        ) [MethodType6]
+      ) [MethodTypeDeclaration]
+    ) [MethodDecMulti]
+    MethodVoidDeclaration(
+      MethodVoid6(
+       main
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementMulti(
+                StatementMulti(
+                  StatementMulti(
+                    StatementSingle(
+                      StmtIfElse(
+                        StmtIfHead(
+                        ) [StmtIfHead]
+                        StmtIfBody(
+                          CondOne(
+                            CondTermOne(
+                              CondFactTwo(
+                                ExprOne(
+                                  ExprSingle(
+                                    TermSingle(
+                                      FactorNumConst(
+                                       1
+                                      ) [FactorNumConst]
+                                    ) [TermSingle]
+                                  ) [ExprSingle]
+                                ) [ExprOne]
+                                RelopNE(
+                                ) [RelopNE]
+                                ExprOne(
+                                  ExprSingle(
+                                    TermSingle(
+                                      FactorNumConst(
+                                       1
+                                      ) [FactorNumConst]
+                                    ) [TermSingle]
+                                  ) [ExprSingle]
+                                ) [ExprOne]
+                              ) [CondFactTwo]
+                            ) [CondTermOne]
+                          ) [CondOne]
+                          StmtPrint(
+                            ExprOne(
+                              ExprNegSingle(
+                                TermSingle(
+                                  FactorNumConst(
+                                   6
+                                  ) [FactorNumConst]
+                                ) [TermSingle]
+                              ) [ExprNegSingle]
+                            ) [ExprOne]
+                          ) [StmtPrint]
+                        ) [StmtIfBody]
+                        StmtPrint(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorNumConst(
+                                 0
+                                ) [FactorNumConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [StmtPrint]
+                      ) [StmtIfElse]
+                    ) [StatementSingle]
+                    StmtDesign(
+                      Assignment(
+                        Designator0(
+                         ibool
+                        ) [Designator0]
+                        ExprOne(
+                          ExprSingle(
+                            TermSingle(
+                              FactorBoolConst(
+                               false
+                              ) [FactorBoolConst]
+                            ) [TermSingle]
+                          ) [ExprSingle]
+                        ) [ExprOne]
+                      ) [Assignment]
+                    ) [StmtDesign]
+                  ) [StatementMulti]
+                  StmtDesign(
+                    Assignment(
+                      Designator0(
+                       i
+                      ) [Designator0]
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             0
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [Assignment]
+                  ) [StmtDesign]
+                ) [StatementMulti]
+                StmtIfElse(
+                  StmtIfHead(
+                  ) [StmtIfHead]
+                  StmtIfBody(
+                    CondOne(
+                      CondTermOne(
+                        CondFactTwo(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorNumConst(
+                                 1
+                                ) [FactorNumConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                          RelopNE(
+                          ) [RelopNE]
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorNumConst(
+                                 1
+                                ) [FactorNumConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [CondFactTwo]
+                      ) [CondTermOne]
+                    ) [CondOne]
+                    StmtPrint(
+                      ExprOne(
+                        ExprNegSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             6
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprNegSingle]
+                      ) [ExprOne]
+                    ) [StmtPrint]
+                  ) [StmtIfBody]
+                  StmtPrint(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorNumConst(
+                           0
+                          ) [FactorNumConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [StmtPrint]
+                ) [StmtIfElse]
+              ) [StatementMulti]
+              StmtDesign(
+                Assignment(
+                  Designator0(
+                   ibool
+                  ) [Designator0]
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorBoolConst(
+                         false
+                        ) [FactorBoolConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [Assignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDesign(
+              Assignment(
+                Designator0(
+                 i
+                ) [Designator0]
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorNumConst(
+                       0
+                      ) [FactorNumConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [Assignment]
+            ) [StmtDesign]
+          ) [StatementMulti]
+          StmtDoWhile(
+            Stmt(
+              StatementSingle(
+                StmtDesign(
+                  Increment(
+                    Designator0(
+                     i
+                    ) [Designator0]
+                  ) [Increment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+            ) [Stmt]
+            CondOne(
+              CondTermOne(
+                CondFactTwo(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorDesignator(
+                          Designator0(
+                           i
+                          ) [Designator0]
+                        ) [FactorDesignator]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                  RelopLT(
+                  ) [RelopLT]
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         5
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [CondFactTwo]
+              ) [CondTermOne]
+            ) [CondOne]
+          ) [StmtDoWhile]
+        ) [StatementMulti]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  20:14:42,276 - ===================================
+INFO  20:14:42,278 -  Print count calls = 5
+INFO  20:14:42,278 -  Deklarisanih promenljivih ima = 4

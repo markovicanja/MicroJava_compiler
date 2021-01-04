@@ -1,78 +1,37 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/0/2021 15:48:49
+// 4/0/2021 13:57:25
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Assignment extends DesignatorStatement {
+public abstract class Assignment implements SyntaxNode {
 
-    private Designator Designator;
-    private Expr Expr;
+    private SyntaxNode parent;
 
-    public Assignment (Designator Designator, Expr Expr) {
-        this.Designator=Designator;
-        if(Designator!=null) Designator.setParent(this);
-        this.Expr=Expr;
-        if(Expr!=null) Expr.setParent(this);
+    private int line;
+
+    public SyntaxNode getParent() {
+        return parent;
     }
 
-    public Designator getDesignator() {
-        return Designator;
+    public void setParent(SyntaxNode parent) {
+        this.parent=parent;
     }
 
-    public void setDesignator(Designator Designator) {
-        this.Designator=Designator;
+    public int getLine() {
+        return line;
     }
 
-    public Expr getExpr() {
-        return Expr;
+    public void setLine(int line) {
+        this.line=line;
     }
 
-    public void setExpr(Expr Expr) {
-        this.Expr=Expr;
-    }
+    public abstract void accept(Visitor visitor);
+    public abstract void childrenAccept(Visitor visitor);
+    public abstract void traverseTopDown(Visitor visitor);
+    public abstract void traverseBottomUp(Visitor visitor);
 
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-
-    public void childrenAccept(Visitor visitor) {
-        if(Designator!=null) Designator.accept(visitor);
-        if(Expr!=null) Expr.accept(visitor);
-    }
-
-    public void traverseTopDown(Visitor visitor) {
-        accept(visitor);
-        if(Designator!=null) Designator.traverseTopDown(visitor);
-        if(Expr!=null) Expr.traverseTopDown(visitor);
-    }
-
-    public void traverseBottomUp(Visitor visitor) {
-        if(Designator!=null) Designator.traverseBottomUp(visitor);
-        if(Expr!=null) Expr.traverseBottomUp(visitor);
-        accept(visitor);
-    }
-
-    public String toString(String tab) {
-        StringBuffer buffer=new StringBuffer();
-        buffer.append(tab);
-        buffer.append("Assignment(\n");
-
-        if(Designator!=null)
-            buffer.append(Designator.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(Expr!=null)
-            buffer.append(Expr.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(tab);
-        buffer.append(") [Assignment]");
-        return buffer.toString();
-    }
+    public String toString() { return toString(""); }
+    public abstract String toString(String tab);
 }
