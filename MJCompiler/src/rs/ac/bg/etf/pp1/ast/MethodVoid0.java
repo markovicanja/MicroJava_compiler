@@ -1,19 +1,20 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/0/2021 22:44:14
+// 5/0/2021 21:5:56
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class MethodVoid0 extends MethodVoidDecl {
 
-    private String I1;
+    private MethVoidName MethVoidName;
     private FormParams FormParams;
     private VarDeclList VarDeclList;
     private StatementList StatementList;
 
-    public MethodVoid0 (String I1, FormParams FormParams, VarDeclList VarDeclList, StatementList StatementList) {
-        this.I1=I1;
+    public MethodVoid0 (MethVoidName MethVoidName, FormParams FormParams, VarDeclList VarDeclList, StatementList StatementList) {
+        this.MethVoidName=MethVoidName;
+        if(MethVoidName!=null) MethVoidName.setParent(this);
         this.FormParams=FormParams;
         if(FormParams!=null) FormParams.setParent(this);
         this.VarDeclList=VarDeclList;
@@ -22,12 +23,12 @@ public class MethodVoid0 extends MethodVoidDecl {
         if(StatementList!=null) StatementList.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public MethVoidName getMethVoidName() {
+        return MethVoidName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setMethVoidName(MethVoidName MethVoidName) {
+        this.MethVoidName=MethVoidName;
     }
 
     public FormParams getFormParams() {
@@ -59,6 +60,7 @@ public class MethodVoid0 extends MethodVoidDecl {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(MethVoidName!=null) MethVoidName.accept(visitor);
         if(FormParams!=null) FormParams.accept(visitor);
         if(VarDeclList!=null) VarDeclList.accept(visitor);
         if(StatementList!=null) StatementList.accept(visitor);
@@ -66,12 +68,14 @@ public class MethodVoid0 extends MethodVoidDecl {
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(MethVoidName!=null) MethVoidName.traverseTopDown(visitor);
         if(FormParams!=null) FormParams.traverseTopDown(visitor);
         if(VarDeclList!=null) VarDeclList.traverseTopDown(visitor);
         if(StatementList!=null) StatementList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(MethVoidName!=null) MethVoidName.traverseBottomUp(visitor);
         if(FormParams!=null) FormParams.traverseBottomUp(visitor);
         if(VarDeclList!=null) VarDeclList.traverseBottomUp(visitor);
         if(StatementList!=null) StatementList.traverseBottomUp(visitor);
@@ -83,7 +87,10 @@ public class MethodVoid0 extends MethodVoidDecl {
         buffer.append(tab);
         buffer.append("MethodVoid0(\n");
 
-        buffer.append(" "+tab+I1);
+        if(MethVoidName!=null)
+            buffer.append(MethVoidName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(FormParams!=null)

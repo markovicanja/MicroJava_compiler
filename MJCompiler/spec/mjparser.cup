@@ -92,7 +92,7 @@ nonterminal ProgramDeclarations, ProgramDeclaration;
 nonterminal ConstDecl, ConstList, ConstPart, ClassDecl;
 nonterminal Value, VarDecl, VarList, VarPart, VarDeclList;
 nonterminal GlobalVarDecl, GlobalVarList, GlobalVarPart;
-nonterminal MethodDeclList, MethodDec, MethodVoidDecl, MethodTypeDecl;
+nonterminal MethodDeclList, MethodDec, MethodVoidDecl, MethodTypeDecl, MethVoidName, MethTypeName;
 nonterminal FormParams, FormParam, StatementList, Statement, StatementIf, StatementIfBody;
 nonterminal CaseList, CasePart, DesignatorStatement, Assignment;
 nonterminal ActPars, Condition, CondTerm, CondFact, IfCondition;
@@ -185,45 +185,49 @@ MethodDec ::= (MethodVoidDeclaration) MethodVoidDecl
 			  |
 			  (MethodTypeDeclaration) MethodTypeDecl;
 
-MethodVoidDecl ::= (MethodVoid0) VOID IDENT LPAREN FormParams RPAREN VarDeclList LBRACE StatementList RBRACE
+MethodVoidDecl ::= (MethodVoid0) MethVoidName LPAREN FormParams RPAREN VarDeclList LBRACE StatementList RBRACE
 				   |
-				   (MethodVoid1) VOID IDENT LPAREN FormParams RPAREN VarDeclList LBRACE RBRACE
+				   (MethodVoid1) MethVoidName LPAREN FormParams RPAREN VarDeclList LBRACE RBRACE
 				   |
-				   (MethodVoid2) VOID IDENT LPAREN FormParams RPAREN LBRACE StatementList RBRACE
+				   (MethodVoid2) MethVoidName LPAREN FormParams RPAREN LBRACE StatementList RBRACE
 				   |
-				   (MethodVoid3) VOID IDENT LPAREN FormParams RPAREN LBRACE RBRACE
+				   (MethodVoid3) MethVoidName LPAREN FormParams RPAREN LBRACE RBRACE
 				   |
-				   (MethodVoid4) VOID IDENT LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE
+				   (MethodVoid4) MethVoidName LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE
 				   |
-				   (MethodVoid5) VOID IDENT LPAREN RPAREN VarDeclList LBRACE RBRACE
+				   (MethodVoid5) MethVoidName LPAREN RPAREN VarDeclList LBRACE RBRACE
 				   |
-				   (MethodVoid6) VOID IDENT LPAREN RPAREN LBRACE StatementList RBRACE
+				   (MethodVoid6) MethVoidName LPAREN RPAREN LBRACE StatementList RBRACE
 				   |
-				   (MethodVoid7) VOID IDENT LPAREN RPAREN LBRACE RBRACE;
+				   (MethodVoid7) MethVoidName LPAREN RPAREN LBRACE RBRACE;
 				   
-MethodTypeDecl ::= (MethodType0) Type IDENT LPAREN FormParams RPAREN VarDeclList LBRACE StatementList RBRACE
+MethVoidName ::= (MethodVoidName) VOID IDENT:methodName;
+				   
+MethodTypeDecl ::= (MethodType0) MethTypeName LPAREN FormParams RPAREN VarDeclList LBRACE StatementList RBRACE
 				   |
-				   (MethodType1) Type IDENT LPAREN FormParams RPAREN VarDeclList LBRACE RBRACE
+				   (MethodType1) MethTypeName LPAREN FormParams RPAREN VarDeclList LBRACE RBRACE
 				   |
-				   (MethodType2) Type IDENT LPAREN FormParams RPAREN LBRACE StatementList RBRACE
+				   (MethodType2) MethTypeName LPAREN FormParams RPAREN LBRACE StatementList RBRACE
 				   |
-				   (MethodType3) Type IDENT LPAREN FormParams RPAREN LBRACE RBRACE
+				   (MethodType3) MethTypeName LPAREN FormParams RPAREN LBRACE RBRACE
 				   |
-				   (MethodType4) Type IDENT LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE
+				   (MethodType4) MethTypeName LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE
 				   |
-				   (MethodType5) Type IDENT LPAREN RPAREN VarDeclList LBRACE RBRACE
+				   (MethodType5) MethTypeName LPAREN RPAREN VarDeclList LBRACE RBRACE
 				   |
-				   (MethodType6) Type IDENT LPAREN RPAREN LBRACE StatementList RBRACE
+				   (MethodType6) MethTypeName LPAREN RPAREN LBRACE StatementList RBRACE
 				   |
-				   (MethodType7) Type IDENT LPAREN RPAREN LBRACE RBRACE;
+				   (MethodType7) MethTypeName LPAREN RPAREN LBRACE RBRACE;
+		
+MethTypeName ::= (MethodTypeName) Type IDENT:methodName;
 
 FormParams ::= (ParamMulti) FormParams COMMA FormParam
 			   |
 			   (ParamSingle) FormParam;
 			   
-FormParam ::= (ParamNormal) Type IDENT
+FormParam ::= (ParamNormal) Type IDENT:paramName
 		      |
-		      (ParamArray) Type IDENT LSQUARE RSQUARE
+		      (ParamArray) Type IDENT:paramName LSQUARE RSQUARE
 		      |
 		      (ParamError) error 
 		      {: this.parser.report_error("Oporavak od greske u definiciji formalnih parametara funkcije", this.parser.getErrorSymbol()); :};
@@ -245,7 +249,7 @@ Statement ::= (StmtDesign) DesignatorStatement SEMICOLON
 			  |
 			  (StmtContinue) CONTINUE SEMICOLON
 			  |
-			  (StmtReturnExpr) RETURN Expr SEMICOLON
+			  (StmtReturnExpr) RETURN Expr:expr SEMICOLON
 			  |
 			  (StmtReturn) RETURN SEMICOLON
 			  |

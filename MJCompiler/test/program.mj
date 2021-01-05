@@ -1,7 +1,12 @@
 program MJProgram
 	const int m=1;
 	int global, globarArr[];
+	abc a; // error - nije pronadjen tip 'abc' u tabeli simbola!
 {
+	int fun(int x) { // prijavice semanticku gresku jer je global vec deklarisano!!! NE BI TREBALO TO DA SE DESI
+		return x;
+	}
+	
 	void main() int b, a[];
 	char a; // error - vec definisana
 	{

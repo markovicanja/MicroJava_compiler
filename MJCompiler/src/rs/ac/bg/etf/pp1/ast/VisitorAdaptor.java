@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/0/2021 22:44:14
+// 5/0/2021 21:5:56
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -12,6 +12,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ProgramDeclarations ProgramDeclarations) { }
     public void visit(TermList TermList) { }
     public void visit(MethodVoidDecl MethodVoidDecl) { }
+    public void visit(MethTypeName MethTypeName) { }
     public void visit(StatementList StatementList) { }
     public void visit(VarPart VarPart) { }
     public void visit(FactorList FactorList) { }
@@ -29,9 +30,9 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Condition Condition) { }
     public void visit(MethodDec MethodDec) { }
     public void visit(CaseList CaseList) { }
+    public void visit(IfCondition IfCondition) { }
     public void visit(Value Value) { }
     public void visit(FormParams FormParams) { }
-    public void visit(IfCondition IfCondition) { }
     public void visit(DesignatorPart DesignatorPart) { }
     public void visit(StatementIfBody StatementIfBody) { }
     public void visit(VarDeclList VarDeclList) { }
@@ -50,6 +51,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MethodDeclList MethodDeclList) { }
     public void visit(GlobalVarList GlobalVarList) { }
     public void visit(FormParam FormParam) { }
+    public void visit(MethVoidName MethVoidName) { }
     public void visit(MulopMod MulopMod) { visit(); }
     public void visit(MulopDiv MulopDiv) { visit(); }
     public void visit(MulopMul MulopMul) { visit(); }
@@ -133,6 +135,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ParamNormal ParamNormal) { visit(); }
     public void visit(ParamSingle ParamSingle) { visit(); }
     public void visit(ParamMulti ParamMulti) { visit(); }
+    public void visit(MethodTypeName MethodTypeName) { visit(); }
     public void visit(MethodType7 MethodType7) { visit(); }
     public void visit(MethodType6 MethodType6) { visit(); }
     public void visit(MethodType5 MethodType5) { visit(); }
@@ -141,6 +144,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MethodType2 MethodType2) { visit(); }
     public void visit(MethodType1 MethodType1) { visit(); }
     public void visit(MethodType0 MethodType0) { visit(); }
+    public void visit(MethodVoidName MethodVoidName) { visit(); }
     public void visit(MethodVoid7 MethodVoid7) { visit(); }
     public void visit(MethodVoid6 MethodVoid6) { visit(); }
     public void visit(MethodVoid5 MethodVoid5) { visit(); }

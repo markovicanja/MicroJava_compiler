@@ -106,6 +106,8 @@ nonterminal MethodDeclList MethodDeclList;
 nonterminal MethodDec MethodDec;
 nonterminal MethodVoidDecl MethodVoidDecl;
 nonterminal MethodTypeDecl MethodTypeDecl;
+nonterminal MethVoidName MethVoidName;
+nonterminal MethTypeName MethTypeName;
 nonterminal FormParams FormParams;
 nonterminal FormParam FormParam;
 nonterminal StatementList StatementList;
@@ -220,45 +222,49 @@ MethodDec ::= (MethodVoidDeclaration) MethodVoidDecl:M1 {: RESULT=new MethodVoid
 			  |
 			  (MethodTypeDeclaration) MethodTypeDecl:M1 {: RESULT=new MethodTypeDeclaration(M1); RESULT.setLine(M1left); :};
 
-MethodVoidDecl ::= (MethodVoid0) VOID IDENT:I1 LPAREN FormParams:F2 RPAREN VarDeclList:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodVoid0(I1, F2, V3, S4); RESULT.setLine(I1left); :}
+MethodVoidDecl ::= (MethodVoid0) MethVoidName:M1 LPAREN FormParams:F2 RPAREN VarDeclList:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodVoid0(M1, F2, V3, S4); RESULT.setLine(M1left); :}
 				   |
-				   (MethodVoid1) VOID IDENT:I1 LPAREN FormParams:F2 RPAREN VarDeclList:V3 LBRACE RBRACE {: RESULT=new MethodVoid1(I1, F2, V3); RESULT.setLine(I1left); :}
+				   (MethodVoid1) MethVoidName:M1 LPAREN FormParams:F2 RPAREN VarDeclList:V3 LBRACE RBRACE {: RESULT=new MethodVoid1(M1, F2, V3); RESULT.setLine(M1left); :}
 				   |
-				   (MethodVoid2) VOID IDENT:I1 LPAREN FormParams:F2 RPAREN LBRACE StatementList:S3 RBRACE {: RESULT=new MethodVoid2(I1, F2, S3); RESULT.setLine(I1left); :}
+				   (MethodVoid2) MethVoidName:M1 LPAREN FormParams:F2 RPAREN LBRACE StatementList:S3 RBRACE {: RESULT=new MethodVoid2(M1, F2, S3); RESULT.setLine(M1left); :}
 				   |
-				   (MethodVoid3) VOID IDENT:I1 LPAREN FormParams:F2 RPAREN LBRACE RBRACE {: RESULT=new MethodVoid3(I1, F2); RESULT.setLine(I1left); :}
+				   (MethodVoid3) MethVoidName:M1 LPAREN FormParams:F2 RPAREN LBRACE RBRACE {: RESULT=new MethodVoid3(M1, F2); RESULT.setLine(M1left); :}
 				   |
-				   (MethodVoid4) VOID IDENT:I1 LPAREN RPAREN VarDeclList:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new MethodVoid4(I1, V2, S3); RESULT.setLine(I1left); :}
+				   (MethodVoid4) MethVoidName:M1 LPAREN RPAREN VarDeclList:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new MethodVoid4(M1, V2, S3); RESULT.setLine(M1left); :}
 				   |
-				   (MethodVoid5) VOID IDENT:I1 LPAREN RPAREN VarDeclList:V2 LBRACE RBRACE {: RESULT=new MethodVoid5(I1, V2); RESULT.setLine(I1left); :}
+				   (MethodVoid5) MethVoidName:M1 LPAREN RPAREN VarDeclList:V2 LBRACE RBRACE {: RESULT=new MethodVoid5(M1, V2); RESULT.setLine(M1left); :}
 				   |
-				   (MethodVoid6) VOID IDENT:I1 LPAREN RPAREN LBRACE StatementList:S2 RBRACE {: RESULT=new MethodVoid6(I1, S2); RESULT.setLine(I1left); :}
+				   (MethodVoid6) MethVoidName:M1 LPAREN RPAREN LBRACE StatementList:S2 RBRACE {: RESULT=new MethodVoid6(M1, S2); RESULT.setLine(M1left); :}
 				   |
-				   (MethodVoid7) VOID IDENT:I1 LPAREN RPAREN LBRACE RBRACE {: RESULT=new MethodVoid7(I1); RESULT.setLine(I1left); :};
+				   (MethodVoid7) MethVoidName:M1 LPAREN RPAREN LBRACE RBRACE {: RESULT=new MethodVoid7(M1); RESULT.setLine(M1left); :};
 				   
-MethodTypeDecl ::= (MethodType0) Type:T1 IDENT:I2 LPAREN FormParams:F3 RPAREN VarDeclList:V4 LBRACE StatementList:S5 RBRACE {: RESULT=new MethodType0(T1, I2, F3, V4, S5); RESULT.setLine(T1left); :}
+MethVoidName ::= (MethodVoidName) VOID IDENT:methodName {: RESULT=new MethodVoidName(methodName); RESULT.setLine(methodNameleft); :};
+				   
+MethodTypeDecl ::= (MethodType0) MethTypeName:M1 LPAREN FormParams:F2 RPAREN VarDeclList:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodType0(M1, F2, V3, S4); RESULT.setLine(M1left); :}
 				   |
-				   (MethodType1) Type:T1 IDENT:I2 LPAREN FormParams:F3 RPAREN VarDeclList:V4 LBRACE RBRACE {: RESULT=new MethodType1(T1, I2, F3, V4); RESULT.setLine(T1left); :}
+				   (MethodType1) MethTypeName:M1 LPAREN FormParams:F2 RPAREN VarDeclList:V3 LBRACE RBRACE {: RESULT=new MethodType1(M1, F2, V3); RESULT.setLine(M1left); :}
 				   |
-				   (MethodType2) Type:T1 IDENT:I2 LPAREN FormParams:F3 RPAREN LBRACE StatementList:S4 RBRACE {: RESULT=new MethodType2(T1, I2, F3, S4); RESULT.setLine(T1left); :}
+				   (MethodType2) MethTypeName:M1 LPAREN FormParams:F2 RPAREN LBRACE StatementList:S3 RBRACE {: RESULT=new MethodType2(M1, F2, S3); RESULT.setLine(M1left); :}
 				   |
-				   (MethodType3) Type:T1 IDENT:I2 LPAREN FormParams:F3 RPAREN LBRACE RBRACE {: RESULT=new MethodType3(T1, I2, F3); RESULT.setLine(T1left); :}
+				   (MethodType3) MethTypeName:M1 LPAREN FormParams:F2 RPAREN LBRACE RBRACE {: RESULT=new MethodType3(M1, F2); RESULT.setLine(M1left); :}
 				   |
-				   (MethodType4) Type:T1 IDENT:I2 LPAREN RPAREN VarDeclList:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodType4(T1, I2, V3, S4); RESULT.setLine(T1left); :}
+				   (MethodType4) MethTypeName:M1 LPAREN RPAREN VarDeclList:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new MethodType4(M1, V2, S3); RESULT.setLine(M1left); :}
 				   |
-				   (MethodType5) Type:T1 IDENT:I2 LPAREN RPAREN VarDeclList:V3 LBRACE RBRACE {: RESULT=new MethodType5(T1, I2, V3); RESULT.setLine(T1left); :}
+				   (MethodType5) MethTypeName:M1 LPAREN RPAREN VarDeclList:V2 LBRACE RBRACE {: RESULT=new MethodType5(M1, V2); RESULT.setLine(M1left); :}
 				   |
-				   (MethodType6) Type:T1 IDENT:I2 LPAREN RPAREN LBRACE StatementList:S3 RBRACE {: RESULT=new MethodType6(T1, I2, S3); RESULT.setLine(T1left); :}
+				   (MethodType6) MethTypeName:M1 LPAREN RPAREN LBRACE StatementList:S2 RBRACE {: RESULT=new MethodType6(M1, S2); RESULT.setLine(M1left); :}
 				   |
-				   (MethodType7) Type:T1 IDENT:I2 LPAREN RPAREN LBRACE RBRACE {: RESULT=new MethodType7(T1, I2); RESULT.setLine(T1left); :};
+				   (MethodType7) MethTypeName:M1 LPAREN RPAREN LBRACE RBRACE {: RESULT=new MethodType7(M1); RESULT.setLine(M1left); :};
+		
+MethTypeName ::= (MethodTypeName) Type:T1 IDENT:methodName {: RESULT=new MethodTypeName(T1, methodName); RESULT.setLine(T1left); :};
 
 FormParams ::= (ParamMulti) FormParams:F1 COMMA FormParam:F2 {: RESULT=new ParamMulti(F1, F2); RESULT.setLine(F1left); :}
 			   |
 			   (ParamSingle) FormParam:F1 {: RESULT=new ParamSingle(F1); RESULT.setLine(F1left); :};
 			   
-FormParam ::= (ParamNormal) Type:T1 IDENT:I2 {: RESULT=new ParamNormal(T1, I2); RESULT.setLine(T1left); :}
+FormParam ::= (ParamNormal) Type:T1 IDENT:paramName {: RESULT=new ParamNormal(T1, paramName); RESULT.setLine(T1left); :}
 		      |
-		      (ParamArray) Type:T1 IDENT:I2 LSQUARE RSQUARE {: RESULT=new ParamArray(T1, I2); RESULT.setLine(T1left); :}
+		      (ParamArray) Type:T1 IDENT:paramName LSQUARE RSQUARE {: RESULT=new ParamArray(T1, paramName); RESULT.setLine(T1left); :}
 		      |
 		      (ParamError) error 
 		      {: this.parser.report_error("Oporavak od greske u definiciji formalnih parametara funkcije", this.parser.getErrorSymbol()); :} {: RESULT=new ParamError(); :};

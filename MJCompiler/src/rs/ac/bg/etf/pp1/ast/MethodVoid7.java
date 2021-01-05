@@ -1,24 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/0/2021 22:44:14
+// 5/0/2021 21:5:56
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class MethodVoid7 extends MethodVoidDecl {
 
-    private String I1;
+    private MethVoidName MethVoidName;
 
-    public MethodVoid7 (String I1) {
-        this.I1=I1;
+    public MethodVoid7 (MethVoidName MethVoidName) {
+        this.MethVoidName=MethVoidName;
+        if(MethVoidName!=null) MethVoidName.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public MethVoidName getMethVoidName() {
+        return MethVoidName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setMethVoidName(MethVoidName MethVoidName) {
+        this.MethVoidName=MethVoidName;
     }
 
     public void accept(Visitor visitor) {
@@ -26,13 +27,16 @@ public class MethodVoid7 extends MethodVoidDecl {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(MethVoidName!=null) MethVoidName.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(MethVoidName!=null) MethVoidName.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(MethVoidName!=null) MethVoidName.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -41,7 +45,10 @@ public class MethodVoid7 extends MethodVoidDecl {
         buffer.append(tab);
         buffer.append("MethodVoid7(\n");
 
-        buffer.append(" "+tab+I1);
+        if(MethVoidName!=null)
+            buffer.append(MethVoidName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         buffer.append(tab);

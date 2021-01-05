@@ -1,35 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/0/2021 22:44:14
+// 5/0/2021 21:5:56
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class MethodType7 extends MethodTypeDecl {
 
-    private Type Type;
-    private String I2;
+    private MethTypeName MethTypeName;
 
-    public MethodType7 (Type Type, String I2) {
-        this.Type=Type;
-        if(Type!=null) Type.setParent(this);
-        this.I2=I2;
+    public MethodType7 (MethTypeName MethTypeName) {
+        this.MethTypeName=MethTypeName;
+        if(MethTypeName!=null) MethTypeName.setParent(this);
     }
 
-    public Type getType() {
-        return Type;
+    public MethTypeName getMethTypeName() {
+        return MethTypeName;
     }
 
-    public void setType(Type Type) {
-        this.Type=Type;
-    }
-
-    public String getI2() {
-        return I2;
-    }
-
-    public void setI2(String I2) {
-        this.I2=I2;
+    public void setMethTypeName(MethTypeName MethTypeName) {
+        this.MethTypeName=MethTypeName;
     }
 
     public void accept(Visitor visitor) {
@@ -37,16 +27,16 @@ public class MethodType7 extends MethodTypeDecl {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Type!=null) Type.accept(visitor);
+        if(MethTypeName!=null) MethTypeName.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Type!=null) Type.traverseTopDown(visitor);
+        if(MethTypeName!=null) MethTypeName.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Type!=null) Type.traverseBottomUp(visitor);
+        if(MethTypeName!=null) MethTypeName.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -55,13 +45,10 @@ public class MethodType7 extends MethodTypeDecl {
         buffer.append(tab);
         buffer.append("MethodType7(\n");
 
-        if(Type!=null)
-            buffer.append(Type.toString("  "+tab));
+        if(MethTypeName!=null)
+            buffer.append(MethTypeName.toString("  "+tab));
         else
             buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(" "+tab+I2);
         buffer.append("\n");
 
         buffer.append(tab);
