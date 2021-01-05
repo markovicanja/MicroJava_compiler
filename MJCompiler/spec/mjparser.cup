@@ -90,19 +90,19 @@ terminal QUESTION_MARK, COLON;
 
 nonterminal ProgramDeclarations, ProgramDeclaration;
 nonterminal ConstDecl, ConstList, ConstPart, ClassDecl;
-nonterminal Value, VarDecl, VarList, VarPart, VarDeclList;
+nonterminal VarDecl, VarList, VarPart, VarDeclList;
 nonterminal GlobalVarDecl, GlobalVarList, GlobalVarPart;
 nonterminal MethodDeclList, MethodDec, MethodVoidDecl, MethodTypeDecl, MethVoidName, MethTypeName;
 nonterminal FormParams, FormParam, StatementList, Statement, StatementIf, StatementIfBody;
 nonterminal CaseList, CasePart, DesignatorStatement, Assignment;
 nonterminal ActPars, Condition, CondTerm, CondFact, IfCondition;
-nonterminal Expr, Expr1, TermList, TermPart, Term;
+nonterminal Expr1, TermList, TermPart, Term;
 nonterminal FactorList, FactorPart, Factor;
 nonterminal Designator, DesignatorList, DesignatorPart;
 nonterminal Relop, Addop, Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Expr, Value;
 
 precedence left ELSE;
 

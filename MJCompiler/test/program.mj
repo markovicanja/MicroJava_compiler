@@ -1,14 +1,14 @@
 program MJProgram
 	const int m=1;
 	int global, globarArr[];
-	abc a; // error - nije pronadjen tip 'abc' u tabeli simbola!
+	// abc a; // error - nije pronadjen tip 'abc' u tabeli simbola!
 {
 	int fun(int x) { // prijavice semanticku gresku jer je global vec deklarisano!!! NE BI TREBALO TO DA SE DESI
-		return x;
+		return 1; // NE POKLAPAJU SE POVRATNE VREDNOSTI??
 	}
 	
 	void main() int b, a[];
-	char a; // error - vec definisana
+	// char a; // error - vec definisana
 	{
 		b = 1;
 	}

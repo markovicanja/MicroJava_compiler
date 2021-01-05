@@ -94,7 +94,6 @@ nonterminal ConstDecl ConstDecl;
 nonterminal ConstList ConstList;
 nonterminal ConstPart ConstPart;
 nonterminal ClassDecl ClassDecl;
-nonterminal Value Value;
 nonterminal VarDecl VarDecl;
 nonterminal VarList VarList;
 nonterminal VarPart VarPart;
@@ -123,7 +122,6 @@ nonterminal Condition Condition;
 nonterminal CondTerm CondTerm;
 nonterminal CondFact CondFact;
 nonterminal IfCondition IfCondition;
-nonterminal Expr Expr;
 nonterminal Expr1 Expr1;
 nonterminal TermList TermList;
 nonterminal TermPart TermPart;
@@ -139,7 +137,7 @@ nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Expr, Value;
 
 precedence left ELSE;
 
@@ -286,7 +284,7 @@ Statement ::= (StmtDesign) DesignatorStatement:D1 SEMICOLON {: RESULT=new StmtDe
 			  |
 			  (StmtContinue) CONTINUE SEMICOLON {: RESULT=new StmtContinue(); :}
 			  |
-			  (StmtReturnExpr) RETURN Expr:E1 SEMICOLON {: RESULT=new StmtReturnExpr(E1); RESULT.setLine(E1left); :}
+			  (StmtReturnExpr) RETURN Expr:expr SEMICOLON {: RESULT=new StmtReturnExpr(expr); RESULT.setLine(exprleft); :}
 			  |
 			  (StmtReturn) RETURN SEMICOLON {: RESULT=new StmtReturn(); :}
 			  |

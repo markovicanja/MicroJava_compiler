@@ -4,8 +4,11 @@ import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
+import rs.ac.bg.etf.pp1.ast.BoolConst;
+import rs.ac.bg.etf.pp1.ast.CharConst;
 import rs.ac.bg.etf.pp1.ast.ConstDeclaration;
 import rs.ac.bg.etf.pp1.ast.ConstPart;
+import rs.ac.bg.etf.pp1.ast.FactorNumConst;
 import rs.ac.bg.etf.pp1.ast.GlobalVarArray;
 import rs.ac.bg.etf.pp1.ast.GlobalVarDeclaration;
 import rs.ac.bg.etf.pp1.ast.GlobalVarNormal;
@@ -13,11 +16,11 @@ import rs.ac.bg.etf.pp1.ast.MethodTypeDeclaration;
 import rs.ac.bg.etf.pp1.ast.MethodTypeName;
 import rs.ac.bg.etf.pp1.ast.MethodVoidDeclaration;
 import rs.ac.bg.etf.pp1.ast.MethodVoidName;
+import rs.ac.bg.etf.pp1.ast.NumConst;
 import rs.ac.bg.etf.pp1.ast.ParamArray;
 import rs.ac.bg.etf.pp1.ast.ParamNormal;
 import rs.ac.bg.etf.pp1.ast.ProgName;
 import rs.ac.bg.etf.pp1.ast.Program;
-import rs.ac.bg.etf.pp1.ast.StmtPrint;
 import rs.ac.bg.etf.pp1.ast.StmtReturn;
 import rs.ac.bg.etf.pp1.ast.StmtReturnExpr;
 import rs.ac.bg.etf.pp1.ast.SyntaxNode;
@@ -37,6 +40,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	int nVars;
 	boolean errorDetected = false;
+	boolean returnValue = false;
 	
 	private ArrayList<Variable> declarationVariables = new ArrayList<Variable>();
 	private Obj currentMethod = null;
@@ -207,6 +211,18 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		}
 	}
 	
+	public void visit(NumConst numConst) { // CEMU SLUZI OVO???
+		numConst.struct = Tab.intType;
+	}
+	
+	public void visit(BoolConst boolConst) { 
+		boolConst.struct = boolType;
+	}
+	
+	public void visit(CharConst charConst) { 
+		charConst.struct = Tab.charType;
+	}  
+	
 	public void visit(MethodVoidName methodVoidName) { 
 		currentMethod = Tab.insert(Obj.Meth, methodVoidName.getMethodName(), Tab.noType);
 		// mListOfMethods.add(new Method(methodVoidName.getMethodName()));		
@@ -215,14 +231,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	
 	public void visit(MethodVoidDeclaration methodVoidDeclaration) { 
-//		if (mRetValExists) {
-//			report_error("Semanticka greska - metoda " + currentMethod.getName() + " ne treba da ima povratnu vrednost!", null);
-//		}
 		Tab.chainLocalSymbols(currentMethod);
 		Tab.closeScope();
 		report_info("Kraj obrade metode " + currentMethod.getName(), methodVoidDeclaration);
 		currentMethod = null;
-//		mRetValExists = false;
+		returnValue = false;
 	}
 	
 	public void visit(MethodTypeName methodTypeName) { 
@@ -233,14 +246,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	
 	public void visit(MethodTypeDeclaration methodTypeDeclaration) { 
-//		if (mRetValExists) {
-//			report_error("Semanticka greska - metoda " + currentMethod.getName() + " ne treba da ima povratnu vrednost!", null);
-//		}
+		if (!returnValue) {
+			report_error("Semanticka greska - metoda '" + currentMethod.getName() + "' treba da ima povratnu vrednost!", null);
+		}
 		Tab.chainLocalSymbols(currentMethod);
 		Tab.closeScope();
 		report_info("Kraj obrade metode " + currentMethod.getName(), methodTypeDeclaration);
 		currentMethod = null;
-//		mRetValExists = false;
+		returnValue = false;
 	}
 	
 	public void visit(ParamArray paramArray) {
@@ -272,10 +285,15 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     public void visit(StmtReturnExpr stmtReturnExpr) {
-    	
+    	returnValue = true;
+    	if (currentMethod.getType() == Tab.noType) {
+    		report_error("Semanticka greska - return naredba u funkciji koja nema povratnu vrednost", stmtReturnExpr);
+    		return;
+    	}
+    	if (!currentMethod.getType().compatibleWith(stmtReturnExpr.getExpr().struct)) {
+    		report_error("Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu", stmtReturnExpr);
+    		return;
+    	}
     }
     
-    public void visit(StmtReturn stmtReturn) {
-    	
-    }
 }
