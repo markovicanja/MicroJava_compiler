@@ -122,22 +122,18 @@ nonterminal Condition Condition;
 nonterminal CondTerm CondTerm;
 nonterminal CondFact CondFact;
 nonterminal IfCondition IfCondition;
-nonterminal Expr1 Expr1;
 nonterminal TermList TermList;
 nonterminal TermPart TermPart;
-nonterminal Term Term;
 nonterminal FactorList FactorList;
 nonterminal FactorPart FactorPart;
-nonterminal Factor Factor;
-nonterminal Designator Designator;
 nonterminal DesignatorList DesignatorList;
-nonterminal DesignatorPart DesignatorPart;
+nonterminal DesignatorName DesignatorName;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Expr, Value;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, DesignatorPart;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1;
 
 precedence left ELSE;
 
@@ -353,12 +349,12 @@ Expr ::= (ExprTernary) Expr1:E1 QUESTION_MARK Expr1:E2 COLON Expr1:E3 {: RESULT=
 		 (ExprOne) Expr1:E1 {: RESULT=new ExprOne(E1); RESULT.setLine(E1left); :};
 			 
 Expr1 ::= (ExprNegMulti) MINUS Term:T1 TermList:T2 {: RESULT=new ExprNegMulti(T1, T2); RESULT.setLine(T1left); :}
-		 | 
-		 (ExprNegSingle) MINUS Term:T1 {: RESULT=new ExprNegSingle(T1); RESULT.setLine(T1left); :}
-		 |
-		 (ExprMulti) Term:T1 TermList:T2 {: RESULT=new ExprMulti(T1, T2); RESULT.setLine(T1left); :}
-		 |
-		 (ExprSingle) Term:T1 {: RESULT=new ExprSingle(T1); RESULT.setLine(T1left); :};
+		  | 
+		  (ExprNegSingle) MINUS Term:T1 {: RESULT=new ExprNegSingle(T1); RESULT.setLine(T1left); :}
+		  |
+ 		  (ExprMulti) Term:T1 TermList:T2 {: RESULT=new ExprMulti(T1, T2); RESULT.setLine(T1left); :}
+ 		  |
+ 		  (ExprSingle) Term:T1 {: RESULT=new ExprSingle(T1); RESULT.setLine(T1left); :};
 		 
 TermList ::= (TermListMulti) TermList:T1 TermPart:T2 {: RESULT=new TermListMulti(T1, T2); RESULT.setLine(T1left); :}
 			 |
@@ -376,9 +372,9 @@ FactorList ::= (FactorListMulti) FactorList:F1 FactorPart:F2 {: RESULT=new Facto
 			   
 FactorPart ::= (FactorPart) Mulop:M1 Factor:F2 {: RESULT=new FactorPart(M1, F2); RESULT.setLine(M1left); :};
 
-Factor ::= (FactorDesigMethCall0) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new FactorDesigMethCall0(D1, A2); RESULT.setLine(D1left); :}
+Factor ::= (FuncCallParams) Designator:functionName LPAREN ActPars:A1 RPAREN {: RESULT=new FuncCallParams(functionName, A1); RESULT.setLine(functionNameleft); :}
 		   |
-		   (FactorDesigMethCall1) Designator:D1 LPAREN RPAREN {: RESULT=new FactorDesigMethCall1(D1); RESULT.setLine(D1left); :}
+		   (FuncCall) Designator:functionName LPAREN RPAREN {: RESULT=new FuncCall(functionName); RESULT.setLine(functionNameleft); :}
 		   |
 		   (FactorDesignator) Designator:D1 {: RESULT=new FactorDesignator(D1); RESULT.setLine(D1left); :}
 		   |
@@ -394,17 +390,19 @@ Factor ::= (FactorDesigMethCall0) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESU
 		   | 
 		   (FactorExpr) LPAREN Expr:E1 RPAREN {: RESULT=new FactorExpr(E1); RESULT.setLine(E1left); :};
 		   
-Designator ::= (Designator0) IDENT:I1 {: RESULT=new Designator0(I1); RESULT.setLine(I1left); :}
+Designator ::= (DesignatorSimple) IDENT:designatorName {: RESULT=new DesignatorSimple(designatorName); RESULT.setLine(designatorNameleft); :}
 			   |
-			   (Designator1) IDENT:I1 DesignatorList:D2 {: RESULT=new Designator1(I1, D2); RESULT.setLine(I1left); :};
+			   (DesignatorMulti) DesignatorName:D1 DesignatorList:D2 {: RESULT=new DesignatorMulti(D1, D2); RESULT.setLine(D1left); :};
+			   
+DesignatorName ::= (DesignatorIdent) IDENT:designatorIdent {: RESULT=new DesignatorIdent(designatorIdent); RESULT.setLine(designatorIdentleft); :};
 
 DesignatorList ::= (DesignatorListMulti) DesignatorList:D1 DesignatorPart:D2 {: RESULT=new DesignatorListMulti(D1, D2); RESULT.setLine(D1left); :}
 				   |
 				   (DesignatorListSingle) DesignatorPart:D1 {: RESULT=new DesignatorListSingle(D1); RESULT.setLine(D1left); :};
 				   
-DesignatorPart ::= (DesignatorPart0) FULL_STOP IDENT:I1 {: RESULT=new DesignatorPart0(I1); RESULT.setLine(I1left); :}
+DesignatorPart ::= (DesignatorPartField) FULL_STOP IDENT:I1 {: RESULT=new DesignatorPartField(I1); RESULT.setLine(I1left); :}
 				   |
-				   (DesignatorPart1) LSQUARE Expr:E1 RSQUARE {: RESULT=new DesignatorPart1(E1); RESULT.setLine(E1left); :};
+				   (DesignatorPartArray) LSQUARE Expr:E1 RSQUARE {: RESULT=new DesignatorPartArray(E1); RESULT.setLine(E1left); :};
 
 Relop ::= (RelopEQ) EQUAL {: RESULT=new RelopEQ(); :}
 		  |

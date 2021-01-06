@@ -10,6 +10,7 @@ program MJProgram
 	void main() int b, a[];
 	// char a; // error - vec definisana
 	{
-		b = 1;
+		a[1] = 'a';
+		funk(m);
 	}
 }

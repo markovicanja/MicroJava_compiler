@@ -56,107 +56,17 @@ public class Compiler {
             SemanticAnalyzer semanticAnalyzer = new SemanticAnalyzer();
             prog.traverseBottomUp(semanticAnalyzer);
             
-            log.info("\n\n================TABELA SIMBOLA====================\n\n");
-            //tsdump();
+            // log.info("\n\n================TABELA SIMBOLA====================\n\n");
+            tsdump();
 			log.info("===================================");
 		}
 	}
-	/*OVE METODE IZMENI*/
-	
-	private static boolean addTab = false;
-	
-	private static String collOfObjDump(Collection<Obj> coll) {
-		StringBuilder sb = new StringBuilder();
-		Iterator<Obj> i = coll.iterator();
-		Obj obj;
-		while (i.hasNext()) {
-			obj = (Obj) i.next();
-			sb.append(objDump(obj));
-		}
-		return sb.toString();
-	}
-	
-	private static String objDump(Obj obj) {
-		StringBuilder sb = new StringBuilder();		
-		switch (obj.getKind()) {			
-			case Obj.Type:		
-				sb.append("Type " + obj.getName() + ": ");
-				sb.append(structDump(obj.getType()));
-				break;
-			case Obj.Prog:
-				addTab = true;
-				sb.append("\n");
-				sb.append("Prog " + obj.getName() + ": ");				
-				sb.append(structDump(obj.getType()));						
-				Collection<Obj> globlSyms = obj.getLocalSymbols();				
-				sb.append(collOfObjDump(globlSyms));
-				break;
-			case Obj.Meth:
-				addTab = true;
-				sb.append("Meth " + obj.getName() + ": ");				
-				sb.append(structDump(obj.getType()));
-				//sb.append("(br param:" + obj.getLevel() + ", br lok: " + (obj.getLocalSymbols().size() - obj.getLevel()) + ")");
-				Collection<Obj> localSyms = obj.getLocalSymbols();				
-				sb.append(collOfObjDump(localSyms));
-				break;
-			case Obj.Var:
-				if (addTab) {
-					sb.append("\t");
-				}				
-				if (obj.getLevel() == 0) {
-					sb.append("Globl ");
-				} else if (obj.getLevel() == 1) {
-					if (obj.getFpPos() == -1) {
-						sb.append("Local ");
-					} else {
-						sb.append("Param" + obj.getFpPos() + " ");
-					}					  
-				}
-				sb.append("Var " + obj.getName() + ": ");				
-				sb.append(structDump(obj.getType()));				
-				break;
-			case Obj.Con:
-				if (addTab) {
-					sb.append("\t");
-				}
-				sb.append("Con " + obj.getName() + ": ");				
-				sb.append(structDump(obj.getType()));				
-				break;			
-		}		
-		return sb.toString();
-	}
-	
-	private static String structDump(Struct struct) {
-		StringBuilder sb = new StringBuilder();
-		if (struct.getKind() == Struct.Array) {
-			sb.append("array of ");
-			sb.append(structDump(struct.getElemType()));
-		} else {
-			switch (struct.getKind()) {
-				case Struct.Int:
-					sb.append("int");
-					break;
-				case Struct.Char:
-					sb.append("char");
-					break;
-				case Struct.None:
-					sb.append("none");
-					break;
-				default:
-					sb.append("bool");
-					break;
-			}
-			sb.append("\n");
-		}
-		return sb.toString();
-	}
 	
 	public static void tsdump() {
-		StringBuilder sb = new StringBuilder();
-		for (Scope s = Tab.currentScope; s != null; s = s.getOuter()) {
-			Collection<Obj> coll = s.values();
-			sb.append(collOfObjDump(coll));
-		}
-		log.info("\n\n" + sb.toString());
+//		Izvedi novu klasu za SymbolTableVisitor
+//		SymbolTableVisitor stv = new SimpleSymbolTableVisitor(false);
+//      Tab.dump(stv);
+		Tab.dump();
 	}
+	
 }

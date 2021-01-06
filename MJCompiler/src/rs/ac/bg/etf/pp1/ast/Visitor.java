@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/0/2021 23:19:26
+// 6/0/2021 22:20:46
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -33,6 +33,7 @@ public interface Visitor {
     public void visit(Value Value);
     public void visit(FormParams FormParams);
     public void visit(IfCondition IfCondition);
+    public void visit(DesignatorName DesignatorName);
     public void visit(DesignatorPart DesignatorPart);
     public void visit(StatementIfBody StatementIfBody);
     public void visit(VarDeclList VarDeclList);
@@ -63,12 +64,13 @@ public interface Visitor {
     public void visit(RelopGT RelopGT);
     public void visit(RelopNE RelopNE);
     public void visit(RelopEQ RelopEQ);
-    public void visit(DesignatorPart1 DesignatorPart1);
-    public void visit(DesignatorPart0 DesignatorPart0);
+    public void visit(DesignatorPartArray DesignatorPartArray);
+    public void visit(DesignatorPartField DesignatorPartField);
     public void visit(DesignatorListSingle DesignatorListSingle);
     public void visit(DesignatorListMulti DesignatorListMulti);
-    public void visit(Designator1 Designator1);
-    public void visit(Designator0 Designator0);
+    public void visit(DesignatorIdent DesignatorIdent);
+    public void visit(DesignatorMulti DesignatorMulti);
+    public void visit(DesignatorSimple DesignatorSimple);
     public void visit(FactorExpr FactorExpr);
     public void visit(FactorNewArray FactorNewArray);
     public void visit(FactorNew FactorNew);
@@ -76,8 +78,8 @@ public interface Visitor {
     public void visit(FactorCharConst FactorCharConst);
     public void visit(FactorNumConst FactorNumConst);
     public void visit(FactorDesignator FactorDesignator);
-    public void visit(FactorDesigMethCall1 FactorDesigMethCall1);
-    public void visit(FactorDesigMethCall0 FactorDesigMethCall0);
+    public void visit(FuncCall FuncCall);
+    public void visit(FuncCallParams FuncCallParams);
     public void visit(FactorPart FactorPart);
     public void visit(FactorListSingle FactorListSingle);
     public void visit(FactorListMulti FactorListMulti);

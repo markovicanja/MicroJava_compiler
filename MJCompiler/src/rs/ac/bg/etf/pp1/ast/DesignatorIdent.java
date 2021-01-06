@@ -5,20 +5,20 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class VarArray extends VarPart {
+public class DesignatorIdent extends DesignatorName {
 
-    private String varName;
+    private String designatorIdent;
 
-    public VarArray (String varName) {
-        this.varName=varName;
+    public DesignatorIdent (String designatorIdent) {
+        this.designatorIdent=designatorIdent;
     }
 
-    public String getVarName() {
-        return varName;
+    public String getDesignatorIdent() {
+        return designatorIdent;
     }
 
-    public void setVarName(String varName) {
-        this.varName=varName;
+    public void setDesignatorIdent(String designatorIdent) {
+        this.designatorIdent=designatorIdent;
     }
 
     public void accept(Visitor visitor) {
@@ -39,13 +39,13 @@ public class VarArray extends VarPart {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("VarArray(\n");
+        buffer.append("DesignatorIdent(\n");
 
-        buffer.append(" "+tab+varName);
+        buffer.append(" "+tab+designatorIdent);
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [VarArray]");
+        buffer.append(") [DesignatorIdent]");
         return buffer.toString();
     }
 }

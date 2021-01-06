@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/0/2021 23:19:26
+// 6/0/2021 22:20:46
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -33,6 +33,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Value Value) { }
     public void visit(FormParams FormParams) { }
     public void visit(IfCondition IfCondition) { }
+    public void visit(DesignatorName DesignatorName) { }
     public void visit(DesignatorPart DesignatorPart) { }
     public void visit(StatementIfBody StatementIfBody) { }
     public void visit(VarDeclList VarDeclList) { }
@@ -63,12 +64,13 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(RelopGT RelopGT) { visit(); }
     public void visit(RelopNE RelopNE) { visit(); }
     public void visit(RelopEQ RelopEQ) { visit(); }
-    public void visit(DesignatorPart1 DesignatorPart1) { visit(); }
-    public void visit(DesignatorPart0 DesignatorPart0) { visit(); }
+    public void visit(DesignatorPartArray DesignatorPartArray) { visit(); }
+    public void visit(DesignatorPartField DesignatorPartField) { visit(); }
     public void visit(DesignatorListSingle DesignatorListSingle) { visit(); }
     public void visit(DesignatorListMulti DesignatorListMulti) { visit(); }
-    public void visit(Designator1 Designator1) { visit(); }
-    public void visit(Designator0 Designator0) { visit(); }
+    public void visit(DesignatorIdent DesignatorIdent) { visit(); }
+    public void visit(DesignatorMulti DesignatorMulti) { visit(); }
+    public void visit(DesignatorSimple DesignatorSimple) { visit(); }
     public void visit(FactorExpr FactorExpr) { visit(); }
     public void visit(FactorNewArray FactorNewArray) { visit(); }
     public void visit(FactorNew FactorNew) { visit(); }
@@ -76,8 +78,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FactorCharConst FactorCharConst) { visit(); }
     public void visit(FactorNumConst FactorNumConst) { visit(); }
     public void visit(FactorDesignator FactorDesignator) { visit(); }
-    public void visit(FactorDesigMethCall1 FactorDesigMethCall1) { visit(); }
-    public void visit(FactorDesigMethCall0 FactorDesigMethCall0) { visit(); }
+    public void visit(FuncCall FuncCall) { visit(); }
+    public void visit(FuncCallParams FuncCallParams) { visit(); }
     public void visit(FactorPart FactorPart) { visit(); }
     public void visit(FactorListSingle FactorListSingle) { visit(); }
     public void visit(FactorListMulti FactorListMulti) { visit(); }

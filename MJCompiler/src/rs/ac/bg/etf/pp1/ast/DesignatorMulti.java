@@ -1,27 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/0/2021 23:19:26
+// 6/0/2021 22:20:46
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Designator1 extends Designator {
+public class DesignatorMulti extends Designator {
 
-    private String I1;
+    private DesignatorName DesignatorName;
     private DesignatorList DesignatorList;
 
-    public Designator1 (String I1, DesignatorList DesignatorList) {
-        this.I1=I1;
+    public DesignatorMulti (DesignatorName DesignatorName, DesignatorList DesignatorList) {
+        this.DesignatorName=DesignatorName;
+        if(DesignatorName!=null) DesignatorName.setParent(this);
         this.DesignatorList=DesignatorList;
         if(DesignatorList!=null) DesignatorList.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public DesignatorName getDesignatorName() {
+        return DesignatorName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setDesignatorName(DesignatorName DesignatorName) {
+        this.DesignatorName=DesignatorName;
     }
 
     public DesignatorList getDesignatorList() {
@@ -37,15 +38,18 @@ public class Designator1 extends Designator {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(DesignatorName!=null) DesignatorName.accept(visitor);
         if(DesignatorList!=null) DesignatorList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(DesignatorName!=null) DesignatorName.traverseTopDown(visitor);
         if(DesignatorList!=null) DesignatorList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(DesignatorName!=null) DesignatorName.traverseBottomUp(visitor);
         if(DesignatorList!=null) DesignatorList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -53,9 +57,12 @@ public class Designator1 extends Designator {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("Designator1(\n");
+        buffer.append("DesignatorMulti(\n");
 
-        buffer.append(" "+tab+I1);
+        if(DesignatorName!=null)
+            buffer.append(DesignatorName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(DesignatorList!=null)
@@ -65,7 +72,7 @@ public class Designator1 extends Designator {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [Designator1]");
+        buffer.append(") [DesignatorMulti]");
         return buffer.toString();
     }
 }

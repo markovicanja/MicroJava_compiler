@@ -96,13 +96,13 @@ nonterminal MethodDeclList, MethodDec, MethodVoidDecl, MethodTypeDecl, MethVoidN
 nonterminal FormParams, FormParam, StatementList, Statement, StatementIf, StatementIfBody;
 nonterminal CaseList, CasePart, DesignatorStatement, Assignment;
 nonterminal ActPars, Condition, CondTerm, CondFact, IfCondition;
-nonterminal Expr1, TermList, TermPart, Term;
-nonterminal FactorList, FactorPart, Factor;
-nonterminal Designator, DesignatorList, DesignatorPart;
+nonterminal TermList, TermPart;
+nonterminal FactorList, FactorPart;
+nonterminal DesignatorList, DesignatorName;
 nonterminal Relop, Addop, Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Expr, Value;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, DesignatorPart;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1;
 
 precedence left ELSE;
 
@@ -318,12 +318,12 @@ Expr ::= (ExprTernary) Expr1 QUESTION_MARK Expr1 COLON Expr1
 		 (ExprOne) Expr1;
 			 
 Expr1 ::= (ExprNegMulti) MINUS Term TermList
-		 | 
-		 (ExprNegSingle) MINUS Term
-		 |
-		 (ExprMulti) Term TermList
-		 |
-		 (ExprSingle) Term;
+		  | 
+		  (ExprNegSingle) MINUS Term
+		  |
+ 		  (ExprMulti) Term TermList
+ 		  |
+ 		  (ExprSingle) Term;
 		 
 TermList ::= (TermListMulti) TermList TermPart
 			 |
@@ -341,9 +341,9 @@ FactorList ::= (FactorListMulti) FactorList FactorPart
 			   
 FactorPart ::= (FactorPart) Mulop Factor;
 
-Factor ::= (FactorDesigMethCall0) Designator LPAREN ActPars RPAREN
+Factor ::= (FuncCallParams) Designator:functionName LPAREN ActPars RPAREN
 		   |
-		   (FactorDesigMethCall1) Designator LPAREN RPAREN
+		   (FuncCall) Designator:functionName LPAREN RPAREN
 		   |
 		   (FactorDesignator) Designator
 		   |
@@ -359,17 +359,19 @@ Factor ::= (FactorDesigMethCall0) Designator LPAREN ActPars RPAREN
 		   | 
 		   (FactorExpr) LPAREN Expr RPAREN;
 		   
-Designator ::= (Designator0) IDENT
+Designator ::= (DesignatorSimple) IDENT:designatorName
 			   |
-			   (Designator1) IDENT DesignatorList;
+			   (DesignatorMulti) DesignatorName DesignatorList;
+			   
+DesignatorName ::= (DesignatorIdent) IDENT:designatorIdent;
 
 DesignatorList ::= (DesignatorListMulti) DesignatorList DesignatorPart
 				   |
 				   (DesignatorListSingle) DesignatorPart;
 				   
-DesignatorPart ::= (DesignatorPart0) FULL_STOP IDENT
+DesignatorPart ::= (DesignatorPartField) FULL_STOP IDENT
 				   |
-				   (DesignatorPart1) LSQUARE Expr RSQUARE;
+				   (DesignatorPartArray) LSQUARE Expr RSQUARE;
 
 Relop ::= (RelopEQ) EQUAL
 		  |

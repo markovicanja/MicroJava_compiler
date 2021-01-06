@@ -1,15 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/0/2021 23:19:26
+// 6/0/2021 22:20:46
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class DesignatorPart0 extends DesignatorPart {
+public class DesignatorPartField extends DesignatorPart {
 
     private String I1;
 
-    public DesignatorPart0 (String I1) {
+    public DesignatorPartField (String I1) {
         this.I1=I1;
     }
 
@@ -39,13 +39,13 @@ public class DesignatorPart0 extends DesignatorPart {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("DesignatorPart0(\n");
+        buffer.append("DesignatorPartField(\n");
 
         buffer.append(" "+tab+I1);
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [DesignatorPart0]");
+        buffer.append(") [DesignatorPartField]");
         return buffer.toString();
     }
 }
