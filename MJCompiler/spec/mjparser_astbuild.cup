@@ -142,7 +142,7 @@ ProgName ::= (ProgName) IDENT:progName {: RESULT=new ProgName(progName); RESULT.
 
 ProgramDeclarations ::= (ProgramDeclMulti) ProgramDeclarations:P1 ProgramDeclaration:P2 {: RESULT=new ProgramDeclMulti(P1, P2); RESULT.setLine(P1left); :}
 						|
-						(ProgramDeclSingle) ProgramDeclaration:P1 {: RESULT=new ProgramDeclSingle(P1); RESULT.setLine(P1left); :};
+						(ProgramDeclEps) {: RESULT=new ProgramDeclEps(); :} /* epsilon */;
 						
 ProgramDeclaration ::= (PartConstDeclaration) ConstDecl:C1 {: RESULT=new PartConstDeclaration(C1); RESULT.setLine(C1left); :}
 					   |

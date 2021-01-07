@@ -1,18 +1,39 @@
 program MJProgram
-	const int m=1;
-	int global, globarArr[];
-	// abc a; // error - nije pronadjen tip 'abc' u tabeli simbola!
+	abc a; // error - abc nije tip
+	const int cnst = 1;
 {
-	int fun(int x) { // prijavice semanticku gresku jer je global vec deklarisano!!! NE BI TREBALO TO DA SE DESI
-		return 1;
+	int fun(int x) {
+		// error - treba da ima povratnu vrednost
 	}
 	
-	void main() int b, a[];
-	// char a; // error - vec definisana
+	void main() 
+	int b; char b; // error - b je vec deklarisano
+	int num; char character; bool boolean;
+	int niz[];
 	{
-		// a[1] = 'a'; // error - nekompatabilni tipovi
-		a[1] = 1;
-		fun(m);
-		read(b);
+		a = 1; // error - a nije deklarisano
+		
+		// error - nekompatibilni tipovi za dodelu vrednosti
+		num = 'a'; 
+		num = true;
+		character = 1;
+		character = true;
+		boolean = 1;
+		boolean = 'a';
+		
+		// error - vrednost ne moze da se dodeli konstanti
+		cnst = 2;
+		
+		// error - tip za inc i dec moze biti samo int
+		character++;
+		boolean--;
+		
+		fun(1, 2); // NE RADI ZA POGRESNE PARAMENTRE
+		
+		// error - posle minusa moze da bude samo int
+		character = -'a';
+		
+		// error - tip za alociranje niza moze biti jedino int
+		niz = new int['a'];
 	}
 }

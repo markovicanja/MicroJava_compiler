@@ -5,9 +5,9 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class IfCondError extends IfCondition {
+public class ProgramDeclEps extends ProgramDeclarations {
 
-    public IfCondError () {
+    public ProgramDeclEps () {
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +28,10 @@ public class IfCondError extends IfCondition {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("IfCondError(\n");
+        buffer.append("ProgramDeclEps(\n");
 
         buffer.append(tab);
-        buffer.append(") [IfCondError]");
+        buffer.append(") [ProgramDeclEps]");
         return buffer.toString();
     }
 }

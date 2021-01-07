@@ -112,7 +112,7 @@ ProgName ::= (ProgName) IDENT:progName;
 
 ProgramDeclarations ::= (ProgramDeclMulti) ProgramDeclarations ProgramDeclaration
 						|
-						(ProgramDeclSingle) ProgramDeclaration;
+						(ProgramDeclEps) /* epsilon */;
 						
 ProgramDeclaration ::= (PartConstDeclaration) ConstDecl
 					   |

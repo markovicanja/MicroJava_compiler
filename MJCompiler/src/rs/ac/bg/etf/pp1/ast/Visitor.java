@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/0/2021 16:55:12
+// 7/0/2021 22:39:39
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -183,7 +183,7 @@ public interface Visitor {
     public void visit(PartClassDeclaration PartClassDeclaration);
     public void visit(PartVarDeclaration PartVarDeclaration);
     public void visit(PartConstDeclaration PartConstDeclaration);
-    public void visit(ProgramDeclSingle ProgramDeclSingle);
+    public void visit(ProgramDeclEps ProgramDeclEps);
     public void visit(ProgramDeclMulti ProgramDeclMulti);
     public void visit(ProgName ProgName);
     public void visit(Program Program);
