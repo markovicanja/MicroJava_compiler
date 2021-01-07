@@ -98,10 +98,10 @@ nonterminal CaseList, CasePart, DesignatorStatement, Assignment;
 nonterminal ActPars, Condition, CondTerm, CondFact, IfCondition;
 nonterminal TermList, TermPart;
 nonterminal FactorList, FactorPart;
-nonterminal DesignatorList, DesignatorName;
+nonterminal DesignatorName;
 nonterminal Relop, Addop, Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, DesignatorPart;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1;
 
 precedence left ELSE;
@@ -285,7 +285,7 @@ DesignatorStatement ::= (DesignatorAssignment) Designator Assignment
 						|
 						(DesignatorMethodCall0) Designator LPAREN ActPars RPAREN
 						|
-						(DesignatorMethodCall1) Designator RPAREN RPAREN
+						(DesignatorMethodCall1) Designator LPAREN RPAREN
 						|
 						(DesignatorIncrement) Designator INC
 						|
@@ -358,21 +358,11 @@ Factor ::= (FuncCallParams) Designator:functionName LPAREN ActPars RPAREN
 		   (FactorNewArray) NEW Type LSQUARE Expr RSQUARE
 		   | 
 		   (FactorExpr) LPAREN Expr RPAREN;
-		   
-Designator ::= (DesignatorSimple) IDENT:designatorName
+
+Designator ::= (DesignatorArray) IDENT:designatorName LSQUARE Expr RSQUARE
 			   |
-			   (DesignatorMulti) DesignatorName DesignatorList;
+			   (DesignatorSimple) IDENT:designatorName;
 			   
-DesignatorName ::= (DesignatorIdent) IDENT:designatorIdent;
-
-DesignatorList ::= (DesignatorListMulti) DesignatorList DesignatorPart
-				   |
-				   (DesignatorListSingle) DesignatorPart;
-				   
-DesignatorPart ::= (DesignatorPartField) FULL_STOP IDENT
-				   |
-				   (DesignatorPartArray) LSQUARE Expr RSQUARE;
-
 Relop ::= (RelopEQ) EQUAL
 		  |
 		  (RelopNE) NOT_EQUAL

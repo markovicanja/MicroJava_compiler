@@ -126,13 +126,12 @@ nonterminal TermList TermList;
 nonterminal TermPart TermPart;
 nonterminal FactorList FactorList;
 nonterminal FactorPart FactorPart;
-nonterminal DesignatorList DesignatorList;
 nonterminal DesignatorName DesignatorName;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, DesignatorPart;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1;
 
 precedence left ELSE;
@@ -316,7 +315,7 @@ DesignatorStatement ::= (DesignatorAssignment) Designator:D1 Assignment:A2 {: RE
 						|
 						(DesignatorMethodCall0) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignatorMethodCall0(D1, A2); RESULT.setLine(D1left); :}
 						|
-						(DesignatorMethodCall1) Designator:D1 RPAREN RPAREN {: RESULT=new DesignatorMethodCall1(D1); RESULT.setLine(D1left); :}
+						(DesignatorMethodCall1) Designator:D1 LPAREN RPAREN {: RESULT=new DesignatorMethodCall1(D1); RESULT.setLine(D1left); :}
 						|
 						(DesignatorIncrement) Designator:D1 INC {: RESULT=new DesignatorIncrement(D1); RESULT.setLine(D1left); :}
 						|
@@ -389,21 +388,11 @@ Factor ::= (FuncCallParams) Designator:functionName LPAREN ActPars:A1 RPAREN {: 
 		   (FactorNewArray) NEW Type:T1 LSQUARE Expr:E2 RSQUARE {: RESULT=new FactorNewArray(T1, E2); RESULT.setLine(T1left); :}
 		   | 
 		   (FactorExpr) LPAREN Expr:E1 RPAREN {: RESULT=new FactorExpr(E1); RESULT.setLine(E1left); :};
-		   
-Designator ::= (DesignatorSimple) IDENT:designatorName {: RESULT=new DesignatorSimple(designatorName); RESULT.setLine(designatorNameleft); :}
+
+Designator ::= (DesignatorArray) IDENT:designatorName LSQUARE Expr:E1 RSQUARE {: RESULT=new DesignatorArray(designatorName, E1); RESULT.setLine(designatorNameleft); :}
 			   |
-			   (DesignatorMulti) DesignatorName:D1 DesignatorList:D2 {: RESULT=new DesignatorMulti(D1, D2); RESULT.setLine(D1left); :};
+			   (DesignatorSimple) IDENT:designatorName {: RESULT=new DesignatorSimple(designatorName); RESULT.setLine(designatorNameleft); :};
 			   
-DesignatorName ::= (DesignatorIdent) IDENT:designatorIdent {: RESULT=new DesignatorIdent(designatorIdent); RESULT.setLine(designatorIdentleft); :};
-
-DesignatorList ::= (DesignatorListMulti) DesignatorList:D1 DesignatorPart:D2 {: RESULT=new DesignatorListMulti(D1, D2); RESULT.setLine(D1left); :}
-				   |
-				   (DesignatorListSingle) DesignatorPart:D1 {: RESULT=new DesignatorListSingle(D1); RESULT.setLine(D1left); :};
-				   
-DesignatorPart ::= (DesignatorPartField) FULL_STOP IDENT:I1 {: RESULT=new DesignatorPartField(I1); RESULT.setLine(I1left); :}
-				   |
-				   (DesignatorPartArray) LSQUARE Expr:E1 RSQUARE {: RESULT=new DesignatorPartArray(E1); RESULT.setLine(E1left); :};
-
 Relop ::= (RelopEQ) EQUAL {: RESULT=new RelopEQ(); :}
 		  |
 		  (RelopNE) NOT_EQUAL {: RESULT=new RelopNE(); :}

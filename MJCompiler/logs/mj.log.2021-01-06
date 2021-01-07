@@ -1,0 +1,5266 @@
+INFO  11:48:31,732 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  11:48:31,803 - #2 program
+INFO  11:48:31,803 - #20 MJProgram
+INFO  11:48:31,804 - #7 const
+INFO  11:48:31,804 - #20 int
+INFO  11:48:31,804 - #20 m
+INFO  11:48:31,805 - #37 =
+INFO  11:48:31,805 - #21 1
+INFO  11:48:31,805 - #40 ;
+INFO  11:48:31,806 - #20 int
+INFO  11:48:31,806 - #20 global
+INFO  11:48:31,806 - #41 ,
+INFO  11:48:31,807 - #20 globarArr
+INFO  11:48:31,807 - #45 [
+INFO  11:48:31,807 - #46 ]
+INFO  11:48:31,807 - #40 ;
+INFO  11:48:31,807 - #47 {
+INFO  11:48:31,807 - #20 int
+INFO  11:48:31,807 - #20 fun
+INFO  11:48:31,808 - #43 (
+INFO  11:48:31,808 - #20 int
+INFO  11:48:31,808 - #20 x
+INFO  11:48:31,808 - #44 )
+INFO  11:48:31,809 - #47 {
+INFO  11:48:31,809 - #15 return
+INFO  11:48:31,809 - #21 1
+INFO  11:48:31,809 - #40 ;
+INFO  11:48:31,809 - #48 }
+INFO  11:48:31,809 - #16 void
+INFO  11:48:31,810 - #20 main
+INFO  11:48:31,810 - #43 (
+INFO  11:48:31,810 - #44 )
+INFO  11:48:31,810 - #20 int
+INFO  11:48:31,810 - #20 b
+INFO  11:48:31,810 - #41 ,
+INFO  11:48:31,810 - #20 a
+INFO  11:48:31,810 - #45 [
+INFO  11:48:31,811 - #46 ]
+INFO  11:48:31,811 - #40 ;
+INFO  11:48:31,811 - #47 {
+INFO  11:48:31,811 - #20 b
+INFO  11:48:31,811 - #37 =
+INFO  11:48:31,811 - #21 1
+INFO  11:48:31,811 - #40 ;
+INFO  11:48:31,812 - #48 }
+INFO  11:48:31,812 - #48 }
+INFO  11:48:31,813 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  11:48:31,813 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementSingle(
+          StmtDesign(
+            DesignatorAssignment(
+              Designator0(
+               b
+              ) [Designator0]
+              AssignmentExpr(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorNumConst(
+                       1
+                      ) [FactorNumConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [AssignmentExpr]
+            ) [DesignatorAssignment]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  11:48:31,814 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  11:48:31,825 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  11:48:31,826 - Deklarisana konstanta 'm' na liniji 2
+INFO  11:48:31,826 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  11:48:31,826 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  11:48:31,826 - Pocetak obrade metode fun na liniji 6
+INFO  11:48:31,826 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 11:48:31,826 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  11:48:31,826 - Kraj obrade metode fun na liniji 6
+INFO  11:48:31,826 - Pocetak obrade metode main na liniji 10
+INFO  11:48:31,826 - Deklarisana promenljiva 'b' na liniji 10
+INFO  11:48:31,826 - Deklarisan niz 'a' na liniji 10
+INFO  11:48:31,827 - Kraj obrade metode main na liniji 10
+INFO  11:48:31,827 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  11:48:31,827 - 
+
+================TABELA SIMBOLA====================
+
+
+INFO  11:48:31,827 - ===================================
+INFO  12:45:27,808 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  12:45:27,867 - #2 program
+INFO  12:45:27,868 - #20 MJProgram
+INFO  12:45:27,868 - #7 const
+INFO  12:45:27,868 - #20 int
+INFO  12:45:27,868 - #20 m
+INFO  12:45:27,869 - #37 =
+INFO  12:45:27,869 - #21 1
+INFO  12:45:27,869 - #40 ;
+INFO  12:45:27,870 - #20 int
+INFO  12:45:27,870 - #20 global
+INFO  12:45:27,870 - #41 ,
+INFO  12:45:27,870 - #20 globarArr
+INFO  12:45:27,870 - #45 [
+INFO  12:45:27,870 - #46 ]
+INFO  12:45:27,870 - #40 ;
+INFO  12:45:27,870 - #47 {
+INFO  12:45:27,871 - #20 int
+INFO  12:45:27,871 - #20 fun
+INFO  12:45:27,871 - #43 (
+INFO  12:45:27,871 - #20 int
+INFO  12:45:27,871 - #20 x
+INFO  12:45:27,871 - #44 )
+INFO  12:45:27,872 - #47 {
+INFO  12:45:27,872 - #15 return
+INFO  12:45:27,872 - #21 1
+INFO  12:45:27,872 - #40 ;
+INFO  12:45:27,872 - #48 }
+INFO  12:45:27,873 - #16 void
+INFO  12:45:27,873 - #20 main
+INFO  12:45:27,873 - #43 (
+INFO  12:45:27,873 - #44 )
+INFO  12:45:27,873 - #20 int
+INFO  12:45:27,873 - #20 b
+INFO  12:45:27,873 - #41 ,
+INFO  12:45:27,874 - #20 a
+INFO  12:45:27,874 - #45 [
+INFO  12:45:27,874 - #21 3
+ERROR 12:45:27,874 - 
+Sintaksna greska na liniji 10, koloni 22 za simbol "3"!
+INFO  12:45:27,874 - #46 ]
+INFO  12:45:27,874 - #40 ;
+INFO  12:45:27,874 - #47 {
+INFO  12:45:27,875 - #20 a
+INFO  12:45:27,875 - #45 [
+INFO  12:45:27,875 - #21 1
+INFO  12:45:27,875 - #46 ]
+INFO  12:45:27,875 - #37 =
+INFO  12:45:27,875 - #21 1
+INFO  12:45:27,876 - #40 ;
+INFO  12:45:27,876 - #48 }
+INFO  12:45:27,876 - #48 }
+ERROR 12:45:27,876 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 15, koloni 1!
+INFO  12:45:58,349 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  12:45:58,395 - #2 program
+INFO  12:45:58,395 - #20 MJProgram
+INFO  12:45:58,395 - #7 const
+INFO  12:45:58,395 - #20 int
+INFO  12:45:58,395 - #20 m
+INFO  12:45:58,396 - #37 =
+INFO  12:45:58,396 - #21 1
+INFO  12:45:58,396 - #40 ;
+INFO  12:45:58,396 - #20 int
+INFO  12:45:58,397 - #20 global
+INFO  12:45:58,397 - #41 ,
+INFO  12:45:58,397 - #20 globarArr
+INFO  12:45:58,397 - #45 [
+INFO  12:45:58,397 - #46 ]
+INFO  12:45:58,397 - #40 ;
+INFO  12:45:58,397 - #47 {
+INFO  12:45:58,397 - #20 int
+INFO  12:45:58,397 - #20 fun
+INFO  12:45:58,398 - #43 (
+INFO  12:45:58,398 - #20 int
+INFO  12:45:58,398 - #20 x
+INFO  12:45:58,398 - #44 )
+INFO  12:45:58,399 - #47 {
+INFO  12:45:58,399 - #15 return
+INFO  12:45:58,399 - #21 1
+INFO  12:45:58,399 - #40 ;
+INFO  12:45:58,400 - #48 }
+INFO  12:45:58,400 - #16 void
+INFO  12:45:58,400 - #20 main
+INFO  12:45:58,400 - #43 (
+INFO  12:45:58,400 - #44 )
+INFO  12:45:58,401 - #20 int
+INFO  12:45:58,401 - #20 b
+INFO  12:45:58,401 - #41 ,
+INFO  12:45:58,401 - #20 a
+INFO  12:45:58,401 - #45 [
+INFO  12:45:58,401 - #46 ]
+INFO  12:45:58,401 - #40 ;
+INFO  12:45:58,401 - #47 {
+INFO  12:45:58,402 - #20 a
+INFO  12:45:58,402 - #45 [
+INFO  12:45:58,402 - #21 1
+INFO  12:45:58,402 - #46 ]
+INFO  12:45:58,402 - #37 =
+INFO  12:45:58,402 - #21 1
+INFO  12:45:58,402 - #40 ;
+INFO  12:45:58,402 - #48 }
+INFO  12:45:58,402 - #48 }
+INFO  12:45:58,403 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  12:45:58,404 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementSingle(
+          StmtDesign(
+            DesignatorAssignment(
+              DesignatorMulti(
+                DesignatorIdent(
+                 a
+                ) [DesignatorIdent]
+                DesignatorListSingle(
+                  DesignatorPartArray(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorNumConst(
+                           1
+                          ) [FactorNumConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [DesignatorPartArray]
+                ) [DesignatorListSingle]
+              ) [DesignatorMulti]
+              AssignmentExpr(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorNumConst(
+                       1
+                      ) [FactorNumConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [AssignmentExpr]
+            ) [DesignatorAssignment]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  12:45:58,405 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  12:45:58,417 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  12:45:58,418 - Deklarisana konstanta 'm' na liniji 2
+INFO  12:45:58,418 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  12:45:58,418 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  12:45:58,418 - Pocetak obrade metode fun na liniji 6
+INFO  12:45:58,418 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 12:45:58,419 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  12:45:58,419 - Kraj obrade metode fun na liniji 6
+INFO  12:45:58,419 - Pocetak obrade metode main na liniji 10
+INFO  12:45:58,419 - Deklarisana promenljiva 'b' na liniji 10
+INFO  12:45:58,419 - Deklarisan niz 'a' na liniji 10
+ERROR 12:45:58,419 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  12:45:58,419 - Pristup elementu niza 'a' na liniji 13
+INFO  12:45:58,419 - Kraj obrade metode main na liniji 10
+INFO  12:45:58,420 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  12:45:58,420 - 
+
+================TABELA SIMBOLA====================
+
+
+INFO  12:45:58,421 - ===================================
+INFO  16:41:10,573 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  16:41:10,636 - #2 program
+INFO  16:41:10,637 - #20 MJProgram
+INFO  16:41:10,637 - #7 const
+INFO  16:41:10,637 - #20 int
+INFO  16:41:10,637 - #20 m
+INFO  16:41:10,638 - #37 =
+INFO  16:41:10,639 - #21 1
+INFO  16:41:10,639 - #40 ;
+INFO  16:41:10,640 - #20 int
+INFO  16:41:10,640 - #20 global
+INFO  16:41:10,641 - #41 ,
+INFO  16:41:10,641 - #20 globarArr
+INFO  16:41:10,641 - #45 [
+INFO  16:41:10,641 - #46 ]
+INFO  16:41:10,641 - #40 ;
+INFO  16:41:10,641 - #47 {
+INFO  16:41:10,642 - #20 int
+INFO  16:41:10,642 - #20 fun
+INFO  16:41:10,642 - #43 (
+INFO  16:41:10,642 - #20 int
+INFO  16:41:10,642 - #20 x
+INFO  16:41:10,643 - #44 )
+INFO  16:41:10,643 - #47 {
+INFO  16:41:10,643 - #15 return
+INFO  16:41:10,643 - #21 1
+INFO  16:41:10,644 - #40 ;
+INFO  16:41:10,644 - #48 }
+INFO  16:41:10,644 - #16 void
+INFO  16:41:10,644 - #20 main
+INFO  16:41:10,644 - #43 (
+INFO  16:41:10,645 - #44 )
+INFO  16:41:10,645 - #20 int
+INFO  16:41:10,645 - #20 b
+INFO  16:41:10,645 - #41 ,
+INFO  16:41:10,645 - #20 a
+INFO  16:41:10,645 - #45 [
+INFO  16:41:10,645 - #46 ]
+INFO  16:41:10,645 - #40 ;
+INFO  16:41:10,646 - #47 {
+INFO  16:41:10,646 - #20 a
+INFO  16:41:10,646 - #45 [
+INFO  16:41:10,646 - #21 1
+INFO  16:41:10,646 - #46 ]
+INFO  16:41:10,646 - #37 =
+INFO  16:41:10,647 - #21 1
+INFO  16:41:10,647 - #40 ;
+INFO  16:41:10,647 - #20 fun
+INFO  16:41:10,647 - #43 (
+INFO  16:41:10,647 - #21 1
+INFO  16:41:10,648 - #44 )
+INFO  16:41:10,648 - #40 ;
+INFO  16:41:10,648 - #48 }
+INFO  16:41:10,648 - #48 }
+INFO  16:41:10,649 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  16:41:10,650 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         1
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               fun
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorNumConst(
+                       1
+                      ) [FactorNumConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  16:41:10,651 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  16:41:10,663 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  16:41:10,664 - Deklarisana konstanta 'm' na liniji 2
+INFO  16:41:10,664 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  16:41:10,664 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  16:41:10,664 - Pocetak obrade metode fun na liniji 6
+INFO  16:41:10,664 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 16:41:10,664 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  16:41:10,664 - Kraj obrade metode fun na liniji 6
+INFO  16:41:10,665 - Pocetak obrade metode main na liniji 10
+INFO  16:41:10,665 - Deklarisana promenljiva 'b' na liniji 10
+INFO  16:41:10,665 - Deklarisan niz 'a' na liniji 10
+ERROR 16:41:10,665 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  16:41:10,665 - Kraj obrade metode main na liniji 10
+INFO  16:41:10,665 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  16:41:10,665 - 
+
+================TABELA SIMBOLA====================
+
+
+INFO  16:41:10,667 - ===================================
+INFO  16:42:26,549 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  16:42:26,598 - #2 program
+INFO  16:42:26,598 - #20 MJProgram
+INFO  16:42:26,599 - #7 const
+INFO  16:42:26,599 - #20 int
+INFO  16:42:26,599 - #20 m
+INFO  16:42:26,599 - #37 =
+INFO  16:42:26,599 - #21 1
+INFO  16:42:26,599 - #40 ;
+INFO  16:42:26,600 - #20 int
+INFO  16:42:26,600 - #20 global
+INFO  16:42:26,600 - #41 ,
+INFO  16:42:26,601 - #20 globarArr
+INFO  16:42:26,601 - #45 [
+INFO  16:42:26,601 - #46 ]
+INFO  16:42:26,601 - #40 ;
+INFO  16:42:26,601 - #47 {
+INFO  16:42:26,601 - #20 int
+INFO  16:42:26,601 - #20 fun
+INFO  16:42:26,601 - #43 (
+INFO  16:42:26,602 - #20 int
+INFO  16:42:26,602 - #20 x
+INFO  16:42:26,602 - #44 )
+INFO  16:42:26,602 - #47 {
+INFO  16:42:26,602 - #15 return
+INFO  16:42:26,602 - #21 1
+INFO  16:42:26,602 - #40 ;
+INFO  16:42:26,603 - #48 }
+INFO  16:42:26,603 - #16 void
+INFO  16:42:26,604 - #20 main
+INFO  16:42:26,604 - #43 (
+INFO  16:42:26,604 - #44 )
+INFO  16:42:26,604 - #20 int
+INFO  16:42:26,604 - #20 b
+INFO  16:42:26,604 - #41 ,
+INFO  16:42:26,604 - #20 a
+INFO  16:42:26,604 - #45 [
+INFO  16:42:26,604 - #46 ]
+INFO  16:42:26,604 - #40 ;
+INFO  16:42:26,604 - #47 {
+INFO  16:42:26,605 - #20 a
+INFO  16:42:26,605 - #45 [
+INFO  16:42:26,605 - #21 1
+INFO  16:42:26,605 - #46 ]
+INFO  16:42:26,605 - #37 =
+INFO  16:42:26,605 - #21 1
+INFO  16:42:26,605 - #40 ;
+INFO  16:42:26,605 - #20 fun
+INFO  16:42:26,606 - #43 (
+INFO  16:42:26,606 - #20 m
+INFO  16:42:26,606 - #44 )
+INFO  16:42:26,606 - #40 ;
+INFO  16:42:26,606 - #48 }
+INFO  16:42:26,606 - #48 }
+INFO  16:42:26,607 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  16:42:26,609 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         1
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               fun
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  16:42:26,613 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  16:42:26,621 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  16:42:26,622 - Deklarisana konstanta 'm' na liniji 2
+INFO  16:42:26,622 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  16:42:26,622 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  16:42:26,622 - Pocetak obrade metode fun na liniji 6
+INFO  16:42:26,622 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 16:42:26,622 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  16:42:26,622 - Kraj obrade metode fun na liniji 6
+INFO  16:42:26,623 - Pocetak obrade metode main na liniji 10
+INFO  16:42:26,623 - Deklarisana promenljiva 'b' na liniji 10
+INFO  16:42:26,623 - Deklarisan niz 'a' na liniji 10
+ERROR 16:42:26,623 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  16:42:26,623 - Kraj obrade metode main na liniji 10
+INFO  16:42:26,623 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  16:42:26,623 - 
+
+================TABELA SIMBOLA====================
+
+
+INFO  16:42:26,624 - ===================================
+INFO  16:42:35,337 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  16:42:35,388 - #2 program
+INFO  16:42:35,389 - #20 MJProgram
+INFO  16:42:35,389 - #7 const
+INFO  16:42:35,389 - #20 int
+INFO  16:42:35,389 - #20 m
+INFO  16:42:35,390 - #37 =
+INFO  16:42:35,390 - #21 1
+INFO  16:42:35,390 - #40 ;
+INFO  16:42:35,391 - #20 int
+INFO  16:42:35,391 - #20 global
+INFO  16:42:35,391 - #41 ,
+INFO  16:42:35,392 - #20 globarArr
+INFO  16:42:35,392 - #45 [
+INFO  16:42:35,392 - #46 ]
+INFO  16:42:35,392 - #40 ;
+INFO  16:42:35,393 - #47 {
+INFO  16:42:35,394 - #20 int
+INFO  16:42:35,394 - #20 fun
+INFO  16:42:35,395 - #43 (
+INFO  16:42:35,395 - #20 int
+INFO  16:42:35,395 - #20 x
+INFO  16:42:35,395 - #44 )
+INFO  16:42:35,396 - #47 {
+INFO  16:42:35,396 - #15 return
+INFO  16:42:35,396 - #21 1
+INFO  16:42:35,396 - #40 ;
+INFO  16:42:35,397 - #48 }
+INFO  16:42:35,397 - #16 void
+INFO  16:42:35,397 - #20 main
+INFO  16:42:35,397 - #43 (
+INFO  16:42:35,397 - #44 )
+INFO  16:42:35,397 - #20 int
+INFO  16:42:35,397 - #20 b
+INFO  16:42:35,397 - #41 ,
+INFO  16:42:35,397 - #20 a
+INFO  16:42:35,398 - #45 [
+INFO  16:42:35,398 - #46 ]
+INFO  16:42:35,398 - #40 ;
+INFO  16:42:35,398 - #47 {
+INFO  16:42:35,398 - #20 a
+INFO  16:42:35,398 - #45 [
+INFO  16:42:35,398 - #21 1
+INFO  16:42:35,398 - #46 ]
+INFO  16:42:35,398 - #37 =
+INFO  16:42:35,399 - #21 1
+INFO  16:42:35,399 - #40 ;
+INFO  16:42:35,399 - #20 funk
+INFO  16:42:35,399 - #43 (
+INFO  16:42:35,399 - #20 m
+INFO  16:42:35,399 - #44 )
+INFO  16:42:35,399 - #40 ;
+INFO  16:42:35,400 - #48 }
+INFO  16:42:35,400 - #48 }
+INFO  16:42:35,400 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  16:42:35,401 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         1
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  16:42:35,402 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  16:42:35,413 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  16:42:35,414 - Deklarisana konstanta 'm' na liniji 2
+INFO  16:42:35,414 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  16:42:35,414 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  16:42:35,414 - Pocetak obrade metode fun na liniji 6
+INFO  16:42:35,414 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 16:42:35,414 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  16:42:35,414 - Kraj obrade metode fun na liniji 6
+INFO  16:42:35,414 - Pocetak obrade metode main na liniji 10
+INFO  16:42:35,415 - Deklarisana promenljiva 'b' na liniji 10
+INFO  16:42:35,415 - Deklarisan niz 'a' na liniji 10
+ERROR 16:42:35,415 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  16:42:35,415 - Kraj obrade metode main na liniji 10
+INFO  16:42:35,415 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  16:42:35,415 - 
+
+================TABELA SIMBOLA====================
+
+
+INFO  16:42:35,416 - ===================================
+INFO  16:51:46,661 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  16:51:46,714 - #2 program
+INFO  16:51:46,714 - #20 MJProgram
+INFO  16:51:46,714 - #7 const
+INFO  16:51:46,715 - #20 int
+INFO  16:51:46,715 - #20 m
+INFO  16:51:46,715 - #37 =
+INFO  16:51:46,715 - #21 1
+INFO  16:51:46,715 - #40 ;
+INFO  16:51:46,716 - #20 int
+INFO  16:51:46,716 - #20 global
+INFO  16:51:46,716 - #41 ,
+INFO  16:51:46,717 - #20 globarArr
+INFO  16:51:46,717 - #45 [
+INFO  16:51:46,717 - #46 ]
+INFO  16:51:46,717 - #40 ;
+INFO  16:51:46,717 - #47 {
+INFO  16:51:46,718 - #20 int
+INFO  16:51:46,718 - #20 fun
+INFO  16:51:46,718 - #43 (
+INFO  16:51:46,719 - #20 int
+INFO  16:51:46,719 - #20 x
+INFO  16:51:46,719 - #44 )
+INFO  16:51:46,719 - #47 {
+INFO  16:51:46,719 - #15 return
+INFO  16:51:46,720 - #21 1
+INFO  16:51:46,720 - #40 ;
+INFO  16:51:46,720 - #48 }
+INFO  16:51:46,720 - #16 void
+INFO  16:51:46,721 - #20 main
+INFO  16:51:46,721 - #43 (
+INFO  16:51:46,721 - #44 )
+INFO  16:51:46,721 - #20 int
+INFO  16:51:46,721 - #20 b
+INFO  16:51:46,721 - #41 ,
+INFO  16:51:46,721 - #20 a
+INFO  16:51:46,721 - #45 [
+INFO  16:51:46,721 - #46 ]
+INFO  16:51:46,721 - #40 ;
+INFO  16:51:46,722 - #20 bool
+INFO  16:51:46,722 - #20 c
+INFO  16:51:46,722 - #40 ;
+INFO  16:51:46,722 - #47 {
+INFO  16:51:46,723 - #20 a
+INFO  16:51:46,723 - #45 [
+INFO  16:51:46,723 - #21 1
+INFO  16:51:46,723 - #46 ]
+INFO  16:51:46,723 - #37 =
+INFO  16:51:46,723 - #21 1
+INFO  16:51:46,724 - #40 ;
+INFO  16:51:46,724 - #20 funk
+INFO  16:51:46,724 - #43 (
+INFO  16:51:46,724 - #20 m
+INFO  16:51:46,724 - #44 )
+INFO  16:51:46,724 - #40 ;
+INFO  16:51:46,725 - #48 }
+INFO  16:51:46,725 - #48 }
+INFO  16:51:46,726 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  16:51:46,727 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclSingle(
+            VarDeclaration(
+              Type(
+               int
+              ) [Type]
+              VarMulti(
+                VarSingle(
+                  VarNormal(
+                   b
+                  ) [VarNormal]
+                ) [VarSingle]
+                VarArray(
+                 a
+                ) [VarArray]
+              ) [VarMulti]
+            ) [VarDeclaration]
+          ) [VarDeclSingle]
+          VarDeclaration(
+            Type(
+             bool
+            ) [Type]
+            VarSingle(
+              VarNormal(
+               c
+              ) [VarNormal]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         1
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  16:51:46,728 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  16:51:46,739 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  16:51:46,740 - Deklarisana konstanta 'm' na liniji 2
+INFO  16:51:46,740 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  16:51:46,740 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  16:51:46,741 - Pocetak obrade metode fun na liniji 6
+INFO  16:51:46,741 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 16:51:46,741 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  16:51:46,741 - Kraj obrade metode fun na liniji 6
+INFO  16:51:46,741 - Pocetak obrade metode main na liniji 10
+INFO  16:51:46,741 - Deklarisana promenljiva 'b' na liniji 10
+INFO  16:51:46,741 - Deklarisan niz 'a' na liniji 10
+INFO  16:51:46,741 - Deklarisana promenljiva 'c' na liniji 11
+ERROR 16:51:46,741 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 14
+INFO  16:51:46,741 - Kraj obrade metode main na liniji 10
+INFO  16:51:46,741 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  16:51:46,742 - ===================================
+INFO  21:51:35,637 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  21:51:35,700 - #2 program
+INFO  21:51:35,700 - #20 MJProgram
+INFO  21:51:35,701 - #7 const
+INFO  21:51:35,701 - #20 int
+INFO  21:51:35,701 - #20 m
+INFO  21:51:35,701 - #37 =
+INFO  21:51:35,701 - #21 1
+INFO  21:51:35,702 - #40 ;
+INFO  21:51:35,702 - #20 int
+INFO  21:51:35,702 - #20 global
+INFO  21:51:35,702 - #41 ,
+INFO  21:51:35,703 - #20 globarArr
+INFO  21:51:35,703 - #45 [
+INFO  21:51:35,703 - #46 ]
+INFO  21:51:35,703 - #40 ;
+INFO  21:51:35,703 - #47 {
+INFO  21:51:35,703 - #20 int
+INFO  21:51:35,703 - #20 fun
+INFO  21:51:35,703 - #43 (
+INFO  21:51:35,704 - #20 int
+INFO  21:51:35,704 - #20 x
+INFO  21:51:35,704 - #44 )
+INFO  21:51:35,704 - #47 {
+INFO  21:51:35,704 - #15 return
+INFO  21:51:35,704 - #21 1
+INFO  21:51:35,705 - #40 ;
+INFO  21:51:35,705 - #48 }
+INFO  21:51:35,705 - #16 void
+INFO  21:51:35,705 - #20 main
+INFO  21:51:35,705 - #43 (
+INFO  21:51:35,706 - #44 )
+INFO  21:51:35,706 - #20 int
+INFO  21:51:35,706 - #20 b
+INFO  21:51:35,706 - #41 ,
+INFO  21:51:35,706 - #20 a
+INFO  21:51:35,706 - #45 [
+INFO  21:51:35,706 - #46 ]
+INFO  21:51:35,706 - #40 ;
+INFO  21:51:35,706 - #47 {
+INFO  21:51:35,707 - #20 a
+INFO  21:51:35,707 - #45 [
+INFO  21:51:35,707 - #21 1
+INFO  21:51:35,707 - #46 ]
+INFO  21:51:35,707 - #37 =
+INFO  21:51:35,707 - #21 1
+INFO  21:51:35,707 - #40 ;
+INFO  21:51:35,708 - #20 funk
+INFO  21:51:35,708 - #43 (
+INFO  21:51:35,708 - #20 m
+INFO  21:51:35,708 - #44 )
+INFO  21:51:35,708 - #40 ;
+INFO  21:51:35,708 - #48 }
+INFO  21:51:35,708 - #48 }
+INFO  21:51:35,710 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  21:51:35,712 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         1
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  21:51:35,714 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  21:51:35,724 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  21:51:35,725 - Deklarisana konstanta 'm' na liniji 2
+INFO  21:51:35,725 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  21:51:35,725 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  21:51:35,725 - Pocetak obrade metode fun na liniji 6
+INFO  21:51:35,725 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 21:51:35,725 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  21:51:35,725 - Kraj obrade metode fun na liniji 6
+INFO  21:51:35,726 - Pocetak obrade metode main na liniji 10
+INFO  21:51:35,726 - Deklarisana promenljiva 'b' na liniji 10
+INFO  21:51:35,726 - Deklarisan niz 'a' na liniji 10
+ERROR 21:51:35,726 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  21:52:42,301 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  21:52:42,361 - #2 program
+INFO  21:52:42,361 - #20 MJProgram
+INFO  21:52:42,362 - #7 const
+INFO  21:52:42,362 - #20 int
+INFO  21:52:42,363 - #20 m
+INFO  21:52:42,364 - #37 =
+INFO  21:52:42,364 - #21 1
+INFO  21:52:42,364 - #40 ;
+INFO  21:52:42,365 - #20 int
+INFO  21:52:42,366 - #20 global
+INFO  21:52:42,366 - #41 ,
+INFO  21:52:42,366 - #20 globarArr
+INFO  21:52:42,366 - #45 [
+INFO  21:52:42,366 - #46 ]
+INFO  21:52:42,366 - #40 ;
+INFO  21:52:42,367 - #47 {
+INFO  21:52:42,367 - #20 int
+INFO  21:52:42,367 - #20 fun
+INFO  21:52:42,367 - #43 (
+INFO  21:52:42,367 - #20 int
+INFO  21:52:42,368 - #20 x
+INFO  21:52:42,368 - #44 )
+INFO  21:52:42,368 - #47 {
+INFO  21:52:42,368 - #15 return
+INFO  21:52:42,369 - #21 1
+INFO  21:52:42,369 - #40 ;
+INFO  21:52:42,369 - #48 }
+INFO  21:52:42,369 - #16 void
+INFO  21:52:42,370 - #20 main
+INFO  21:52:42,370 - #43 (
+INFO  21:52:42,370 - #44 )
+INFO  21:52:42,370 - #20 int
+INFO  21:52:42,370 - #20 b
+INFO  21:52:42,370 - #41 ,
+INFO  21:52:42,370 - #20 a
+INFO  21:52:42,370 - #45 [
+INFO  21:52:42,370 - #46 ]
+INFO  21:52:42,370 - #40 ;
+INFO  21:52:42,370 - #47 {
+INFO  21:52:42,371 - #20 a
+INFO  21:52:42,371 - #45 [
+INFO  21:52:42,371 - #21 1
+INFO  21:52:42,371 - #46 ]
+INFO  21:52:42,371 - #37 =
+INFO  21:52:42,371 - #21 1
+INFO  21:52:42,371 - #40 ;
+INFO  21:52:42,372 - #20 funk
+INFO  21:52:42,372 - #43 (
+INFO  21:52:42,372 - #20 m
+INFO  21:52:42,372 - #44 )
+INFO  21:52:42,372 - #40 ;
+INFO  21:52:42,372 - #48 }
+INFO  21:52:42,372 - #48 }
+INFO  21:52:42,373 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  21:52:42,374 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         1
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  21:52:42,375 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  21:52:42,386 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  21:52:42,387 - Deklarisana konstanta 'm' na liniji 2
+INFO  21:52:42,387 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  21:52:42,387 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  21:52:42,387 - Pocetak obrade metode fun na liniji 6
+INFO  21:52:42,387 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 21:52:42,387 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  21:52:42,387 - Kraj obrade metode fun na liniji 6
+INFO  21:52:42,387 - Pocetak obrade metode main na liniji 10
+INFO  21:52:42,388 - Deklarisana promenljiva 'b' na liniji 10
+INFO  21:52:42,388 - Deklarisan niz 'a' na liniji 10
+ERROR 21:52:42,388 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  21:52:42,388 - Kraj obrade metode main na liniji 10
+INFO  21:52:42,388 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  21:52:42,389 - ===================================
+INFO  21:57:35,164 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  21:57:35,213 - #2 program
+INFO  21:57:35,213 - #20 MJProgram
+INFO  21:57:35,213 - #7 const
+INFO  21:57:35,214 - #20 int
+INFO  21:57:35,214 - #20 m
+INFO  21:57:35,214 - #37 =
+INFO  21:57:35,214 - #21 1
+INFO  21:57:35,214 - #40 ;
+INFO  21:57:35,215 - #20 int
+INFO  21:57:35,215 - #20 global
+INFO  21:57:35,215 - #41 ,
+INFO  21:57:35,215 - #20 globarArr
+INFO  21:57:35,216 - #45 [
+INFO  21:57:35,216 - #46 ]
+INFO  21:57:35,216 - #40 ;
+INFO  21:57:35,216 - #47 {
+INFO  21:57:35,216 - #20 int
+INFO  21:57:35,216 - #20 fun
+INFO  21:57:35,216 - #43 (
+INFO  21:57:35,216 - #20 int
+INFO  21:57:35,217 - #20 x
+INFO  21:57:35,217 - #44 )
+INFO  21:57:35,217 - #47 {
+INFO  21:57:35,217 - #15 return
+INFO  21:57:35,217 - #21 1
+INFO  21:57:35,217 - #40 ;
+INFO  21:57:35,218 - #48 }
+INFO  21:57:35,218 - #16 void
+INFO  21:57:35,218 - #20 main
+INFO  21:57:35,218 - #43 (
+INFO  21:57:35,218 - #44 )
+INFO  21:57:35,218 - #20 int
+INFO  21:57:35,218 - #20 b
+INFO  21:57:35,218 - #41 ,
+INFO  21:57:35,219 - #20 a
+INFO  21:57:35,219 - #45 [
+INFO  21:57:35,219 - #46 ]
+INFO  21:57:35,219 - #40 ;
+INFO  21:57:35,219 - #47 {
+INFO  21:57:35,219 - #20 a
+INFO  21:57:35,219 - #45 [
+INFO  21:57:35,219 - #21 1
+INFO  21:57:35,219 - #46 ]
+INFO  21:57:35,219 - #37 =
+INFO  21:57:35,220 - #22 a
+INFO  21:57:35,220 - #40 ;
+INFO  21:57:35,220 - #20 funk
+INFO  21:57:35,220 - #43 (
+INFO  21:57:35,221 - #20 m
+INFO  21:57:35,221 - #44 )
+INFO  21:57:35,221 - #40 ;
+INFO  21:57:35,221 - #48 }
+INFO  21:57:35,221 - #48 }
+INFO  21:57:35,222 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  21:57:35,223 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  21:57:35,224 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  21:57:35,237 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  21:57:35,237 - Deklarisana konstanta 'm' na liniji 2
+INFO  21:57:35,238 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  21:57:35,238 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  21:57:35,238 - Pocetak obrade metode fun na liniji 6
+INFO  21:57:35,238 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 21:57:35,238 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  21:57:35,238 - Kraj obrade metode fun na liniji 6
+INFO  21:57:35,238 - Pocetak obrade metode main na liniji 10
+INFO  21:57:35,238 - Deklarisana promenljiva 'b' na liniji 10
+INFO  21:57:35,238 - Deklarisan niz 'a' na liniji 10
+ERROR 21:57:35,239 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  22:00:14,245 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:00:14,302 - #2 program
+INFO  22:00:14,302 - #20 MJProgram
+INFO  22:00:14,302 - #7 const
+INFO  22:00:14,303 - #20 int
+INFO  22:00:14,303 - #20 m
+INFO  22:00:14,303 - #37 =
+INFO  22:00:14,303 - #21 1
+INFO  22:00:14,303 - #40 ;
+INFO  22:00:14,304 - #20 int
+INFO  22:00:14,304 - #20 global
+INFO  22:00:14,304 - #41 ,
+INFO  22:00:14,304 - #20 globarArr
+INFO  22:00:14,304 - #45 [
+INFO  22:00:14,305 - #46 ]
+INFO  22:00:14,305 - #40 ;
+INFO  22:00:14,305 - #47 {
+INFO  22:00:14,305 - #20 int
+INFO  22:00:14,305 - #20 fun
+INFO  22:00:14,305 - #43 (
+INFO  22:00:14,306 - #20 int
+INFO  22:00:14,306 - #20 x
+INFO  22:00:14,306 - #44 )
+INFO  22:00:14,306 - #47 {
+INFO  22:00:14,307 - #15 return
+INFO  22:00:14,307 - #21 1
+INFO  22:00:14,307 - #40 ;
+INFO  22:00:14,307 - #48 }
+INFO  22:00:14,307 - #16 void
+INFO  22:00:14,308 - #20 main
+INFO  22:00:14,308 - #43 (
+INFO  22:00:14,308 - #44 )
+INFO  22:00:14,308 - #20 int
+INFO  22:00:14,308 - #20 b
+INFO  22:00:14,308 - #41 ,
+INFO  22:00:14,308 - #20 a
+INFO  22:00:14,308 - #45 [
+INFO  22:00:14,308 - #46 ]
+INFO  22:00:14,308 - #40 ;
+INFO  22:00:14,308 - #47 {
+INFO  22:00:14,309 - #20 a
+INFO  22:00:14,309 - #45 [
+INFO  22:00:14,309 - #21 1
+INFO  22:00:14,309 - #46 ]
+INFO  22:00:14,309 - #37 =
+INFO  22:00:14,309 - #22 a
+INFO  22:00:14,309 - #40 ;
+INFO  22:00:14,310 - #20 funk
+INFO  22:00:14,310 - #43 (
+INFO  22:00:14,310 - #20 m
+INFO  22:00:14,310 - #44 )
+INFO  22:00:14,310 - #40 ;
+INFO  22:00:14,310 - #48 }
+INFO  22:00:14,310 - #48 }
+INFO  22:00:14,311 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:00:14,313 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:00:14,315 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:00:14,325 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:00:14,326 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:00:14,326 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:00:14,326 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:00:14,326 - Pocetak obrade metode fun na liniji 6
+INFO  22:00:14,326 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:00:14,326 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:00:14,326 - Kraj obrade metode fun na liniji 6
+INFO  22:00:14,326 - Pocetak obrade metode main na liniji 10
+INFO  22:00:14,326 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:00:14,326 - Deklarisan niz 'a' na liniji 10
+ERROR 22:00:14,327 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+ERROR 22:00:14,327 - OBJ = NULL na liniji 13
+INFO  22:00:14,327 - Kraj obrade metode main na liniji 10
+INFO  22:00:14,327 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  22:00:14,327 - ===================================
+INFO  22:01:05,732 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:01:05,795 - #2 program
+INFO  22:01:05,795 - #20 MJProgram
+INFO  22:01:05,795 - #7 const
+INFO  22:01:05,795 - #20 int
+INFO  22:01:05,795 - #20 m
+INFO  22:01:05,796 - #37 =
+INFO  22:01:05,796 - #21 1
+INFO  22:01:05,796 - #40 ;
+INFO  22:01:05,797 - #20 int
+INFO  22:01:05,797 - #20 global
+INFO  22:01:05,797 - #41 ,
+INFO  22:01:05,798 - #20 globarArr
+INFO  22:01:05,798 - #45 [
+INFO  22:01:05,798 - #46 ]
+INFO  22:01:05,798 - #40 ;
+INFO  22:01:05,798 - #47 {
+INFO  22:01:05,799 - #20 int
+INFO  22:01:05,799 - #20 fun
+INFO  22:01:05,799 - #43 (
+INFO  22:01:05,799 - #20 int
+INFO  22:01:05,799 - #20 x
+INFO  22:01:05,800 - #44 )
+INFO  22:01:05,800 - #47 {
+INFO  22:01:05,800 - #15 return
+INFO  22:01:05,800 - #21 1
+INFO  22:01:05,800 - #40 ;
+INFO  22:01:05,801 - #48 }
+INFO  22:01:05,801 - #16 void
+INFO  22:01:05,801 - #20 main
+INFO  22:01:05,801 - #43 (
+INFO  22:01:05,802 - #44 )
+INFO  22:01:05,802 - #20 int
+INFO  22:01:05,802 - #20 b
+INFO  22:01:05,802 - #41 ,
+INFO  22:01:05,802 - #20 a
+INFO  22:01:05,802 - #45 [
+INFO  22:01:05,802 - #46 ]
+INFO  22:01:05,802 - #40 ;
+INFO  22:01:05,803 - #47 {
+INFO  22:01:05,803 - #20 a
+INFO  22:01:05,803 - #45 [
+INFO  22:01:05,803 - #21 1
+INFO  22:01:05,804 - #46 ]
+INFO  22:01:05,804 - #37 =
+INFO  22:01:05,804 - #22 a
+INFO  22:01:05,804 - #40 ;
+INFO  22:01:05,804 - #20 funk
+INFO  22:01:05,804 - #43 (
+INFO  22:01:05,805 - #20 m
+INFO  22:01:05,805 - #44 )
+INFO  22:01:05,805 - #40 ;
+INFO  22:01:05,805 - #48 }
+INFO  22:01:05,805 - #48 }
+INFO  22:01:05,806 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:01:05,808 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:01:05,809 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:01:05,823 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:01:05,824 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:01:05,824 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:01:05,824 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:01:05,824 - Pocetak obrade metode fun na liniji 6
+INFO  22:01:05,824 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:01:05,824 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:01:05,824 - Kraj obrade metode fun na liniji 6
+INFO  22:01:05,824 - Pocetak obrade metode main na liniji 10
+INFO  22:01:05,825 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:01:05,825 - Deklarisan niz 'a' na liniji 10
+ERROR 22:01:05,825 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+ERROR 22:01:05,825 - factorDesignator OBJ = NULL na liniji 14
+INFO  22:01:05,825 - Kraj obrade metode main na liniji 10
+INFO  22:01:05,825 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  22:01:05,826 - ===================================
+INFO  22:07:26,899 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:07:26,968 - #2 program
+INFO  22:07:26,968 - #20 MJProgram
+INFO  22:07:26,968 - #7 const
+INFO  22:07:26,969 - #20 int
+INFO  22:07:26,969 - #20 m
+INFO  22:07:26,970 - #37 =
+INFO  22:07:26,970 - #21 1
+INFO  22:07:26,970 - #40 ;
+INFO  22:07:26,971 - #20 int
+INFO  22:07:26,971 - #20 global
+INFO  22:07:26,971 - #41 ,
+INFO  22:07:26,972 - #20 globarArr
+INFO  22:07:26,972 - #45 [
+INFO  22:07:26,972 - #46 ]
+INFO  22:07:26,972 - #40 ;
+INFO  22:07:26,972 - #47 {
+INFO  22:07:26,973 - #20 int
+INFO  22:07:26,973 - #20 fun
+INFO  22:07:26,973 - #43 (
+INFO  22:07:26,973 - #20 int
+INFO  22:07:26,974 - #20 x
+INFO  22:07:26,974 - #44 )
+INFO  22:07:26,974 - #47 {
+INFO  22:07:26,974 - #15 return
+INFO  22:07:26,974 - #21 1
+INFO  22:07:26,974 - #40 ;
+INFO  22:07:26,975 - #48 }
+INFO  22:07:26,975 - #16 void
+INFO  22:07:26,976 - #20 main
+INFO  22:07:26,976 - #43 (
+INFO  22:07:26,976 - #44 )
+INFO  22:07:26,976 - #20 int
+INFO  22:07:26,976 - #20 b
+INFO  22:07:26,976 - #41 ,
+INFO  22:07:26,977 - #20 a
+INFO  22:07:26,977 - #45 [
+INFO  22:07:26,977 - #46 ]
+INFO  22:07:26,977 - #40 ;
+INFO  22:07:26,977 - #47 {
+INFO  22:07:26,977 - #20 a
+INFO  22:07:26,977 - #45 [
+INFO  22:07:26,977 - #21 1
+INFO  22:07:26,977 - #46 ]
+INFO  22:07:26,977 - #37 =
+INFO  22:07:26,978 - #22 a
+INFO  22:07:26,978 - #40 ;
+INFO  22:07:26,978 - #20 funk
+INFO  22:07:26,978 - #43 (
+INFO  22:07:26,978 - #20 m
+INFO  22:07:26,978 - #44 )
+INFO  22:07:26,979 - #40 ;
+INFO  22:07:26,979 - #48 }
+INFO  22:07:26,979 - #48 }
+INFO  22:07:26,980 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:07:26,982 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:07:26,983 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:07:26,996 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:07:26,996 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:07:26,997 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:07:26,997 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:07:26,997 - Pocetak obrade metode fun na liniji 6
+INFO  22:07:26,997 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:07:26,997 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:07:26,998 - Kraj obrade metode fun na liniji 6
+INFO  22:07:26,998 - Pocetak obrade metode main na liniji 10
+INFO  22:07:26,998 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:07:26,998 - Deklarisan niz 'a' na liniji 10
+ERROR 22:07:26,998 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  22:11:21,270 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:11:21,344 - #2 program
+INFO  22:11:21,345 - #20 MJProgram
+INFO  22:11:21,345 - #7 const
+INFO  22:11:21,345 - #20 int
+INFO  22:11:21,346 - #20 m
+INFO  22:11:21,346 - #37 =
+INFO  22:11:21,346 - #21 1
+INFO  22:11:21,346 - #40 ;
+INFO  22:11:21,347 - #20 int
+INFO  22:11:21,347 - #20 global
+INFO  22:11:21,347 - #41 ,
+INFO  22:11:21,347 - #20 globarArr
+INFO  22:11:21,348 - #45 [
+INFO  22:11:21,348 - #46 ]
+INFO  22:11:21,348 - #40 ;
+INFO  22:11:21,348 - #47 {
+INFO  22:11:21,348 - #20 int
+INFO  22:11:21,348 - #20 fun
+INFO  22:11:21,349 - #43 (
+INFO  22:11:21,349 - #20 int
+INFO  22:11:21,349 - #20 x
+INFO  22:11:21,349 - #44 )
+INFO  22:11:21,350 - #47 {
+INFO  22:11:21,350 - #15 return
+INFO  22:11:21,350 - #21 1
+INFO  22:11:21,350 - #40 ;
+INFO  22:11:21,351 - #48 }
+INFO  22:11:21,351 - #16 void
+INFO  22:11:21,352 - #20 main
+INFO  22:11:21,352 - #43 (
+INFO  22:11:21,352 - #44 )
+INFO  22:11:21,352 - #20 int
+INFO  22:11:21,353 - #20 b
+INFO  22:11:21,353 - #41 ,
+INFO  22:11:21,353 - #20 a
+INFO  22:11:21,353 - #45 [
+INFO  22:11:21,353 - #46 ]
+INFO  22:11:21,353 - #40 ;
+INFO  22:11:21,353 - #47 {
+INFO  22:11:21,354 - #20 a
+INFO  22:11:21,354 - #45 [
+INFO  22:11:21,354 - #21 1
+INFO  22:11:21,354 - #46 ]
+INFO  22:11:21,354 - #37 =
+INFO  22:11:21,355 - #22 a
+INFO  22:11:21,355 - #40 ;
+INFO  22:11:21,355 - #20 funk
+INFO  22:11:21,355 - #43 (
+INFO  22:11:21,356 - #20 m
+INFO  22:11:21,356 - #44 )
+INFO  22:11:21,356 - #40 ;
+INFO  22:11:21,356 - #48 }
+INFO  22:11:21,356 - #48 }
+INFO  22:11:21,358 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:11:21,359 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:11:21,361 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:11:21,375 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:11:21,375 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:11:21,376 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:11:21,376 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:11:21,376 - Pocetak obrade metode fun na liniji 6
+INFO  22:11:21,376 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:11:21,376 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:11:21,376 - Kraj obrade metode fun na liniji 6
+INFO  22:11:21,377 - Pocetak obrade metode main na liniji 10
+INFO  22:11:21,377 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:11:21,377 - Deklarisan niz 'a' na liniji 10
+ERROR 22:11:21,377 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  22:12:42,178 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:12:42,228 - #2 program
+INFO  22:12:42,228 - #20 MJProgram
+INFO  22:12:42,228 - #7 const
+INFO  22:12:42,229 - #20 int
+INFO  22:12:42,229 - #20 m
+INFO  22:12:42,230 - #37 =
+INFO  22:12:42,230 - #21 1
+INFO  22:12:42,230 - #40 ;
+INFO  22:12:42,230 - #20 int
+INFO  22:12:42,231 - #20 global
+INFO  22:12:42,231 - #41 ,
+INFO  22:12:42,231 - #20 globarArr
+INFO  22:12:42,231 - #45 [
+INFO  22:12:42,231 - #46 ]
+INFO  22:12:42,231 - #40 ;
+INFO  22:12:42,231 - #47 {
+INFO  22:12:42,231 - #20 int
+INFO  22:12:42,232 - #20 fun
+INFO  22:12:42,232 - #43 (
+INFO  22:12:42,232 - #20 int
+INFO  22:12:42,232 - #20 x
+INFO  22:12:42,233 - #44 )
+INFO  22:12:42,233 - #47 {
+INFO  22:12:42,234 - #15 return
+INFO  22:12:42,234 - #21 1
+INFO  22:12:42,234 - #40 ;
+INFO  22:12:42,234 - #48 }
+INFO  22:12:42,235 - #16 void
+INFO  22:12:42,235 - #20 main
+INFO  22:12:42,235 - #43 (
+INFO  22:12:42,236 - #44 )
+INFO  22:12:42,236 - #20 int
+INFO  22:12:42,236 - #20 b
+INFO  22:12:42,236 - #41 ,
+INFO  22:12:42,236 - #20 a
+INFO  22:12:42,236 - #45 [
+INFO  22:12:42,236 - #46 ]
+INFO  22:12:42,236 - #40 ;
+INFO  22:12:42,236 - #47 {
+INFO  22:12:42,236 - #20 a
+INFO  22:12:42,237 - #45 [
+INFO  22:12:42,237 - #21 1
+INFO  22:12:42,237 - #46 ]
+INFO  22:12:42,237 - #37 =
+INFO  22:12:42,237 - #22 a
+INFO  22:12:42,237 - #40 ;
+INFO  22:12:42,238 - #20 funk
+INFO  22:12:42,238 - #43 (
+INFO  22:12:42,238 - #20 m
+INFO  22:12:42,238 - #44 )
+INFO  22:12:42,238 - #40 ;
+INFO  22:12:42,239 - #48 }
+INFO  22:12:42,239 - #48 }
+INFO  22:12:42,239 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:12:42,241 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:12:42,242 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:12:42,252 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:12:42,253 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:12:42,253 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:12:42,253 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:12:42,253 - Pocetak obrade metode fun na liniji 6
+INFO  22:12:42,253 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:12:42,253 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:12:42,253 - Kraj obrade metode fun na liniji 6
+INFO  22:12:42,253 - Pocetak obrade metode main na liniji 10
+INFO  22:12:42,254 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:12:42,254 - Deklarisan niz 'a' na liniji 10
+ERROR 22:12:42,254 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+ERROR 22:12:42,254 - DESIGNATOR ASSIGNMENTDesignatorMulti(
+  DesignatorIdent(
+   a
+  ) [DesignatorIdent]
+  DesignatorListSingle(
+    DesignatorPartArray(
+      ExprOne(
+        ExprSingle(
+          TermSingle(
+            FactorNumConst(
+             1
+            ) [FactorNumConst]
+          ) [TermSingle]
+        ) [ExprSingle]
+      ) [ExprOne]
+    ) [DesignatorPartArray]
+  ) [DesignatorListSingle]
+) [DesignatorMulti] na liniji 13
+INFO  22:12:50,619 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:12:50,669 - #2 program
+INFO  22:12:50,669 - #20 MJProgram
+INFO  22:12:50,669 - #7 const
+INFO  22:12:50,670 - #20 int
+INFO  22:12:50,670 - #20 m
+INFO  22:12:50,670 - #37 =
+INFO  22:12:50,670 - #21 1
+INFO  22:12:50,670 - #40 ;
+INFO  22:12:50,671 - #20 int
+INFO  22:12:50,671 - #20 global
+INFO  22:12:50,671 - #41 ,
+INFO  22:12:50,671 - #20 globarArr
+INFO  22:12:50,671 - #45 [
+INFO  22:12:50,671 - #46 ]
+INFO  22:12:50,671 - #40 ;
+INFO  22:12:50,672 - #47 {
+INFO  22:12:50,672 - #20 int
+INFO  22:12:50,672 - #20 fun
+INFO  22:12:50,673 - #43 (
+INFO  22:12:50,673 - #20 int
+INFO  22:12:50,673 - #20 x
+INFO  22:12:50,673 - #44 )
+INFO  22:12:50,673 - #47 {
+INFO  22:12:50,673 - #15 return
+INFO  22:12:50,673 - #21 1
+INFO  22:12:50,673 - #40 ;
+INFO  22:12:50,674 - #48 }
+INFO  22:12:50,674 - #16 void
+INFO  22:12:50,674 - #20 main
+INFO  22:12:50,674 - #43 (
+INFO  22:12:50,674 - #44 )
+INFO  22:12:50,674 - #20 int
+INFO  22:12:50,674 - #20 b
+INFO  22:12:50,675 - #41 ,
+INFO  22:12:50,675 - #20 a
+INFO  22:12:50,675 - #45 [
+INFO  22:12:50,675 - #46 ]
+INFO  22:12:50,675 - #40 ;
+INFO  22:12:50,675 - #47 {
+INFO  22:12:50,675 - #20 a
+INFO  22:12:50,675 - #45 [
+INFO  22:12:50,675 - #21 1
+INFO  22:12:50,675 - #46 ]
+INFO  22:12:50,676 - #37 =
+INFO  22:12:50,676 - #22 a
+INFO  22:12:50,676 - #40 ;
+INFO  22:12:50,676 - #20 funk
+INFO  22:12:50,677 - #43 (
+INFO  22:12:50,677 - #20 m
+INFO  22:12:50,677 - #44 )
+INFO  22:12:50,677 - #40 ;
+INFO  22:12:50,677 - #48 }
+INFO  22:12:50,678 - #48 }
+INFO  22:12:50,679 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:12:50,680 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:12:50,681 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:12:50,692 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:12:50,692 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:12:50,692 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:12:50,692 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:12:50,692 - Pocetak obrade metode fun na liniji 6
+INFO  22:12:50,693 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:12:50,693 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:12:50,693 - Kraj obrade metode fun na liniji 6
+INFO  22:12:50,693 - Pocetak obrade metode main na liniji 10
+INFO  22:12:50,693 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:12:50,693 - Deklarisan niz 'a' na liniji 10
+ERROR 22:12:50,693 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+ERROR 22:12:50,693 - DESIGNATOR ASSIGNMENTDesignatorMulti(
+  DesignatorIdent(
+   a
+  ) [DesignatorIdent]
+  DesignatorListSingle(
+    DesignatorPartArray(
+      ExprOne(
+        ExprSingle(
+          TermSingle(
+            FactorNumConst(
+             1
+            ) [FactorNumConst]
+          ) [TermSingle]
+        ) [ExprSingle]
+      ) [ExprOne]
+    ) [DesignatorPartArray]
+  ) [DesignatorListSingle]
+) [DesignatorMulti] na liniji 13
+INFO  22:12:50,693 - Kraj obrade metode main na liniji 10
+INFO  22:12:50,693 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  22:12:50,694 - ===================================
+INFO  22:14:10,600 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:14:10,651 - #2 program
+INFO  22:14:10,651 - #20 MJProgram
+INFO  22:14:10,651 - #7 const
+INFO  22:14:10,652 - #20 int
+INFO  22:14:10,652 - #20 m
+INFO  22:14:10,652 - #37 =
+INFO  22:14:10,652 - #21 1
+INFO  22:14:10,652 - #40 ;
+INFO  22:14:10,653 - #20 int
+INFO  22:14:10,653 - #20 global
+INFO  22:14:10,653 - #41 ,
+INFO  22:14:10,653 - #20 globarArr
+INFO  22:14:10,653 - #45 [
+INFO  22:14:10,653 - #46 ]
+INFO  22:14:10,653 - #40 ;
+INFO  22:14:10,653 - #47 {
+INFO  22:14:10,654 - #20 int
+INFO  22:14:10,654 - #20 fun
+INFO  22:14:10,654 - #43 (
+INFO  22:14:10,654 - #20 int
+INFO  22:14:10,654 - #20 x
+INFO  22:14:10,654 - #44 )
+INFO  22:14:10,655 - #47 {
+INFO  22:14:10,655 - #15 return
+INFO  22:14:10,655 - #21 1
+INFO  22:14:10,655 - #40 ;
+INFO  22:14:10,655 - #48 }
+INFO  22:14:10,655 - #16 void
+INFO  22:14:10,656 - #20 main
+INFO  22:14:10,656 - #43 (
+INFO  22:14:10,656 - #44 )
+INFO  22:14:10,656 - #20 int
+INFO  22:14:10,656 - #20 b
+INFO  22:14:10,656 - #41 ,
+INFO  22:14:10,656 - #20 a
+INFO  22:14:10,656 - #45 [
+INFO  22:14:10,656 - #46 ]
+INFO  22:14:10,656 - #40 ;
+INFO  22:14:10,656 - #47 {
+INFO  22:14:10,657 - #20 a
+INFO  22:14:10,657 - #45 [
+INFO  22:14:10,657 - #21 1
+INFO  22:14:10,657 - #46 ]
+INFO  22:14:10,657 - #37 =
+INFO  22:14:10,657 - #22 a
+INFO  22:14:10,657 - #40 ;
+INFO  22:14:10,658 - #20 funk
+INFO  22:14:10,658 - #43 (
+INFO  22:14:10,658 - #20 m
+INFO  22:14:10,658 - #44 )
+INFO  22:14:10,658 - #40 ;
+INFO  22:14:10,658 - #48 }
+INFO  22:14:10,658 - #48 }
+INFO  22:14:10,659 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:14:10,660 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:14:10,661 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:14:10,673 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:14:10,674 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:14:10,674 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:14:10,674 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:14:10,674 - Pocetak obrade metode fun na liniji 6
+INFO  22:14:10,674 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:14:10,674 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:14:10,675 - Kraj obrade metode fun na liniji 6
+INFO  22:14:10,675 - Pocetak obrade metode main na liniji 10
+INFO  22:14:10,675 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:14:10,675 - Deklarisan niz 'a' na liniji 10
+ERROR 22:14:10,675 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+ERROR 22:14:10,675 - DESIGNATOR ASSIGNMENTDesignatorMulti(
+  DesignatorIdent(
+   a
+  ) [DesignatorIdent]
+  DesignatorListSingle(
+    DesignatorPartArray(
+      ExprOne(
+        ExprSingle(
+          TermSingle(
+            FactorNumConst(
+             1
+            ) [FactorNumConst]
+          ) [TermSingle]
+        ) [ExprSingle]
+      ) [ExprOne]
+    ) [DesignatorPartArray]
+  ) [DesignatorListSingle]
+) [DesignatorMulti] na liniji 13
+INFO  22:14:10,675 - Kraj obrade metode main na liniji 10
+INFO  22:14:10,675 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  22:14:10,676 - ===================================
+INFO  22:14:23,984 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:14:24,035 - #2 program
+INFO  22:14:24,035 - #20 MJProgram
+INFO  22:14:24,035 - #7 const
+INFO  22:14:24,035 - #20 int
+INFO  22:14:24,035 - #20 m
+INFO  22:14:24,036 - #37 =
+INFO  22:14:24,036 - #21 1
+INFO  22:14:24,036 - #40 ;
+INFO  22:14:24,036 - #20 int
+INFO  22:14:24,037 - #20 global
+INFO  22:14:24,037 - #41 ,
+INFO  22:14:24,037 - #20 globarArr
+INFO  22:14:24,037 - #45 [
+INFO  22:14:24,037 - #46 ]
+INFO  22:14:24,037 - #40 ;
+INFO  22:14:24,037 - #47 {
+INFO  22:14:24,037 - #20 int
+INFO  22:14:24,037 - #20 fun
+INFO  22:14:24,038 - #43 (
+INFO  22:14:24,038 - #20 int
+INFO  22:14:24,038 - #20 x
+INFO  22:14:24,038 - #44 )
+INFO  22:14:24,038 - #47 {
+INFO  22:14:24,038 - #15 return
+INFO  22:14:24,039 - #21 1
+INFO  22:14:24,039 - #40 ;
+INFO  22:14:24,040 - #48 }
+INFO  22:14:24,040 - #16 void
+INFO  22:14:24,040 - #20 main
+INFO  22:14:24,041 - #43 (
+INFO  22:14:24,041 - #44 )
+INFO  22:14:24,041 - #20 int
+INFO  22:14:24,041 - #20 b
+INFO  22:14:24,041 - #41 ,
+INFO  22:14:24,041 - #20 a
+INFO  22:14:24,041 - #45 [
+INFO  22:14:24,041 - #46 ]
+INFO  22:14:24,041 - #40 ;
+INFO  22:14:24,042 - #47 {
+INFO  22:14:24,042 - #20 a
+INFO  22:14:24,042 - #45 [
+INFO  22:14:24,042 - #21 1
+INFO  22:14:24,042 - #46 ]
+INFO  22:14:24,042 - #37 =
+INFO  22:14:24,043 - #22 a
+INFO  22:14:24,044 - #40 ;
+INFO  22:14:24,044 - #20 funk
+INFO  22:14:24,044 - #43 (
+INFO  22:14:24,045 - #20 m
+INFO  22:14:24,045 - #44 )
+INFO  22:14:24,045 - #40 ;
+INFO  22:14:24,045 - #48 }
+INFO  22:14:24,045 - #48 }
+INFO  22:14:24,046 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:14:24,047 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:14:24,048 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:14:24,058 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:14:24,059 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:14:24,059 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:14:24,059 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:14:24,059 - Pocetak obrade metode fun na liniji 6
+INFO  22:14:24,059 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:14:24,059 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:14:24,059 - Kraj obrade metode fun na liniji 6
+INFO  22:14:24,060 - Pocetak obrade metode main na liniji 10
+INFO  22:14:24,060 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:14:24,060 - Deklarisan niz 'a' na liniji 10
+ERROR 22:14:24,060 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+ERROR 22:14:24,060 - DESIGNATOR ASSIGNMENTnull na liniji 13
+INFO  22:14:24,060 - Kraj obrade metode main na liniji 10
+INFO  22:14:24,061 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  22:14:24,061 - ===================================
+INFO  22:14:39,578 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:14:39,625 - #2 program
+INFO  22:14:39,625 - #20 MJProgram
+INFO  22:14:39,625 - #7 const
+INFO  22:14:39,625 - #20 int
+INFO  22:14:39,625 - #20 m
+INFO  22:14:39,626 - #37 =
+INFO  22:14:39,626 - #21 1
+INFO  22:14:39,626 - #40 ;
+INFO  22:14:39,626 - #20 int
+INFO  22:14:39,627 - #20 global
+INFO  22:14:39,627 - #41 ,
+INFO  22:14:39,627 - #20 globarArr
+INFO  22:14:39,627 - #45 [
+INFO  22:14:39,627 - #46 ]
+INFO  22:14:39,627 - #40 ;
+INFO  22:14:39,627 - #47 {
+INFO  22:14:39,628 - #20 int
+INFO  22:14:39,628 - #20 fun
+INFO  22:14:39,628 - #43 (
+INFO  22:14:39,628 - #20 int
+INFO  22:14:39,628 - #20 x
+INFO  22:14:39,628 - #44 )
+INFO  22:14:39,629 - #47 {
+INFO  22:14:39,629 - #15 return
+INFO  22:14:39,629 - #21 1
+INFO  22:14:39,629 - #40 ;
+INFO  22:14:39,629 - #48 }
+INFO  22:14:39,629 - #16 void
+INFO  22:14:39,630 - #20 main
+INFO  22:14:39,630 - #43 (
+INFO  22:14:39,630 - #44 )
+INFO  22:14:39,631 - #20 int
+INFO  22:14:39,631 - #20 b
+INFO  22:14:39,631 - #41 ,
+INFO  22:14:39,631 - #20 a
+INFO  22:14:39,631 - #45 [
+INFO  22:14:39,631 - #46 ]
+INFO  22:14:39,631 - #40 ;
+INFO  22:14:39,632 - #47 {
+INFO  22:14:39,632 - #20 a
+INFO  22:14:39,632 - #45 [
+INFO  22:14:39,632 - #21 1
+INFO  22:14:39,632 - #46 ]
+INFO  22:14:39,632 - #37 =
+INFO  22:14:39,633 - #22 a
+INFO  22:14:39,633 - #40 ;
+INFO  22:14:39,633 - #20 funk
+INFO  22:14:39,634 - #43 (
+INFO  22:14:39,634 - #20 m
+INFO  22:14:39,634 - #44 )
+INFO  22:14:39,634 - #40 ;
+INFO  22:14:39,634 - #48 }
+INFO  22:14:39,635 - #48 }
+INFO  22:14:39,636 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:14:39,637 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:14:39,637 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:14:39,648 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:14:39,648 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:14:39,648 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:14:39,648 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:14:39,648 - Pocetak obrade metode fun na liniji 6
+INFO  22:14:39,649 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:14:39,649 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:14:39,649 - Kraj obrade metode fun na liniji 6
+INFO  22:14:39,649 - Pocetak obrade metode main na liniji 10
+INFO  22:14:39,649 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:14:39,649 - Deklarisan niz 'a' na liniji 10
+ERROR 22:14:39,649 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+ERROR 22:14:39,649 - DESIGNATOR ASSIGNMENTDesignatorMulti(
+  DesignatorIdent(
+   a
+  ) [DesignatorIdent]
+  DesignatorListSingle(
+    DesignatorPartArray(
+      ExprOne(
+        ExprSingle(
+          TermSingle(
+            FactorNumConst(
+             1
+            ) [FactorNumConst]
+          ) [TermSingle]
+        ) [ExprSingle]
+      ) [ExprOne]
+    ) [DesignatorPartArray]
+  ) [DesignatorListSingle]
+) [DesignatorMulti] na liniji 13
+INFO  22:14:39,649 - Kraj obrade metode main na liniji 10
+INFO  22:14:39,649 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  22:14:39,650 - ===================================
+INFO  22:15:54,208 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:15:54,257 - #2 program
+INFO  22:15:54,257 - #20 MJProgram
+INFO  22:15:54,257 - #7 const
+INFO  22:15:54,257 - #20 int
+INFO  22:15:54,257 - #20 m
+INFO  22:15:54,258 - #37 =
+INFO  22:15:54,258 - #21 1
+INFO  22:15:54,258 - #40 ;
+INFO  22:15:54,258 - #20 int
+INFO  22:15:54,259 - #20 global
+INFO  22:15:54,259 - #41 ,
+INFO  22:15:54,259 - #20 globarArr
+INFO  22:15:54,259 - #45 [
+INFO  22:15:54,259 - #46 ]
+INFO  22:15:54,259 - #40 ;
+INFO  22:15:54,259 - #47 {
+INFO  22:15:54,259 - #20 int
+INFO  22:15:54,260 - #20 fun
+INFO  22:15:54,260 - #43 (
+INFO  22:15:54,260 - #20 int
+INFO  22:15:54,260 - #20 x
+INFO  22:15:54,261 - #44 )
+INFO  22:15:54,261 - #47 {
+INFO  22:15:54,261 - #15 return
+INFO  22:15:54,261 - #21 1
+INFO  22:15:54,261 - #40 ;
+INFO  22:15:54,262 - #48 }
+INFO  22:15:54,262 - #16 void
+INFO  22:15:54,262 - #20 main
+INFO  22:15:54,263 - #43 (
+INFO  22:15:54,263 - #44 )
+INFO  22:15:54,263 - #20 int
+INFO  22:15:54,263 - #20 b
+INFO  22:15:54,263 - #41 ,
+INFO  22:15:54,263 - #20 a
+INFO  22:15:54,263 - #45 [
+INFO  22:15:54,263 - #46 ]
+INFO  22:15:54,263 - #40 ;
+INFO  22:15:54,264 - #47 {
+INFO  22:15:54,264 - #20 a
+INFO  22:15:54,264 - #45 [
+INFO  22:15:54,264 - #21 1
+INFO  22:15:54,264 - #46 ]
+INFO  22:15:54,264 - #37 =
+INFO  22:15:54,265 - #22 a
+INFO  22:15:54,265 - #40 ;
+INFO  22:15:54,265 - #20 funk
+INFO  22:15:54,265 - #43 (
+INFO  22:15:54,266 - #20 m
+INFO  22:15:54,266 - #44 )
+INFO  22:15:54,266 - #40 ;
+INFO  22:15:54,266 - #48 }
+INFO  22:15:54,266 - #48 }
+INFO  22:15:54,267 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:15:54,268 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:15:54,269 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:15:54,280 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:15:54,281 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:15:54,281 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:15:54,281 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:15:54,281 - Pocetak obrade metode fun na liniji 6
+INFO  22:15:54,281 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:15:54,281 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:15:54,282 - Kraj obrade metode fun na liniji 6
+INFO  22:15:54,282 - Pocetak obrade metode main na liniji 10
+INFO  22:15:54,282 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:15:54,282 - Deklarisan niz 'a' na liniji 10
+ERROR 22:15:54,283 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  22:15:54,283 - Kraj obrade metode main na liniji 10
+INFO  22:15:54,283 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  22:15:54,284 - ===================================
+INFO  22:21:04,199 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:21:04,274 - #2 program
+INFO  22:21:04,274 - #20 MJProgram
+INFO  22:21:04,274 - #7 const
+INFO  22:21:04,275 - #20 int
+INFO  22:21:04,275 - #20 m
+INFO  22:21:04,276 - #37 =
+INFO  22:21:04,276 - #21 1
+INFO  22:21:04,276 - #40 ;
+INFO  22:21:04,277 - #20 int
+INFO  22:21:04,278 - #20 global
+INFO  22:21:04,278 - #41 ,
+INFO  22:21:04,278 - #20 globarArr
+INFO  22:21:04,278 - #45 [
+INFO  22:21:04,278 - #46 ]
+INFO  22:21:04,278 - #40 ;
+INFO  22:21:04,279 - #47 {
+INFO  22:21:04,279 - #20 int
+INFO  22:21:04,279 - #20 fun
+INFO  22:21:04,279 - #43 (
+INFO  22:21:04,280 - #20 int
+INFO  22:21:04,280 - #20 x
+INFO  22:21:04,281 - #44 )
+INFO  22:21:04,281 - #47 {
+INFO  22:21:04,281 - #15 return
+INFO  22:21:04,281 - #21 1
+INFO  22:21:04,282 - #40 ;
+INFO  22:21:04,282 - #48 }
+INFO  22:21:04,282 - #16 void
+INFO  22:21:04,283 - #20 main
+INFO  22:21:04,283 - #43 (
+INFO  22:21:04,283 - #44 )
+INFO  22:21:04,283 - #20 int
+INFO  22:21:04,283 - #20 b
+INFO  22:21:04,283 - #41 ,
+INFO  22:21:04,284 - #20 a
+INFO  22:21:04,284 - #45 [
+INFO  22:21:04,284 - #46 ]
+INFO  22:21:04,284 - #40 ;
+INFO  22:21:04,284 - #47 {
+INFO  22:21:04,284 - #20 a
+INFO  22:21:04,285 - #45 [
+INFO  22:21:04,285 - #21 1
+INFO  22:21:04,285 - #46 ]
+INFO  22:21:04,285 - #37 =
+INFO  22:21:04,285 - #22 a
+INFO  22:21:04,285 - #40 ;
+INFO  22:21:04,286 - #20 funk
+INFO  22:21:04,286 - #43 (
+INFO  22:21:04,286 - #20 m
+INFO  22:21:04,287 - #44 )
+INFO  22:21:04,287 - #40 ;
+INFO  22:21:04,287 - #48 }
+INFO  22:21:04,287 - #48 }
+INFO  22:21:04,289 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:21:04,291 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:21:04,292 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:21:04,305 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:21:04,306 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:21:04,306 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:21:04,306 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:21:04,306 - Pocetak obrade metode fun na liniji 6
+INFO  22:21:04,306 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:21:04,307 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:21:04,307 - Kraj obrade metode fun na liniji 6
+INFO  22:21:04,307 - Pocetak obrade metode main na liniji 10
+INFO  22:21:04,307 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:21:04,307 - Deklarisan niz 'a' na liniji 10
+ERROR 22:21:04,307 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  22:21:04,308 - Kraj obrade metode main na liniji 10
+INFO  22:21:04,308 - Kraj obrade programa 'MJProgram' na liniji 1
+INFO  22:21:04,309 - ===================================
+INFO  22:21:20,149 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:21:20,221 - #2 program
+INFO  22:21:20,221 - #20 MJProgram
+INFO  22:21:20,221 - #7 const
+INFO  22:21:20,222 - #20 int
+INFO  22:21:20,222 - #20 m
+INFO  22:21:20,223 - #37 =
+INFO  22:21:20,223 - #21 1
+INFO  22:21:20,223 - #40 ;
+INFO  22:21:20,225 - #20 int
+INFO  22:21:20,225 - #20 global
+INFO  22:21:20,225 - #41 ,
+INFO  22:21:20,225 - #20 globarArr
+INFO  22:21:20,225 - #45 [
+INFO  22:21:20,225 - #46 ]
+INFO  22:21:20,226 - #40 ;
+INFO  22:21:20,226 - #47 {
+INFO  22:21:20,226 - #20 int
+INFO  22:21:20,226 - #20 fun
+INFO  22:21:20,227 - #43 (
+INFO  22:21:20,227 - #20 int
+INFO  22:21:20,227 - #20 x
+INFO  22:21:20,227 - #44 )
+INFO  22:21:20,228 - #47 {
+INFO  22:21:20,228 - #15 return
+INFO  22:21:20,228 - #21 1
+INFO  22:21:20,228 - #40 ;
+INFO  22:21:20,228 - #48 }
+INFO  22:21:20,229 - #16 void
+INFO  22:21:20,229 - #20 main
+INFO  22:21:20,229 - #43 (
+INFO  22:21:20,229 - #44 )
+INFO  22:21:20,230 - #20 int
+INFO  22:21:20,230 - #20 b
+INFO  22:21:20,230 - #41 ,
+INFO  22:21:20,230 - #20 a
+INFO  22:21:20,230 - #45 [
+INFO  22:21:20,230 - #46 ]
+INFO  22:21:20,230 - #40 ;
+INFO  22:21:20,230 - #47 {
+INFO  22:21:20,231 - #20 a
+INFO  22:21:20,231 - #45 [
+INFO  22:21:20,231 - #21 1
+INFO  22:21:20,231 - #46 ]
+INFO  22:21:20,231 - #37 =
+INFO  22:21:20,232 - #22 a
+INFO  22:21:20,232 - #40 ;
+INFO  22:21:20,232 - #20 funk
+INFO  22:21:20,232 - #43 (
+INFO  22:21:20,232 - #20 m
+INFO  22:21:20,233 - #44 )
+INFO  22:21:20,233 - #40 ;
+INFO  22:21:20,233 - #48 }
+INFO  22:21:20,233 - #48 }
+INFO  22:21:20,234 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:21:20,236 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:21:20,238 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:21:20,252 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:21:20,253 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:21:20,253 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:21:20,253 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:21:20,253 - Pocetak obrade metode fun na liniji 6
+INFO  22:21:20,253 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:21:20,253 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:21:20,254 - Kraj obrade metode fun na liniji 6
+INFO  22:21:20,254 - Pocetak obrade metode main na liniji 10
+INFO  22:21:20,254 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:21:20,254 - Deklarisan niz 'a' na liniji 10
+ERROR 22:21:20,254 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13
+INFO  22:25:57,287 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  22:25:57,335 - #2 program
+INFO  22:25:57,335 - #20 MJProgram
+INFO  22:25:57,335 - #7 const
+INFO  22:25:57,335 - #20 int
+INFO  22:25:57,335 - #20 m
+INFO  22:25:57,336 - #37 =
+INFO  22:25:57,336 - #21 1
+INFO  22:25:57,336 - #40 ;
+INFO  22:25:57,336 - #20 int
+INFO  22:25:57,336 - #20 global
+INFO  22:25:57,336 - #41 ,
+INFO  22:25:57,337 - #20 globarArr
+INFO  22:25:57,337 - #45 [
+INFO  22:25:57,337 - #46 ]
+INFO  22:25:57,337 - #40 ;
+INFO  22:25:57,337 - #47 {
+INFO  22:25:57,337 - #20 int
+INFO  22:25:57,337 - #20 fun
+INFO  22:25:57,338 - #43 (
+INFO  22:25:57,338 - #20 int
+INFO  22:25:57,338 - #20 x
+INFO  22:25:57,338 - #44 )
+INFO  22:25:57,338 - #47 {
+INFO  22:25:57,338 - #15 return
+INFO  22:25:57,338 - #21 1
+INFO  22:25:57,339 - #40 ;
+INFO  22:25:57,339 - #48 }
+INFO  22:25:57,339 - #16 void
+INFO  22:25:57,340 - #20 main
+INFO  22:25:57,340 - #43 (
+INFO  22:25:57,340 - #44 )
+INFO  22:25:57,340 - #20 int
+INFO  22:25:57,340 - #20 b
+INFO  22:25:57,340 - #41 ,
+INFO  22:25:57,340 - #20 a
+INFO  22:25:57,340 - #45 [
+INFO  22:25:57,340 - #46 ]
+INFO  22:25:57,340 - #40 ;
+INFO  22:25:57,340 - #47 {
+INFO  22:25:57,341 - #20 a
+INFO  22:25:57,341 - #45 [
+INFO  22:25:57,341 - #21 1
+INFO  22:25:57,341 - #46 ]
+INFO  22:25:57,341 - #37 =
+INFO  22:25:57,342 - #22 a
+INFO  22:25:57,342 - #40 ;
+INFO  22:25:57,342 - #20 funk
+INFO  22:25:57,342 - #43 (
+INFO  22:25:57,342 - #20 m
+INFO  22:25:57,342 - #44 )
+INFO  22:25:57,343 - #40 ;
+INFO  22:25:57,343 - #48 }
+INFO  22:25:57,343 - #48 }
+INFO  22:25:57,345 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  22:25:57,346 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclSingle(
+      PartConstDeclaration(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+          ConstSingle(
+            ConstPart(
+             m
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstPart]
+          ) [ConstSingle]
+        ) [ConstDeclaration]
+      ) [PartConstDeclaration]
+    ) [ProgramDeclSingle]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarMulti(
+          GlobalVarSingle(
+            GlobalVarNormal(
+             global
+            ) [GlobalVarNormal]
+          ) [GlobalVarSingle]
+          GlobalVarArray(
+           globarArr
+          ) [GlobalVarArray]
+        ) [GlobalVarMulti]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             x
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermSingle(
+                    FactorNumConst(
+                     1
+                    ) [FactorNumConst]
+                  ) [TermSingle]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclSingle(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarMulti(
+              VarSingle(
+                VarNormal(
+                 b
+                ) [VarNormal]
+              ) [VarSingle]
+              VarArray(
+               a
+              ) [VarArray]
+            ) [VarMulti]
+          ) [VarDeclaration]
+        ) [VarDeclSingle]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorMulti(
+                  DesignatorIdent(
+                   a
+                  ) [DesignatorIdent]
+                  DesignatorListSingle(
+                    DesignatorPartArray(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [DesignatorPartArray]
+                  ) [DesignatorListSingle]
+                ) [DesignatorMulti]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorCharConst(
+                         a
+                        ) [FactorCharConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtDesign(
+            DesignatorMethodCall0(
+              DesignatorSimple(
+               funk
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         m
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCall0]
+          ) [StmtDesign]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  22:25:57,347 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  22:25:57,358 - Pocetak obrade programa 'MJProgram' na liniji 1
+INFO  22:25:57,358 - Deklarisana konstanta 'm' na liniji 2
+INFO  22:25:57,358 - Deklarisana globalna promenljiva 'global' na liniji 3
+INFO  22:25:57,358 - Deklarisan globalni niz 'globarArr' na liniji 3
+INFO  22:25:57,358 - Pocetak obrade metode fun na liniji 6
+INFO  22:25:57,359 - Formalni parametar funkcije fun: 'x' na liniji 6
+ERROR 22:25:57,359 - Semanticka greska - tip povratne vrednosti metode i tip vrednosti izraza u return naredbi se ne slazu na liniji 7
+INFO  22:25:57,359 - Kraj obrade metode fun na liniji 6
+INFO  22:25:57,359 - Pocetak obrade metode main na liniji 10
+INFO  22:25:57,359 - Deklarisana promenljiva 'b' na liniji 10
+INFO  22:25:57,359 - Deklarisan niz 'a' na liniji 10
+ERROR 22:25:57,359 - Semanticka greska - invalidan pristup elementu niza 'a' na liniji 13

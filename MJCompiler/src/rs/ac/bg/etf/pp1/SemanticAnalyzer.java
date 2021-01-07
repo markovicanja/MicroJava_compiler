@@ -4,65 +4,21 @@ import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
-import rs.ac.bg.etf.pp1.ast.AssignmentExpr;
-import rs.ac.bg.etf.pp1.ast.BoolConst;
-import rs.ac.bg.etf.pp1.ast.CharConst;
-import rs.ac.bg.etf.pp1.ast.ConstDeclaration;
-import rs.ac.bg.etf.pp1.ast.ConstPart;
-import rs.ac.bg.etf.pp1.ast.DesignatorAssignment;
-import rs.ac.bg.etf.pp1.ast.DesignatorIdent;
-import rs.ac.bg.etf.pp1.ast.DesignatorPartArray;
-import rs.ac.bg.etf.pp1.ast.DesignatorPartField;
-import rs.ac.bg.etf.pp1.ast.ExprMulti;
-import rs.ac.bg.etf.pp1.ast.ExprNegMulti;
-import rs.ac.bg.etf.pp1.ast.ExprNegSingle;
-import rs.ac.bg.etf.pp1.ast.ExprSingle;
-import rs.ac.bg.etf.pp1.ast.FactorBoolConst;
-import rs.ac.bg.etf.pp1.ast.FactorCharConst;
-import rs.ac.bg.etf.pp1.ast.FactorDesignator;
-import rs.ac.bg.etf.pp1.ast.FactorExpr;
-import rs.ac.bg.etf.pp1.ast.FactorNew;
-import rs.ac.bg.etf.pp1.ast.FactorNewArray;
-import rs.ac.bg.etf.pp1.ast.FactorNumConst;
-import rs.ac.bg.etf.pp1.ast.FuncCall;
-import rs.ac.bg.etf.pp1.ast.FuncCallParams;
-import rs.ac.bg.etf.pp1.ast.GlobalVarArray;
-import rs.ac.bg.etf.pp1.ast.GlobalVarDeclaration;
-import rs.ac.bg.etf.pp1.ast.GlobalVarNormal;
-import rs.ac.bg.etf.pp1.ast.MethodTypeDeclaration;
-import rs.ac.bg.etf.pp1.ast.MethodTypeName;
-import rs.ac.bg.etf.pp1.ast.MethodVoidDeclaration;
-import rs.ac.bg.etf.pp1.ast.MethodVoidName;
-import rs.ac.bg.etf.pp1.ast.NumConst;
-import rs.ac.bg.etf.pp1.ast.ParamArray;
-import rs.ac.bg.etf.pp1.ast.ParamNormal;
-import rs.ac.bg.etf.pp1.ast.ProgName;
-import rs.ac.bg.etf.pp1.ast.Program;
-import rs.ac.bg.etf.pp1.ast.StmtReturnExpr;
-import rs.ac.bg.etf.pp1.ast.SyntaxNode;
-import rs.ac.bg.etf.pp1.ast.TermMulti;
-import rs.ac.bg.etf.pp1.ast.TermSingle;
-import rs.ac.bg.etf.pp1.ast.VarArray;
-import rs.ac.bg.etf.pp1.ast.VarDeclaration;
-import rs.ac.bg.etf.pp1.ast.VarNormal;
-import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
-import rs.ac.bg.etf.pp1.ast.Type;
+import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
 import rs.etf.pp1.symboltable.concepts.Struct;
 
 public class SemanticAnalyzer extends VisitorAdaptor {
 	
-	// ubacivanje bool tipa u tabelu simbola
-	private static Struct boolType = Tab.insert(Obj.Type, "bool", new Struct(5)).getType();
+	public static Struct boolType = Tab.insert(Obj.Type, "bool", new Struct(5)).getType();
 	
-	int nVars;
-	boolean errorDetected = false;
-	boolean returnValue = false;
+	private int nVars;
+	private boolean errorDetected = false;
+	private boolean returnValue = false;
 	
 	private ArrayList<Variable> declarationVariables = new ArrayList<Variable>();
 	private Obj currentMethod = null;
-	private String currentDesignatorName;
 	private Struct assignmentRight = null;
 	 
 	Logger log = Logger.getLogger(getClass());
@@ -88,7 +44,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	// Program
 	public void visit(Program program) { 
-		nVars = Tab.currentScope.getnVars();
+		// nVars = Tab.currentScope.getnVars();
     	Tab.chainLocalSymbols(program.getProgName().obj);
     	Tab.closeScope();
     	report_info("Kraj obrade programa '" + program.getProgName().getProgName() + "'", program);
@@ -110,6 +66,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		} 
 		else {
 			if (Obj.Type == typeNode.getKind()) {
+				// report_info("Pronadjen tip " + Type.getTypeName() + " u tabeli simbola", Type);
 				type.struct = typeNode.getType();
 			} 
 			else {
@@ -166,7 +123,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			report_error("Semanticka greska - '" + varArray.getVarName() + "' je vec deklarisano", varArray);
 		}
     }
-    
+	
 	// GlobalVarDecl
     public void visit(GlobalVarDeclaration globalVarDeclaration) {
 		Struct type = globalVarDeclaration.getType().struct;
@@ -242,7 +199,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	
 	// Value
-	public void visit(NumConst numConst) { // CEMU SLUZI OVO???
+	public void visit(NumConst numConst) {
 		numConst.struct = Tab.intType;
 	}
 	
@@ -333,13 +290,53 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
-    // DesignatorName
-    public void visit(DesignatorIdent designatorIdent) {
-    	currentDesignatorName = designatorIdent.getDesignatorIdent();
-    	if (Tab.find(currentDesignatorName) == Tab.noObj) { 
-			report_error("Semanticka greska - '" + currentDesignatorName + "' nije deklarisano", designatorIdent);
+    public void visit(StmtRead stmtRead) {
+		Obj obj = stmtRead.getDesignator().obj;
+		if (obj.getKind() == Obj.Var || obj.getKind() == Obj.Elem) {
+			Struct type = obj.getType();
+			if (!type.equals(Tab.intType) && !type.equals(Tab.charType) && !type.equals(boolType)) {
+				report_error("Semanticka greska - izraz u read naredbi mora biti int, char ili bool tipa", stmtRead);
+			}
+		} else {
+			report_error("Semanticka greska - argument read naredbe nije promenljiva ili element niza", stmtRead);
 		}
-    }
+	}
+
+  	public void visit(StmtPrintNumConst stmtPrintNumConst) {
+  		Struct expr = stmtPrintNumConst.getExpr().struct;
+  		if (expr != null && !expr.equals(Tab.intType) && !expr.equals(Tab.charType) && !expr.equals(boolType)) {
+  			report_error("Semanticka greska - izraz print naredbe nije int, char ili bool tipa", stmtPrintNumConst);
+  		}
+  	}
+
+  	public void visit(StmtPrint stmtPrint) {	
+  		Struct expr = stmtPrint.getExpr().struct;
+  		if (expr != null && !expr.equals(Tab.intType) && !expr.equals(Tab.charType) && !expr.equals(boolType)) {
+  			report_error("Semanticka greska - izraz print naredbe nije int, char ili bool tipa", stmtPrint);
+  		}
+  	} 
+    
+    // DesignatorStatement
+ 	public void visit(DesignatorAssignment designatorAssignment) {
+ 		Struct assignmentLeft = designatorAssignment.getDesignator().obj.getType();
+ 		if (!assignmentRight.assignableTo(assignmentLeft)) {
+ 			report_error("Semanticka greska - nekompatibilni tipovi za dodelu vrednosti", designatorAssignment);
+ 		}
+ 	}
+ 	
+ 	// Assignment
+ 	public void visit(AssignmentExpr assignmentExpr) { 
+ 		assignmentRight = assignmentExpr.getExpr().struct;
+ 	}
+ 	
+    // Expr
+  	public void visit(ExprTernary exprTernary) { // STA SE OVDE DESAVA KAD IMA 3 Expr1???
+  		exprTernary.struct = exprTernary.getExpr1().struct;
+  	}
+  	
+  	public void visit(ExprOne exprOne) {
+  		exprOne.struct = exprOne.getExpr1().struct;
+  	}
 	
 	// Expr1
 	public void visit(ExprNegMulti exprNegMulti) { 
@@ -373,10 +370,18 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	if (Obj.Meth == func.getKind()) {
     		report_info("Pronadjen poziv funkcije '" + func.getName() + "'", funcCallParams);
     		funcCallParams.struct = func.getType();
+//    		int ind = getMyMethod(Method_call_0.getDesignator().obj.getName());
+//			if (ind != -1) { 
+//				Method meth = mListOfMethods.get(ind);
+//				if (!meth.getParameters().equals(mTempActArgs)) {
+//					report_error("Semanticka greska - invalidni argumenti za metodu (proceduru) " + Method_call_0.getDesignator().obj.getName(), Method_call_0);
+//				}
+//			}
     	} else {
     		report_error("Semanticka greska - ime '" + func.getName() + "' nije funkcija", funcCallParams);
 			funcCallParams.struct = Tab.noType;
     	}
+//    	mTempActArgs.clear();
     }
 	
 	public void visit(FuncCall funcCall){
@@ -384,14 +389,23 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	if (Obj.Meth == func.getKind()) {
 			report_info("Pronadjen poziv funkcije '" + func.getName() + "'", funcCall);
 			funcCall.struct = func.getType(); // kako ovde uzima tip??
+//			report_info("Pronadjen poziv metode (procedure) " + Method_call_1.getDesignator().obj.getName(), Method_call_1);
+//			int ind = getMyMethod(Method_call_1.getDesignator().obj.getName());
+//			if (ind != -1) { 
+//				Method meth = mListOfMethods.get(ind);
+//				if (!meth.getParameters().equals(mTempActArgs)) {
+//					report_error("Semanticka greska - invalidni argumenti za metodu (proceduru) " + Method_call_1.getDesignator().obj.getName(), Method_call_1);
+//				}
+//			}
     	} else {
 			report_error("Semanticka greska - ime '" + func.getName() + "' nije funkcija", funcCall);
 			funcCall.struct = Tab.noType;
     	}
+//    	mTempActArgs.clear();
     }
 	
-	public void visit(FactorDesignator factorDesignator) { // puca NULL prilikom pristupa func(1), obj = NULL
-//		 factorDesignator.struct = factorDesignator.getDesignator().obj.getType();
+	public void visit(FactorDesignator factorDesignator) {
+		 factorDesignator.struct = factorDesignator.getDesignator().obj.getType();
 	}
 	
 	public void visit(FactorNumConst factorNumConst) { 
@@ -422,40 +436,26 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(FactorExpr factorExpr) { 
 		factorExpr.struct = factorExpr.getExpr().struct;
 	}
-
-	// DesignatorStatement
-	public void visit(DesignatorAssignment designatorAssignment) {	// puca NullPointerException, obj = null
-		Struct assignmentLeft = designatorAssignment.getDesignator().obj.getType();
-		if (!assignmentRight.assignableTo(assignmentLeft)) {
-			report_error("Semanticka greska - nekompatibilni tipovi za dodelu vrednosti", designatorAssignment);
+	
+	// Designator
+	public void visit(DesignatorArray designatorArray) {
+		Obj obj = Tab.find(designatorArray.getDesignatorName());
+		if (obj == Tab.noObj) { 
+			report_error("Semanticka greska - niz '" + designatorArray.getDesignatorName() + "' nije deklarisan", designatorArray);
 		}
-	}
-	
-	// Assignment
-	public void visit(AssignmentExpr assignmentExpr) {
-		assignmentRight = assignmentExpr.getExpr().struct;		
-	}
-	
-	// DesignatorPart
-    public void visit(DesignatorPartField designatorPartField) {
-//    	Obj obj = Tab.find(designatorPartField.getID());
-//		if (obj == Tab.noObj) { 
-//			report_error("Semanticka greska - ime " + designatorPartField.getID() + " nije deklarisano", designatorPartField);
-//		}		
-//		designatorPartField.obj = obj;
+		if (designatorArray.getExpr().struct != Tab.intType) {
+			report_error("Semanticka greska - nevalidan pristup elementu niza", designatorArray);
+		} else if (obj.getType().getKind() != Struct.Array){
+			report_error("Semanticka greska - '" + designatorArray.getDesignatorName() + "' nije niz", designatorArray);
+		}
+		designatorArray.obj = new Obj(Obj.Elem, obj.getName(), obj.getType().getElemType());		 
 	} 
 	
-	public void visit(DesignatorPartArray designatorPartArray) { 
-		Obj obj = Tab.find(currentDesignatorName);
-		if (Tab.find(currentDesignatorName) != Tab.noObj) {  
-			if (designatorPartArray.getExpr().struct != Tab.intType) { // opet ne prepoznaje int
-				report_error("Semanticka greska - invalidan pristup elementu niza '" + currentDesignatorName + "'", designatorPartArray);
-			} else if (obj.getType().getKind() != Struct.Array){
-				report_error("Semanticka greska - ime '" + currentDesignatorName + "' nije niz", designatorPartArray);
-			} else {
-				report_info("Pristup elementu niza '" + currentDesignatorName + "'", designatorPartArray);
-			}
-		}
-		designatorPartArray.obj = new Obj(Obj.Elem, obj.getName(), obj.getType().getElemType());	
+	public void visit(DesignatorSimple designatorSimple) { 
+		Obj obj = Tab.find(designatorSimple.getDesignatorName());
+		if (obj == Tab.noObj) { 
+			report_error("Semanticka greska - '" + designatorSimple.getDesignatorName() + "' nije deklarisano", designatorSimple);
+		}		
+		designatorSimple.obj = obj;
 	}
 }
