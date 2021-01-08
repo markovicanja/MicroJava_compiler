@@ -283,9 +283,9 @@ CasePart ::= (CasePart) CASE NUM_CONST COLON StatementList;
 
 DesignatorStatement ::= (DesignatorAssignment) Designator Assignment
 						|
-						(DesignatorMethodCall0) Designator LPAREN ActPars RPAREN
+						(DesignatorMethodCallParams) Designator LPAREN ActPars RPAREN
 						|
-						(DesignatorMethodCall1) Designator LPAREN RPAREN
+						(DesignatorMethodCall) Designator LPAREN RPAREN
 						|
 						(DesignatorIncrement) Designator INC
 						|

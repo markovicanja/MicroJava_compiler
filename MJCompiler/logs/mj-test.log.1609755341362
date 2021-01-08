@@ -1,7 +1,0 @@
-INFO  11:13:54,038 - Compiling source file: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
-INFO  11:13:54,106 - #2 program
-INFO  11:13:54,107 - #20 MJCompiler
-INFO  11:13:54,107 - #47 {
-ERROR 11:13:54,107 - 
-Sintaksna greska na liniji 3, koloni 0 za simbol "{"!
-ERROR 11:13:54,107 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 3, koloni 0 za simbol "{"!

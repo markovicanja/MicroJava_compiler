@@ -32,7 +32,9 @@ program MJProgram
 		character++;
 		boolean--;
 		
-		fun(1, 2); // NE RADI ZA POGRESNE PARAMENTRE
+		// error - argumenti funkcije nisu odgovarajuci
+		fun(1, 2); 
+		fun(true);
 		
 		// error - posle minusa moze da bude samo int
 		character = -'a';
@@ -64,6 +66,6 @@ program MJProgram
 		num = num + 'a'; // error - clanovi izraza nisu tipa int, i nisu kompatibilni
 		num = num * 'a'; // error - clanovi izraza nisu tipa int
 		
-		
+		num = boolean ? 1 : 'a'; // error - drugi i treci izraz moraju biti istog tipa
 	}
 }

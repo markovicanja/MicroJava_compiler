@@ -309,9 +309,9 @@ CasePart ::= (CasePart) CASE NUM_CONST:N1 COLON StatementList:S2 {: RESULT=new C
 
 DesignatorStatement ::= (DesignatorAssignment) Designator:D1 Assignment:A2 {: RESULT=new DesignatorAssignment(D1, A2); RESULT.setLine(D1left); :}
 						|
-						(DesignatorMethodCall0) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignatorMethodCall0(D1, A2); RESULT.setLine(D1left); :}
+						(DesignatorMethodCallParams) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignatorMethodCallParams(D1, A2); RESULT.setLine(D1left); :}
 						|
-						(DesignatorMethodCall1) Designator:D1 LPAREN RPAREN {: RESULT=new DesignatorMethodCall1(D1); RESULT.setLine(D1left); :}
+						(DesignatorMethodCall) Designator:D1 LPAREN RPAREN {: RESULT=new DesignatorMethodCall(D1); RESULT.setLine(D1left); :}
 						|
 						(DesignatorIncrement) Designator:D1 INC {: RESULT=new DesignatorIncrement(D1); RESULT.setLine(D1left); :}
 						|
