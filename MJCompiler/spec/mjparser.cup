@@ -95,14 +95,12 @@ nonterminal GlobalVarDecl, GlobalVarList, GlobalVarPart;
 nonterminal MethodDeclList, MethodDec, MethodVoidDecl, MethodTypeDecl, MethVoidName, MethTypeName;
 nonterminal FormParams, FormParam, StatementList, Statement, StatementIf, StatementIfBody;
 nonterminal CaseList, CasePart, DesignatorStatement, Assignment;
-nonterminal ActPars, Condition, CondTerm, CondFact, IfCondition;
-nonterminal TermList, TermPart;
-nonterminal FactorList, FactorPart;
+nonterminal ActPars, IfCondition, DoHeader;
 nonterminal DesignatorName;
 nonterminal Relop, Addop, Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1, Condition, CondTerm, CondFact;
 
 precedence left ELSE;
 
@@ -265,7 +263,9 @@ Statement ::= (StmtDesign) DesignatorStatement SEMICOLON
 			  |
 			  (StmtIf) IF StatementIfBody
 			  |
-			  (StmtDoWhile) DO Statement WHILE LPAREN Condition RPAREN SEMICOLON;
+			  (StmtDoWhile) DoHeader Statement WHILE LPAREN Condition RPAREN SEMICOLON;
+			  
+DoHeader ::= (DoHead) DO;
 			  
 StatementIfBody ::= (StmtIfBody) IfCondition Statement;	
 
@@ -317,29 +317,15 @@ Expr ::= (ExprTernary) Expr1 QUESTION_MARK Expr1 COLON Expr1
 		 |
 		 (ExprOne) Expr1;
 			 
-Expr1 ::= (ExprNegMulti) MINUS Term TermList
-		  | 
-		  (ExprNegSingle) MINUS Term
+Expr1 ::= (ExprNeg) MINUS Term
 		  |
- 		  (ExprMulti) Term TermList
+ 		  (ExprAddop) Expr1 Addop Term
  		  |
  		  (ExprSingle) Term;
 		 
-TermList ::= (TermListMulti) TermList TermPart
-			 |
-			 (TermListSingle) TermPart;
-			 
-TermPart ::= (TermPart) Addop Term;
-		 
-Term ::= (TermMulti) Factor FactorList
+Term ::= (TermMulop) Term Mulop Factor
 		 |
 		 (TermSingle) Factor;
-
-FactorList ::= (FactorListMulti) FactorList FactorPart
-			   |
-			   (FactorListSingle) FactorPart;
-			   
-FactorPart ::= (FactorPart) Mulop Factor;
 
 Factor ::= (FuncCallParams) Designator:functionName LPAREN ActPars RPAREN
 		   |

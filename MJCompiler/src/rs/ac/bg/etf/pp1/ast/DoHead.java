@@ -5,20 +5,9 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ClassDecl7 extends ClassDecl {
+public class DoHead extends DoHeader {
 
-    private String I1;
-
-    public ClassDecl7 (String I1) {
-        this.I1=I1;
-    }
-
-    public String getI1() {
-        return I1;
-    }
-
-    public void setI1(String I1) {
-        this.I1=I1;
+    public DoHead () {
     }
 
     public void accept(Visitor visitor) {
@@ -39,13 +28,10 @@ public class ClassDecl7 extends ClassDecl {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("ClassDecl7(\n");
-
-        buffer.append(" "+tab+I1);
-        buffer.append("\n");
+        buffer.append("DoHead(\n");
 
         buffer.append(tab);
-        buffer.append(") [ClassDecl7]");
+        buffer.append(") [DoHead]");
         return buffer.toString();
     }
 }

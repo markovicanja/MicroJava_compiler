@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/0/2021 22:39:39
+// 8/0/2021 15:58:56
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,14 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public interface Visitor { 
 
     public void visit(Mulop Mulop);
-    public void visit(Relop Relop);
     public void visit(ProgramDeclarations ProgramDeclarations);
-    public void visit(TermList TermList);
+    public void visit(Relop Relop);
     public void visit(MethodVoidDecl MethodVoidDecl);
     public void visit(MethTypeName MethTypeName);
+    public void visit(DoHeader DoHeader);
     public void visit(StatementList StatementList);
     public void visit(VarPart VarPart);
-    public void visit(FactorList FactorList);
     public void visit(Addop Addop);
     public void visit(ProgramDeclaration ProgramDeclaration);
     public void visit(Factor Factor);
@@ -73,18 +72,11 @@ public interface Visitor {
     public void visit(FactorDesignator FactorDesignator);
     public void visit(FuncCall FuncCall);
     public void visit(FuncCallParams FuncCallParams);
-    public void visit(FactorPart FactorPart);
-    public void visit(FactorListSingle FactorListSingle);
-    public void visit(FactorListMulti FactorListMulti);
     public void visit(TermSingle TermSingle);
-    public void visit(TermMulti TermMulti);
-    public void visit(TermPart TermPart);
-    public void visit(TermListSingle TermListSingle);
-    public void visit(TermListMulti TermListMulti);
+    public void visit(TermMulop TermMulop);
     public void visit(ExprSingle ExprSingle);
-    public void visit(ExprMulti ExprMulti);
-    public void visit(ExprNegSingle ExprNegSingle);
-    public void visit(ExprNegMulti ExprNegMulti);
+    public void visit(ExprAddop ExprAddop);
+    public void visit(ExprNeg ExprNeg);
     public void visit(ExprOne ExprOne);
     public void visit(ExprTernary ExprTernary);
     public void visit(CondFactOne CondFactOne);
@@ -108,6 +100,7 @@ public interface Visitor {
     public void visit(IfCondError IfCondError);
     public void visit(IfCond IfCond);
     public void visit(StmtIfBody StmtIfBody);
+    public void visit(DoHead DoHead);
     public void visit(StmtDoWhile StmtDoWhile);
     public void visit(StmtIf StmtIf);
     public void visit(StmtIfElse StmtIfElse);

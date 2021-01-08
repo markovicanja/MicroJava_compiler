@@ -16,6 +16,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	private int nVars;
 	private boolean errorDetected = false;
 	private boolean returnValue = false;
+	private boolean mainMethodDefined = false;
+	private int doWhileDepth = 0;
 	
 	private ArrayList<Variable> declarationVariables = new ArrayList<Variable>();
 	private Obj currentMethod = null;
@@ -47,6 +49,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		// nVars = Tab.currentScope.getnVars();
     	Tab.chainLocalSymbols(program.getProgName().obj);
     	Tab.closeScope();
+    	if (!mainMethodDefined) {
+    		report_info("Semanticka greska - u programu mora postojati metoda 'void main();'", program);
+    	}
 //    	report_info("Kraj obrade programa '" + program.getProgName().getProgName() + "'", program);
 	}
 	
@@ -215,6 +220,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		currentMethod = Tab.insert(Obj.Meth, methodVoidName.getMethodName(), Tab.noType);
 		// mListOfMethods.add(new Method(methodVoidName.getMethodName()));		
 		Tab.openScope();
+		if (methodVoidName.getMethodName().equals("main")) {
+			mainMethodDefined = true;
+		}
 //		report_info("Pocetak obrade metode " + methodVoidName.getMethodName(), methodVoidName);
 	}
 	
@@ -255,6 +263,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 //	    		mListOfMethods.get(mListOfMethods.size() - 1).getParameters().add(obj.getType());
 //	    	}
 //	    	obj.setFpPos(currentMethod.getLevel());
+	    	if (currentMethod.getName().equals("main")) {
+	    		mainMethodDefined = false;
+	    	}
 	    	currentMethod.setLevel(currentMethod.getLevel() + 1);
 	    	report_info("Formalni parametar funkcije " + currentMethod.getName() + ": '" + paramNormal.getParamName() + "'", paramNormal);
 		} else {
@@ -269,6 +280,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 //				mListOfMethods.get(mListOfMethods.size() - 1).getParameters().add(obj.getType());
 //			}			
 //			obj.setFpPos(currentMethod.getLevel()); // ne kapiram??
+			if (currentMethod.getName().equals("main")) {
+	    		mainMethodDefined = false;
+	    	}
 			currentMethod.setLevel(currentMethod.getLevel() + 1);
 			report_info("Formalni parametar funkcije " + currentMethod.getName() + ": '" + paramArray.getParamName() + "'", paramArray);
 		} else {
@@ -276,10 +290,30 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		}
 	}
 	
+	// DoHeader
+	public void visit(DoHead doHead) {
+		 doWhileDepth++;
+	}
+	
 	// Statement
+	public void visit(StmtDoWhile stmtDoWhile) {
+		 if (!stmtDoWhile.getCondition().struct.equals(boolType)) {
+             report_error("Semanticka greska - while uslov nije tipa bool", stmtDoWhile);
+         }
+         doWhileDepth--;
+	}
+	
 	public void visit(StmtBreak stmtBreak) {
-		report_error("BREAK", stmtBreak); // KAKO OVO DA PROVERIM???
+		 if (doWhileDepth == 0) {
+             report_error("Semanticka greska - break iskaz van petlje", stmtBreak);
+         }
     }
+	
+	public void visit(StmtContinue stmtContinue) {
+		 if (doWhileDepth == 0) {
+            report_error("Semanticka greska - continue iskaz van petlje", stmtContinue);
+        }
+   }
 	
     public void visit(StmtReturnExpr stmtReturnExpr) {
     	returnValue = true;
@@ -388,6 +422,52 @@ public class SemanticAnalyzer extends VisitorAdaptor {
  	public void visit(AssignmentExpr assignmentExpr) { 
  		assignmentRight = assignmentExpr.getExpr().struct;
  	}
+  	
+  	// IfCondition
+  	public void visit(IfCond ifCond) {
+  		if (!ifCond.getCondition().struct.equals(boolType)) {
+            report_error("Semanticka greska - if uslov nije tipa bool", ifCond);
+        }
+  	}
+  	
+  	// Condition
+   	public void visit(CondOne condOne) {
+   		condOne.struct = condOne.getCondTerm().struct;
+   	}
+   	
+   	public void visit(CondTwo condTwo) { // Jel ovde getCondition ili getCondTerm??
+   		condTwo.struct = condTwo.getCondTerm().struct;
+   	}
+   	
+   	// CondTerm
+   	public void visit(CondTermOne condTermOne) {
+   		condTermOne.struct = condTermOne.getCondFact().struct;
+   	}
+   	
+   	public void visit(CondTermTwo condTermTwo) { // CondFact ili condTerm??
+   		condTermTwo.struct = condTermTwo.getCondFact().struct;
+   	}
+   	
+   	// CondFact
+   	public void visit(CondFactOne condFactOne) {
+   		condFactOne.struct = condFactOne.getExpr().struct;
+   	}
+   	
+   	public void visit(CondFactTwo condFactTwo) {
+   		if (!condFactTwo.getExpr().struct.compatibleWith(condFactTwo.getExpr1().struct)) {
+            report_error("Semanticka greska - tipovi relacionog izraza nisu kompatibilni", condFactTwo);
+        } else {
+        	int kindLeft = condFactTwo.getExpr().struct.getKind();
+        	int kindRight = condFactTwo.getExpr1().struct.getKind();
+        	Relop relop = condFactTwo.getRelop();
+            if (kindLeft == Struct.Array || kindRight == Struct.Array) {
+            	if (!(relop instanceof RelopEQ || relop instanceof RelopNE)) {
+            		report_error("Semanticka greska - relacioni izraz sa referentnim tipovima moze koristiti samo '==' i '!=' operatore", condFactTwo);
+                }
+            }
+        }
+   		condFactTwo.struct = boolType;
+   	}
  	
     // Expr
   	public void visit(ExprTernary exprTernary) { // STA SE OVDE DESAVA KAD IMA 3 Expr1???
@@ -399,31 +479,33 @@ public class SemanticAnalyzer extends VisitorAdaptor {
   	}
 	
 	// Expr1
-	public void visit(ExprNegMulti exprNegMulti) { 
-		if (exprNegMulti.getTerm().struct.getKind() != Struct.Int) {
-			report_error("Semanticka greska - tip mora da bude int", exprNegMulti);
+	public void visit(ExprNeg exprNeg) { 
+		if (exprNeg.getTerm().struct.getKind() != Struct.Int) {
+			report_error("Semanticka greska - tip mora da bude int", exprNeg);
 		}
-		exprNegMulti.struct = exprNegMulti.getTerm().struct;
-	}
-	
-	public void visit(ExprNegSingle exprNegSingle) {
-		if (exprNegSingle.getTerm().struct.getKind() != Struct.Int) {
-			report_error("Semanticka greska - tip mora da bude int", exprNegSingle);
-		}
-		exprNegSingle.struct = exprNegSingle.getTerm().struct;
+		exprNeg.struct = exprNeg.getTerm().struct;
 	}
 	
 	public void visit(ExprSingle exprSingle) { 
 		exprSingle.struct = exprSingle.getTerm().struct;
 	}
 	
-	public void visit(ExprMulti exprMulti) { 
-		exprMulti.struct = exprMulti.getTerm().struct;
+	public void visit(ExprAddop exprAddop) {
+		if (!exprAddop.getExpr1().struct.equals(Tab.intType) || !exprAddop.getTerm().struct.equals(Tab.intType)) {
+            report_error("Semanticka greska - clanovi izraza nisu tipa int", exprAddop);
+        }
+		if (!exprAddop.getExpr1().struct.compatibleWith(exprAddop.getTerm().struct)) {
+            report_error("Semanticka greska - clanovi izraza nisu kompatibilni", exprAddop);
+        }
+		exprAddop.struct = exprAddop.getExpr1().struct;
 	}
 	
 	// Term
-	public void visit(TermMulti termMulti) { 
-		termMulti.struct = termMulti.getFactor().struct;
+	public void visit(TermMulop termMulop) {
+		if (!termMulop.getTerm().struct.equals(Tab.intType) || !termMulop.getFactor().struct.equals(Tab.intType)) {
+            report_error("Semanticka greska - clanovi izraza nisu tipa int", termMulop);
+        }
+		termMulop.struct = termMulop.getTerm().struct;
 	}
 	
 	public void visit(TermSingle termSingle) { 

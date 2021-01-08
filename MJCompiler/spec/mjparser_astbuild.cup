@@ -118,21 +118,15 @@ nonterminal CasePart CasePart;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal Assignment Assignment;
 nonterminal ActPars ActPars;
-nonterminal Condition Condition;
-nonterminal CondTerm CondTerm;
-nonterminal CondFact CondFact;
 nonterminal IfCondition IfCondition;
-nonterminal TermList TermList;
-nonterminal TermPart TermPart;
-nonterminal FactorList FactorList;
-nonterminal FactorPart FactorPart;
+nonterminal DoHeader DoHeader;
 nonterminal DesignatorName DesignatorName;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1, Condition, CondTerm, CondFact;
 
 precedence left ELSE;
 
@@ -295,7 +289,9 @@ Statement ::= (StmtDesign) DesignatorStatement:D1 SEMICOLON {: RESULT=new StmtDe
 			  |
 			  (StmtIf) IF StatementIfBody:S1 {: RESULT=new StmtIf(S1); RESULT.setLine(S1left); :}
 			  |
-			  (StmtDoWhile) DO Statement:S1 WHILE LPAREN Condition:C2 RPAREN SEMICOLON {: RESULT=new StmtDoWhile(S1, C2); RESULT.setLine(S1left); :};
+			  (StmtDoWhile) DoHeader:D1 Statement:S2 WHILE LPAREN Condition:C3 RPAREN SEMICOLON {: RESULT=new StmtDoWhile(D1, S2, C3); RESULT.setLine(D1left); :};
+			  
+DoHeader ::= (DoHead) DO {: RESULT=new DoHead(); :};
 			  
 StatementIfBody ::= (StmtIfBody) IfCondition:I1 Statement:S2 {: RESULT=new StmtIfBody(I1, S2); RESULT.setLine(I1left); :};	
 
@@ -347,29 +343,15 @@ Expr ::= (ExprTernary) Expr1:E1 QUESTION_MARK Expr1:E2 COLON Expr1:E3 {: RESULT=
 		 |
 		 (ExprOne) Expr1:E1 {: RESULT=new ExprOne(E1); RESULT.setLine(E1left); :};
 			 
-Expr1 ::= (ExprNegMulti) MINUS Term:T1 TermList:T2 {: RESULT=new ExprNegMulti(T1, T2); RESULT.setLine(T1left); :}
-		  | 
-		  (ExprNegSingle) MINUS Term:T1 {: RESULT=new ExprNegSingle(T1); RESULT.setLine(T1left); :}
+Expr1 ::= (ExprNeg) MINUS Term:T1 {: RESULT=new ExprNeg(T1); RESULT.setLine(T1left); :}
 		  |
- 		  (ExprMulti) Term:T1 TermList:T2 {: RESULT=new ExprMulti(T1, T2); RESULT.setLine(T1left); :}
+ 		  (ExprAddop) Expr1:E1 Addop:A2 Term:T3 {: RESULT=new ExprAddop(E1, A2, T3); RESULT.setLine(E1left); :}
  		  |
  		  (ExprSingle) Term:T1 {: RESULT=new ExprSingle(T1); RESULT.setLine(T1left); :};
 		 
-TermList ::= (TermListMulti) TermList:T1 TermPart:T2 {: RESULT=new TermListMulti(T1, T2); RESULT.setLine(T1left); :}
-			 |
-			 (TermListSingle) TermPart:T1 {: RESULT=new TermListSingle(T1); RESULT.setLine(T1left); :};
-			 
-TermPart ::= (TermPart) Addop:A1 Term:T2 {: RESULT=new TermPart(A1, T2); RESULT.setLine(A1left); :};
-		 
-Term ::= (TermMulti) Factor:F1 FactorList:F2 {: RESULT=new TermMulti(F1, F2); RESULT.setLine(F1left); :}
+Term ::= (TermMulop) Term:T1 Mulop:M2 Factor:F3 {: RESULT=new TermMulop(T1, M2, F3); RESULT.setLine(T1left); :}
 		 |
 		 (TermSingle) Factor:F1 {: RESULT=new TermSingle(F1); RESULT.setLine(F1left); :};
-
-FactorList ::= (FactorListMulti) FactorList:F1 FactorPart:F2 {: RESULT=new FactorListMulti(F1, F2); RESULT.setLine(F1left); :}
-			   |
-			   (FactorListSingle) FactorPart:F1 {: RESULT=new FactorListSingle(F1); RESULT.setLine(F1left); :};
-			   
-FactorPart ::= (FactorPart) Mulop:M1 Factor:F2 {: RESULT=new FactorPart(M1, F2); RESULT.setLine(M1left); :};
 
 Factor ::= (FuncCallParams) Designator:functionName LPAREN ActPars:A1 RPAREN {: RESULT=new FuncCallParams(functionName, A1); RESULT.setLine(functionNameleft); :}
 		   |

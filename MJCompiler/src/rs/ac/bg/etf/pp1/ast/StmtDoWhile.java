@@ -1,20 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/0/2021 22:39:39
+// 8/0/2021 15:58:55
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class StmtDoWhile extends Statement {
 
+    private DoHeader DoHeader;
     private Statement Statement;
     private Condition Condition;
 
-    public StmtDoWhile (Statement Statement, Condition Condition) {
+    public StmtDoWhile (DoHeader DoHeader, Statement Statement, Condition Condition) {
+        this.DoHeader=DoHeader;
+        if(DoHeader!=null) DoHeader.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
         this.Condition=Condition;
         if(Condition!=null) Condition.setParent(this);
+    }
+
+    public DoHeader getDoHeader() {
+        return DoHeader;
+    }
+
+    public void setDoHeader(DoHeader DoHeader) {
+        this.DoHeader=DoHeader;
     }
 
     public Statement getStatement() {
@@ -38,17 +49,20 @@ public class StmtDoWhile extends Statement {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(DoHeader!=null) DoHeader.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
         if(Condition!=null) Condition.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(DoHeader!=null) DoHeader.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
         if(Condition!=null) Condition.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(DoHeader!=null) DoHeader.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
         if(Condition!=null) Condition.traverseBottomUp(visitor);
         accept(visitor);
@@ -58,6 +72,12 @@ public class StmtDoWhile extends Statement {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("StmtDoWhile(\n");
+
+        if(DoHeader!=null)
+            buffer.append(DoHeader.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
 
         if(Statement!=null)
             buffer.append(Statement.toString("  "+tab));

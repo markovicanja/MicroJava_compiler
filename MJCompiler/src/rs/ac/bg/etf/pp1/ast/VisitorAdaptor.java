@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/0/2021 22:39:39
+// 8/0/2021 15:58:56
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,14 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public abstract class VisitorAdaptor implements Visitor { 
 
     public void visit(Mulop Mulop) { }
-    public void visit(Relop Relop) { }
     public void visit(ProgramDeclarations ProgramDeclarations) { }
-    public void visit(TermList TermList) { }
+    public void visit(Relop Relop) { }
     public void visit(MethodVoidDecl MethodVoidDecl) { }
     public void visit(MethTypeName MethTypeName) { }
+    public void visit(DoHeader DoHeader) { }
     public void visit(StatementList StatementList) { }
     public void visit(VarPart VarPart) { }
-    public void visit(FactorList FactorList) { }
     public void visit(Addop Addop) { }
     public void visit(ProgramDeclaration ProgramDeclaration) { }
     public void visit(Factor Factor) { }
@@ -73,18 +72,11 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FactorDesignator FactorDesignator) { visit(); }
     public void visit(FuncCall FuncCall) { visit(); }
     public void visit(FuncCallParams FuncCallParams) { visit(); }
-    public void visit(FactorPart FactorPart) { visit(); }
-    public void visit(FactorListSingle FactorListSingle) { visit(); }
-    public void visit(FactorListMulti FactorListMulti) { visit(); }
     public void visit(TermSingle TermSingle) { visit(); }
-    public void visit(TermMulti TermMulti) { visit(); }
-    public void visit(TermPart TermPart) { visit(); }
-    public void visit(TermListSingle TermListSingle) { visit(); }
-    public void visit(TermListMulti TermListMulti) { visit(); }
+    public void visit(TermMulop TermMulop) { visit(); }
     public void visit(ExprSingle ExprSingle) { visit(); }
-    public void visit(ExprMulti ExprMulti) { visit(); }
-    public void visit(ExprNegSingle ExprNegSingle) { visit(); }
-    public void visit(ExprNegMulti ExprNegMulti) { visit(); }
+    public void visit(ExprAddop ExprAddop) { visit(); }
+    public void visit(ExprNeg ExprNeg) { visit(); }
     public void visit(ExprOne ExprOne) { visit(); }
     public void visit(ExprTernary ExprTernary) { visit(); }
     public void visit(CondFactOne CondFactOne) { visit(); }
@@ -108,6 +100,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(IfCondError IfCondError) { visit(); }
     public void visit(IfCond IfCond) { visit(); }
     public void visit(StmtIfBody StmtIfBody) { visit(); }
+    public void visit(DoHead DoHead) { visit(); }
     public void visit(StmtDoWhile StmtDoWhile) { visit(); }
     public void visit(StmtIf StmtIf) { visit(); }
     public void visit(StmtIfElse StmtIfElse) { visit(); }

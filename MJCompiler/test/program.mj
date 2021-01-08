@@ -6,10 +6,14 @@ program MJProgram
 		// error - treba da ima povratnu vrednost
 	}
 	
+	// error - mora da postoji void main();
+	// void main(int x); 
+	// int main();
+	
 	void main() 
 	int b; char b; // error - b je vec deklarisano
 	int num; char character; bool boolean;
-	int niz[];
+	int niz[], niz1[];
 	{
 		a = 1; // error - a nije deklarisano
 		
@@ -35,5 +39,31 @@ program MJProgram
 		
 		// error - tip za alociranje niza moze biti jedino int
 		niz = new int['a'];
+		
+		do {
+			num++;
+			break;
+			continue;
+		} while(num < 10);
+		
+		break; // error - break iskaz van petlje
+		continue; // error - continue iskaz van petlje
+		
+		if (niz < niz1) { // error - relacioni izraz sa referentnim tipovima moze koristiti samo '==' i '!='
+			num = 1;
+		}
+		
+		if (num) { // error - if nije tipa bool
+			num = 2;
+		}
+		
+		do {
+			niz[true] = 1; // error - nevalidan pristup elementu niza
+		} while(num); // error - while uslov nije tipa bool
+		
+		num = num + 'a'; // error - clanovi izraza nisu tipa int, i nisu kompatibilni
+		num = num * 'a'; // error - clanovi izraza nisu tipa int
+		
+		
 	}
 }

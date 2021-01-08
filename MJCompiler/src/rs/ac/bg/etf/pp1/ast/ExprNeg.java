@@ -1,15 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/0/2021 22:39:39
+// 8/0/2021 15:58:55
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ExprNegSingle extends Expr1 {
+public class ExprNeg extends Expr1 {
 
     private Term Term;
 
-    public ExprNegSingle (Term Term) {
+    public ExprNeg (Term Term) {
         this.Term=Term;
         if(Term!=null) Term.setParent(this);
     }
@@ -43,7 +43,7 @@ public class ExprNegSingle extends Expr1 {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("ExprNegSingle(\n");
+        buffer.append("ExprNeg(\n");
 
         if(Term!=null)
             buffer.append(Term.toString("  "+tab));
@@ -52,7 +52,7 @@ public class ExprNegSingle extends Expr1 {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [ExprNegSingle]");
+        buffer.append(") [ExprNeg]");
         return buffer.toString();
     }
 }
