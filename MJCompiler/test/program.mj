@@ -1,71 +1,12 @@
-program MJProgram
-	abc a; // error - abc nije tip
-	const int cnst = 1;
+program test
+	const int N = 2;
+	int g;
 {
-	int fun(int x) {
-		// error - treba da ima povratnu vrednost
-	}
-	
-	// error - mora da postoji void main();
-	// void main(int x); 
-	// int main();
-	
-	void main() 
-	int b; char b; // error - b je vec deklarisano
-	int num; char character; bool boolean;
-	int niz[], niz1[];
+	void main()
 	{
-		a = 1; // error - a nije deklarisano
-		
-		// error - nekompatibilni tipovi za dodelu vrednosti
-		num = 'a'; 
-		num = true;
-		character = 1;
-		character = true;
-		boolean = 1;
-		boolean = 'a';
-		
-		// error - vrednost ne moze da se dodeli konstanti
-		cnst = 2;
-		
-		// error - tip za inc i dec moze biti samo int
-		character++;
-		boolean--;
-		
-		// error - argumenti funkcije nisu odgovarajuci
-		fun(1, 2); 
-		fun(true);
-		
-		// error - posle minusa moze da bude samo int
-		character = -'a';
-		
-		// error - tip za alociranje niza moze biti jedino int
-		niz = new int['a'];
-		
-		do {
-			num++;
-			break;
-			continue;
-		} while(num < 10);
-		
-		break; // error - break iskaz van petlje
-		continue; // error - continue iskaz van petlje
-		
-		if (niz < niz1) { // error - relacioni izraz sa referentnim tipovima moze koristiti samo '==' i '!='
-			num = 1;
-		}
-		
-		if (num) { // error - if nije tipa bool
-			num = 2;
-		}
-		
-		do {
-			niz[true] = 1; // error - nevalidan pristup elementu niza
-		} while(num); // error - while uslov nije tipa bool
-		
-		num = num + 'a'; // error - clanovi izraza nisu tipa int, i nisu kompatibilni
-		num = num * 'a'; // error - clanovi izraza nisu tipa int
-		
-		num = boolean ? 1 : 'a'; // error - drugi i treci izraz moraju biti istog tipa
+		g = N;
+		print(g);
+		g++;
+		read(g);
 	}
 }

@@ -13,11 +13,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	public static Struct boolType = Tab.insert(Obj.Type, "bool", new Struct(5)).getType();
 	
-//	private int nVars;
-//	private boolean errorDetected = false;
+	private int nVars;
+	private boolean errorDetected = false;
 	private boolean returnValue = false;
 	private boolean mainMethodDefined = false;
 	private int doWhileDepth = 0;
+	private Obj outerScopeObj = null;
 	
 	private ArrayList<Variable> declarationVariables = new ArrayList<Variable>();
 	private ArrayList<Method> methods = new ArrayList<Method>();
@@ -28,7 +29,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	Logger log = Logger.getLogger(getClass());
 	
 	public void report_error(String message, SyntaxNode info) {
-//		errorDetected = true;
+		errorDetected = true;
 		StringBuilder msg = new StringBuilder(message);
 		int line = (info == null) ? 0: info.getLine();
 		if (line != 0)
@@ -44,12 +45,25 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		log.info(msg.toString());
 	}
 	
+	public boolean isErrorDetected() {
+		return errorDetected;
+	}
+	
+	public int getnVars() {
+		return nVars;
+	}
+	
+	public Obj getOuterScope() {
+		return outerScopeObj;
+	}
+	
 	// *** VISIT METODE ***
 	
 	// Program
 	public void visit(Program program) { 
-		// nVars = Tab.currentScope.getnVars();
-    	Tab.chainLocalSymbols(program.getProgName().obj);
+		nVars = Tab.currentScope.getnVars();
+		outerScopeObj = program.getProgName().obj;
+    	Tab.chainLocalSymbols(outerScopeObj);
     	Tab.closeScope();
     	if (!mainMethodDefined) {
     		report_info("Semanticka greska - u programu mora postojati metoda 'void main();'", program);

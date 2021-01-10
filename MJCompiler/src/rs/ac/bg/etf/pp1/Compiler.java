@@ -2,28 +2,21 @@ package rs.ac.bg.etf.pp1;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.util.Collection;
-import java.util.Iterator;
-
 import org.apache.log4j.Logger;
 import java_cup.runtime.Symbol;
 import rs.ac.bg.etf.pp1.ast.Program;
-import rs.ac.bg.etf.pp1.ast.SyntaxNode;
 import rs.etf.pp1.symboltable.Tab;
-import rs.etf.pp1.symboltable.concepts.Obj;
-import rs.etf.pp1.symboltable.concepts.Scope;
-import rs.etf.pp1.symboltable.concepts.Struct;
-import rs.etf.pp1.symboltable.visitors.SymbolTableVisitor;
+import rs.etf.pp1.mj.runtime.Code;
 
 public class Compiler {
 
 	private static Logger log = Logger.getLogger(Compiler.class);
 	
 	public static void main(String[] args) throws Exception {
-		Logger log = Logger.getLogger(Compiler.class);
-		if (args.length < 1) {
-			log.error("Nema dovoljno argumenata! ( Ocekivani ulaz: <ulaz>.mj )");
+		if (args.length < 2) {
+			log.error("Nema dovoljno argumenata! ( Ocekivani ulaz: <ulaz>.mj <izlaz>.obj )");
 			return;
 		}
 		
@@ -59,6 +52,25 @@ public class Compiler {
             // log.info("\n\n================TABELA SIMBOLA====================\n\n");
             tsdump();
 			log.info("===================================");
+			
+			if (!semanticAnalyzer.isErrorDetected()) {
+	        	File objFile = new File(args[1]);
+	        	log.info("Generisanje MJ bajtkoda: " + objFile.getAbsolutePath());
+	        	if (objFile.exists())
+	        		objFile.delete();
+
+	        	CodeGenerator codeGenerator = new CodeGenerator(semanticAnalyzer.getOuterScope());
+                prog.traverseBottomUp(codeGenerator);
+                
+                Code.dataSize = semanticAnalyzer.getnVars();
+                Code.mainPc = codeGenerator.getMainPc();
+                
+	        	Code.write(new FileOutputStream(objFile));
+	        	log.info("Parsiranje uspesno zavrseno!");
+	        }
+	        else {
+	        	log.error("Parsiranje nije uspesno zavrseno!");
+	        }
 		}
 	}
 	
