@@ -97,7 +97,7 @@ nonterminal FormParams, FormParam, StatementList, Statement, StatementIf, Statem
 nonterminal CaseList, CasePart, DesignatorStatement, Assignment;
 nonterminal ActPars, IfCondition, DoHeader;
 nonterminal DesignatorName;
-nonterminal Relop, Addop, Mulop;
+nonterminal Assignop, Relop, Addop, Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1, Condition, CondTerm, CondFact;
@@ -148,9 +148,7 @@ GlobalVarList ::= (GlobalVarMulti) GlobalVarList COMMA GlobalVarPart
 				  |
 				  (GlobalVarSingle) GlobalVarPart;
 			
-GlobalVarPart ::= (GlobalVarNormal) IDENT:varName 
-				  |
-				  (GlobalVarArray) IDENT:varName LSQUARE RSQUARE
+GlobalVarPart ::= (GlobalVar) VarPart 
 				  |
 				  (VarError) error {: parser.report_error("Oporavak od greske u deklaraciji globalne promenljive", parser.getErrorSymbol()); :};
 				  /* A1 definicija globalne promenljive */ 
@@ -349,6 +347,8 @@ Designator ::= (DesignatorArray) IDENT:designatorName LSQUARE Expr RSQUARE
 			   |
 			   (DesignatorSimple) IDENT:designatorName;
 			   
+Assignop ::= (Assignop) ASSIGNMENT;
+
 Relop ::= (RelopEQ) EQUAL
 		  |
 		  (RelopNE) NOT_EQUAL

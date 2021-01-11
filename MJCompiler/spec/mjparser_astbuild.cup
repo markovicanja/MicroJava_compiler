@@ -121,6 +121,7 @@ nonterminal ActPars ActPars;
 nonterminal IfCondition IfCondition;
 nonterminal DoHeader DoHeader;
 nonterminal DesignatorName DesignatorName;
+nonterminal Assignop Assignop;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
@@ -174,9 +175,7 @@ GlobalVarList ::= (GlobalVarMulti) GlobalVarList:G1 COMMA GlobalVarPart:G2 {: RE
 				  |
 				  (GlobalVarSingle) GlobalVarPart:G1 {: RESULT=new GlobalVarSingle(G1); RESULT.setLine(G1left); :};
 			
-GlobalVarPart ::= (GlobalVarNormal) IDENT:varName {: RESULT=new GlobalVarNormal(varName); RESULT.setLine(varNameleft); :} 
-				  |
-				  (GlobalVarArray) IDENT:varName LSQUARE RSQUARE {: RESULT=new GlobalVarArray(varName); RESULT.setLine(varNameleft); :}
+GlobalVarPart ::= (GlobalVar) VarPart:V1 {: RESULT=new GlobalVar(V1); RESULT.setLine(V1left); :} 
 				  |
 				  (VarError) error {: parser.report_error("Oporavak od greske u deklaraciji globalne promenljive", parser.getErrorSymbol()); :} {: RESULT=new VarError(); :};
 				  /* A1 definicija globalne promenljive */ 
@@ -375,6 +374,8 @@ Designator ::= (DesignatorArray) IDENT:designatorName LSQUARE Expr:E1 RSQUARE {:
 			   |
 			   (DesignatorSimple) IDENT:designatorName {: RESULT=new DesignatorSimple(designatorName); RESULT.setLine(designatorNameleft); :};
 			   
+Assignop ::= (Assignop) ASSIGNMENT {: RESULT=new Assignop(); :};
+
 Relop ::= (RelopEQ) EQUAL {: RESULT=new RelopEQ(); :}
 		  |
 		  (RelopNE) NOT_EQUAL {: RESULT=new RelopNE(); :}

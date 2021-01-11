@@ -5,21 +5,21 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ExprOne extends Expr {
+public class GlobalVar extends GlobalVarPart {
 
-    private Expr1 Expr1;
+    private VarPart VarPart;
 
-    public ExprOne (Expr1 Expr1) {
-        this.Expr1=Expr1;
-        if(Expr1!=null) Expr1.setParent(this);
+    public GlobalVar (VarPart VarPart) {
+        this.VarPart=VarPart;
+        if(VarPart!=null) VarPart.setParent(this);
     }
 
-    public Expr1 getExpr1() {
-        return Expr1;
+    public VarPart getVarPart() {
+        return VarPart;
     }
 
-    public void setExpr1(Expr1 Expr1) {
-        this.Expr1=Expr1;
+    public void setVarPart(VarPart VarPart) {
+        this.VarPart=VarPart;
     }
 
     public void accept(Visitor visitor) {
@@ -27,32 +27,32 @@ public class ExprOne extends Expr {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Expr1!=null) Expr1.accept(visitor);
+        if(VarPart!=null) VarPart.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Expr1!=null) Expr1.traverseTopDown(visitor);
+        if(VarPart!=null) VarPart.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Expr1!=null) Expr1.traverseBottomUp(visitor);
+        if(VarPart!=null) VarPart.traverseBottomUp(visitor);
         accept(visitor);
     }
 
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("ExprOne(\n");
+        buffer.append("GlobalVar(\n");
 
-        if(Expr1!=null)
-            buffer.append(Expr1.toString("  "+tab));
+        if(VarPart!=null)
+            buffer.append(VarPart.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [ExprOne]");
+        buffer.append(") [GlobalVar]");
         return buffer.toString();
     }
 }

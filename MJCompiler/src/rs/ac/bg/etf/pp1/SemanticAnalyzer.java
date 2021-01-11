@@ -160,35 +160,35 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	
     // GlobalVarPart
-    public void visit(GlobalVarNormal globalVarNormal) {
-		if (Tab.find(globalVarNormal.getVarName()) == Tab.noObj) {
-			String varName = globalVarNormal.getVarName();
-			for (Variable var : declarationVariables) {
-				if(var.getName().equals(varName)) {
-					report_error("Semanticka greska - '" + globalVarNormal.getVarName() + "' je vec deklarisano", globalVarNormal);
-					return;
-				}
-			}
-			declarationVariables.add(new Variable(globalVarNormal.getVarName(), false, null));			
-		} else { 			
-			report_error("Semanticka greska - '" + globalVarNormal.getVarName() + "' je vec deklarisano", globalVarNormal);
-		}
-	}
-    
-	public void visit(GlobalVarArray globalVarArray) { 
-		if (Tab.find(globalVarArray.getVarName()) == Tab.noObj) { 
-			String varName = globalVarArray.getVarName();
-			for (Variable var : declarationVariables) {
-				if(var.getName().equals(varName)) {
-					report_error("Semanticka greska - '" + globalVarArray.getVarName() + "' je vec deklarisano", globalVarArray);
-					return;
-				}
-			}
-			declarationVariables.add(new Variable(globalVarArray.getVarName(), true, null));			
-		} else { 
-			report_error("Semanticka greska - '" + globalVarArray.getVarName() + "' je vec deklarisano", globalVarArray);
-		}
-	}
+//    public void visit(GlobalVarNormal globalVarNormal) {
+//		if (Tab.find(globalVarNormal.getVarName()) == Tab.noObj) {
+//			String varName = globalVarNormal.getVarName();
+//			for (Variable var : declarationVariables) {
+//				if(var.getName().equals(varName)) {
+//					report_error("Semanticka greska - '" + globalVarNormal.getVarName() + "' je vec deklarisano", globalVarNormal);
+//					return;
+//				}
+//			}
+//			declarationVariables.add(new Variable(globalVarNormal.getVarName(), false, null));			
+//		} else { 			
+//			report_error("Semanticka greska - '" + globalVarNormal.getVarName() + "' je vec deklarisano", globalVarNormal);
+//		}
+//	}
+//    
+//	public void visit(GlobalVarArray globalVarArray) { 
+//		if (Tab.find(globalVarArray.getVarName()) == Tab.noObj) { 
+//			String varName = globalVarArray.getVarName();
+//			for (Variable var : declarationVariables) {
+//				if(var.getName().equals(varName)) {
+//					report_error("Semanticka greska - '" + globalVarArray.getVarName() + "' je vec deklarisano", globalVarArray);
+//					return;
+//				}
+//			}
+//			declarationVariables.add(new Variable(globalVarArray.getVarName(), true, null));			
+//		} else { 
+//			report_error("Semanticka greska - '" + globalVarArray.getVarName() + "' je vec deklarisano", globalVarArray);
+//		}
+//	}
     
 	// ConstDecl
     public void visit(ConstDeclaration constDeclaration) {	
@@ -593,7 +593,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		factorBoolConst.struct = boolType;
 	}
 
-	// faktor za kljucnu rec NEW [ NE RADI SE ] ????
 	public void visit(FactorNew factorNew) {
 		factorNew.struct = factorNew.getType().struct;
 	} 

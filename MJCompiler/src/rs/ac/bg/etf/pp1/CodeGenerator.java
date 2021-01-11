@@ -2,6 +2,7 @@ package rs.ac.bg.etf.pp1;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Stack;
 
 import org.apache.log4j.Logger;
 import rs.ac.bg.etf.pp1.ast.*;
@@ -14,19 +15,13 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	private Logger log = Logger.getLogger(getClass());
 	
-	private static final int ADD = 1;
-	private static final int SUB = 2;
-	private static final int MUL = 3;
-	private static final int DIV = 4;
-	private static final int MOD = 5;
-	
 	private int mainPc;
 	private Obj outerScope = null;
 	private Variable variable = null;
 	private Obj currentMethod = null;
 	private ArrayList<Variable> variables = new ArrayList<Variable>();
-	private ArrayList<Integer> addopStack = new ArrayList<>();
-	private ArrayList<Integer> mulopStack = new ArrayList<>();
+	private Stack<Integer> addopStack = new Stack<>();
+	private Stack<Integer> mulopStack = new Stack<>();
 
 	public CodeGenerator(Obj outerScope) {
 		super();
@@ -71,23 +66,25 @@ public class CodeGenerator extends VisitorAdaptor {
 		return null;
 	}
 	
-	public Obj getVarConst(String objName) {	
+	public Obj getVarConst(String objName) {
+		 
 		Obj obj = Tab.find(objName);
 		if (obj == Tab.noObj) {
 			Collection<Obj> localSymbols = outerScope.getLocalSymbols();
-			for (Obj o : localSymbols) {
+			for (Obj o : localSymbols) {				
 				if (o.getKind() != Obj.Meth && o.getName().equals(objName)) {
 					return o;
 				}
 			}			
-//			if (mCurrMethod != null) {
-//				localSymbols = mCurrMethod.getLocalSymbols();
-//				for (Obj o: localSymbols) {
-//					if (o.getName().equals(objName)) {
-//						return o;
-//					}
-//				}
-//			}		
+			if (currentMethod != null) {
+				localSymbols = currentMethod.getLocalSymbols();
+				for (Obj o: localSymbols) {		
+					report_error("currentMethod localSymbols" + o.getName(), null);
+					if (o.getName().equals(objName)) {
+						return o;
+					}
+				}
+			}		
 		} else {
 			return obj;
 		}
@@ -151,6 +148,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	// MethodTypeDecl
 	public void visit(MethodTypeDeclaration methodTypeDeclaration) {
+		// end of function reached without a return statement
 		Code.put(Code.trap); 
 		Code.put(1);
 		currentMethod = null;
@@ -183,7 +181,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.store(designatorAssignment.getDesignator().obj);	
 	}
 	
-	public void visit(StmtPrint stmtPrint){
+	public void visit(StmtPrint stmtPrint) {
 		Struct struct = stmtPrint.getExpr().struct;
 		if (struct.equals(Tab.intType) || struct.equals(SemanticAnalyzer.boolType)) {
 			Code.loadConst(0); // A STO JE OVDE 0???
@@ -194,7 +192,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		}	
 	}
 	
-	public void visit(StmtPrintNumConst stmtPrintNumConst) {		
+	public void visit(StmtPrintNumConst stmtPrintNumConst) {
 		Struct struct = stmtPrintNumConst.getExpr().struct;
 		if (struct.equals(Tab.intType) || struct.equals(SemanticAnalyzer.boolType)) {
 			Code.loadConst(stmtPrintNumConst.getN2());
@@ -221,7 +219,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.store(designatorIncrement.getDesignator().obj);		
 	}
 	
-	@Override
 	public void visit(DesignatorDecrement designatorDecrement) {
 		if(designatorDecrement.getDesignator().obj.getKind() == Obj.Elem) {
 			Code.put(Code.dup2);
@@ -232,6 +229,24 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.store(designatorDecrement.getDesignator().obj);		
 	}
 	
+	public void visit(DesignatorMethodCallParams designatorMethodCallParams) {
+		Obj method = designatorMethodCallParams.getDesignator().obj;
+		if (outerScope.getLocalSymbols().contains(method)) {
+			int offset = method.getAdr() - Code.pc;
+			Code.put(Code.call);
+			Code.put2(offset);
+		}
+	}
+
+	public void visit(DesignatorMethodCall designatorMethodCall) { 
+		Obj method = designatorMethodCall.getDesignator().obj;
+		if (outerScope.getLocalSymbols().contains(method)) {
+			int offset = method.getAdr() - Code.pc;
+			Code.put(Code.call);
+			Code.put2(offset);
+		}
+	}
+	
 	// Term
 	public void visit(TermSingle termSingle) { 		
 		SyntaxNode parent = (SyntaxNode) termSingle.getParent();
@@ -239,6 +254,10 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(Code.neg);
 		}
 	} 
+	
+	public void visit(TermMulop termMulop) {
+		Code.put(mulopStack.pop());
+	}
 	
 	// Factor
 	public void visit(FactorNumConst factorNumConst) {
@@ -269,31 +288,54 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 	
+	public void visit(FuncCallParams funcCallParams) {
+		Obj method = funcCallParams.getDesignator().obj;
+		if (outerScope.getLocalSymbols().contains(method)) {
+			int offset = method.getAdr() - Code.pc;
+			Code.put(Code.call);
+			Code.put2(offset);
+		}
+	}
+
+	public void visit(FuncCall funcCall) {
+		Obj method = funcCall.getDesignator().obj;
+		if (outerScope.getLocalSymbols().contains(method)) {
+			int offset = method.getAdr() - Code.pc;
+			Code.put(Code.call);
+			Code.put2(offset);
+		}
+	}
 	
-//	public void visit(StmtRead stmtRead) {		
-//		Code.put(Code.read);
-//		Code.store(stmtRead.getDesignator().obj);		
-//	}
+	// Designator	
+	public void visit(DesignatorArray designatorArray) { //STA JE OVO dup_x1??
+		Obj o = null;
+		o = getVarConst(designatorArray.getDesignatorName());	
+		if (o != null) {
+			Code.load(o);
+			Code.put(Code.dup_x1);
+			Code.put(Code.pop);
+		}	
+	}
 	
 	// Addop
 	public void visit(AddopPlus addopPlus) {
-		addopStack.add(ADD);
+		addopStack.push(Code.add);
 	}
 	
 	public void visit(AddopMinus addopMinus) {
-		addopStack.add(SUB);
+		addopStack.push(Code.sub);
 	}
 	
 	// Mulop
 	public void visit(MulopMul mulopMul) {		
-		mulopStack.add(MUL);
+		mulopStack.push(Code.mul);
 	}
 
-	public void visit(MulopDiv Mul_op_div) {
-		mulopStack.add(DIV);
+	public void visit(MulopDiv mulopDiv) {
+		mulopStack.push(Code.div);
 	}
 	
-	public void visit(MulopMod Mul_op_mod) {
-		mulopStack.add(MOD);
+	public void visit(MulopMod mulopMod) {
+		mulopStack.push(Code.rem);
 	}
 }

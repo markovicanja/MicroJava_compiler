@@ -1,12 +1,7 @@
 program test
-	const int N = 2;
-	int g;
 {
 	void main()
 	{
-		g = N;
-		print(g);
-		g++;
-		read(g);
+		
 	}
 }

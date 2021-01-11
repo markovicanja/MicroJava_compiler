@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 10/0/2021 22:10:16
+// 11/0/2021 21:3:43
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,8 +8,8 @@ package rs.ac.bg.etf.pp1.ast;
 public abstract class VisitorAdaptor implements Visitor { 
 
     public void visit(Mulop Mulop) { }
-    public void visit(ProgramDeclarations ProgramDeclarations) { }
     public void visit(Relop Relop) { }
+    public void visit(ProgramDeclarations ProgramDeclarations) { }
     public void visit(MethodVoidDecl MethodVoidDecl) { }
     public void visit(MethTypeName MethTypeName) { }
     public void visit(DoHeader DoHeader) { }
@@ -61,6 +61,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(RelopGT RelopGT) { visit(); }
     public void visit(RelopNE RelopNE) { visit(); }
     public void visit(RelopEQ RelopEQ) { visit(); }
+    public void visit(Assignop Assignop) { visit(); }
     public void visit(DesignatorSimple DesignatorSimple) { visit(); }
     public void visit(DesignatorArray DesignatorArray) { visit(); }
     public void visit(FactorExpr FactorExpr) { visit(); }
@@ -156,8 +157,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ClassDecl1 ClassDecl1) { visit(); }
     public void visit(ClassDecl0 ClassDecl0) { visit(); }
     public void visit(VarError VarError) { visit(); }
-    public void visit(GlobalVarArray GlobalVarArray) { visit(); }
-    public void visit(GlobalVarNormal GlobalVarNormal) { visit(); }
+    public void visit(GlobalVar GlobalVar) { visit(); }
     public void visit(GlobalVarSingle GlobalVarSingle) { visit(); }
     public void visit(GlobalVarMulti GlobalVarMulti) { visit(); }
     public void visit(GlobalVarDeclaration GlobalVarDeclaration) { visit(); }
