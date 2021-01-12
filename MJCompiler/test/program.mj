@@ -1,25 +1,19 @@
-program test
-	const int N = 2;
-	int g;
-	//int k;
-	int niz[];
+// Test301
+
+program test301
+	
 {
-	void main()
-	int m;
-	int k;
-	char c;
+
+	void main()	
+		int x, y;
+		bool bt;
+		int niz[];
 	{
-		g = N;
-		g++;
-		k = g;
-		k++;
-		print(k);
-		//read(g);
+		x = 1;
+		y = 1;
+		// if (x >= 0 || y <= 2) x = 3;
+		//if (x!=0 && y>2 || x==1) x = 4;
 		
-		//niz = new int[N];
-		// niz[0] = 1;
 		
-		//m = 2 * 1 * 3;
-		//print(m);
 	}
 }

@@ -62,7 +62,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	// Program
 	public void visit(Program program) { 
 		nVars = Tab.currentScope.getnVars();
-		report_info("PROGRAM " + nVars, program);
 		outerScopeObj = program.getProgName().obj;
     	Tab.chainLocalSymbols(outerScopeObj);
     	Tab.closeScope();
@@ -302,7 +301,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	
 	// DoHeader
-	public void visit(DoHead doHead) {
+	public void visit(DoKeyword doKeyword) {
 		 doWhileDepth++;
 	}
 	
@@ -452,55 +451,65 @@ public class SemanticAnalyzer extends VisitorAdaptor {
   	}
   	
   	// Condition
-   	public void visit(CondOne condOne) {
-   		condOne.struct = condOne.getCondTerm().struct;
+   	public void visit(CondSingle condSingle) {
+   		condSingle.struct = condSingle.getCondTerm().struct;
    	}
    	
-   	public void visit(CondTwo condTwo) { // Jel ovde getCondition ili getCondTerm??
-   		condTwo.struct = condTwo.getCondTerm().struct;
+   	public void visit(CondOr condOr) { // Jel ovde getCondition ili getCondTerm??
+   		condOr.struct = condOr.getCondTerm().struct;
    	}
    	
    	// CondTerm
-   	public void visit(CondTermOne condTermOne) {
-   		condTermOne.struct = condTermOne.getCondFact().struct;
+   	public void visit(CondTermSingle condTermSingle) {
+   		condTermSingle.struct = condTermSingle.getCondFact().struct;
    	}
    	
-   	public void visit(CondTermTwo condTermTwo) { // CondFact ili condTerm??
-   		condTermTwo.struct = condTermTwo.getCondFact().struct;
+   	public void visit(CondTermAnd condTermAnd) { // CondFact ili condTerm??
+   		condTermAnd.struct = condTermAnd.getCondFact().struct;
    	}
    	
    	// CondFact
-   	public void visit(CondFactOne condFactOne) {
-   		condFactOne.struct = condFactOne.getExpr().struct;
+   	public void visit(CondFactSingle condFactSingle) {
+   		condFactSingle.struct = condFactSingle.getExpr().struct;
    	}
    	
-   	public void visit(CondFactTwo condFactTwo) {
-   		if (!condFactTwo.getExpr().struct.compatibleWith(condFactTwo.getExpr1().struct)) {
-            report_error("Semanticka greska - tipovi relacionog izraza nisu kompatibilni", condFactTwo);
+   	public void visit(CondFactRelop condFactRelop) {
+   		if (!condFactRelop.getExpr().struct.compatibleWith(condFactRelop.getExpr1().struct)) {
+            report_error("Semanticka greska - tipovi relacionog izraza nisu kompatibilni", condFactRelop);
         } else {
-        	int kindLeft = condFactTwo.getExpr().struct.getKind();
-        	int kindRight = condFactTwo.getExpr1().struct.getKind();
-        	Relop relop = condFactTwo.getRelop();
+        	int kindLeft = condFactRelop.getExpr().struct.getKind();
+        	int kindRight = condFactRelop.getExpr1().struct.getKind();
+        	Relop relop = condFactRelop.getRelop();
             if (kindLeft == Struct.Array || kindRight == Struct.Array) {
             	if (!(relop instanceof RelopEQ || relop instanceof RelopNE)) {
-            		report_error("Semanticka greska - relacioni izraz sa referentnim tipovima moze koristiti samo '==' i '!=' operatore", condFactTwo);
+            		report_error("Semanticka greska - relacioni izraz sa referentnim tipovima moze koristiti samo '==' i '!=' operatore", condFactRelop);
                 }
             }
         }
-   		condFactTwo.struct = boolType;
+   		condFactRelop.struct = boolType;
    	}
  	
     // Expr
   	public void visit(ExprTernary exprTernary) {
-  		int kind2 = exprTernary.getExpr11().struct.getKind();
-  		int kind3 = exprTernary.getExpr12().struct.getKind();
-  		if (kind2 != kind3) {
+  		int kind1 = exprTernary.getTernaryExpr1().struct.getKind();
+  		int kind2 = exprTernary.getTernaryExpr2().struct.getKind();
+  		if (kind1 != kind2) {
   			report_error("Semanticka greska - drugi i treci izraz moraju biti istog tipa", exprTernary);
   		}
+  		exprTernary.struct = exprTernary.getTernaryExpr1().struct;
   	}
   	
   	public void visit(ExprOne exprOne) {
   		exprOne.struct = exprOne.getExpr1().struct;
+  	}
+  	
+  	// TernaryExpr
+  	public void visit(TerExpr1 terExpr1) { // PROVERI OVO - MENJALA SAM!!!
+  		terExpr1.struct = terExpr1.getExpr1().struct;
+  	}
+  	
+  	public void visit(TerExpr2 terExpr2) {
+  		terExpr2.struct = terExpr2.getExpr1().struct;
   	}
 	
 	// Expr1

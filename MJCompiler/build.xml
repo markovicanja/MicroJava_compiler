@@ -12,6 +12,7 @@
 				<exclude name="Variable.java"/>
 				<exclude name="Method.java"/>
 				<exclude name="CodeGenerator.java"/>
+				<exclude name="IfCondJcc.java"/>				
 			</fileset>
 		</delete>
 		<delete>

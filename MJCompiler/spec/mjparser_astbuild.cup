@@ -119,7 +119,8 @@ nonterminal DesignatorStatement DesignatorStatement;
 nonterminal Assignment Assignment;
 nonterminal ActPars ActPars;
 nonterminal IfCondition IfCondition;
-nonterminal DoHeader DoHeader;
+nonterminal IfKw IfKw;
+nonterminal DoKw DoKw;
 nonterminal DesignatorName DesignatorName;
 nonterminal Assignop Assignop;
 nonterminal Relop Relop;
@@ -127,7 +128,7 @@ nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1, Condition, CondTerm, CondFact;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1, TernaryCondition, TernaryExpr1, TernaryExpr2, Condition, CondTerm, CondFact;
 
 precedence left ELSE;
 
@@ -284,13 +285,15 @@ Statement ::= (StmtDesign) DesignatorStatement:D1 SEMICOLON {: RESULT=new StmtDe
 			  |
 			  (Stmt) LBRACE StatementList:S1 RBRACE {: RESULT=new Stmt(S1); RESULT.setLine(S1left); :}			
 			  |
-			  (StmtIfElse) IF StatementIfBody:S1 ELSE Statement:S2 {: RESULT=new StmtIfElse(S1, S2); RESULT.setLine(S1left); :}
+			  (StmtIfElse) IfKw:I1 StatementIfBody:S2 ELSE Statement:S3 {: RESULT=new StmtIfElse(I1, S2, S3); RESULT.setLine(I1left); :}
 			  |
-			  (StmtIf) IF StatementIfBody:S1 {: RESULT=new StmtIf(S1); RESULT.setLine(S1left); :}
+			  (StmtIf) IfKw:I1 StatementIfBody:S2 {: RESULT=new StmtIf(I1, S2); RESULT.setLine(I1left); :}
 			  |
-			  (StmtDoWhile) DoHeader:D1 Statement:S2 WHILE LPAREN Condition:C3 RPAREN SEMICOLON {: RESULT=new StmtDoWhile(D1, S2, C3); RESULT.setLine(D1left); :};
+			  (StmtDoWhile) DoKw:D1 Statement:S2 WHILE LPAREN Condition:C3 RPAREN SEMICOLON {: RESULT=new StmtDoWhile(D1, S2, C3); RESULT.setLine(D1left); :};
 			  
-DoHeader ::= (DoHead) DO {: RESULT=new DoHead(); :};
+IfKw ::= (IfKeyword) IF {: RESULT=new IfKeyword(); :};
+			  
+DoKw ::= (DoKeyword) DO {: RESULT=new DoKeyword(); :};
 			  
 StatementIfBody ::= (StmtIfBody) IfCondition:I1 Statement:S2 {: RESULT=new StmtIfBody(I1, S2); RESULT.setLine(I1left); :};	
 
@@ -326,21 +329,27 @@ ActPars ::= (ActParsMulti) ActPars:A1 COMMA Expr:E2 {: RESULT=new ActParsMulti(A
 			|
 			(ActParsSingle) Expr:E1 {: RESULT=new ActParsSingle(E1); RESULT.setLine(E1left); :};
 			
-Condition ::= (CondTwo) Condition:C1 OR CondTerm:C2 {: RESULT=new CondTwo(C1, C2); RESULT.setLine(C1left); :}
+Condition ::= (CondOr) Condition:C1 OR CondTerm:C2 {: RESULT=new CondOr(C1, C2); RESULT.setLine(C1left); :}
 			  |
-			  (CondOne) CondTerm:C1 {: RESULT=new CondOne(C1); RESULT.setLine(C1left); :};
+			  (CondSingle) CondTerm:C1 {: RESULT=new CondSingle(C1); RESULT.setLine(C1left); :};
 			  
-CondTerm ::= (CondTermTwo) CondTerm:C1 AND CondFact:C2 {: RESULT=new CondTermTwo(C1, C2); RESULT.setLine(C1left); :}
+CondTerm ::= (CondTermAnd) CondTerm:C1 AND CondFact:C2 {: RESULT=new CondTermAnd(C1, C2); RESULT.setLine(C1left); :}
 			 |
-			 (CondTermOne) CondFact:C1 {: RESULT=new CondTermOne(C1); RESULT.setLine(C1left); :};
+			 (CondTermSingle) CondFact:C1 {: RESULT=new CondTermSingle(C1); RESULT.setLine(C1left); :};
 			  			 			  
-CondFact ::= (CondFactTwo) Expr:E1 Relop:R2 Expr:E3 {: RESULT=new CondFactTwo(E1, R2, E3); RESULT.setLine(E1left); :}
+CondFact ::= (CondFactRelop) Expr:E1 Relop:R2 Expr:E3 {: RESULT=new CondFactRelop(E1, R2, E3); RESULT.setLine(E1left); :}
 			 |
-			 (CondFactOne) Expr:E1 {: RESULT=new CondFactOne(E1); RESULT.setLine(E1left); :};
+			 (CondFactSingle) Expr:E1 {: RESULT=new CondFactSingle(E1); RESULT.setLine(E1left); :};
 			 
-Expr ::= (ExprTernary) Expr1:E1 QUESTION_MARK Expr1:E2 COLON Expr1:E3 {: RESULT=new ExprTernary(E1, E2, E3); RESULT.setLine(E1left); :}
+Expr ::= (ExprTernary) TernaryCondition:T1 QUESTION_MARK TernaryExpr1:T2 COLON TernaryExpr2:T3 {: RESULT=new ExprTernary(T1, T2, T3); RESULT.setLine(T1left); :}
 		 |
 		 (ExprOne) Expr1:E1 {: RESULT=new ExprOne(E1); RESULT.setLine(E1left); :};
+		 
+TernaryCondition ::= (TernaryCond) Expr1:E1 {: RESULT=new TernaryCond(E1); RESULT.setLine(E1left); :};
+
+TernaryExpr1 ::= (TerExpr1) Expr1:E1 {: RESULT=new TerExpr1(E1); RESULT.setLine(E1left); :};
+
+TernaryExpr2 ::= (TerExpr2) Expr1:E1 {: RESULT=new TerExpr2(E1); RESULT.setLine(E1left); :};
 			 
 Expr1 ::= (ExprNeg) MINUS Term:T1 {: RESULT=new ExprNeg(T1); RESULT.setLine(T1left); :}
 		  |

@@ -1,15 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/0/2021 21:3:43
+// 12/0/2021 16:29:42
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class CondTermOne extends CondTerm {
+public class CondTermSingle extends CondTerm {
 
     private CondFact CondFact;
 
-    public CondTermOne (CondFact CondFact) {
+    public CondTermSingle (CondFact CondFact) {
         this.CondFact=CondFact;
         if(CondFact!=null) CondFact.setParent(this);
     }
@@ -43,7 +43,7 @@ public class CondTermOne extends CondTerm {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("CondTermOne(\n");
+        buffer.append("CondTermSingle(\n");
 
         if(CondFact!=null)
             buffer.append(CondFact.toString("  "+tab));
@@ -52,7 +52,7 @@ public class CondTermOne extends CondTerm {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [CondTermOne]");
+        buffer.append(") [CondTermSingle]");
         return buffer.toString();
     }
 }

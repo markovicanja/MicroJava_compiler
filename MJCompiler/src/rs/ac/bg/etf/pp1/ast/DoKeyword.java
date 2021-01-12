@@ -1,13 +1,13 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/0/2021 21:3:43
+// 12/0/2021 16:29:42
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class DoHead extends DoHeader {
+public class DoKeyword extends DoKw {
 
-    public DoHead () {
+    public DoKeyword () {
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +28,10 @@ public class DoHead extends DoHeader {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("DoHead(\n");
+        buffer.append("DoKeyword(\n");
 
         buffer.append(tab);
-        buffer.append(") [DoHead]");
+        buffer.append(") [DoKeyword]");
         return buffer.toString();
     }
 }

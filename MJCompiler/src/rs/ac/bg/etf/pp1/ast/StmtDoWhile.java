@@ -1,31 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/0/2021 21:3:43
+// 12/0/2021 16:29:42
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class StmtDoWhile extends Statement {
 
-    private DoHeader DoHeader;
+    private DoKw DoKw;
     private Statement Statement;
     private Condition Condition;
 
-    public StmtDoWhile (DoHeader DoHeader, Statement Statement, Condition Condition) {
-        this.DoHeader=DoHeader;
-        if(DoHeader!=null) DoHeader.setParent(this);
+    public StmtDoWhile (DoKw DoKw, Statement Statement, Condition Condition) {
+        this.DoKw=DoKw;
+        if(DoKw!=null) DoKw.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
         this.Condition=Condition;
         if(Condition!=null) Condition.setParent(this);
     }
 
-    public DoHeader getDoHeader() {
-        return DoHeader;
+    public DoKw getDoKw() {
+        return DoKw;
     }
 
-    public void setDoHeader(DoHeader DoHeader) {
-        this.DoHeader=DoHeader;
+    public void setDoKw(DoKw DoKw) {
+        this.DoKw=DoKw;
     }
 
     public Statement getStatement() {
@@ -49,20 +49,20 @@ public class StmtDoWhile extends Statement {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(DoHeader!=null) DoHeader.accept(visitor);
+        if(DoKw!=null) DoKw.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
         if(Condition!=null) Condition.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(DoHeader!=null) DoHeader.traverseTopDown(visitor);
+        if(DoKw!=null) DoKw.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
         if(Condition!=null) Condition.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(DoHeader!=null) DoHeader.traverseBottomUp(visitor);
+        if(DoKw!=null) DoKw.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
         if(Condition!=null) Condition.traverseBottomUp(visitor);
         accept(visitor);
@@ -73,8 +73,8 @@ public class StmtDoWhile extends Statement {
         buffer.append(tab);
         buffer.append("StmtDoWhile(\n");
 
-        if(DoHeader!=null)
-            buffer.append(DoHeader.toString("  "+tab));
+        if(DoKw!=null)
+            buffer.append(DoKw.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

@@ -95,12 +95,12 @@ nonterminal GlobalVarDecl, GlobalVarList, GlobalVarPart;
 nonterminal MethodDeclList, MethodDec, MethodVoidDecl, MethodTypeDecl, MethVoidName, MethTypeName;
 nonterminal FormParams, FormParam, StatementList, Statement, StatementIf, StatementIfBody;
 nonterminal CaseList, CasePart, DesignatorStatement, Assignment;
-nonterminal ActPars, IfCondition, DoHeader;
+nonterminal ActPars, IfCondition, IfKw, DoKw;
 nonterminal DesignatorName;
 nonterminal Assignop, Relop, Addop, Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1, Condition, CondTerm, CondFact;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Value, Term, Factor, Expr, Expr1, TernaryCondition, TernaryExpr1, TernaryExpr2, Condition, CondTerm, CondFact;
 
 precedence left ELSE;
 
@@ -257,13 +257,15 @@ Statement ::= (StmtDesign) DesignatorStatement SEMICOLON
 			  |
 			  (Stmt) LBRACE StatementList RBRACE			
 			  |
-			  (StmtIfElse) IF StatementIfBody ELSE Statement
+			  (StmtIfElse) IfKw StatementIfBody ELSE Statement
 			  |
-			  (StmtIf) IF StatementIfBody
+			  (StmtIf) IfKw StatementIfBody
 			  |
-			  (StmtDoWhile) DoHeader Statement WHILE LPAREN Condition RPAREN SEMICOLON;
+			  (StmtDoWhile) DoKw Statement WHILE LPAREN Condition RPAREN SEMICOLON;
 			  
-DoHeader ::= (DoHead) DO;
+IfKw ::= (IfKeyword) IF;
+			  
+DoKw ::= (DoKeyword) DO;
 			  
 StatementIfBody ::= (StmtIfBody) IfCondition Statement;	
 
@@ -299,21 +301,27 @@ ActPars ::= (ActParsMulti) ActPars COMMA Expr
 			|
 			(ActParsSingle) Expr;
 			
-Condition ::= (CondTwo) Condition OR CondTerm
+Condition ::= (CondOr) Condition OR CondTerm
 			  |
-			  (CondOne) CondTerm;
+			  (CondSingle) CondTerm;
 			  
-CondTerm ::= (CondTermTwo) CondTerm AND CondFact
+CondTerm ::= (CondTermAnd) CondTerm AND CondFact
 			 |
-			 (CondTermOne) CondFact;
+			 (CondTermSingle) CondFact;
 			  			 			  
-CondFact ::= (CondFactTwo) Expr Relop Expr
+CondFact ::= (CondFactRelop) Expr Relop Expr
 			 |
-			 (CondFactOne) Expr;
+			 (CondFactSingle) Expr;
 			 
-Expr ::= (ExprTernary) Expr1 QUESTION_MARK Expr1 COLON Expr1
+Expr ::= (ExprTernary) TernaryCondition QUESTION_MARK TernaryExpr1 COLON TernaryExpr2
 		 |
 		 (ExprOne) Expr1;
+		 
+TernaryCondition ::= (TernaryCond) Expr1;
+
+TernaryExpr1 ::= (TerExpr1) Expr1;
+
+TernaryExpr2 ::= (TerExpr2) Expr1;
 			 
 Expr1 ::= (ExprNeg) MINUS Term
 		  |

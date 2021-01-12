@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/0/2021 21:3:43
+// 12/0/2021 16:29:42
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -12,19 +12,21 @@ public interface Visitor {
     public void visit(ProgramDeclarations ProgramDeclarations);
     public void visit(MethodVoidDecl MethodVoidDecl);
     public void visit(MethTypeName MethTypeName);
-    public void visit(DoHeader DoHeader);
     public void visit(StatementList StatementList);
     public void visit(VarPart VarPart);
     public void visit(Addop Addop);
+    public void visit(DoKw DoKw);
     public void visit(ProgramDeclaration ProgramDeclaration);
     public void visit(Factor Factor);
     public void visit(MethodTypeDecl MethodTypeDecl);
     public void visit(CondTerm CondTerm);
     public void visit(VarList VarList);
+    public void visit(TernaryCondition TernaryCondition);
     public void visit(ConstList ConstList);
     public void visit(GlobalVarDecl GlobalVarDecl);
     public void visit(Designator Designator);
     public void visit(StatementIf StatementIf);
+    public void visit(IfKw IfKw);
     public void visit(Term Term);
     public void visit(Condition Condition);
     public void visit(MethodDec MethodDec);
@@ -46,6 +48,8 @@ public interface Visitor {
     public void visit(ClassDecl ClassDecl);
     public void visit(ConstDecl ConstDecl);
     public void visit(CondFact CondFact);
+    public void visit(TernaryExpr2 TernaryExpr2);
+    public void visit(TernaryExpr1 TernaryExpr1);
     public void visit(MethodDeclList MethodDeclList);
     public void visit(GlobalVarList GlobalVarList);
     public void visit(FormParam FormParam);
@@ -78,14 +82,17 @@ public interface Visitor {
     public void visit(ExprSingle ExprSingle);
     public void visit(ExprAddop ExprAddop);
     public void visit(ExprNeg ExprNeg);
+    public void visit(TerExpr2 TerExpr2);
+    public void visit(TerExpr1 TerExpr1);
+    public void visit(TernaryCond TernaryCond);
     public void visit(ExprOne ExprOne);
     public void visit(ExprTernary ExprTernary);
-    public void visit(CondFactOne CondFactOne);
-    public void visit(CondFactTwo CondFactTwo);
-    public void visit(CondTermOne CondTermOne);
-    public void visit(CondTermTwo CondTermTwo);
-    public void visit(CondOne CondOne);
-    public void visit(CondTwo CondTwo);
+    public void visit(CondFactSingle CondFactSingle);
+    public void visit(CondFactRelop CondFactRelop);
+    public void visit(CondTermSingle CondTermSingle);
+    public void visit(CondTermAnd CondTermAnd);
+    public void visit(CondSingle CondSingle);
+    public void visit(CondOr CondOr);
     public void visit(ActParsSingle ActParsSingle);
     public void visit(ActParsMulti ActParsMulti);
     public void visit(AssignmentError AssignmentError);
@@ -101,7 +108,8 @@ public interface Visitor {
     public void visit(IfCondError IfCondError);
     public void visit(IfCond IfCond);
     public void visit(StmtIfBody StmtIfBody);
-    public void visit(DoHead DoHead);
+    public void visit(DoKeyword DoKeyword);
+    public void visit(IfKeyword IfKeyword);
     public void visit(StmtDoWhile StmtDoWhile);
     public void visit(StmtIf StmtIf);
     public void visit(StmtIfElse StmtIfElse);

@@ -1,16 +1,16 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/0/2021 21:3:43
+// 12/0/2021 16:29:42
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class CondTwo extends Condition {
+public class CondOr extends Condition {
 
     private Condition Condition;
     private CondTerm CondTerm;
 
-    public CondTwo (Condition Condition, CondTerm CondTerm) {
+    public CondOr (Condition Condition, CondTerm CondTerm) {
         this.Condition=Condition;
         if(Condition!=null) Condition.setParent(this);
         this.CondTerm=CondTerm;
@@ -57,7 +57,7 @@ public class CondTwo extends Condition {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("CondTwo(\n");
+        buffer.append("CondOr(\n");
 
         if(Condition!=null)
             buffer.append(Condition.toString("  "+tab));
@@ -72,7 +72,7 @@ public class CondTwo extends Condition {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [CondTwo]");
+        buffer.append(") [CondOr]");
         return buffer.toString();
     }
 }

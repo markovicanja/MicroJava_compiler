@@ -2,6 +2,7 @@ package rs.ac.bg.etf.pp1;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.Stack;
 
 import org.apache.log4j.Logger;
@@ -20,6 +21,14 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Variable variable = null;
 	private Obj currentMethod = null;
 	private ArrayList<Variable> variables = new ArrayList<Variable>();
+	private int jmpAfterExpr1Pc, jmpAfterExpr2Pc;
+	private int condCnt = 0; // serijski brojac, broji sve do pojave sledeceg OR prelazeci (inkrementirajuci se) preko AND-ova
+	
+	private LinkedList<ArrayList<IfCondJcc>> ifCondsStack = new LinkedList<ArrayList<IfCondJcc>>();
+	private LinkedList<Integer> ifPcStack = new LinkedList<Integer>(); 
+	private LinkedList<Integer> retWhilePcStack = new LinkedList<Integer>(); //povratna adresa do do-while;
+	
+	private Stack<Integer> relopStack = new Stack<>();
 	private Stack<Integer> addopStack = new Stack<>();
 	private Stack<Integer> mulopStack = new Stack<>();
 
@@ -89,6 +98,52 @@ public class CodeGenerator extends VisitorAdaptor {
 		return null;
 	}
 	
+	// JEL SE OVO POZIVA SAMO ZA POSLEDNJI U LISTI I AKO DA ZASTO?? I ZASTO SE POSTAVLJA DA JE MODIFIED??
+	private void fixJmpPc(IfCondJcc ifCondJcc) { // preskakanje uslova ako je moguce i direktan skok u if naredbu
+		int oldPc = Code.pc;
+		Code.pc = ifCondJcc.getPc() - 1;
+		if (ifCondJcc.getRelop() == -1) 
+			Code.put(Code.jcc + Code.ne);
+		else
+			Code.put(Code.jcc + ifCondJcc.getRelop());
+		
+		Code.pc = oldPc;
+		Code.put2(ifCondJcc.getPc(), Code.pc - ifCondJcc.getPc() + 1);
+		ifCondJcc.setModified(true);
+	}
+	
+	private void jmpAndSavePc(boolean isDoWhile, int ordNum, int relOp) { // postavljanje skoka i cuvanje uslova na koje treba dodati adresu skoka
+		if (!isDoWhile) {
+			if (relOp == - 1) { // ako je relop == - 1 nema relacionih operatora, poslato je true ili false
+				Code.loadConst(0);
+				Code.put(Code.jcc + Code.eq); // skace ako je false
+			} else {
+				Code.put(Code.jcc + Code.inverse[relOp]); // skace se ako je suprotno od relopa
+			}
+			ArrayList<IfCondJcc> markedConds = ifCondsStack.getLast();
+			markedConds.add(new IfCondJcc(Code.pc, ordNum, relOp)); // ne znamo adresu skoka pa ne mozemo ni da je stavimo ali je stavljamo na spisak za dodati
+			Code.pc += 2; // preskacemo 2 adrese na koje treba da se doda adresa skoka
+		} else {
+			if (relOp == - 1) { // ako je rel. op - 1 nema relacionih operatora, poslato je true ili false
+				Code.loadConst(0);
+				Code.put(Code.jcc + Code.ne);
+			} else {
+				Code.put(Code.jcc + relOp);
+			}			
+			Code.put2(retWhilePcStack.removeLast() - Code.pc + 1); // mesto u kodu gde se vracamo (jedno jedino, gore) oznaceno sa retMarkerPc	
+		}
+	}
+	
+	private SyntaxNode prepare(SyntaxNode syntaxNode) {
+		while (syntaxNode.getClass() != StmtIf.class
+				&& syntaxNode.getClass() != StmtIfElse.class
+				&& syntaxNode.getClass() != StmtDoWhile.class
+				&& syntaxNode != null) {
+			syntaxNode = syntaxNode.getParent();
+		}		
+		return syntaxNode;
+	}	
+	
 	// *** VISIT METODE *** 
 	
 	// Program
@@ -98,7 +153,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	// ConstDecl
-	public void visit(ConstDeclaration constDeclaration) {	
+	public void visit(ConstDeclaration constDeclaration) { // uzima konstante iz liste i postavlja za adresu vrednost konstante, i load-uje tu vrednost
 		for (int i = 0; i < variables.size(); i++) {
 			Obj o = getVarConst(variables.get(i).getName());			
 			if (o != null) {
@@ -119,7 +174,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}	
 	
 	// ConstPart
-	public void visit(ConstPart constPart) {
+	public void visit(ConstPart constPart) { // dodaje konstantu u listu
 		variable.setName(constPart.getConstName());
 		variables.add(variable);
 		variable = null;
@@ -133,7 +188,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	// MethodVoidName
-	public void visit(MethodVoidName methodVoidName) { 		
+	public void visit(MethodVoidName methodVoidName) { // postavlja mainPc ako je main funkcija, postavlja joj adresu i generise enter instrukciju
 		currentMethod = getMethObj(methodVoidName.getMethodName());	
 		if (methodVoidName.getMethodName().equals("main")) {
 			mainPc = Code.pc;			
@@ -145,8 +200,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	// MethodTypeDecl
-	public void visit(MethodTypeDeclaration methodTypeDeclaration) {
-		// end of function reached without a return statement
+	public void visit(MethodTypeDeclaration methodTypeDeclaration) { // izaziva Runtime gresku jer nema return
 		Code.put(Code.trap); 
 		Code.put(1);
 		currentMethod = null;
@@ -162,7 +216,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	// Value	
-	public void visit(NumConst numConst) { 
+	public void visit(NumConst numConst) { // kreira promenljivu
 		variable = new Variable("", false, numConst.getN1());
 	}
 	
@@ -175,14 +229,14 @@ public class CodeGenerator extends VisitorAdaptor {
 	}	
 	
 	// Statement
-	public void visit(DesignatorAssignment designatorAssignment) {
+	public void visit(DesignatorAssignment designatorAssignment) { // storuje vrednost sa expr steka u designator
 		Code.store(designatorAssignment.getDesignator().obj);	
 	}
 	
 	public void visit(StmtPrint stmtPrint) {
 		Struct struct = stmtPrint.getExpr().struct;
 		if (struct.equals(Tab.intType) || struct.equals(SemanticAnalyzer.boolType)) {
-			Code.loadConst(0); // A STO JE OVDE 0???
+			Code.loadConst(0); // sto mora ovo??
 			Code.put(Code.print);
 		} else if (struct.equals(Tab.charType)) {
 			Code.loadConst(1);
@@ -202,13 +256,63 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(StmtRead stmtRead) {		
-		Code.put(Code.read);
-		Code.store(stmtRead.getDesignator().obj);		
+		Obj obj = stmtRead.getDesignator().obj;
+        if (obj.getType().equals(Tab.charType))
+            Code.put(Code.bread);
+        else
+            Code.put(Code.read);
+        Code.store(obj);
+	}
+	
+	public void visit(StmtReturnExpr stmtReturnExpr) {
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
+	public void visit(StmtReturn stmtReturn) { 
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}  
+	
+	public void visit(StmtIf stmtIf) { // izlazna tacka iz if
+		ArrayList<IfCondJcc> ifConds = ifCondsStack.removeLast();
+		for (IfCondJcc ifCond : ifConds) {
+			if (!ifCond.isModified()) {
+				Code.put2(ifCond.getPc(), Code.pc - ifCond.getPc() + 1); // postavljamo adresu skoka na prvu posle ifa
+			}
+		}
+		ifConds.clear();
+	}	
+	
+	public void visit(StmtIfElse stmtIfElse) { // postavlja adresu skoka na else granu
+		ArrayList<IfCondJcc> ifConds = ifCondsStack.removeLast();
+		int elsePc = ifPcStack.removeLast(); // LIFO
+		for (int i = 0; i < ifConds.size(); i++) {
+			if (!ifConds.get(i).isModified()) {
+				Code.put2(ifConds.get(i).getPc(),  elsePc - ifConds.get(i).getPc() + 3);
+			}
+		}						
+		ifConds.clear();
+		Code.put2(elsePc, Code.pc - elsePc + 1); // popunjavamo adresu skoka na prvu posle else grane
+	}	 
+	
+	// IfKw
+	public void visit(IfKeyword ifKeyword) { // pravi se nova lista sa uslovima za svaki ugnezdjeni if
+		ifCondsStack.add(new ArrayList<IfCondJcc>());
+	}	
+	
+	// StatementIfBody
+	public void visit(StmtIfBody stmtIfBody) { // dodajemo adresu skoka na prvu posle else grane ako ona postoji			
+		if (stmtIfBody.getParent().getClass() == StmtIfElse.class) {
+			Code.put(Code.jmp);
+			ifPcStack.addLast(Code.pc);
+			Code.pc += 2; // ostavimo dva prazna mesta jer je adresa skoka dva bajta;
+		}
 	}
 	
 	// Designator statement
 	public void visit(DesignatorIncrement designatorIncrement) {
-		if(designatorIncrement.getDesignator().obj.getKind() == Obj.Elem) {
+		if (designatorIncrement.getDesignator().obj.getKind() == Obj.Elem) {
 			Code.put(Code.dup2);
 		}
 		Code.load(designatorIncrement.getDesignator().obj);
@@ -227,7 +331,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.store(designatorDecrement.getDesignator().obj);		
 	}
 	
-	public void visit(DesignatorMethodCallParams designatorMethodCallParams) {
+	public void visit(DesignatorMethodCallParams designatorMethodCallParams) { // PROVERI - ZASTO SE NIGDE NE STAVLJA invokevirtual??
 		Obj method = designatorMethodCallParams.getDesignator().obj;
 		if (outerScope.getLocalSymbols().contains(method)) {
 			int offset = method.getAdr() - Code.pc;
@@ -245,14 +349,63 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 	
-	// Term
-	public void visit(TermSingle termSingle) { 		
-		SyntaxNode parent = (SyntaxNode) termSingle.getParent();
-		if (parent.getClass() == ExprNeg.class) {
-			Code.put(Code.neg);
-		}
-	} 
+	// Condition
+	public void visit(CondOr condOr) {	
+		condCnt = 0;
+		ArrayList<IfCondJcc> markedConds = ifCondsStack.getLast(); // uslovi iz trenutnog if-a
+		fixJmpPc(markedConds.get(markedConds.size() - 1));
+	}		
 	
+	public void visit(CondSingle condSingle) {
+		condCnt = 0;
+	}
+		
+    public void visit(CondTermAnd condTermAnd) {
+		condCnt++; 
+    }
+    
+	public void visit(CondTermSingle condTermSingle) {
+		condCnt++; 
+	}
+	
+	public void visit(CondFactRelop condFactRelop) { // ubacuje u listu i generise instrukcije skoka	
+		SyntaxNode stmt = prepare(condFactRelop);
+		jmpAndSavePc(stmt.getClass() == StmtDoWhile.class, condCnt, relopStack.pop());
+	}
+	
+	public void visit(CondFactSingle condFactSingle) {		
+		SyntaxNode stmt = prepare(condFactSingle); // dohvata roditelja StmtIf, StmtIfElse, StmtDoWhile
+		jmpAndSavePc(stmt.getClass() == StmtDoWhile.class, condCnt, -1);
+	}
+	
+	// ExprTernary
+	public void visit(TernaryCond ternaryCond) {		
+		Code.loadConst(1);
+		Code.putFalseJump(Code.eq, 0);
+		jmpAfterExpr1Pc = Code.pc - 2;
+	}
+	
+	// TernaryExpr
+	public void visit(TerExpr1 terExpr1) {
+		Code.putJump(0);
+		jmpAfterExpr2Pc = Code.pc - 2;
+		Code.fixup(jmpAfterExpr1Pc);
+	}
+	
+	public void visit(TerExpr2 terExpr2) {
+		Code.fixup(jmpAfterExpr2Pc);
+	}
+	
+	// Expr1
+	public void visit(ExprAddop exprAddop) {
+        Code.put(addopStack.pop());
+    }
+	
+	public void visit(ExprNeg exprNeg) {
+        Code.put(Code.neg);
+    }
+	
+	// Term
 	public void visit(TermMulop termMulop) {
 		Code.put(mulopStack.pop());
 	}
@@ -305,7 +458,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	// Designator	
-	public void visit(DesignatorArray designatorArray) { //STA JE OVO dup_x1??
+	public void visit(DesignatorArray designatorArray) { // prvo je stavljen index, pa onda desigName, pa se rotiraju
 		Obj o = null;
 		o = getVarConst(designatorArray.getDesignatorName());	
 		if (o != null) {
@@ -314,6 +467,31 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(Code.pop);
 		}	
 	}
+	
+	//Relop
+	public void visit(RelopEQ relopEQ) { 
+		relopStack.push(Code.eq); 		
+	}
+	
+	public void visit(RelopNE relopNE) { 
+		relopStack.push(Code.ne); 	
+	}
+	
+	public void visit(RelopGT relopGT) { 
+		relopStack.push(Code.gt); 	
+	}
+	
+	public void visit(RelopGE relopGE) {
+		relopStack.push(Code.ge); 	
+	}
+	
+	public void visit(RelopLT relopLT) { 
+		relopStack.push(Code.lt); 	
+	}
+	
+    public void visit(RelopLE relopLE) { 
+    	relopStack.push(Code.le);
+    } 	
 	
 	// Addop
 	public void visit(AddopPlus addopPlus) {
