@@ -62,6 +62,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	// Program
 	public void visit(Program program) { 
 		nVars = Tab.currentScope.getnVars();
+		report_info("PROGRAM " + nVars, program);
 		outerScopeObj = program.getProgName().obj;
     	Tab.chainLocalSymbols(outerScopeObj);
     	Tab.closeScope();
@@ -232,7 +233,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	// MethVoidName
 	public void visit(MethodVoidName methodVoidName) { 
 		currentMethod = Tab.insert(Obj.Meth, methodVoidName.getMethodName(), Tab.noType);
-		 methods.add(new Method(methodVoidName.getMethodName()));		
+		methods.add(new Method(methodVoidName.getMethodName()));		
 		Tab.openScope();
 		if (methodVoidName.getMethodName().equals("main")) {
 			mainMethodDefined = true;

@@ -57,7 +57,7 @@ public class CodeGenerator extends VisitorAdaptor {
 			Collection<Obj> localSymbols = outerScope.getLocalSymbols();
 			for (Obj o : localSymbols) {
 				if (o.getKind() == Obj.Meth && o.getName().equals(methName)) {
-					return obj;
+					return o;
 				}
 			}
 		} else {
@@ -66,8 +66,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		return null;
 	}
 	
-	public Obj getVarConst(String objName) {
-		 
+	public Obj getVarConst(String objName) {		 
 		Obj obj = Tab.find(objName);
 		if (obj == Tab.noObj) {
 			Collection<Obj> localSymbols = outerScope.getLocalSymbols();
@@ -79,7 +78,6 @@ public class CodeGenerator extends VisitorAdaptor {
 			if (currentMethod != null) {
 				localSymbols = currentMethod.getLocalSymbols();
 				for (Obj o: localSymbols) {		
-					report_error("currentMethod localSymbols" + o.getName(), null);
 					if (o.getName().equals(objName)) {
 						return o;
 					}
@@ -136,9 +134,9 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	// MethodVoidName
 	public void visit(MethodVoidName methodVoidName) { 		
-		currentMethod = getMethObj(methodVoidName.getMethodName());			
-		if (currentMethod.getName().equals("main")) {
-			Code.mainPc = Code.pc;			
+		currentMethod = getMethObj(methodVoidName.getMethodName());	
+		if (methodVoidName.getMethodName().equals("main")) {
+			mainPc = Code.pc;			
 		}
 		currentMethod.setAdr(Code.pc);
         Code.put(Code.enter);
