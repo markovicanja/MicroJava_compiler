@@ -93,7 +93,7 @@ nonterminal ConstDecl, ConstList, ConstPart, ClassDecl;
 nonterminal VarDecl, VarList, VarPart, VarDeclList;
 nonterminal GlobalVarDecl, GlobalVarList, GlobalVarPart;
 nonterminal MethodDeclList, MethodDec, MethodVoidDecl, MethodTypeDecl, MethVoidName, MethTypeName;
-nonterminal FormParams, FormParam, StatementList, Statement, StatementIf, StatementIfBody;
+nonterminal FormParams, FormParam, StatementList, Statement, StatementIf, StatementIfBody, StatementWhileBody;
 nonterminal CaseList, CasePart, DesignatorStatement, Assignment;
 nonterminal ActPars, IfCondition, IfKw, DoKw;
 nonterminal DesignatorName;
@@ -261,7 +261,7 @@ Statement ::= (StmtDesign) DesignatorStatement SEMICOLON
 			  |
 			  (StmtIf) IfKw StatementIfBody
 			  |
-			  (StmtDoWhile) DoKw Statement WHILE LPAREN Condition RPAREN SEMICOLON;
+			  (StmtDoWhile) DoKw StatementWhileBody WHILE LPAREN Condition RPAREN SEMICOLON;
 			  
 IfKw ::= (IfKeyword) IF;
 			  
@@ -269,7 +269,7 @@ DoKw ::= (DoKeyword) DO;
 			  
 StatementIfBody ::= (StmtIfBody) IfCondition Statement;
 
-StatementIfBody ::= (StmtIfBody) IfCondition Statement;	
+StatementWhileBody ::= (StmtWhileBody) Statement;
 
 IfCondition ::= (IfCond) LPAREN Condition RPAREN
 				|

@@ -24,10 +24,12 @@ public class CodeGenerator extends VisitorAdaptor {
 	private int jmpAfterExpr1Pc, jmpAfterExpr2Pc;
 	private int condCnt = 0; // serijski brojac, broji sve do pojave sledeceg OR prelazeci (inkrementirajuci se) preko AND-ova
 	
-	private LinkedList<ArrayList<IfCondJcc>> ifCondsStack = new LinkedList<ArrayList<IfCondJcc>>();
+	private LinkedList<ArrayList<CondJcc>> ifCondsStack = new LinkedList<ArrayList<CondJcc>>();
 	private LinkedList<Integer> ifPcStack = new LinkedList<Integer>(); 
 	private LinkedList<Integer> retWhilePcStack = new LinkedList<Integer>(); //povratna adresa do do-while;
-	private LinkedList<ArrayList<Integer>> breakPcStack = new LinkedList<ArrayList<Integer>>();	
+	private LinkedList<ArrayList<Integer>> breakPcStack = new LinkedList<ArrayList<Integer>>();
+	private LinkedList<ArrayList<Integer>> continuePcStack = new LinkedList<ArrayList<Integer>>();
+	private LinkedList<ArrayList<CondJcc>> whileCondsStack = new LinkedList<ArrayList<CondJcc>>();
 	
 	private Stack<Integer> relopStack = new Stack<>();
 	private Stack<Integer> addopStack = new Stack<>();
@@ -99,12 +101,12 @@ public class CodeGenerator extends VisitorAdaptor {
 		return null;
 	}
 	
-	public void fixJmpAdr(IfCondJcc cond, int jmpPc) {
+	public void fixJmpAdr(CondJcc cond, int jmpPc) {
 		Code.put2(cond.getPc(), jmpPc - cond.getPc() + 3);
 		cond.setModified(true);
 	}
 	
-	public void fixJmpCond(IfCondJcc cond) {
+	public void fixJmpCond(CondJcc cond) {
 		int oldPc = Code.pc;
 		Code.pc = cond.getPc() - 1;
 		if (cond.getRelop() == -1) 
@@ -125,17 +127,19 @@ public class CodeGenerator extends VisitorAdaptor {
 			} else {
 				Code.put(Code.jcc + Code.inverse[relOp]); // skace se ako je suprotno od relopa
 			}
-			ArrayList<IfCondJcc> markedConds = ifCondsStack.getLast();
-			markedConds.add(new IfCondJcc(Code.pc, ordNum, relOp)); // ne znamo adresu skoka pa ne mozemo ni da je stavimo ali je stavljamo na spisak za dodati
+			ArrayList<CondJcc> markedConds = ifCondsStack.getLast();
+			markedConds.add(new CondJcc(Code.pc, ordNum, relOp)); // ne znamo adresu skoka pa ne mozemo ni da je stavimo ali je stavljamo na spisak za dodati
 			Code.pc += 2; // preskacemo 2 adrese na koje treba da se doda adresa skoka
 		} else {
-			if (relOp == - 1) { // ako je rel. op - 1 nema relacionih operatora, poslato je true ili false
+			if (relOp == - 1) {
 				Code.loadConst(0);
 				Code.put(Code.jcc + Code.ne);
 			} else {
 				Code.put(Code.jcc + relOp);
-			}			
-			Code.put2(retWhilePcStack.removeLast() - Code.pc + 1); // mesto u kodu gde se vracamo (jedno jedino, gore) oznaceno sa retMarkerPc	
+			}	
+			ArrayList<CondJcc> whileConds = whileCondsStack.getLast();
+			whileConds.add(new CondJcc(Code.pc, ordNum, relOp));
+			Code.put2(retWhilePcStack.getLast() - Code.pc + 1);	
 		}
 	}
 	
@@ -280,8 +284,8 @@ public class CodeGenerator extends VisitorAdaptor {
 	}  
 	
 	public void visit(StmtIf stmtIf) { // izlazna tacka iz if
-		ArrayList<IfCondJcc> ifConds = ifCondsStack.removeLast();
-		for (IfCondJcc ifCond : ifConds) {
+		ArrayList<CondJcc> ifConds = ifCondsStack.removeLast();
+		for (CondJcc ifCond : ifConds) {
 			if (!ifCond.isModified()) {
 				Code.put2(ifCond.getPc(), Code.pc - ifCond.getPc() + 1); // postavljamo adresu skoka na prvu posle ifa
 			}
@@ -290,7 +294,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}	
 	
 	public void visit(StmtIfElse stmtIfElse) { // postavlja adresu skoka na else granu
-		ArrayList<IfCondJcc> ifConds = ifCondsStack.removeLast();
+		ArrayList<CondJcc> ifConds = ifCondsStack.removeLast();
 		int elsePc = ifPcStack.removeLast(); // LIFO
 		for (int i = 0; i < ifConds.size(); i++) {
 			if (!ifConds.get(i).isModified()) {
@@ -303,7 +307,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	// IfKw
 	public void visit(IfKeyword ifKeyword) { // pravi se nova lista sa uslovima za svaki ugnezdjeni if
-		ifCondsStack.add(new ArrayList<IfCondJcc>());
+		ifCondsStack.add(new ArrayList<CondJcc>());
 	}	
 	
 	// StatementIfBody
@@ -315,28 +319,50 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 	
-	public void visit(StmtDoWhile stmtDoWhile) {						
+	public void visit(StmtDoWhile stmtDoWhile) {
+		retWhilePcStack.removeLast();
 		ArrayList<Integer> breakPcs = breakPcStack.removeLast();
 		for (int i = 0; i < breakPcs.size(); i++) {			
 			Code.put2(breakPcs.get(i), Code.pc - breakPcs.get(i) + 1); //POPRAVITI ADRESU							
-		}		
+		}	
+		ArrayList<CondJcc> whileConds = whileCondsStack.removeLast(); // POPRAVI ADRESE ZA POSLEDNJI CondTerm
+		int lastCondTerm = 0;
+		for (int i = 0; i < whileConds.size() - 1; i++) {
+			if (whileConds.get(i).getOrdNum() == 0 && !whileConds.get(i).isModified()) {
+				lastCondTerm = i;
+			}
+		}
+		for (int i = lastCondTerm; i < whileConds.size() - 1; i++) {
+			fixJmpCondWhile(whileConds.get(i), Code.pc - 2);
+		}
 	}
 	
 	// DoKw
 	public void visit(DoKeyword doKeyword) {
 		retWhilePcStack.addLast(Code.pc);
 		breakPcStack.add(new ArrayList<Integer>());
+		continuePcStack.add(new ArrayList<Integer>());
+		whileCondsStack.add(new ArrayList<CondJcc>());
+	}
+	
+	// StmtWhileBody
+	public void visit(StmtWhileBody stmtWhileBody) {
+		ArrayList<Integer> continuePcs = continuePcStack.removeLast();
+		for (int i = 0; i < continuePcs.size(); i++) {			
+			Code.put2(continuePcs.get(i), Code.pc - continuePcs.get(i) + 1);						
+		}
 	}
 		
     public void visit(StmtBreak stmtBreak) {    	
-    	Code.put(Code.jmp); //ne vadimo, samo dohvatamo referencu   	
+    	Code.put(Code.jmp);  	
     	breakPcStack.getLast().add(Code.pc);
-    	Code.pc += 2; //ostavili smo 2B za adresu skoka
+    	Code.pc += 2;
     }
 	
     public void visit(StmtContinue stmtContinue) {     	 
-    	Code.put(Code.jmp); //ne uklanja, jer ce trebati dole na while da se ukloni
-		Code.put2(retWhilePcStack.getLast() - Code.pc + 1);
+    	Code.put(Code.jmp);
+    	continuePcStack.getLast().add(Code.pc);
+    	Code.pc += 2;
     }
 	
 	// Designator statement
@@ -380,7 +406,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	// IfCondition
 	public void visit(IfCond ifCond) {
-		ArrayList<IfCondJcc> markedConds = ifCondsStack.getLast();
+		ArrayList<CondJcc> markedConds = ifCondsStack.getLast();
 		int startOfLastCondTerm = 0;
 		for (int i = markedConds.size() - 1; i >= 0; i--) {
 			if (markedConds.get(i).getOrdNum() == 0) {
@@ -398,28 +424,61 @@ public class CodeGenerator extends VisitorAdaptor {
 	// Condition
 	public void visit(CondOr condOr) {	
 		condCnt = 0;
-		ArrayList<IfCondJcc> markedConds = ifCondsStack.getLast(); // uslovi iz trenutnog if-a
-		// fixJmpPc(markedConds.get(markedConds.size() - 2)); // uzima pretposlednji i menja mu uslov skoka
-		int startOfLastCondTerm = 0;
-		int startOfCurrentCondTerm = 0;
-		
-		for (int i = markedConds.size() - 1; i >= 0; i--) {
-			if (markedConds.get(i).getOrdNum() == 0) {
-				startOfLastCondTerm = i;
-				break;
+		SyntaxNode stmt = prepare(condOr);
+		if (stmt.getClass() != StmtDoWhile.class) {
+			ArrayList<CondJcc> markedConds = ifCondsStack.getLast();
+			int startOfLastCondTerm = 0;
+			int startOfCurrentCondTerm = 0;
+			
+			for (int i = markedConds.size() - 1; i >= 0; i--) {
+				if (markedConds.get(i).getOrdNum() == 0) {
+					startOfLastCondTerm = i;
+					break;
+				}
 			}
-		}
-		for (int i = 0; i < startOfLastCondTerm; i++) {
-			if (markedConds.get(i).getOrdNum() == 0 && markedConds.get(i).isModified() == false) {
-				startOfCurrentCondTerm = i;
-				break;
+			for (int i = 0; i < startOfLastCondTerm; i++) {
+				if (markedConds.get(i).getOrdNum() == 0 && markedConds.get(i).isModified() == false) {
+					startOfCurrentCondTerm = i;
+					break;
+				}
 			}
-		}
-		for (int j = startOfCurrentCondTerm; j < startOfLastCondTerm - 1; j++) {
-			//report_error("PC " + (markedConds.get(startOfLastCondTerm - 1).getPc()), null);
-			fixJmpAdr(markedConds.get(j), markedConds.get(startOfLastCondTerm - 1).getPc());
+			for (int j = startOfCurrentCondTerm; j < startOfLastCondTerm - 1; j++) {
+				fixJmpAdr(markedConds.get(j), markedConds.get(startOfLastCondTerm - 1).getPc());
+			}
+		} else {
+			ArrayList<CondJcc> markedConds = whileCondsStack.getLast();
+			int startOfLastCondTerm = 0;
+			int startOfCurrentCondTerm = 0;
+			
+			for (int i = markedConds.size() - 1; i >= 0; i--) {
+				if (markedConds.get(i).getOrdNum() == 0) {
+					startOfLastCondTerm = i;
+					break;
+				}
+			}
+			for (int i = 0; i < startOfLastCondTerm; i++) {
+				if (markedConds.get(i).getOrdNum() == 0 && markedConds.get(i).isModified() == false) {
+					startOfCurrentCondTerm = i;
+					break;
+				}
+			}
+			for (int j = startOfCurrentCondTerm; j < startOfLastCondTerm - 1; j++) {
+				fixJmpCondWhile(markedConds.get(j), markedConds.get(startOfLastCondTerm - 1).getPc());
+			}
 		}
 	}		
+	
+	public void fixJmpCondWhile(CondJcc cond, int jmpPc) {
+		int oldPc = Code.pc;
+		Code.pc = cond.getPc() - 1;
+		if (cond.getRelop() == -1) 
+			Code.put(Code.jcc + Code.eq);
+		else
+			Code.put(Code.jcc + Code.inverse[cond.getRelop()]);		
+		Code.pc = oldPc;
+		Code.put2(cond.getPc(), jmpPc - cond.getPc() + 3);
+		cond.setModified(true);
+	}
 	
 	public void visit(CondSingle condSingle) {
 		condCnt = 0;
@@ -433,13 +492,13 @@ public class CodeGenerator extends VisitorAdaptor {
 		condCnt++; 
 	}
 	
-	public void visit(CondFactRelop condFactRelop) { // ubacuje u listu i generise instrukcije skoka	
+	public void visit(CondFactRelop condFactRelop) {	
 		SyntaxNode stmt = prepare(condFactRelop);
 		jmpAndSavePc(stmt.getClass() == StmtDoWhile.class, condCnt, relopStack.pop());
 	}
 	
 	public void visit(CondFactSingle condFactSingle) {		
-		SyntaxNode stmt = prepare(condFactSingle); // dohvata roditelja StmtIf, StmtIfElse, StmtDoWhile
+		SyntaxNode stmt = prepare(condFactSingle);
 		jmpAndSavePc(stmt.getClass() == StmtDoWhile.class, condCnt, -1);
 	}
 	

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 12/0/2021 16:29:42
+// 13/0/2021 15:10:24
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,14 +8,14 @@ package rs.ac.bg.etf.pp1.ast;
 public class StmtDoWhile extends Statement {
 
     private DoKw DoKw;
-    private Statement Statement;
+    private StatementWhileBody StatementWhileBody;
     private Condition Condition;
 
-    public StmtDoWhile (DoKw DoKw, Statement Statement, Condition Condition) {
+    public StmtDoWhile (DoKw DoKw, StatementWhileBody StatementWhileBody, Condition Condition) {
         this.DoKw=DoKw;
         if(DoKw!=null) DoKw.setParent(this);
-        this.Statement=Statement;
-        if(Statement!=null) Statement.setParent(this);
+        this.StatementWhileBody=StatementWhileBody;
+        if(StatementWhileBody!=null) StatementWhileBody.setParent(this);
         this.Condition=Condition;
         if(Condition!=null) Condition.setParent(this);
     }
@@ -28,12 +28,12 @@ public class StmtDoWhile extends Statement {
         this.DoKw=DoKw;
     }
 
-    public Statement getStatement() {
-        return Statement;
+    public StatementWhileBody getStatementWhileBody() {
+        return StatementWhileBody;
     }
 
-    public void setStatement(Statement Statement) {
-        this.Statement=Statement;
+    public void setStatementWhileBody(StatementWhileBody StatementWhileBody) {
+        this.StatementWhileBody=StatementWhileBody;
     }
 
     public Condition getCondition() {
@@ -50,20 +50,20 @@ public class StmtDoWhile extends Statement {
 
     public void childrenAccept(Visitor visitor) {
         if(DoKw!=null) DoKw.accept(visitor);
-        if(Statement!=null) Statement.accept(visitor);
+        if(StatementWhileBody!=null) StatementWhileBody.accept(visitor);
         if(Condition!=null) Condition.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(DoKw!=null) DoKw.traverseTopDown(visitor);
-        if(Statement!=null) Statement.traverseTopDown(visitor);
+        if(StatementWhileBody!=null) StatementWhileBody.traverseTopDown(visitor);
         if(Condition!=null) Condition.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(DoKw!=null) DoKw.traverseBottomUp(visitor);
-        if(Statement!=null) Statement.traverseBottomUp(visitor);
+        if(StatementWhileBody!=null) StatementWhileBody.traverseBottomUp(visitor);
         if(Condition!=null) Condition.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -79,8 +79,8 @@ public class StmtDoWhile extends Statement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Statement!=null)
-            buffer.append(Statement.toString("  "+tab));
+        if(StatementWhileBody!=null)
+            buffer.append(StatementWhileBody.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

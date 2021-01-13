@@ -5654,3 +5654,4815 @@ INFO  12:29:06,657 - Deklarisan niz 'niz' na liniji 10
 INFO  12:29:06,657 - ===================================
 INFO  12:29:06,657 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
 INFO  12:29:06,667 - Parsiranje uspesno zavrseno!
+INFO  13:14:07,212 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  13:14:07,259 - #2 program
+INFO  13:14:07,259 - #20 test301
+INFO  13:14:07,259 - #47 {
+INFO  13:14:07,259 - #16 void
+INFO  13:14:07,259 - #20 main
+INFO  13:14:07,259 - #43 (
+INFO  13:14:07,259 - #44 )
+INFO  13:14:07,259 - #20 int
+INFO  13:14:07,259 - #20 x
+INFO  13:14:07,259 - #41 ,
+INFO  13:14:07,259 - #20 y
+INFO  13:14:07,259 - #40 ;
+INFO  13:14:07,259 - #20 bool
+INFO  13:14:07,259 - #20 bt
+INFO  13:14:07,259 - #40 ;
+INFO  13:14:07,259 - #20 int
+INFO  13:14:07,259 - #20 niz
+INFO  13:14:07,259 - #45 [
+INFO  13:14:07,259 - #46 ]
+INFO  13:14:07,259 - #40 ;
+INFO  13:14:07,259 - #47 {
+INFO  13:14:07,259 - #20 x
+INFO  13:14:07,259 - #37 =
+INFO  13:14:07,259 - #21 1
+INFO  13:14:07,259 - #40 ;
+INFO  13:14:07,259 - #10 do
+INFO  13:14:07,259 - #47 {
+INFO  13:14:07,259 - #20 x
+INFO  13:14:07,259 - #38 ++
+INFO  13:14:07,259 - #40 ;
+INFO  13:14:07,259 - #11 while
+ERROR 13:14:07,259 - 
+Sintaksna greska na liniji 16, koloni 2 za simbol "while"!
+INFO  13:14:07,259 - #43 (
+INFO  13:14:07,259 - #20 x
+INFO  13:14:07,259 - #33 <
+INFO  13:14:07,274 - #21 3
+INFO  13:14:07,274 - #44 )
+INFO  13:14:07,274 - #40 ;
+INFO  13:14:07,274 - #13 print
+INFO  13:14:07,274 - #43 (
+INFO  13:14:07,274 - #20 x
+INFO  13:14:07,274 - #44 )
+INFO  13:14:07,274 - #40 ;
+INFO  13:14:07,274 - #48 }
+INFO  13:14:07,274 - #48 }
+ERROR 13:14:07,274 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 32, koloni 1!
+INFO  13:14:25,625 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  13:14:25,672 - #2 program
+INFO  13:14:25,672 - #20 test301
+INFO  13:14:25,672 - #47 {
+INFO  13:14:25,672 - #16 void
+INFO  13:14:25,672 - #20 main
+INFO  13:14:25,672 - #43 (
+INFO  13:14:25,672 - #44 )
+INFO  13:14:25,672 - #20 int
+INFO  13:14:25,672 - #20 x
+INFO  13:14:25,672 - #41 ,
+INFO  13:14:25,672 - #20 y
+INFO  13:14:25,672 - #40 ;
+INFO  13:14:25,672 - #20 bool
+INFO  13:14:25,678 - #20 bt
+INFO  13:14:25,678 - #40 ;
+INFO  13:14:25,678 - #20 int
+INFO  13:14:25,678 - #20 niz
+INFO  13:14:25,678 - #45 [
+INFO  13:14:25,678 - #46 ]
+INFO  13:14:25,678 - #40 ;
+INFO  13:14:25,678 - #47 {
+INFO  13:14:25,678 - #20 x
+INFO  13:14:25,678 - #37 =
+INFO  13:14:25,678 - #21 1
+INFO  13:14:25,678 - #40 ;
+INFO  13:14:25,678 - #10 do
+INFO  13:14:25,678 - #47 {
+INFO  13:14:25,678 - #20 x
+INFO  13:14:25,678 - #38 ++
+INFO  13:14:25,678 - #40 ;
+INFO  13:14:25,678 - #48 }
+INFO  13:14:25,678 - #11 while
+INFO  13:14:25,678 - #43 (
+INFO  13:14:25,678 - #20 x
+INFO  13:14:25,678 - #33 <
+INFO  13:14:25,678 - #21 3
+INFO  13:14:25,678 - #44 )
+INFO  13:14:25,678 - #40 ;
+INFO  13:14:25,678 - #13 print
+INFO  13:14:25,678 - #43 (
+INFO  13:14:25,678 - #20 x
+INFO  13:14:25,678 - #44 )
+INFO  13:14:25,678 - #40 ;
+INFO  13:14:25,678 - #48 }
+INFO  13:14:25,678 - #48 }
+INFO  13:14:25,678 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  13:14:25,678 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementSingle(
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   x
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorNumConst(
+                           1
+                          ) [FactorNumConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementSingle]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondSingle(
+                CondTermSingle(
+                  CondFactRelop(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorDesignator(
+                            DesignatorSimple(
+                             x
+                            ) [DesignatorSimple]
+                          ) [FactorDesignator]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                    RelopLT(
+                    ) [RelopLT]
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorNumConst(
+                           3
+                          ) [FactorNumConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactRelop]
+                ) [CondTermSingle]
+              ) [CondSingle]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  13:14:25,678 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  13:14:25,694 - Deklarisana promenljiva 'x' na liniji 8
+INFO  13:14:25,694 - Deklarisana promenljiva 'y' na liniji 8
+INFO  13:14:25,694 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  13:14:25,694 - Deklarisan niz 'niz' na liniji 10
+INFO  13:14:25,694 - ===================================
+INFO  13:14:25,694 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  13:14:25,694 - Parsiranje uspesno zavrseno!
+INFO  13:15:25,152 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  13:15:25,221 - #2 program
+INFO  13:15:25,221 - #20 test301
+INFO  13:15:25,221 - #47 {
+INFO  13:15:25,221 - #16 void
+INFO  13:15:25,221 - #20 main
+INFO  13:15:25,221 - #43 (
+INFO  13:15:25,221 - #44 )
+INFO  13:15:25,221 - #20 int
+INFO  13:15:25,221 - #20 x
+INFO  13:15:25,221 - #41 ,
+INFO  13:15:25,221 - #20 y
+INFO  13:15:25,221 - #40 ;
+INFO  13:15:25,221 - #20 bool
+INFO  13:15:25,221 - #20 bt
+INFO  13:15:25,221 - #40 ;
+INFO  13:15:25,221 - #20 int
+INFO  13:15:25,221 - #20 niz
+INFO  13:15:25,221 - #45 [
+INFO  13:15:25,221 - #46 ]
+INFO  13:15:25,221 - #40 ;
+INFO  13:15:25,221 - #47 {
+INFO  13:15:25,221 - #20 x
+INFO  13:15:25,221 - #37 =
+INFO  13:15:25,221 - #21 1
+INFO  13:15:25,221 - #40 ;
+INFO  13:15:25,236 - #20 bt
+INFO  13:15:25,236 - #37 =
+INFO  13:15:25,236 - #23 true
+INFO  13:15:25,236 - #40 ;
+INFO  13:15:25,236 - #10 do
+INFO  13:15:25,236 - #47 {
+INFO  13:15:25,236 - #20 x
+INFO  13:15:25,236 - #38 ++
+INFO  13:15:25,236 - #40 ;
+INFO  13:15:25,236 - #48 }
+INFO  13:15:25,236 - #11 while
+INFO  13:15:25,236 - #43 (
+INFO  13:15:25,236 - #20 x
+INFO  13:15:25,236 - #33 <
+INFO  13:15:25,236 - #21 3
+INFO  13:15:25,236 - #35 &&
+INFO  13:15:25,236 - #20 bt
+INFO  13:15:25,236 - #44 )
+INFO  13:15:25,236 - #40 ;
+INFO  13:15:25,236 - #13 print
+INFO  13:15:25,236 - #43 (
+INFO  13:15:25,236 - #20 x
+INFO  13:15:25,236 - #44 )
+INFO  13:15:25,236 - #40 ;
+INFO  13:15:25,236 - #48 }
+INFO  13:15:25,236 - #48 }
+INFO  13:15:25,236 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  13:15:25,236 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondSingle(
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactRelop(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorDesignator(
+                              DesignatorSimple(
+                               x
+                              ) [DesignatorSimple]
+                            ) [FactorDesignator]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                      RelopLT(
+                      ) [RelopLT]
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             3
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactRelop]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorDesignator(
+                            DesignatorSimple(
+                             bt
+                            ) [DesignatorSimple]
+                          ) [FactorDesignator]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondSingle]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  13:15:25,236 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  13:15:25,252 - Deklarisana promenljiva 'x' na liniji 8
+INFO  13:15:25,252 - Deklarisana promenljiva 'y' na liniji 8
+INFO  13:15:25,252 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  13:15:25,252 - Deklarisan niz 'niz' na liniji 10
+INFO  13:15:25,267 - ===================================
+INFO  13:15:25,267 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  13:16:11,693 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  13:16:11,746 - #2 program
+INFO  13:16:11,746 - #20 test301
+INFO  13:16:11,746 - #47 {
+INFO  13:16:11,746 - #16 void
+INFO  13:16:11,746 - #20 main
+INFO  13:16:11,746 - #43 (
+INFO  13:16:11,746 - #44 )
+INFO  13:16:11,746 - #20 int
+INFO  13:16:11,746 - #20 x
+INFO  13:16:11,746 - #41 ,
+INFO  13:16:11,746 - #20 y
+INFO  13:16:11,746 - #40 ;
+INFO  13:16:11,746 - #20 bool
+INFO  13:16:11,746 - #20 bt
+INFO  13:16:11,746 - #40 ;
+INFO  13:16:11,746 - #20 int
+INFO  13:16:11,746 - #20 niz
+INFO  13:16:11,746 - #45 [
+INFO  13:16:11,746 - #46 ]
+INFO  13:16:11,746 - #40 ;
+INFO  13:16:11,746 - #47 {
+INFO  13:16:11,746 - #20 x
+INFO  13:16:11,746 - #37 =
+INFO  13:16:11,746 - #21 1
+INFO  13:16:11,746 - #40 ;
+INFO  13:16:11,746 - #20 bt
+INFO  13:16:11,746 - #37 =
+INFO  13:16:11,746 - #23 true
+INFO  13:16:11,746 - #40 ;
+INFO  13:16:11,746 - #10 do
+INFO  13:16:11,746 - #47 {
+INFO  13:16:11,746 - #20 x
+INFO  13:16:11,746 - #38 ++
+INFO  13:16:11,746 - #40 ;
+INFO  13:16:11,746 - #48 }
+INFO  13:16:11,746 - #11 while
+INFO  13:16:11,746 - #43 (
+INFO  13:16:11,746 - #20 x
+INFO  13:16:11,746 - #33 <
+INFO  13:16:11,746 - #21 3
+INFO  13:16:11,746 - #35 &&
+INFO  13:16:11,746 - #20 bt
+INFO  13:16:11,746 - #44 )
+INFO  13:16:11,746 - #40 ;
+INFO  13:16:11,746 - #13 print
+INFO  13:16:11,746 - #43 (
+INFO  13:16:11,746 - #20 x
+INFO  13:16:11,746 - #44 )
+INFO  13:16:11,746 - #40 ;
+INFO  13:16:11,746 - #48 }
+INFO  13:16:11,746 - #48 }
+INFO  13:16:11,746 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  13:16:11,746 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondSingle(
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactRelop(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorDesignator(
+                              DesignatorSimple(
+                               x
+                              ) [DesignatorSimple]
+                            ) [FactorDesignator]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                      RelopLT(
+                      ) [RelopLT]
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             3
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactRelop]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorDesignator(
+                            DesignatorSimple(
+                             bt
+                            ) [DesignatorSimple]
+                          ) [FactorDesignator]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondSingle]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  13:16:11,746 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  13:16:11,762 - Deklarisana promenljiva 'x' na liniji 8
+INFO  13:16:11,762 - Deklarisana promenljiva 'y' na liniji 8
+INFO  13:16:11,762 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  13:16:11,762 - Deklarisan niz 'niz' na liniji 10
+INFO  13:16:11,762 - ===================================
+INFO  13:16:11,762 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  13:16:11,762 - Parsiranje uspesno zavrseno!
+INFO  13:16:29,793 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  13:16:29,846 - #2 program
+INFO  13:16:29,846 - #20 test301
+INFO  13:16:29,846 - #47 {
+INFO  13:16:29,846 - #16 void
+INFO  13:16:29,846 - #20 main
+INFO  13:16:29,846 - #43 (
+INFO  13:16:29,846 - #44 )
+INFO  13:16:29,846 - #20 int
+INFO  13:16:29,846 - #20 x
+INFO  13:16:29,846 - #41 ,
+INFO  13:16:29,846 - #20 y
+INFO  13:16:29,846 - #40 ;
+INFO  13:16:29,846 - #20 bool
+INFO  13:16:29,846 - #20 bt
+INFO  13:16:29,846 - #40 ;
+INFO  13:16:29,846 - #20 int
+INFO  13:16:29,846 - #20 niz
+INFO  13:16:29,846 - #45 [
+INFO  13:16:29,846 - #46 ]
+INFO  13:16:29,846 - #40 ;
+INFO  13:16:29,846 - #47 {
+INFO  13:16:29,846 - #20 x
+INFO  13:16:29,846 - #37 =
+INFO  13:16:29,846 - #21 1
+INFO  13:16:29,846 - #40 ;
+INFO  13:16:29,846 - #20 bt
+INFO  13:16:29,846 - #37 =
+INFO  13:16:29,846 - #23 true
+INFO  13:16:29,846 - #40 ;
+INFO  13:16:29,846 - #10 do
+INFO  13:16:29,846 - #47 {
+INFO  13:16:29,846 - #20 x
+INFO  13:16:29,846 - #38 ++
+INFO  13:16:29,846 - #40 ;
+INFO  13:16:29,846 - #48 }
+INFO  13:16:29,846 - #11 while
+INFO  13:16:29,846 - #43 (
+INFO  13:16:29,846 - #20 x
+INFO  13:16:29,846 - #33 <
+INFO  13:16:29,846 - #21 3
+INFO  13:16:29,846 - #35 &&
+INFO  13:16:29,846 - #20 bt
+INFO  13:16:29,846 - #44 )
+INFO  13:16:29,846 - #40 ;
+INFO  13:16:29,846 - #13 print
+INFO  13:16:29,846 - #43 (
+INFO  13:16:29,846 - #20 x
+INFO  13:16:29,846 - #44 )
+INFO  13:16:29,846 - #40 ;
+INFO  13:16:29,846 - #48 }
+INFO  13:16:29,846 - #48 }
+INFO  13:16:29,846 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  13:16:29,846 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondSingle(
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactRelop(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorDesignator(
+                              DesignatorSimple(
+                               x
+                              ) [DesignatorSimple]
+                            ) [FactorDesignator]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                      RelopLT(
+                      ) [RelopLT]
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             3
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactRelop]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorDesignator(
+                            DesignatorSimple(
+                             bt
+                            ) [DesignatorSimple]
+                          ) [FactorDesignator]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondSingle]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  13:16:29,846 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  13:16:29,862 - Deklarisana promenljiva 'x' na liniji 8
+INFO  13:16:29,862 - Deklarisana promenljiva 'y' na liniji 8
+INFO  13:16:29,862 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  13:16:29,862 - Deklarisan niz 'niz' na liniji 10
+INFO  13:16:29,862 - ===================================
+INFO  13:16:29,862 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  13:16:29,878 - Parsiranje uspesno zavrseno!
+INFO  13:20:50,949 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  13:20:50,987 - #2 program
+INFO  13:20:50,987 - #20 test301
+INFO  13:20:50,987 - #47 {
+INFO  13:20:50,987 - #16 void
+INFO  13:20:50,987 - #20 main
+INFO  13:20:50,987 - #43 (
+INFO  13:20:50,987 - #44 )
+INFO  13:20:50,987 - #20 int
+INFO  13:20:50,987 - #20 x
+INFO  13:20:51,003 - #41 ,
+INFO  13:20:51,003 - #20 y
+INFO  13:20:51,003 - #40 ;
+INFO  13:20:51,003 - #20 bool
+INFO  13:20:51,003 - #20 bt
+INFO  13:20:51,003 - #40 ;
+INFO  13:20:51,003 - #20 int
+INFO  13:20:51,003 - #20 niz
+INFO  13:20:51,003 - #45 [
+INFO  13:20:51,003 - #46 ]
+INFO  13:20:51,003 - #40 ;
+INFO  13:20:51,003 - #47 {
+INFO  13:20:51,003 - #20 x
+INFO  13:20:51,003 - #37 =
+INFO  13:20:51,003 - #21 1
+INFO  13:20:51,003 - #40 ;
+INFO  13:20:51,003 - #20 bt
+INFO  13:20:51,003 - #37 =
+INFO  13:20:51,003 - #23 true
+INFO  13:20:51,003 - #40 ;
+INFO  13:20:51,003 - #10 do
+INFO  13:20:51,003 - #47 {
+INFO  13:20:51,003 - #20 x
+INFO  13:20:51,003 - #38 ++
+INFO  13:20:51,003 - #40 ;
+INFO  13:20:51,003 - #48 }
+INFO  13:20:51,003 - #11 while
+INFO  13:20:51,003 - #43 (
+INFO  13:20:51,003 - #20 x
+INFO  13:20:51,003 - #33 <
+INFO  13:20:51,003 - #21 3
+INFO  13:20:51,003 - #35 &&
+INFO  13:20:51,003 - #20 bt
+INFO  13:20:51,003 - #44 )
+INFO  13:20:51,003 - #40 ;
+INFO  13:20:51,003 - #13 print
+INFO  13:20:51,003 - #43 (
+INFO  13:20:51,003 - #20 x
+INFO  13:20:51,003 - #44 )
+INFO  13:20:51,003 - #40 ;
+INFO  13:20:51,003 - #48 }
+INFO  13:20:51,003 - #48 }
+INFO  13:20:51,003 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  13:20:51,003 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondSingle(
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactRelop(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorDesignator(
+                              DesignatorSimple(
+                               x
+                              ) [DesignatorSimple]
+                            ) [FactorDesignator]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                      RelopLT(
+                      ) [RelopLT]
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             3
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactRelop]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorDesignator(
+                            DesignatorSimple(
+                             bt
+                            ) [DesignatorSimple]
+                          ) [FactorDesignator]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondSingle]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  13:20:51,003 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  13:20:51,018 - Deklarisana promenljiva 'x' na liniji 8
+INFO  13:20:51,018 - Deklarisana promenljiva 'y' na liniji 8
+INFO  13:20:51,018 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  13:20:51,018 - Deklarisan niz 'niz' na liniji 10
+INFO  13:20:51,018 - ===================================
+INFO  13:20:51,018 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  13:20:51,034 - Parsiranje uspesno zavrseno!
+INFO  13:22:10,319 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  13:22:10,388 - #2 program
+INFO  13:22:10,388 - #20 test301
+INFO  13:22:10,388 - #47 {
+INFO  13:22:10,388 - #16 void
+INFO  13:22:10,388 - #20 main
+INFO  13:22:10,388 - #43 (
+INFO  13:22:10,388 - #44 )
+INFO  13:22:10,388 - #20 int
+INFO  13:22:10,388 - #20 x
+INFO  13:22:10,388 - #41 ,
+INFO  13:22:10,388 - #20 y
+INFO  13:22:10,388 - #40 ;
+INFO  13:22:10,388 - #20 bool
+INFO  13:22:10,388 - #20 bt
+INFO  13:22:10,388 - #40 ;
+INFO  13:22:10,388 - #20 int
+INFO  13:22:10,388 - #20 niz
+INFO  13:22:10,388 - #45 [
+INFO  13:22:10,388 - #46 ]
+INFO  13:22:10,388 - #40 ;
+INFO  13:22:10,388 - #47 {
+INFO  13:22:10,388 - #20 x
+INFO  13:22:10,388 - #37 =
+INFO  13:22:10,388 - #21 1
+INFO  13:22:10,388 - #40 ;
+INFO  13:22:10,388 - #20 bt
+INFO  13:22:10,388 - #37 =
+INFO  13:22:10,388 - #23 false
+INFO  13:22:10,388 - #40 ;
+INFO  13:22:10,388 - #10 do
+INFO  13:22:10,388 - #47 {
+INFO  13:22:10,388 - #20 x
+INFO  13:22:10,388 - #38 ++
+INFO  13:22:10,388 - #40 ;
+INFO  13:22:10,388 - #48 }
+INFO  13:22:10,388 - #11 while
+INFO  13:22:10,388 - #43 (
+INFO  13:22:10,388 - #20 x
+INFO  13:22:10,388 - #33 <
+INFO  13:22:10,388 - #21 3
+INFO  13:22:10,388 - #36 ||
+INFO  13:22:10,388 - #20 bt
+INFO  13:22:10,388 - #44 )
+INFO  13:22:10,388 - #40 ;
+INFO  13:22:10,388 - #13 print
+INFO  13:22:10,388 - #43 (
+INFO  13:22:10,388 - #20 x
+INFO  13:22:10,388 - #44 )
+INFO  13:22:10,388 - #40 ;
+INFO  13:22:10,388 - #48 }
+INFO  13:22:10,388 - #48 }
+INFO  13:22:10,388 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  13:22:10,388 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondOr(
+                CondSingle(
+                  CondTermSingle(
+                    CondFactRelop(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorDesignator(
+                              DesignatorSimple(
+                               x
+                              ) [DesignatorSimple]
+                            ) [FactorDesignator]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                      RelopLT(
+                      ) [RelopLT]
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             3
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactRelop]
+                  ) [CondTermSingle]
+                ) [CondSingle]
+                CondTermSingle(
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorDesignator(
+                            DesignatorSimple(
+                             bt
+                            ) [DesignatorSimple]
+                          ) [FactorDesignator]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermSingle]
+              ) [CondOr]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  13:22:10,403 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  13:22:10,403 - Deklarisana promenljiva 'x' na liniji 8
+INFO  13:22:10,403 - Deklarisana promenljiva 'y' na liniji 8
+INFO  13:22:10,403 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  13:22:10,403 - Deklarisan niz 'niz' na liniji 10
+INFO  13:22:10,419 - ===================================
+INFO  13:22:10,419 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  14:20:47,159 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:20:47,221 - #2 program
+INFO  14:20:47,221 - #20 test301
+INFO  14:20:47,221 - #47 {
+INFO  14:20:47,221 - #16 void
+INFO  14:20:47,221 - #20 main
+INFO  14:20:47,221 - #43 (
+INFO  14:20:47,221 - #44 )
+INFO  14:20:47,221 - #20 int
+INFO  14:20:47,221 - #20 x
+INFO  14:20:47,237 - #41 ,
+INFO  14:20:47,237 - #20 y
+INFO  14:20:47,237 - #40 ;
+INFO  14:20:47,237 - #20 bool
+INFO  14:20:47,237 - #20 bt
+INFO  14:20:47,237 - #40 ;
+INFO  14:20:47,237 - #20 int
+INFO  14:20:47,237 - #20 niz
+INFO  14:20:47,237 - #45 [
+INFO  14:20:47,237 - #46 ]
+INFO  14:20:47,237 - #40 ;
+INFO  14:20:47,237 - #47 {
+INFO  14:20:47,237 - #20 x
+INFO  14:20:47,237 - #37 =
+INFO  14:20:47,237 - #21 1
+INFO  14:20:47,237 - #40 ;
+INFO  14:20:47,237 - #20 bt
+INFO  14:20:47,237 - #37 =
+INFO  14:20:47,237 - #23 false
+INFO  14:20:47,237 - #40 ;
+INFO  14:20:47,237 - #10 do
+INFO  14:20:47,237 - #47 {
+INFO  14:20:47,237 - #20 x
+INFO  14:20:47,237 - #38 ++
+INFO  14:20:47,237 - #40 ;
+INFO  14:20:47,237 - #48 }
+INFO  14:20:47,237 - #11 while
+INFO  14:20:47,237 - #43 (
+INFO  14:20:47,237 - #20 x
+INFO  14:20:47,237 - #33 <
+INFO  14:20:47,237 - #21 3
+INFO  14:20:47,243 - #36 ||
+INFO  14:20:47,243 - #20 bt
+INFO  14:20:47,243 - #44 )
+INFO  14:20:47,243 - #40 ;
+INFO  14:20:47,243 - #13 print
+INFO  14:20:47,243 - #43 (
+INFO  14:20:47,243 - #20 x
+INFO  14:20:47,243 - #44 )
+INFO  14:20:47,243 - #40 ;
+INFO  14:20:47,243 - #48 }
+INFO  14:20:47,243 - #48 }
+INFO  14:20:47,243 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  14:20:47,243 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondOr(
+                CondSingle(
+                  CondTermSingle(
+                    CondFactRelop(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorDesignator(
+                              DesignatorSimple(
+                               x
+                              ) [DesignatorSimple]
+                            ) [FactorDesignator]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                      RelopLT(
+                      ) [RelopLT]
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             3
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactRelop]
+                  ) [CondTermSingle]
+                ) [CondSingle]
+                CondTermSingle(
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorDesignator(
+                            DesignatorSimple(
+                             bt
+                            ) [DesignatorSimple]
+                          ) [FactorDesignator]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermSingle]
+              ) [CondOr]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:20:47,243 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  14:20:47,259 - Deklarisana promenljiva 'x' na liniji 8
+INFO  14:20:47,259 - Deklarisana promenljiva 'y' na liniji 8
+INFO  14:20:47,259 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  14:20:47,259 - Deklarisan niz 'niz' na liniji 10
+INFO  14:20:47,259 - ===================================
+INFO  14:20:47,259 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  14:20:47,259 - Parsiranje uspesno zavrseno!
+INFO  14:22:50,248 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:22:50,294 - #2 program
+INFO  14:22:50,294 - #20 test301
+INFO  14:22:50,294 - #47 {
+INFO  14:22:50,294 - #16 void
+INFO  14:22:50,294 - #20 main
+INFO  14:22:50,294 - #43 (
+INFO  14:22:50,294 - #44 )
+INFO  14:22:50,294 - #20 int
+INFO  14:22:50,294 - #20 x
+INFO  14:22:50,294 - #41 ,
+INFO  14:22:50,294 - #20 y
+INFO  14:22:50,294 - #40 ;
+INFO  14:22:50,294 - #20 bool
+INFO  14:22:50,294 - #20 bt
+INFO  14:22:50,294 - #40 ;
+INFO  14:22:50,294 - #20 int
+INFO  14:22:50,294 - #20 niz
+INFO  14:22:50,294 - #45 [
+INFO  14:22:50,294 - #46 ]
+INFO  14:22:50,294 - #40 ;
+INFO  14:22:50,294 - #47 {
+INFO  14:22:50,294 - #20 x
+INFO  14:22:50,294 - #37 =
+INFO  14:22:50,294 - #21 1
+INFO  14:22:50,294 - #40 ;
+INFO  14:22:50,294 - #20 bt
+INFO  14:22:50,294 - #37 =
+INFO  14:22:50,294 - #23 false
+INFO  14:22:50,294 - #40 ;
+INFO  14:22:50,294 - #10 do
+INFO  14:22:50,294 - #47 {
+INFO  14:22:50,294 - #20 x
+INFO  14:22:50,294 - #38 ++
+INFO  14:22:50,294 - #40 ;
+INFO  14:22:50,294 - #48 }
+INFO  14:22:50,294 - #11 while
+INFO  14:22:50,294 - #43 (
+INFO  14:22:50,294 - #23 false
+INFO  14:22:50,294 - #35 &&
+INFO  14:22:50,294 - #23 true
+INFO  14:22:50,294 - #35 &&
+INFO  14:22:50,294 - #23 false
+INFO  14:22:50,294 - #36 ||
+INFO  14:22:50,294 - #23 false
+INFO  14:22:50,294 - #36 ||
+INFO  14:22:50,294 - #23 false
+INFO  14:22:50,294 - #35 &&
+INFO  14:22:50,294 - #23 true
+INFO  14:22:50,294 - #44 )
+INFO  14:22:50,294 - #40 ;
+INFO  14:22:50,294 - #13 print
+INFO  14:22:50,294 - #43 (
+INFO  14:22:50,294 - #20 x
+INFO  14:22:50,294 - #44 )
+INFO  14:22:50,294 - #40 ;
+INFO  14:22:50,294 - #48 }
+INFO  14:22:50,294 - #48 }
+INFO  14:22:50,294 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  14:22:50,294 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondOr(
+                CondOr(
+                  CondSingle(
+                    CondTermAnd(
+                      CondTermAnd(
+                        CondTermSingle(
+                          CondFactSingle(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorBoolConst(
+                                   false
+                                  ) [FactorBoolConst]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [CondFactSingle]
+                        ) [CondTermSingle]
+                        CondFactSingle(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorBoolConst(
+                                 true
+                                ) [FactorBoolConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [CondFactSingle]
+                      ) [CondTermAnd]
+                      CondFactSingle(
+                        ExprOne(
+                          ExprSingle(
+                            TermSingle(
+                              FactorBoolConst(
+                               false
+                              ) [FactorBoolConst]
+                            ) [TermSingle]
+                          ) [ExprSingle]
+                        ) [ExprOne]
+                      ) [CondFactSingle]
+                    ) [CondTermAnd]
+                  ) [CondSingle]
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                ) [CondOr]
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondOr]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:22:50,294 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  14:22:50,310 - Deklarisana promenljiva 'x' na liniji 8
+INFO  14:22:50,310 - Deklarisana promenljiva 'y' na liniji 8
+INFO  14:22:50,310 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  14:22:50,310 - Deklarisan niz 'niz' na liniji 10
+INFO  14:22:50,310 - ===================================
+INFO  14:22:50,310 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  14:22:50,310 - Parsiranje uspesno zavrseno!
+INFO  14:24:39,572 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:24:39,626 - #2 program
+INFO  14:24:39,626 - #20 test301
+INFO  14:24:39,626 - #47 {
+INFO  14:24:39,626 - #16 void
+INFO  14:24:39,626 - #20 main
+INFO  14:24:39,626 - #43 (
+INFO  14:24:39,626 - #44 )
+INFO  14:24:39,626 - #20 int
+INFO  14:24:39,626 - #20 x
+INFO  14:24:39,626 - #41 ,
+INFO  14:24:39,626 - #20 y
+INFO  14:24:39,626 - #40 ;
+INFO  14:24:39,626 - #20 bool
+INFO  14:24:39,626 - #20 bt
+INFO  14:24:39,626 - #40 ;
+INFO  14:24:39,626 - #20 int
+INFO  14:24:39,626 - #20 niz
+INFO  14:24:39,626 - #45 [
+INFO  14:24:39,626 - #46 ]
+INFO  14:24:39,626 - #40 ;
+INFO  14:24:39,626 - #47 {
+INFO  14:24:39,626 - #20 x
+INFO  14:24:39,626 - #37 =
+INFO  14:24:39,626 - #21 1
+INFO  14:24:39,626 - #40 ;
+INFO  14:24:39,626 - #20 bt
+INFO  14:24:39,626 - #37 =
+INFO  14:24:39,626 - #23 false
+INFO  14:24:39,626 - #40 ;
+INFO  14:24:39,626 - #10 do
+INFO  14:24:39,626 - #47 {
+INFO  14:24:39,626 - #20 x
+INFO  14:24:39,626 - #38 ++
+INFO  14:24:39,626 - #40 ;
+INFO  14:24:39,626 - #48 }
+INFO  14:24:39,626 - #11 while
+INFO  14:24:39,626 - #43 (
+INFO  14:24:39,626 - #23 false
+INFO  14:24:39,626 - #35 &&
+INFO  14:24:39,626 - #23 true
+INFO  14:24:39,626 - #35 &&
+INFO  14:24:39,626 - #23 false
+INFO  14:24:39,626 - #36 ||
+INFO  14:24:39,626 - #23 false
+INFO  14:24:39,626 - #36 ||
+INFO  14:24:39,626 - #23 false
+INFO  14:24:39,641 - #35 &&
+INFO  14:24:39,641 - #23 true
+INFO  14:24:39,641 - #44 )
+INFO  14:24:39,641 - #40 ;
+INFO  14:24:39,641 - #13 print
+INFO  14:24:39,641 - #43 (
+INFO  14:24:39,641 - #20 x
+INFO  14:24:39,641 - #44 )
+INFO  14:24:39,641 - #40 ;
+INFO  14:24:39,641 - #48 }
+INFO  14:24:39,641 - #48 }
+INFO  14:24:39,641 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  14:24:39,641 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondOr(
+                CondOr(
+                  CondSingle(
+                    CondTermAnd(
+                      CondTermAnd(
+                        CondTermSingle(
+                          CondFactSingle(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorBoolConst(
+                                   false
+                                  ) [FactorBoolConst]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [CondFactSingle]
+                        ) [CondTermSingle]
+                        CondFactSingle(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorBoolConst(
+                                 true
+                                ) [FactorBoolConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [CondFactSingle]
+                      ) [CondTermAnd]
+                      CondFactSingle(
+                        ExprOne(
+                          ExprSingle(
+                            TermSingle(
+                              FactorBoolConst(
+                               false
+                              ) [FactorBoolConst]
+                            ) [TermSingle]
+                          ) [ExprSingle]
+                        ) [ExprOne]
+                      ) [CondFactSingle]
+                    ) [CondTermAnd]
+                  ) [CondSingle]
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                ) [CondOr]
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondOr]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:24:39,641 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  14:24:39,641 - Deklarisana promenljiva 'x' na liniji 8
+INFO  14:24:39,641 - Deklarisana promenljiva 'y' na liniji 8
+INFO  14:24:39,641 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  14:24:39,641 - Deklarisan niz 'niz' na liniji 10
+INFO  14:24:39,657 - ===================================
+INFO  14:24:39,657 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  14:24:39,657 - Parsiranje uspesno zavrseno!
+INFO  14:25:38,963 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:25:39,009 - #2 program
+INFO  14:25:39,009 - #20 test301
+INFO  14:25:39,009 - #47 {
+INFO  14:25:39,025 - #16 void
+INFO  14:25:39,025 - #20 main
+INFO  14:25:39,025 - #43 (
+INFO  14:25:39,025 - #44 )
+INFO  14:25:39,025 - #20 int
+INFO  14:25:39,025 - #20 x
+INFO  14:25:39,025 - #41 ,
+INFO  14:25:39,025 - #20 y
+INFO  14:25:39,025 - #40 ;
+INFO  14:25:39,025 - #20 bool
+INFO  14:25:39,025 - #20 bt
+INFO  14:25:39,025 - #40 ;
+INFO  14:25:39,025 - #20 int
+INFO  14:25:39,025 - #20 niz
+INFO  14:25:39,025 - #45 [
+INFO  14:25:39,025 - #46 ]
+INFO  14:25:39,025 - #40 ;
+INFO  14:25:39,025 - #47 {
+INFO  14:25:39,025 - #20 x
+INFO  14:25:39,025 - #37 =
+INFO  14:25:39,025 - #21 1
+INFO  14:25:39,025 - #40 ;
+INFO  14:25:39,025 - #20 bt
+INFO  14:25:39,025 - #37 =
+INFO  14:25:39,025 - #23 false
+INFO  14:25:39,025 - #40 ;
+INFO  14:25:39,025 - #10 do
+INFO  14:25:39,025 - #47 {
+INFO  14:25:39,025 - #20 x
+INFO  14:25:39,025 - #38 ++
+INFO  14:25:39,025 - #40 ;
+INFO  14:25:39,025 - #48 }
+INFO  14:25:39,025 - #11 while
+INFO  14:25:39,025 - #43 (
+INFO  14:25:39,025 - #23 false
+INFO  14:25:39,025 - #35 &&
+INFO  14:25:39,025 - #23 true
+INFO  14:25:39,025 - #35 &&
+INFO  14:25:39,025 - #23 false
+INFO  14:25:39,025 - #36 ||
+INFO  14:25:39,025 - #23 false
+INFO  14:25:39,025 - #36 ||
+INFO  14:25:39,025 - #23 false
+INFO  14:25:39,025 - #35 &&
+INFO  14:25:39,025 - #23 true
+INFO  14:25:39,025 - #44 )
+INFO  14:25:39,025 - #40 ;
+INFO  14:25:39,025 - #13 print
+INFO  14:25:39,025 - #43 (
+INFO  14:25:39,025 - #20 x
+INFO  14:25:39,025 - #44 )
+INFO  14:25:39,025 - #40 ;
+INFO  14:25:39,025 - #48 }
+INFO  14:25:39,025 - #48 }
+INFO  14:25:39,025 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  14:25:39,025 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondOr(
+                CondOr(
+                  CondSingle(
+                    CondTermAnd(
+                      CondTermAnd(
+                        CondTermSingle(
+                          CondFactSingle(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorBoolConst(
+                                   false
+                                  ) [FactorBoolConst]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [CondFactSingle]
+                        ) [CondTermSingle]
+                        CondFactSingle(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorBoolConst(
+                                 true
+                                ) [FactorBoolConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [CondFactSingle]
+                      ) [CondTermAnd]
+                      CondFactSingle(
+                        ExprOne(
+                          ExprSingle(
+                            TermSingle(
+                              FactorBoolConst(
+                               false
+                              ) [FactorBoolConst]
+                            ) [TermSingle]
+                          ) [ExprSingle]
+                        ) [ExprOne]
+                      ) [CondFactSingle]
+                    ) [CondTermAnd]
+                  ) [CondSingle]
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                ) [CondOr]
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondOr]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:25:39,025 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  14:25:39,041 - Deklarisana promenljiva 'x' na liniji 8
+INFO  14:25:39,041 - Deklarisana promenljiva 'y' na liniji 8
+INFO  14:25:39,041 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  14:25:39,041 - Deklarisan niz 'niz' na liniji 10
+INFO  14:25:39,041 - ===================================
+INFO  14:25:39,041 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  14:25:39,056 - Parsiranje uspesno zavrseno!
+INFO  14:29:02,825 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:29:02,879 - #2 program
+INFO  14:29:02,879 - #20 test301
+INFO  14:29:02,879 - #47 {
+INFO  14:29:02,879 - #16 void
+INFO  14:29:02,879 - #20 main
+INFO  14:29:02,879 - #43 (
+INFO  14:29:02,879 - #44 )
+INFO  14:29:02,879 - #20 int
+INFO  14:29:02,879 - #20 x
+INFO  14:29:02,894 - #41 ,
+INFO  14:29:02,894 - #20 y
+INFO  14:29:02,894 - #40 ;
+INFO  14:29:02,894 - #20 bool
+INFO  14:29:02,894 - #20 bt
+INFO  14:29:02,894 - #40 ;
+INFO  14:29:02,894 - #20 int
+INFO  14:29:02,894 - #20 niz
+INFO  14:29:02,894 - #45 [
+INFO  14:29:02,894 - #46 ]
+INFO  14:29:02,894 - #40 ;
+INFO  14:29:02,894 - #47 {
+INFO  14:29:02,894 - #20 x
+INFO  14:29:02,894 - #37 =
+INFO  14:29:02,894 - #21 1
+INFO  14:29:02,894 - #40 ;
+INFO  14:29:02,894 - #20 bt
+INFO  14:29:02,894 - #37 =
+INFO  14:29:02,894 - #23 false
+INFO  14:29:02,894 - #40 ;
+INFO  14:29:02,894 - #10 do
+INFO  14:29:02,894 - #47 {
+INFO  14:29:02,894 - #20 x
+INFO  14:29:02,894 - #38 ++
+INFO  14:29:02,894 - #40 ;
+INFO  14:29:02,894 - #48 }
+INFO  14:29:02,894 - #11 while
+INFO  14:29:02,894 - #43 (
+INFO  14:29:02,894 - #23 false
+INFO  14:29:02,894 - #35 &&
+INFO  14:29:02,894 - #23 true
+INFO  14:29:02,894 - #35 &&
+INFO  14:29:02,894 - #23 false
+INFO  14:29:02,894 - #36 ||
+INFO  14:29:02,894 - #23 false
+INFO  14:29:02,894 - #36 ||
+INFO  14:29:02,894 - #23 false
+INFO  14:29:02,894 - #35 &&
+INFO  14:29:02,894 - #23 true
+INFO  14:29:02,894 - #44 )
+INFO  14:29:02,894 - #40 ;
+INFO  14:29:02,894 - #13 print
+INFO  14:29:02,894 - #43 (
+INFO  14:29:02,894 - #20 x
+INFO  14:29:02,894 - #44 )
+INFO  14:29:02,894 - #40 ;
+INFO  14:29:02,894 - #48 }
+INFO  14:29:02,894 - #48 }
+INFO  14:29:02,894 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  14:29:02,894 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondOr(
+                CondOr(
+                  CondSingle(
+                    CondTermAnd(
+                      CondTermAnd(
+                        CondTermSingle(
+                          CondFactSingle(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorBoolConst(
+                                   false
+                                  ) [FactorBoolConst]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [CondFactSingle]
+                        ) [CondTermSingle]
+                        CondFactSingle(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorBoolConst(
+                                 true
+                                ) [FactorBoolConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [CondFactSingle]
+                      ) [CondTermAnd]
+                      CondFactSingle(
+                        ExprOne(
+                          ExprSingle(
+                            TermSingle(
+                              FactorBoolConst(
+                               false
+                              ) [FactorBoolConst]
+                            ) [TermSingle]
+                          ) [ExprSingle]
+                        ) [ExprOne]
+                      ) [CondFactSingle]
+                    ) [CondTermAnd]
+                  ) [CondSingle]
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                ) [CondOr]
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondOr]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:29:02,910 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  14:29:02,910 - Deklarisana promenljiva 'x' na liniji 8
+INFO  14:29:02,910 - Deklarisana promenljiva 'y' na liniji 8
+INFO  14:29:02,910 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  14:29:02,910 - Deklarisan niz 'niz' na liniji 10
+INFO  14:29:02,910 - ===================================
+INFO  14:29:02,925 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  14:29:02,925 - Parsiranje uspesno zavrseno!
+INFO  14:31:27,283 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:31:27,352 - #2 program
+INFO  14:31:27,352 - #20 test301
+INFO  14:31:27,352 - #47 {
+INFO  14:31:27,368 - #16 void
+INFO  14:31:27,368 - #20 main
+INFO  14:31:27,368 - #43 (
+INFO  14:31:27,368 - #44 )
+INFO  14:31:27,368 - #20 int
+INFO  14:31:27,368 - #20 x
+INFO  14:31:27,368 - #41 ,
+INFO  14:31:27,368 - #20 y
+INFO  14:31:27,368 - #40 ;
+INFO  14:31:27,368 - #20 bool
+INFO  14:31:27,368 - #20 bt
+INFO  14:31:27,368 - #40 ;
+INFO  14:31:27,368 - #20 int
+INFO  14:31:27,368 - #20 niz
+INFO  14:31:27,368 - #45 [
+INFO  14:31:27,368 - #46 ]
+INFO  14:31:27,368 - #40 ;
+INFO  14:31:27,368 - #47 {
+INFO  14:31:27,368 - #20 x
+INFO  14:31:27,368 - #37 =
+INFO  14:31:27,368 - #21 1
+INFO  14:31:27,368 - #40 ;
+INFO  14:31:27,368 - #20 bt
+INFO  14:31:27,368 - #37 =
+INFO  14:31:27,368 - #23 false
+INFO  14:31:27,368 - #40 ;
+INFO  14:31:27,368 - #10 do
+INFO  14:31:27,368 - #47 {
+INFO  14:31:27,368 - #20 x
+INFO  14:31:27,368 - #38 ++
+INFO  14:31:27,368 - #40 ;
+INFO  14:31:27,368 - #48 }
+INFO  14:31:27,368 - #11 while
+INFO  14:31:27,368 - #43 (
+INFO  14:31:27,368 - #23 false
+INFO  14:31:27,368 - #35 &&
+INFO  14:31:27,368 - #23 true
+INFO  14:31:27,368 - #35 &&
+INFO  14:31:27,368 - #23 false
+INFO  14:31:27,368 - #36 ||
+INFO  14:31:27,368 - #23 false
+INFO  14:31:27,368 - #36 ||
+INFO  14:31:27,368 - #23 false
+INFO  14:31:27,368 - #35 &&
+INFO  14:31:27,368 - #23 true
+INFO  14:31:27,368 - #44 )
+INFO  14:31:27,368 - #40 ;
+INFO  14:31:27,368 - #13 print
+INFO  14:31:27,368 - #43 (
+INFO  14:31:27,368 - #20 x
+INFO  14:31:27,368 - #44 )
+INFO  14:31:27,368 - #40 ;
+INFO  14:31:27,368 - #48 }
+INFO  14:31:27,368 - #48 }
+INFO  14:31:27,368 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  14:31:27,383 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondOr(
+                CondOr(
+                  CondSingle(
+                    CondTermAnd(
+                      CondTermAnd(
+                        CondTermSingle(
+                          CondFactSingle(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorBoolConst(
+                                   false
+                                  ) [FactorBoolConst]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [CondFactSingle]
+                        ) [CondTermSingle]
+                        CondFactSingle(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorBoolConst(
+                                 true
+                                ) [FactorBoolConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [CondFactSingle]
+                      ) [CondTermAnd]
+                      CondFactSingle(
+                        ExprOne(
+                          ExprSingle(
+                            TermSingle(
+                              FactorBoolConst(
+                               false
+                              ) [FactorBoolConst]
+                            ) [TermSingle]
+                          ) [ExprSingle]
+                        ) [ExprOne]
+                      ) [CondFactSingle]
+                    ) [CondTermAnd]
+                  ) [CondSingle]
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                ) [CondOr]
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondOr]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:31:27,383 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  14:31:27,399 - Deklarisana promenljiva 'x' na liniji 8
+INFO  14:31:27,399 - Deklarisana promenljiva 'y' na liniji 8
+INFO  14:31:27,399 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  14:31:27,399 - Deklarisan niz 'niz' na liniji 10
+INFO  14:31:27,399 - ===================================
+INFO  14:31:27,399 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+ERROR 14:31:27,415 - PC 14
+ERROR 14:31:27,415 - PC 19
+INFO  14:31:27,415 - Parsiranje uspesno zavrseno!
+INFO  14:33:07,211 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:33:07,257 - #2 program
+INFO  14:33:07,257 - #20 test301
+INFO  14:33:07,257 - #47 {
+INFO  14:33:07,257 - #16 void
+INFO  14:33:07,257 - #20 main
+INFO  14:33:07,257 - #43 (
+INFO  14:33:07,257 - #44 )
+INFO  14:33:07,257 - #20 int
+INFO  14:33:07,257 - #20 x
+INFO  14:33:07,273 - #41 ,
+INFO  14:33:07,273 - #20 y
+INFO  14:33:07,273 - #40 ;
+INFO  14:33:07,273 - #20 bool
+INFO  14:33:07,273 - #20 bt
+INFO  14:33:07,273 - #40 ;
+INFO  14:33:07,273 - #20 int
+INFO  14:33:07,273 - #20 niz
+INFO  14:33:07,273 - #45 [
+INFO  14:33:07,273 - #46 ]
+INFO  14:33:07,273 - #40 ;
+INFO  14:33:07,273 - #47 {
+INFO  14:33:07,273 - #20 x
+INFO  14:33:07,273 - #37 =
+INFO  14:33:07,273 - #21 1
+INFO  14:33:07,273 - #40 ;
+INFO  14:33:07,273 - #20 bt
+INFO  14:33:07,273 - #37 =
+INFO  14:33:07,273 - #23 false
+INFO  14:33:07,273 - #40 ;
+INFO  14:33:07,273 - #10 do
+INFO  14:33:07,273 - #47 {
+INFO  14:33:07,273 - #20 x
+INFO  14:33:07,273 - #38 ++
+INFO  14:33:07,273 - #40 ;
+INFO  14:33:07,273 - #48 }
+INFO  14:33:07,273 - #11 while
+INFO  14:33:07,273 - #43 (
+INFO  14:33:07,273 - #23 false
+INFO  14:33:07,273 - #35 &&
+INFO  14:33:07,273 - #23 true
+INFO  14:33:07,273 - #35 &&
+INFO  14:33:07,273 - #23 false
+INFO  14:33:07,273 - #36 ||
+INFO  14:33:07,273 - #23 false
+INFO  14:33:07,273 - #36 ||
+INFO  14:33:07,273 - #23 false
+INFO  14:33:07,273 - #35 &&
+INFO  14:33:07,273 - #23 true
+INFO  14:33:07,273 - #44 )
+INFO  14:33:07,273 - #40 ;
+INFO  14:33:07,273 - #13 print
+INFO  14:33:07,273 - #43 (
+INFO  14:33:07,273 - #20 x
+INFO  14:33:07,273 - #44 )
+INFO  14:33:07,273 - #40 ;
+INFO  14:33:07,273 - #48 }
+INFO  14:33:07,273 - #48 }
+INFO  14:33:07,273 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  14:33:07,273 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondOr(
+                CondOr(
+                  CondSingle(
+                    CondTermAnd(
+                      CondTermAnd(
+                        CondTermSingle(
+                          CondFactSingle(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorBoolConst(
+                                   false
+                                  ) [FactorBoolConst]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [CondFactSingle]
+                        ) [CondTermSingle]
+                        CondFactSingle(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorBoolConst(
+                                 true
+                                ) [FactorBoolConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [CondFactSingle]
+                      ) [CondTermAnd]
+                      CondFactSingle(
+                        ExprOne(
+                          ExprSingle(
+                            TermSingle(
+                              FactorBoolConst(
+                               false
+                              ) [FactorBoolConst]
+                            ) [TermSingle]
+                          ) [ExprSingle]
+                        ) [ExprOne]
+                      ) [CondFactSingle]
+                    ) [CondTermAnd]
+                  ) [CondSingle]
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                ) [CondOr]
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondOr]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:33:07,273 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  14:33:07,295 - Deklarisana promenljiva 'x' na liniji 8
+INFO  14:33:07,295 - Deklarisana promenljiva 'y' na liniji 8
+INFO  14:33:07,295 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  14:33:07,295 - Deklarisan niz 'niz' na liniji 10
+INFO  14:33:07,295 - ===================================
+INFO  14:33:07,295 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+ERROR 14:33:07,311 - PC 14
+ERROR 14:33:07,311 - PC 19
+ERROR 14:33:07,311 - PC 29
+ERROR 14:33:07,311 - PC 34
+INFO  14:33:07,311 - Parsiranje uspesno zavrseno!
+INFO  14:34:49,775 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:34:49,813 - #2 program
+INFO  14:34:49,813 - #20 test301
+INFO  14:34:49,813 - #47 {
+INFO  14:34:49,813 - #16 void
+INFO  14:34:49,813 - #20 main
+INFO  14:34:49,813 - #43 (
+INFO  14:34:49,813 - #44 )
+INFO  14:34:49,813 - #20 int
+INFO  14:34:49,813 - #20 x
+INFO  14:34:49,813 - #41 ,
+INFO  14:34:49,813 - #20 y
+INFO  14:34:49,813 - #40 ;
+INFO  14:34:49,828 - #20 bool
+INFO  14:34:49,828 - #20 bt
+INFO  14:34:49,828 - #40 ;
+INFO  14:34:49,828 - #20 int
+INFO  14:34:49,828 - #20 niz
+INFO  14:34:49,828 - #45 [
+INFO  14:34:49,828 - #46 ]
+INFO  14:34:49,828 - #40 ;
+INFO  14:34:49,828 - #47 {
+INFO  14:34:49,828 - #20 x
+INFO  14:34:49,828 - #37 =
+INFO  14:34:49,828 - #21 1
+INFO  14:34:49,828 - #40 ;
+INFO  14:34:49,828 - #20 bt
+INFO  14:34:49,828 - #37 =
+INFO  14:34:49,828 - #23 false
+INFO  14:34:49,828 - #40 ;
+INFO  14:34:49,828 - #10 do
+INFO  14:34:49,828 - #47 {
+INFO  14:34:49,828 - #20 x
+INFO  14:34:49,828 - #38 ++
+INFO  14:34:49,828 - #40 ;
+INFO  14:34:49,828 - #48 }
+INFO  14:34:49,828 - #11 while
+INFO  14:34:49,828 - #43 (
+INFO  14:34:49,828 - #23 false
+INFO  14:34:49,828 - #35 &&
+INFO  14:34:49,828 - #23 true
+INFO  14:34:49,828 - #35 &&
+INFO  14:34:49,828 - #23 false
+INFO  14:34:49,828 - #36 ||
+INFO  14:34:49,828 - #23 false
+INFO  14:34:49,828 - #36 ||
+INFO  14:34:49,828 - #23 false
+INFO  14:34:49,828 - #35 &&
+INFO  14:34:49,828 - #23 true
+INFO  14:34:49,828 - #44 )
+INFO  14:34:49,828 - #40 ;
+INFO  14:34:49,828 - #13 print
+INFO  14:34:49,828 - #43 (
+INFO  14:34:49,828 - #20 x
+INFO  14:34:49,828 - #44 )
+INFO  14:34:49,828 - #40 ;
+INFO  14:34:49,828 - #48 }
+INFO  14:34:49,828 - #48 }
+INFO  14:34:49,828 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  14:34:49,828 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondOr(
+                CondOr(
+                  CondSingle(
+                    CondTermAnd(
+                      CondTermAnd(
+                        CondTermSingle(
+                          CondFactSingle(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorBoolConst(
+                                   false
+                                  ) [FactorBoolConst]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [CondFactSingle]
+                        ) [CondTermSingle]
+                        CondFactSingle(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorBoolConst(
+                                 true
+                                ) [FactorBoolConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [CondFactSingle]
+                      ) [CondTermAnd]
+                      CondFactSingle(
+                        ExprOne(
+                          ExprSingle(
+                            TermSingle(
+                              FactorBoolConst(
+                               false
+                              ) [FactorBoolConst]
+                            ) [TermSingle]
+                          ) [ExprSingle]
+                        ) [ExprOne]
+                      ) [CondFactSingle]
+                    ) [CondTermAnd]
+                  ) [CondSingle]
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                ) [CondOr]
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondOr]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:34:49,828 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  14:34:49,844 - Deklarisana promenljiva 'x' na liniji 8
+INFO  14:34:49,844 - Deklarisana promenljiva 'y' na liniji 8
+INFO  14:34:49,844 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  14:34:49,844 - Deklarisan niz 'niz' na liniji 10
+INFO  14:34:49,844 - ===================================
+INFO  14:34:49,844 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+ERROR 14:34:49,844 - PC 14
+ERROR 14:34:49,844 - PC 19
+ERROR 14:34:49,844 - PC 34
+INFO  14:34:49,859 - Parsiranje uspesno zavrseno!
+INFO  14:35:04,750 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:35:04,796 - #2 program
+INFO  14:35:04,796 - #20 test301
+INFO  14:35:04,796 - #47 {
+INFO  14:35:04,796 - #16 void
+INFO  14:35:04,796 - #20 main
+INFO  14:35:04,796 - #43 (
+INFO  14:35:04,796 - #44 )
+INFO  14:35:04,796 - #20 int
+INFO  14:35:04,812 - #20 x
+INFO  14:35:04,812 - #41 ,
+INFO  14:35:04,812 - #20 y
+INFO  14:35:04,812 - #40 ;
+INFO  14:35:04,812 - #20 bool
+INFO  14:35:04,812 - #20 bt
+INFO  14:35:04,812 - #40 ;
+INFO  14:35:04,812 - #20 int
+INFO  14:35:04,812 - #20 niz
+INFO  14:35:04,812 - #45 [
+INFO  14:35:04,812 - #46 ]
+INFO  14:35:04,812 - #40 ;
+INFO  14:35:04,812 - #47 {
+INFO  14:35:04,812 - #20 x
+INFO  14:35:04,812 - #37 =
+INFO  14:35:04,812 - #21 1
+INFO  14:35:04,812 - #40 ;
+INFO  14:35:04,812 - #20 bt
+INFO  14:35:04,812 - #37 =
+INFO  14:35:04,812 - #23 false
+INFO  14:35:04,812 - #40 ;
+INFO  14:35:04,812 - #10 do
+INFO  14:35:04,812 - #47 {
+INFO  14:35:04,812 - #20 x
+INFO  14:35:04,812 - #38 ++
+INFO  14:35:04,812 - #40 ;
+INFO  14:35:04,812 - #48 }
+INFO  14:35:04,812 - #11 while
+INFO  14:35:04,812 - #43 (
+INFO  14:35:04,812 - #23 false
+INFO  14:35:04,812 - #35 &&
+INFO  14:35:04,812 - #23 true
+INFO  14:35:04,812 - #35 &&
+INFO  14:35:04,812 - #23 false
+INFO  14:35:04,812 - #36 ||
+INFO  14:35:04,812 - #23 false
+INFO  14:35:04,812 - #36 ||
+INFO  14:35:04,812 - #23 false
+INFO  14:35:04,812 - #35 &&
+INFO  14:35:04,812 - #23 true
+INFO  14:35:04,812 - #44 )
+INFO  14:35:04,812 - #40 ;
+INFO  14:35:04,812 - #13 print
+INFO  14:35:04,812 - #43 (
+INFO  14:35:04,812 - #20 x
+INFO  14:35:04,812 - #44 )
+INFO  14:35:04,812 - #40 ;
+INFO  14:35:04,812 - #48 }
+INFO  14:35:04,812 - #48 }
+INFO  14:35:04,812 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  14:35:04,812 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementSingle(
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementSingle]
+              ) [Stmt]
+              CondOr(
+                CondOr(
+                  CondSingle(
+                    CondTermAnd(
+                      CondTermAnd(
+                        CondTermSingle(
+                          CondFactSingle(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorBoolConst(
+                                   false
+                                  ) [FactorBoolConst]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [CondFactSingle]
+                        ) [CondTermSingle]
+                        CondFactSingle(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorBoolConst(
+                                 true
+                                ) [FactorBoolConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [CondFactSingle]
+                      ) [CondTermAnd]
+                      CondFactSingle(
+                        ExprOne(
+                          ExprSingle(
+                            TermSingle(
+                              FactorBoolConst(
+                               false
+                              ) [FactorBoolConst]
+                            ) [TermSingle]
+                          ) [ExprSingle]
+                        ) [ExprOne]
+                      ) [CondFactSingle]
+                    ) [CondTermAnd]
+                  ) [CondSingle]
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                ) [CondOr]
+                CondTermAnd(
+                  CondTermSingle(
+                    CondFactSingle(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorBoolConst(
+                             false
+                            ) [FactorBoolConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [CondFactSingle]
+                  ) [CondTermSingle]
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermAnd]
+              ) [CondOr]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:35:04,828 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  14:35:04,834 - Deklarisana promenljiva 'x' na liniji 8
+INFO  14:35:04,834 - Deklarisana promenljiva 'y' na liniji 8
+INFO  14:35:04,834 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  14:35:04,834 - Deklarisan niz 'niz' na liniji 10
+INFO  14:35:04,834 - ===================================
+INFO  14:35:04,834 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  14:35:04,850 - Parsiranje uspesno zavrseno!
+INFO  14:36:04,452 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:36:04,505 - #2 program
+INFO  14:36:04,505 - #20 test301
+INFO  14:36:04,505 - #47 {
+INFO  14:36:04,505 - #16 void
+INFO  14:36:04,505 - #20 main
+INFO  14:36:04,505 - #43 (
+INFO  14:36:04,505 - #44 )
+INFO  14:36:04,505 - #20 int
+INFO  14:36:04,505 - #20 x
+INFO  14:36:04,505 - #41 ,
+INFO  14:36:04,505 - #20 y
+INFO  14:36:04,505 - #40 ;
+INFO  14:36:04,505 - #20 bool
+INFO  14:36:04,505 - #20 bt
+INFO  14:36:04,505 - #40 ;
+INFO  14:36:04,505 - #20 int
+INFO  14:36:04,505 - #20 niz
+INFO  14:36:04,505 - #45 [
+INFO  14:36:04,505 - #46 ]
+INFO  14:36:04,505 - #40 ;
+INFO  14:36:04,505 - #47 {
+INFO  14:36:04,505 - #20 x
+INFO  14:36:04,505 - #37 =
+INFO  14:36:04,505 - #21 1
+INFO  14:36:04,505 - #40 ;
+INFO  14:36:04,505 - #20 bt
+INFO  14:36:04,505 - #37 =
+INFO  14:36:04,505 - #23 false
+INFO  14:36:04,505 - #40 ;
+INFO  14:36:04,505 - #10 do
+INFO  14:36:04,505 - #47 {
+INFO  14:36:04,505 - #20 x
+INFO  14:36:04,505 - #38 ++
+INFO  14:36:04,505 - #40 ;
+INFO  14:36:04,505 - #8 if
+INFO  14:36:04,505 - #43 (
+INFO  14:36:04,505 - #20 x
+INFO  14:36:04,505 - #29 ==
+INFO  14:36:04,505 - #21 3
+INFO  14:36:04,505 - #44 )
+INFO  14:36:04,505 - #3 break
+INFO  14:36:04,505 - #40 ;
+INFO  14:36:04,505 - #48 }
+INFO  14:36:04,505 - #11 while
+INFO  14:36:04,505 - #43 (
+INFO  14:36:04,505 - #23 true
+INFO  14:36:04,505 - #44 )
+INFO  14:36:04,505 - #40 ;
+INFO  14:36:04,505 - #13 print
+INFO  14:36:04,505 - #43 (
+INFO  14:36:04,505 - #20 x
+INFO  14:36:04,505 - #44 )
+INFO  14:36:04,505 - #40 ;
+INFO  14:36:04,505 - #48 }
+INFO  14:36:04,505 - #48 }
+INFO  14:36:04,505 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  14:36:04,521 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementMulti(
+                  StatementSingle(
+                    StmtDesign(
+                      DesignatorIncrement(
+                        DesignatorSimple(
+                         x
+                        ) [DesignatorSimple]
+                      ) [DesignatorIncrement]
+                    ) [StmtDesign]
+                  ) [StatementSingle]
+                  StmtIf(
+                    IfKeyword(
+                    ) [IfKeyword]
+                    StmtIfBody(
+                      IfCond(
+                        CondSingle(
+                          CondTermSingle(
+                            CondFactRelop(
+                              ExprOne(
+                                ExprSingle(
+                                  TermSingle(
+                                    FactorDesignator(
+                                      DesignatorSimple(
+                                       x
+                                      ) [DesignatorSimple]
+                                    ) [FactorDesignator]
+                                  ) [TermSingle]
+                                ) [ExprSingle]
+                              ) [ExprOne]
+                              RelopEQ(
+                              ) [RelopEQ]
+                              ExprOne(
+                                ExprSingle(
+                                  TermSingle(
+                                    FactorNumConst(
+                                     3
+                                    ) [FactorNumConst]
+                                  ) [TermSingle]
+                                ) [ExprSingle]
+                              ) [ExprOne]
+                            ) [CondFactRelop]
+                          ) [CondTermSingle]
+                        ) [CondSingle]
+                      ) [IfCond]
+                      StmtBreak(
+                      ) [StmtBreak]
+                    ) [StmtIfBody]
+                  ) [StmtIf]
+                ) [StatementMulti]
+              ) [Stmt]
+              CondSingle(
+                CondTermSingle(
+                  CondFactSingle(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           true
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactSingle]
+                ) [CondTermSingle]
+              ) [CondSingle]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:36:04,521 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  14:36:04,521 - Deklarisana promenljiva 'x' na liniji 8
+INFO  14:36:04,521 - Deklarisana promenljiva 'y' na liniji 8
+INFO  14:36:04,521 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  14:36:04,521 - Deklarisan niz 'niz' na liniji 10
+INFO  14:36:04,521 - ===================================
+INFO  14:36:04,521 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  14:36:04,536 - Parsiranje uspesno zavrseno!
+INFO  14:38:49,736 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  14:38:49,783 - #2 program
+INFO  14:38:49,783 - #20 test301
+INFO  14:38:49,783 - #47 {
+INFO  14:38:49,783 - #16 void
+INFO  14:38:49,783 - #20 main
+INFO  14:38:49,783 - #43 (
+INFO  14:38:49,783 - #44 )
+INFO  14:38:49,783 - #20 int
+INFO  14:38:49,783 - #20 x
+INFO  14:38:49,799 - #41 ,
+INFO  14:38:49,799 - #20 y
+INFO  14:38:49,799 - #40 ;
+INFO  14:38:49,799 - #20 bool
+INFO  14:38:49,799 - #20 bt
+INFO  14:38:49,799 - #40 ;
+INFO  14:38:49,799 - #20 int
+INFO  14:38:49,799 - #20 niz
+INFO  14:38:49,799 - #45 [
+INFO  14:38:49,799 - #46 ]
+INFO  14:38:49,799 - #40 ;
+INFO  14:38:49,799 - #47 {
+INFO  14:38:49,799 - #20 x
+INFO  14:38:49,799 - #37 =
+INFO  14:38:49,799 - #21 1
+INFO  14:38:49,799 - #40 ;
+INFO  14:38:49,799 - #20 bt
+INFO  14:38:49,799 - #37 =
+INFO  14:38:49,799 - #23 false
+INFO  14:38:49,799 - #40 ;
+INFO  14:38:49,799 - #10 do
+INFO  14:38:49,799 - #47 {
+INFO  14:38:49,799 - #8 if
+INFO  14:38:49,799 - #43 (
+INFO  14:38:49,799 - #20 x
+INFO  14:38:49,799 - #29 ==
+INFO  14:38:49,805 - #21 3
+INFO  14:38:49,805 - #44 )
+INFO  14:38:49,805 - #18 continue
+INFO  14:38:49,805 - #40 ;
+INFO  14:38:49,805 - #20 x
+INFO  14:38:49,805 - #38 ++
+INFO  14:38:49,805 - #40 ;
+INFO  14:38:49,805 - #48 }
+INFO  14:38:49,805 - #11 while
+INFO  14:38:49,805 - #43 (
+INFO  14:38:49,805 - #20 x
+INFO  14:38:49,805 - #33 <
+INFO  14:38:49,805 - #21 2
+INFO  14:38:49,805 - #44 )
+INFO  14:38:49,805 - #40 ;
+INFO  14:38:49,805 - #13 print
+INFO  14:38:49,805 - #43 (
+INFO  14:38:49,805 - #20 x
+INFO  14:38:49,805 - #44 )
+INFO  14:38:49,805 - #40 ;
+INFO  14:38:49,805 - #48 }
+INFO  14:38:49,805 - #48 }
+INFO  14:38:49,805 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  14:38:49,805 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              Stmt(
+                StatementMulti(
+                  StatementSingle(
+                    StmtIf(
+                      IfKeyword(
+                      ) [IfKeyword]
+                      StmtIfBody(
+                        IfCond(
+                          CondSingle(
+                            CondTermSingle(
+                              CondFactRelop(
+                                ExprOne(
+                                  ExprSingle(
+                                    TermSingle(
+                                      FactorDesignator(
+                                        DesignatorSimple(
+                                         x
+                                        ) [DesignatorSimple]
+                                      ) [FactorDesignator]
+                                    ) [TermSingle]
+                                  ) [ExprSingle]
+                                ) [ExprOne]
+                                RelopEQ(
+                                ) [RelopEQ]
+                                ExprOne(
+                                  ExprSingle(
+                                    TermSingle(
+                                      FactorNumConst(
+                                       3
+                                      ) [FactorNumConst]
+                                    ) [TermSingle]
+                                  ) [ExprSingle]
+                                ) [ExprOne]
+                              ) [CondFactRelop]
+                            ) [CondTermSingle]
+                          ) [CondSingle]
+                        ) [IfCond]
+                        StmtContinue(
+                        ) [StmtContinue]
+                      ) [StmtIfBody]
+                    ) [StmtIf]
+                  ) [StatementSingle]
+                  StmtDesign(
+                    DesignatorIncrement(
+                      DesignatorSimple(
+                       x
+                      ) [DesignatorSimple]
+                    ) [DesignatorIncrement]
+                  ) [StmtDesign]
+                ) [StatementMulti]
+              ) [Stmt]
+              CondSingle(
+                CondTermSingle(
+                  CondFactRelop(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorDesignator(
+                            DesignatorSimple(
+                             x
+                            ) [DesignatorSimple]
+                          ) [FactorDesignator]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                    RelopLT(
+                    ) [RelopLT]
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorNumConst(
+                           2
+                          ) [FactorNumConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactRelop]
+                ) [CondTermSingle]
+              ) [CondSingle]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  14:38:49,805 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  14:38:49,821 - Deklarisana promenljiva 'x' na liniji 8
+INFO  14:38:49,821 - Deklarisana promenljiva 'y' na liniji 8
+INFO  14:38:49,821 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  14:38:49,821 - Deklarisan niz 'niz' na liniji 10
+INFO  14:38:49,821 - ===================================
+INFO  14:38:49,821 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  14:38:49,821 - Parsiranje uspesno zavrseno!
+INFO  15:14:31,304 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  15:14:31,358 - #2 program
+INFO  15:14:31,358 - #20 test301
+INFO  15:14:31,358 - #47 {
+INFO  15:14:31,358 - #16 void
+INFO  15:14:31,358 - #20 main
+INFO  15:14:31,358 - #43 (
+INFO  15:14:31,358 - #44 )
+INFO  15:14:31,358 - #20 int
+INFO  15:14:31,358 - #20 x
+INFO  15:14:31,358 - #41 ,
+INFO  15:14:31,358 - #20 y
+INFO  15:14:31,358 - #40 ;
+INFO  15:14:31,358 - #20 bool
+INFO  15:14:31,358 - #20 bt
+INFO  15:14:31,358 - #40 ;
+INFO  15:14:31,358 - #20 int
+INFO  15:14:31,358 - #20 niz
+INFO  15:14:31,358 - #45 [
+INFO  15:14:31,358 - #46 ]
+INFO  15:14:31,358 - #40 ;
+INFO  15:14:31,358 - #47 {
+INFO  15:14:31,358 - #20 x
+INFO  15:14:31,358 - #37 =
+INFO  15:14:31,358 - #21 1
+INFO  15:14:31,358 - #40 ;
+INFO  15:14:31,358 - #20 bt
+INFO  15:14:31,358 - #37 =
+INFO  15:14:31,358 - #23 false
+INFO  15:14:31,358 - #40 ;
+INFO  15:14:31,358 - #10 do
+INFO  15:14:31,358 - #47 {
+INFO  15:14:31,358 - #8 if
+INFO  15:14:31,358 - #43 (
+INFO  15:14:31,358 - #20 x
+INFO  15:14:31,358 - #29 ==
+INFO  15:14:31,358 - #21 3
+INFO  15:14:31,358 - #44 )
+INFO  15:14:31,358 - #18 continue
+INFO  15:14:31,358 - #40 ;
+INFO  15:14:31,358 - #20 x
+INFO  15:14:31,358 - #38 ++
+INFO  15:14:31,358 - #40 ;
+INFO  15:14:31,373 - #48 }
+INFO  15:14:31,373 - #11 while
+INFO  15:14:31,373 - #43 (
+INFO  15:14:31,373 - #20 x
+INFO  15:14:31,373 - #33 <
+INFO  15:14:31,373 - #21 2
+INFO  15:14:31,373 - #44 )
+INFO  15:14:31,373 - #40 ;
+INFO  15:14:31,373 - #13 print
+INFO  15:14:31,373 - #43 (
+INFO  15:14:31,373 - #20 x
+INFO  15:14:31,373 - #44 )
+INFO  15:14:31,373 - #40 ;
+INFO  15:14:31,373 - #48 }
+INFO  15:14:31,373 - #48 }
+INFO  15:14:31,373 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  15:14:31,373 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDeclSingle(
+    MethodVoidDeclaration(
+      MethodVoid4(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        VarDeclMulti(
+          VarDeclMulti(
+            VarDeclSingle(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+                VarMulti(
+                  VarSingle(
+                    VarNormal(
+                     x
+                    ) [VarNormal]
+                  ) [VarSingle]
+                  VarNormal(
+                   y
+                  ) [VarNormal]
+                ) [VarMulti]
+              ) [VarDeclaration]
+            ) [VarDeclSingle]
+            VarDeclaration(
+              Type(
+               bool
+              ) [Type]
+              VarSingle(
+                VarNormal(
+                 bt
+                ) [VarNormal]
+              ) [VarSingle]
+            ) [VarDeclaration]
+          ) [VarDeclMulti]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+            VarSingle(
+              VarArray(
+               niz
+              ) [VarArray]
+            ) [VarSingle]
+          ) [VarDeclaration]
+        ) [VarDeclMulti]
+        StatementMulti(
+          StatementMulti(
+            StatementMulti(
+              StatementSingle(
+                StmtDesign(
+                  DesignatorAssignment(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                    AssignmentExpr(
+                      ExprOne(
+                        ExprSingle(
+                          TermSingle(
+                            FactorNumConst(
+                             1
+                            ) [FactorNumConst]
+                          ) [TermSingle]
+                        ) [ExprSingle]
+                      ) [ExprOne]
+                    ) [AssignmentExpr]
+                  ) [DesignatorAssignment]
+                ) [StmtDesign]
+              ) [StatementSingle]
+              StmtDesign(
+                DesignatorAssignment(
+                  DesignatorSimple(
+                   bt
+                  ) [DesignatorSimple]
+                  AssignmentExpr(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [AssignmentExpr]
+                ) [DesignatorAssignment]
+              ) [StmtDesign]
+            ) [StatementMulti]
+            StmtDoWhile(
+              DoKeyword(
+              ) [DoKeyword]
+              StmtWhileBody(
+                Stmt(
+                  StatementMulti(
+                    StatementSingle(
+                      StmtIf(
+                        IfKeyword(
+                        ) [IfKeyword]
+                        StmtIfBody(
+                          IfCond(
+                            CondSingle(
+                              CondTermSingle(
+                                CondFactRelop(
+                                  ExprOne(
+                                    ExprSingle(
+                                      TermSingle(
+                                        FactorDesignator(
+                                          DesignatorSimple(
+                                           x
+                                          ) [DesignatorSimple]
+                                        ) [FactorDesignator]
+                                      ) [TermSingle]
+                                    ) [ExprSingle]
+                                  ) [ExprOne]
+                                  RelopEQ(
+                                  ) [RelopEQ]
+                                  ExprOne(
+                                    ExprSingle(
+                                      TermSingle(
+                                        FactorNumConst(
+                                         3
+                                        ) [FactorNumConst]
+                                      ) [TermSingle]
+                                    ) [ExprSingle]
+                                  ) [ExprOne]
+                                ) [CondFactRelop]
+                              ) [CondTermSingle]
+                            ) [CondSingle]
+                          ) [IfCond]
+                          StmtContinue(
+                          ) [StmtContinue]
+                        ) [StmtIfBody]
+                      ) [StmtIf]
+                    ) [StatementSingle]
+                    StmtDesign(
+                      DesignatorIncrement(
+                        DesignatorSimple(
+                         x
+                        ) [DesignatorSimple]
+                      ) [DesignatorIncrement]
+                    ) [StmtDesign]
+                  ) [StatementMulti]
+                ) [Stmt]
+              ) [StmtWhileBody]
+              CondSingle(
+                CondTermSingle(
+                  CondFactRelop(
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorDesignator(
+                            DesignatorSimple(
+                             x
+                            ) [DesignatorSimple]
+                          ) [FactorDesignator]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                    RelopLT(
+                    ) [RelopLT]
+                    ExprOne(
+                      ExprSingle(
+                        TermSingle(
+                          FactorNumConst(
+                           2
+                          ) [FactorNumConst]
+                        ) [TermSingle]
+                      ) [ExprSingle]
+                    ) [ExprOne]
+                  ) [CondFactRelop]
+                ) [CondTermSingle]
+              ) [CondSingle]
+            ) [StmtDoWhile]
+          ) [StatementMulti]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     x
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid4]
+    ) [MethodVoidDeclaration]
+  ) [MethodDeclSingle]
+) [Program]
+INFO  15:14:31,420 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  15:14:31,442 - Deklarisana promenljiva 'x' na liniji 8
+INFO  15:14:31,442 - Deklarisana promenljiva 'y' na liniji 8
+INFO  15:14:31,442 - Deklarisana promenljiva 'bt' na liniji 9
+INFO  15:14:31,442 - Deklarisan niz 'niz' na liniji 10
+INFO  15:14:31,442 - ===================================
+INFO  15:14:31,442 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  15:14:31,442 - Parsiranje uspesno zavrseno!

@@ -113,6 +113,7 @@ nonterminal StatementList StatementList;
 nonterminal Statement Statement;
 nonterminal StatementIf StatementIf;
 nonterminal StatementIfBody StatementIfBody;
+nonterminal StatementWhileBody StatementWhileBody;
 nonterminal CaseList CaseList;
 nonterminal CasePart CasePart;
 nonterminal DesignatorStatement DesignatorStatement;
@@ -289,13 +290,15 @@ Statement ::= (StmtDesign) DesignatorStatement:D1 SEMICOLON {: RESULT=new StmtDe
 			  |
 			  (StmtIf) IfKw:I1 StatementIfBody:S2 {: RESULT=new StmtIf(I1, S2); RESULT.setLine(I1left); :}
 			  |
-			  (StmtDoWhile) DoKw:D1 Statement:S2 WHILE LPAREN Condition:C3 RPAREN SEMICOLON {: RESULT=new StmtDoWhile(D1, S2, C3); RESULT.setLine(D1left); :};
+			  (StmtDoWhile) DoKw:D1 StatementWhileBody:S2 WHILE LPAREN Condition:C3 RPAREN SEMICOLON {: RESULT=new StmtDoWhile(D1, S2, C3); RESULT.setLine(D1left); :};
 			  
 IfKw ::= (IfKeyword) IF {: RESULT=new IfKeyword(); :};
 			  
 DoKw ::= (DoKeyword) DO {: RESULT=new DoKeyword(); :};
 			  
-StatementIfBody ::= (StmtIfBody) IfCondition:I1 Statement:S2 {: RESULT=new StmtIfBody(I1, S2); RESULT.setLine(I1left); :};	
+StatementIfBody ::= (StmtIfBody) IfCondition:I1 Statement:S2 {: RESULT=new StmtIfBody(I1, S2); RESULT.setLine(I1left); :};
+
+StatementWhileBody ::= (StmtWhileBody) Statement:S1 {: RESULT=new StmtWhileBody(S1); RESULT.setLine(S1left); :};
 
 IfCondition ::= (IfCond) LPAREN Condition:C1 RPAREN {: RESULT=new IfCond(C1); RESULT.setLine(C1left); :}
 				|

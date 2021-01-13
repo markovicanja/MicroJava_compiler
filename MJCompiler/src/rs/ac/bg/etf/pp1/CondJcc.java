@@ -1,12 +1,12 @@
 package rs.ac.bg.etf.pp1;
 
-public class IfCondJcc {
+public class CondJcc {
 	private int pc;
 	private int ordNum;
 	private int relop;
 	private boolean modified;
 	
-	public IfCondJcc(int pc, int ordNum, int relop) {
+	public CondJcc(int pc, int ordNum, int relop) {
 		super();
 		this.pc = pc;
 		this.ordNum = ordNum;
