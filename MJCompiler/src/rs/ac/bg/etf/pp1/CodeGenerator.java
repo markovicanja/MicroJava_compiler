@@ -27,6 +27,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	private LinkedList<ArrayList<IfCondJcc>> ifCondsStack = new LinkedList<ArrayList<IfCondJcc>>();
 	private LinkedList<Integer> ifPcStack = new LinkedList<Integer>(); 
 	private LinkedList<Integer> retWhilePcStack = new LinkedList<Integer>(); //povratna adresa do do-while;
+	private LinkedList<ArrayList<Integer>> breakPcStack = new LinkedList<ArrayList<Integer>>();	
 	
 	private Stack<Integer> relopStack = new Stack<>();
 	private Stack<Integer> addopStack = new Stack<>();
@@ -98,18 +99,22 @@ public class CodeGenerator extends VisitorAdaptor {
 		return null;
 	}
 	
-	// JEL SE OVO POZIVA SAMO ZA POSLEDNJI U LISTI I AKO DA ZASTO?? I ZASTO SE POSTAVLJA DA JE MODIFIED??
-	private void fixJmpPc(IfCondJcc ifCondJcc) { // preskakanje uslova ako je moguce i direktan skok u if naredbu
+	public void fixJmpAdr(IfCondJcc cond, int jmpPc) {
+		Code.put2(cond.getPc(), jmpPc - cond.getPc() + 3);
+		cond.setModified(true);
+	}
+	
+	public void fixJmpCond(IfCondJcc cond) {
 		int oldPc = Code.pc;
-		Code.pc = ifCondJcc.getPc() - 1;
-		if (ifCondJcc.getRelop() == -1) 
+		Code.pc = cond.getPc() - 1;
+		if (cond.getRelop() == -1) 
 			Code.put(Code.jcc + Code.ne);
 		else
-			Code.put(Code.jcc + ifCondJcc.getRelop());
+			Code.put(Code.jcc + cond.getRelop());
 		
 		Code.pc = oldPc;
-		Code.put2(ifCondJcc.getPc(), Code.pc - ifCondJcc.getPc() + 1);
-		ifCondJcc.setModified(true);
+		Code.put2(cond.getPc(), Code.pc - cond.getPc() + 1);
+		cond.setModified(true);
 	}
 	
 	private void jmpAndSavePc(boolean isDoWhile, int ordNum, int relOp) { // postavljanje skoka i cuvanje uslova na koje treba dodati adresu skoka
@@ -294,7 +299,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		}						
 		ifConds.clear();
 		Code.put2(elsePc, Code.pc - elsePc + 1); // popunjavamo adresu skoka na prvu posle else grane
-	}	 
+	}	
 	
 	// IfKw
 	public void visit(IfKeyword ifKeyword) { // pravi se nova lista sa uslovima za svaki ugnezdjeni if
@@ -309,6 +314,30 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.pc += 2; // ostavimo dva prazna mesta jer je adresa skoka dva bajta;
 		}
 	}
+	
+	public void visit(StmtDoWhile stmtDoWhile) {						
+		ArrayList<Integer> breakPcs = breakPcStack.removeLast();
+		for (int i = 0; i < breakPcs.size(); i++) {			
+			Code.put2(breakPcs.get(i), Code.pc - breakPcs.get(i) + 1); //POPRAVITI ADRESU							
+		}		
+	}
+	
+	// DoKw
+	public void visit(DoKeyword doKeyword) {
+		retWhilePcStack.addLast(Code.pc);
+		breakPcStack.add(new ArrayList<Integer>());
+	}
+		
+    public void visit(StmtBreak stmtBreak) {    	
+    	Code.put(Code.jmp); //ne vadimo, samo dohvatamo referencu   	
+    	breakPcStack.getLast().add(Code.pc);
+    	Code.pc += 2; //ostavili smo 2B za adresu skoka
+    }
+	
+    public void visit(StmtContinue stmtContinue) {     	 
+    	Code.put(Code.jmp); //ne uklanja, jer ce trebati dole na while da se ukloni
+		Code.put2(retWhilePcStack.getLast() - Code.pc + 1);
+    }
 	
 	// Designator statement
 	public void visit(DesignatorIncrement designatorIncrement) {
@@ -349,11 +378,47 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 	
+	// IfCondition
+	public void visit(IfCond ifCond) {
+		ArrayList<IfCondJcc> markedConds = ifCondsStack.getLast();
+		int startOfLastCondTerm = 0;
+		for (int i = markedConds.size() - 1; i >= 0; i--) {
+			if (markedConds.get(i).getOrdNum() == 0) {
+				startOfLastCondTerm = i;
+				break;
+			}
+		}
+		for (int i=0; i<startOfLastCondTerm; i++) {
+			if (markedConds.get(i).isModified() == false) {
+				fixJmpCond(markedConds.get(i));
+			}
+		}
+	}
+	
 	// Condition
 	public void visit(CondOr condOr) {	
 		condCnt = 0;
 		ArrayList<IfCondJcc> markedConds = ifCondsStack.getLast(); // uslovi iz trenutnog if-a
-		fixJmpPc(markedConds.get(markedConds.size() - 1));
+		// fixJmpPc(markedConds.get(markedConds.size() - 2)); // uzima pretposlednji i menja mu uslov skoka
+		int startOfLastCondTerm = 0;
+		int startOfCurrentCondTerm = 0;
+		
+		for (int i = markedConds.size() - 1; i >= 0; i--) {
+			if (markedConds.get(i).getOrdNum() == 0) {
+				startOfLastCondTerm = i;
+				break;
+			}
+		}
+		for (int i = 0; i < startOfLastCondTerm; i++) {
+			if (markedConds.get(i).getOrdNum() == 0 && markedConds.get(i).isModified() == false) {
+				startOfCurrentCondTerm = i;
+				break;
+			}
+		}
+		for (int j = startOfCurrentCondTerm; j < startOfLastCondTerm - 1; j++) {
+			//report_error("PC " + (markedConds.get(startOfLastCondTerm - 1).getPc()), null);
+			fixJmpAdr(markedConds.get(j), markedConds.get(startOfLastCondTerm - 1).getPc());
+		}
 	}		
 	
 	public void visit(CondSingle condSingle) {

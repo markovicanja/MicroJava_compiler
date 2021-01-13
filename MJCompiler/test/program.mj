@@ -11,9 +11,17 @@ program test301
 	{
 		x = 1;
 		y = 1;
-		// if (x >= 0 || y <= 2) x = 3;
-		//if (x!=0 && y>2 || x==1) x = 4;
+		bt = true;
+		// if (false || bt) x = 3;		
 		
+		//if (false && true && false || true || false) x = 4;
 		
+		if (x!=0 && y>2 || x<1) 
+			x = 4;
+		else if (x == 3) 
+				x = 5;
+			else
+				x = 6;
+		print(x);
 	}
 }

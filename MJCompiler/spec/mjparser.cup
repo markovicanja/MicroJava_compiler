@@ -267,6 +267,8 @@ IfKw ::= (IfKeyword) IF;
 			  
 DoKw ::= (DoKeyword) DO;
 			  
+StatementIfBody ::= (StmtIfBody) IfCondition Statement;
+
 StatementIfBody ::= (StmtIfBody) IfCondition Statement;	
 
 IfCondition ::= (IfCond) LPAREN Condition RPAREN
