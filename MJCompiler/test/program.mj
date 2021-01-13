@@ -1,35 +1,15 @@
 // Test301
 
 program test301
-	
+	int a;
 {
-
+	int fun(int x, int y) {
+		return x + y;
+	}
+	
 	void main()	
-		int x, y;
-		bool bt;
-		int niz[];
 	{
-		x = 1;
-		bt = false;
-		
-		do {
-			if (x == 3) continue;
-			x++;
-		}
-		while(x < 2);
-		
-		print(x);
-		
-		// if (false || bt) x = 3;			
-		//if (false && true && false || true || false) x = 4;
-		//if (x!=0 && y>2 || x<1) 
-		//	x = 4;
-		//else if (x == 3) 
-		//		x = 5;
-		//	else
-		//		x = 6;
-		
-		
-		
+		a = fun(2+3, 3*10);
+		print(a);
 	}
 }

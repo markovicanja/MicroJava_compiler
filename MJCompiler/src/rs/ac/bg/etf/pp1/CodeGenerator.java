@@ -22,7 +22,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Obj currentMethod = null;
 	private ArrayList<Variable> variables = new ArrayList<Variable>();
 	private int jmpAfterExpr1Pc, jmpAfterExpr2Pc;
-	private int condCnt = 0; // serijski brojac, broji sve do pojave sledeceg OR prelazeci (inkrementirajuci se) preko AND-ova
+	private int condCnt = 0;
 	
 	private LinkedList<ArrayList<CondJcc>> ifCondsStack = new LinkedList<ArrayList<CondJcc>>();
 	private LinkedList<Integer> ifPcStack = new LinkedList<Integer>(); 
@@ -245,7 +245,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(StmtPrint stmtPrint) {
 		Struct struct = stmtPrint.getExpr().struct;
 		if (struct.equals(Tab.intType) || struct.equals(SemanticAnalyzer.boolType)) {
-			Code.loadConst(0); // sto mora ovo??
+			Code.loadConst(5);
 			Code.put(Code.print);
 		} else if (struct.equals(Tab.charType)) {
 			Code.loadConst(1);
@@ -386,12 +386,14 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.store(designatorDecrement.getDesignator().obj);		
 	}
 	
-	public void visit(DesignatorMethodCallParams designatorMethodCallParams) { // PROVERI - ZASTO SE NIGDE NE STAVLJA invokevirtual??
+	public void visit(DesignatorMethodCallParams designatorMethodCallParams) {
 		Obj method = designatorMethodCallParams.getDesignator().obj;
 		if (outerScope.getLocalSymbols().contains(method)) {
 			int offset = method.getAdr() - Code.pc;
 			Code.put(Code.call);
 			Code.put2(offset);
+			if (method.getType() != Tab.noType )
+				Code.put(Code.pop); // rezultat poziva nece biti koriscen
 		}
 	}
 
@@ -401,6 +403,8 @@ public class CodeGenerator extends VisitorAdaptor {
 			int offset = method.getAdr() - Code.pc;
 			Code.put(Code.call);
 			Code.put2(offset);
+			if (method.getType() != Tab.noType ) // skida povratnu vrednost
+				Code.put(Code.pop);
 		}
 	}
 	

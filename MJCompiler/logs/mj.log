@@ -10466,3 +10466,2573 @@ INFO  15:14:31,442 - Deklarisan niz 'niz' na liniji 10
 INFO  15:14:31,442 - ===================================
 INFO  15:14:31,442 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
 INFO  15:14:31,442 - Parsiranje uspesno zavrseno!
+INFO  15:55:00,339 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  15:55:00,392 - #2 program
+INFO  15:55:00,392 - #20 test301
+INFO  15:55:00,392 - #20 int
+INFO  15:55:00,392 - #20 x
+INFO  15:55:00,392 - #40 ;
+INFO  15:55:00,392 - #47 {
+INFO  15:55:00,392 - #16 void
+INFO  15:55:00,392 - #20 fun
+INFO  15:55:00,392 - #43 (
+INFO  15:55:00,392 - #44 )
+INFO  15:55:00,392 - #47 {
+INFO  15:55:00,392 - #20 x
+INFO  15:55:00,392 - #37 =
+INFO  15:55:00,392 - #21 3
+INFO  15:55:00,392 - #40 ;
+INFO  15:55:00,392 - #48 }
+INFO  15:55:00,392 - #16 void
+INFO  15:55:00,392 - #20 main
+INFO  15:55:00,392 - #43 (
+INFO  15:55:00,392 - #44 )
+INFO  15:55:00,392 - #47 {
+INFO  15:55:00,392 - #20 fun
+INFO  15:55:00,392 - #43 (
+INFO  15:55:00,408 - #44 )
+INFO  15:55:00,408 - #40 ;
+INFO  15:55:00,408 - #48 }
+INFO  15:55:00,408 - #48 }
+INFO  15:55:00,408 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  15:55:00,408 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             x
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodVoidDeclaration(
+        MethodVoid6(
+          MethodVoidName(
+           fun
+          ) [MethodVoidName]
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorSimple(
+                 x
+                ) [DesignatorSimple]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         3
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+        ) [MethodVoid6]
+      ) [MethodVoidDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorMethodCall(
+              DesignatorSimple(
+               fun
+              ) [DesignatorSimple]
+            ) [DesignatorMethodCall]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  15:55:00,408 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  15:55:00,424 - Deklarisana globalna promenljiva 'x' na liniji 4
+INFO  15:55:00,424 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  15:55:00,424 - ===================================
+INFO  15:55:00,424 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  15:55:00,424 - Parsiranje uspesno zavrseno!
+INFO  15:55:59,205 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  15:55:59,268 - #2 program
+INFO  15:55:59,268 - #20 test301
+INFO  15:55:59,268 - #20 int
+INFO  15:55:59,268 - #20 x
+INFO  15:55:59,268 - #40 ;
+INFO  15:55:59,268 - #47 {
+INFO  15:55:59,268 - #16 void
+INFO  15:55:59,268 - #20 fun
+INFO  15:55:59,268 - #43 (
+INFO  15:55:59,268 - #20 int
+INFO  15:55:59,268 - #20 y
+INFO  15:55:59,268 - #44 )
+INFO  15:55:59,268 - #47 {
+INFO  15:55:59,268 - #20 x
+INFO  15:55:59,268 - #37 =
+INFO  15:55:59,268 - #20 y
+INFO  15:55:59,268 - #40 ;
+INFO  15:55:59,268 - #48 }
+INFO  15:55:59,268 - #16 void
+INFO  15:55:59,283 - #20 main
+INFO  15:55:59,283 - #43 (
+INFO  15:55:59,283 - #44 )
+INFO  15:55:59,283 - #47 {
+INFO  15:55:59,283 - #20 fun
+INFO  15:55:59,283 - #43 (
+INFO  15:55:59,283 - #21 2
+INFO  15:55:59,283 - #44 )
+INFO  15:55:59,283 - #40 ;
+INFO  15:55:59,283 - #48 }
+INFO  15:55:59,283 - #48 }
+INFO  15:55:59,283 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  15:55:59,283 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             x
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodVoidDeclaration(
+        MethodVoid2(
+          MethodVoidName(
+           fun
+          ) [MethodVoidName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorSimple(
+                 x
+                ) [DesignatorSimple]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorDesignator(
+                          DesignatorSimple(
+                           y
+                          ) [DesignatorSimple]
+                        ) [FactorDesignator]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+        ) [MethodVoid2]
+      ) [MethodVoidDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorMethodCallParams(
+              DesignatorSimple(
+               fun
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorNumConst(
+                       2
+                      ) [FactorNumConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCallParams]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  15:55:59,283 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  15:55:59,290 - Deklarisana globalna promenljiva 'x' na liniji 4
+INFO  15:55:59,290 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  15:55:59,290 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  15:55:59,306 - ===================================
+INFO  15:55:59,306 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  15:55:59,306 - Parsiranje uspesno zavrseno!
+INFO  15:56:47,174 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  15:56:47,227 - #2 program
+INFO  15:56:47,227 - #20 test301
+INFO  15:56:47,227 - #20 int
+INFO  15:56:47,227 - #20 x
+INFO  15:56:47,227 - #40 ;
+INFO  15:56:47,227 - #47 {
+INFO  15:56:47,227 - #20 int
+INFO  15:56:47,227 - #20 fun
+INFO  15:56:47,227 - #43 (
+INFO  15:56:47,227 - #20 int
+INFO  15:56:47,227 - #20 y
+INFO  15:56:47,227 - #44 )
+INFO  15:56:47,227 - #47 {
+INFO  15:56:47,227 - #15 return
+INFO  15:56:47,227 - #20 y
+INFO  15:56:47,227 - #26 *
+INFO  15:56:47,227 - #21 2
+INFO  15:56:47,227 - #40 ;
+INFO  15:56:47,227 - #48 }
+INFO  15:56:47,227 - #16 void
+INFO  15:56:47,227 - #20 main
+INFO  15:56:47,227 - #43 (
+INFO  15:56:47,227 - #44 )
+INFO  15:56:47,227 - #47 {
+INFO  15:56:47,227 - #20 fun
+INFO  15:56:47,227 - #43 (
+INFO  15:56:47,227 - #21 2
+INFO  15:56:47,227 - #44 )
+INFO  15:56:47,227 - #40 ;
+INFO  15:56:47,227 - #48 }
+INFO  15:56:47,227 - #48 }
+INFO  15:56:47,227 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  15:56:47,227 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             x
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermMulop(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         y
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                    MulopMul(
+                    ) [MulopMul]
+                    FactorNumConst(
+                     2
+                    ) [FactorNumConst]
+                  ) [TermMulop]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorMethodCallParams(
+              DesignatorSimple(
+               fun
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorNumConst(
+                       2
+                      ) [FactorNumConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCallParams]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  15:56:47,227 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  15:56:47,243 - Deklarisana globalna promenljiva 'x' na liniji 4
+INFO  15:56:47,243 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  15:56:47,243 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  15:56:47,243 - ===================================
+INFO  15:56:47,243 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  15:56:47,258 - Parsiranje uspesno zavrseno!
+INFO  16:07:27,667 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  16:07:27,736 - #2 program
+INFO  16:07:27,736 - #20 test301
+INFO  16:07:27,736 - #20 int
+INFO  16:07:27,736 - #20 x
+INFO  16:07:27,736 - #40 ;
+INFO  16:07:27,736 - #47 {
+INFO  16:07:27,751 - #20 int
+INFO  16:07:27,751 - #20 fun
+INFO  16:07:27,751 - #43 (
+INFO  16:07:27,751 - #20 int
+INFO  16:07:27,751 - #20 y
+INFO  16:07:27,751 - #44 )
+INFO  16:07:27,751 - #47 {
+INFO  16:07:27,751 - #15 return
+INFO  16:07:27,751 - #20 y
+INFO  16:07:27,751 - #26 *
+INFO  16:07:27,751 - #21 2
+INFO  16:07:27,751 - #40 ;
+INFO  16:07:27,751 - #48 }
+INFO  16:07:27,751 - #16 void
+INFO  16:07:27,751 - #20 main
+INFO  16:07:27,751 - #43 (
+INFO  16:07:27,751 - #44 )
+INFO  16:07:27,751 - #47 {
+INFO  16:07:27,751 - #20 x
+INFO  16:07:27,751 - #37 =
+INFO  16:07:27,751 - #20 fun
+INFO  16:07:27,751 - #43 (
+INFO  16:07:27,751 - #21 2
+INFO  16:07:27,751 - #44 )
+INFO  16:07:27,751 - #40 ;
+INFO  16:07:27,751 - #48 }
+INFO  16:07:27,751 - #48 }
+INFO  16:07:27,751 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  16:07:27,751 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             x
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprSingle(
+                  TermMulop(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         y
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                    MulopMul(
+                    ) [MulopMul]
+                    FactorNumConst(
+                     2
+                    ) [FactorNumConst]
+                  ) [TermMulop]
+                ) [ExprSingle]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorAssignment(
+              DesignatorSimple(
+               x
+              ) [DesignatorSimple]
+              AssignmentExpr(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FuncCallParams(
+                        DesignatorSimple(
+                         fun
+                        ) [DesignatorSimple]
+                        ActParsSingle(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorNumConst(
+                                 2
+                                ) [FactorNumConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [ActParsSingle]
+                      ) [FuncCallParams]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [AssignmentExpr]
+            ) [DesignatorAssignment]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  16:07:27,751 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  16:07:27,767 - Deklarisana globalna promenljiva 'x' na liniji 4
+INFO  16:07:27,767 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  16:07:27,767 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  16:07:27,767 - ===================================
+INFO  16:07:27,767 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  16:07:27,782 - Parsiranje uspesno zavrseno!
+INFO  16:41:26,744 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  16:41:26,813 - #2 program
+INFO  16:41:26,813 - #20 test301
+INFO  16:41:26,813 - #20 int
+INFO  16:41:26,828 - #20 x
+INFO  16:41:26,828 - #40 ;
+INFO  16:41:26,828 - #47 {
+INFO  16:41:26,828 - #16 void
+INFO  16:41:26,828 - #20 fun
+INFO  16:41:26,828 - #43 (
+INFO  16:41:26,828 - #20 int
+INFO  16:41:26,828 - #20 y
+INFO  16:41:26,828 - #44 )
+INFO  16:41:26,828 - #47 {
+INFO  16:41:26,828 - #15 return
+INFO  16:41:26,828 - #40 ;
+INFO  16:41:26,828 - #48 }
+INFO  16:41:26,828 - #16 void
+INFO  16:41:26,828 - #20 main
+INFO  16:41:26,828 - #43 (
+INFO  16:41:26,828 - #44 )
+INFO  16:41:26,828 - #47 {
+INFO  16:41:26,828 - #20 x
+INFO  16:41:26,828 - #37 =
+INFO  16:41:26,828 - #20 fun
+INFO  16:41:26,828 - #43 (
+INFO  16:41:26,828 - #21 2
+INFO  16:41:26,828 - #44 )
+INFO  16:41:26,828 - #40 ;
+INFO  16:41:26,828 - #48 }
+INFO  16:41:26,828 - #48 }
+INFO  16:41:26,828 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  16:41:26,828 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             x
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodVoidDeclaration(
+        MethodVoid2(
+          MethodVoidName(
+           fun
+          ) [MethodVoidName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturn(
+            ) [StmtReturn]
+          ) [StatementSingle]
+        ) [MethodVoid2]
+      ) [MethodVoidDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorAssignment(
+              DesignatorSimple(
+               x
+              ) [DesignatorSimple]
+              AssignmentExpr(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FuncCallParams(
+                        DesignatorSimple(
+                         fun
+                        ) [DesignatorSimple]
+                        ActParsSingle(
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorNumConst(
+                                 2
+                                ) [FactorNumConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [ActParsSingle]
+                      ) [FuncCallParams]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [AssignmentExpr]
+            ) [DesignatorAssignment]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  16:41:26,828 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  16:41:26,844 - Deklarisana globalna promenljiva 'x' na liniji 4
+INFO  16:41:26,844 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  16:41:26,844 - Pronadjen poziv funkcije 'fun' na liniji 12
+ERROR 16:41:26,844 - Semanticka greska - nekompatibilni tipovi za dodelu vrednosti na liniji 12
+INFO  16:41:26,844 - ===================================
+ERROR 16:41:26,844 - Parsiranje nije uspesno zavrseno!
+INFO  16:41:42,915 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  16:41:42,952 - #2 program
+INFO  16:41:42,952 - #20 test301
+INFO  16:41:42,952 - #20 int
+INFO  16:41:42,952 - #20 x
+INFO  16:41:42,952 - #40 ;
+INFO  16:41:42,968 - #47 {
+INFO  16:41:42,968 - #16 void
+INFO  16:41:42,968 - #20 fun
+INFO  16:41:42,968 - #43 (
+INFO  16:41:42,968 - #20 int
+INFO  16:41:42,968 - #20 y
+INFO  16:41:42,968 - #44 )
+INFO  16:41:42,968 - #47 {
+INFO  16:41:42,968 - #15 return
+INFO  16:41:42,968 - #40 ;
+INFO  16:41:42,968 - #48 }
+INFO  16:41:42,968 - #16 void
+INFO  16:41:42,968 - #20 main
+INFO  16:41:42,968 - #43 (
+INFO  16:41:42,968 - #44 )
+INFO  16:41:42,968 - #47 {
+INFO  16:41:42,968 - #20 fun
+INFO  16:41:42,968 - #43 (
+INFO  16:41:42,968 - #21 2
+INFO  16:41:42,968 - #44 )
+INFO  16:41:42,968 - #40 ;
+INFO  16:41:42,968 - #48 }
+INFO  16:41:42,968 - #48 }
+INFO  16:41:42,968 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  16:41:42,968 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             x
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodVoidDeclaration(
+        MethodVoid2(
+          MethodVoidName(
+           fun
+          ) [MethodVoidName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturn(
+            ) [StmtReturn]
+          ) [StatementSingle]
+        ) [MethodVoid2]
+      ) [MethodVoidDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorMethodCallParams(
+              DesignatorSimple(
+               fun
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorNumConst(
+                       2
+                      ) [FactorNumConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCallParams]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  16:41:42,968 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  16:41:42,984 - Deklarisana globalna promenljiva 'x' na liniji 4
+INFO  16:41:42,984 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  16:41:42,984 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  16:41:42,984 - ===================================
+INFO  16:41:42,984 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  16:41:42,984 - Parsiranje uspesno zavrseno!
+INFO  16:42:15,551 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  16:42:15,588 - #2 program
+INFO  16:42:15,588 - #20 test301
+INFO  16:42:15,588 - #20 int
+INFO  16:42:15,588 - #20 x
+INFO  16:42:15,588 - #40 ;
+INFO  16:42:15,588 - #47 {
+INFO  16:42:15,588 - #16 void
+INFO  16:42:15,588 - #20 fun
+INFO  16:42:15,588 - #43 (
+INFO  16:42:15,588 - #20 int
+INFO  16:42:15,588 - #20 y
+INFO  16:42:15,588 - #44 )
+INFO  16:42:15,588 - #47 {
+INFO  16:42:15,588 - #15 return
+INFO  16:42:15,588 - #40 ;
+INFO  16:42:15,588 - #48 }
+INFO  16:42:15,588 - #16 void
+INFO  16:42:15,588 - #20 main
+INFO  16:42:15,588 - #43 (
+INFO  16:42:15,588 - #44 )
+INFO  16:42:15,588 - #47 {
+INFO  16:42:15,588 - #20 fun
+INFO  16:42:15,588 - #43 (
+INFO  16:42:15,588 - #21 2
+INFO  16:42:15,588 - #44 )
+INFO  16:42:15,588 - #40 ;
+INFO  16:42:15,588 - #48 }
+INFO  16:42:15,588 - #48 }
+INFO  16:42:15,588 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  16:42:15,588 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             x
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodVoidDeclaration(
+        MethodVoid2(
+          MethodVoidName(
+           fun
+          ) [MethodVoidName]
+          ParamSingle(
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamSingle]
+          StatementSingle(
+            StmtReturn(
+            ) [StmtReturn]
+          ) [StatementSingle]
+        ) [MethodVoid2]
+      ) [MethodVoidDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorMethodCallParams(
+              DesignatorSimple(
+               fun
+              ) [DesignatorSimple]
+              ActParsSingle(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorNumConst(
+                       2
+                      ) [FactorNumConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsSingle]
+            ) [DesignatorMethodCallParams]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  16:42:15,588 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  16:42:15,604 - Deklarisana globalna promenljiva 'x' na liniji 4
+INFO  16:42:15,604 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  16:42:15,604 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  16:42:15,604 - ===================================
+INFO  16:42:15,604 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  16:42:15,620 - Parsiranje uspesno zavrseno!
+INFO  21:37:19,652 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  21:37:19,721 - #2 program
+INFO  21:37:19,721 - #20 test301
+INFO  21:37:19,721 - #20 int
+INFO  21:37:19,721 - #20 x
+INFO  21:37:19,737 - #40 ;
+INFO  21:37:19,737 - #47 {
+INFO  21:37:19,737 - #16 void
+INFO  21:37:19,737 - #20 fun
+INFO  21:37:19,737 - #43 (
+INFO  21:37:19,737 - #20 int
+INFO  21:37:19,737 - #20 x
+INFO  21:37:19,737 - #41 ,
+INFO  21:37:19,737 - #20 int
+INFO  21:37:19,737 - #20 y
+INFO  21:37:19,737 - #44 )
+INFO  21:37:19,737 - #47 {
+INFO  21:37:19,737 - #15 return
+INFO  21:37:19,737 - #40 ;
+INFO  21:37:19,737 - #48 }
+INFO  21:37:19,737 - #16 void
+INFO  21:37:19,737 - #20 main
+INFO  21:37:19,737 - #43 (
+INFO  21:37:19,737 - #44 )
+INFO  21:37:19,737 - #47 {
+INFO  21:37:19,737 - #20 fun
+INFO  21:37:19,737 - #43 (
+INFO  21:37:19,737 - #21 2
+INFO  21:37:19,737 - #41 ,
+INFO  21:37:19,737 - #21 3
+INFO  21:37:19,737 - #44 )
+INFO  21:37:19,737 - #40 ;
+INFO  21:37:19,737 - #48 }
+INFO  21:37:19,737 - #48 }
+INFO  21:37:19,737 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  21:37:19,737 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             x
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodVoidDeclaration(
+        MethodVoid2(
+          MethodVoidName(
+           fun
+          ) [MethodVoidName]
+          ParamMulti(
+            ParamSingle(
+              ParamNormal(
+                Type(
+                 int
+                ) [Type]
+               x
+              ) [ParamNormal]
+            ) [ParamSingle]
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamMulti]
+          StatementSingle(
+            StmtReturn(
+            ) [StmtReturn]
+          ) [StatementSingle]
+        ) [MethodVoid2]
+      ) [MethodVoidDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorMethodCallParams(
+              DesignatorSimple(
+               fun
+              ) [DesignatorSimple]
+              ActParsMulti(
+                ActParsSingle(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         2
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [ActParsSingle]
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorNumConst(
+                       3
+                      ) [FactorNumConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsMulti]
+            ) [DesignatorMethodCallParams]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  21:37:19,737 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  21:37:19,753 - Deklarisana globalna promenljiva 'x' na liniji 4
+ERROR 21:37:19,753 - Semanticka greska - 'x' vec postoji na liniji 6
+INFO  21:37:19,753 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  21:37:19,753 - Pronadjen poziv funkcije 'fun' na liniji 12
+ERROR 21:37:19,753 - Semanticka greska - argumenti funkcije nisu odgovarajuci na liniji 12
+INFO  21:37:19,753 - ===================================
+ERROR 21:37:19,753 - Parsiranje nije uspesno zavrseno!
+INFO  21:37:46,541 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  21:37:46,594 - #2 program
+INFO  21:37:46,594 - #20 test301
+INFO  21:37:46,594 - #47 {
+INFO  21:37:46,594 - #16 void
+INFO  21:37:46,594 - #20 fun
+INFO  21:37:46,594 - #43 (
+INFO  21:37:46,594 - #20 int
+INFO  21:37:46,594 - #20 x
+INFO  21:37:46,594 - #41 ,
+INFO  21:37:46,594 - #20 int
+INFO  21:37:46,594 - #20 y
+INFO  21:37:46,594 - #44 )
+INFO  21:37:46,594 - #47 {
+INFO  21:37:46,594 - #15 return
+INFO  21:37:46,594 - #40 ;
+INFO  21:37:46,594 - #48 }
+INFO  21:37:46,594 - #16 void
+INFO  21:37:46,594 - #20 main
+INFO  21:37:46,594 - #43 (
+INFO  21:37:46,594 - #44 )
+INFO  21:37:46,594 - #47 {
+INFO  21:37:46,594 - #20 fun
+INFO  21:37:46,594 - #43 (
+INFO  21:37:46,594 - #21 2
+INFO  21:37:46,594 - #41 ,
+INFO  21:37:46,594 - #21 3
+INFO  21:37:46,594 - #44 )
+INFO  21:37:46,594 - #40 ;
+INFO  21:37:46,594 - #48 }
+INFO  21:37:46,594 - #48 }
+INFO  21:37:46,594 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  21:37:46,594 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclEps(
+  ) [ProgramDeclEps]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodVoidDeclaration(
+        MethodVoid2(
+          MethodVoidName(
+           fun
+          ) [MethodVoidName]
+          ParamMulti(
+            ParamSingle(
+              ParamNormal(
+                Type(
+                 int
+                ) [Type]
+               x
+              ) [ParamNormal]
+            ) [ParamSingle]
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamMulti]
+          StatementSingle(
+            StmtReturn(
+            ) [StmtReturn]
+          ) [StatementSingle]
+        ) [MethodVoid2]
+      ) [MethodVoidDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorMethodCallParams(
+              DesignatorSimple(
+               fun
+              ) [DesignatorSimple]
+              ActParsMulti(
+                ActParsSingle(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         2
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [ActParsSingle]
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorNumConst(
+                       3
+                      ) [FactorNumConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsMulti]
+            ) [DesignatorMethodCallParams]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  21:37:46,594 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  21:37:46,610 - Formalni parametar funkcije fun: 'x' na liniji 6
+INFO  21:37:46,610 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  21:37:46,610 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  21:37:46,610 - ===================================
+INFO  21:37:46,610 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  21:37:46,610 - Parsiranje uspesno zavrseno!
+INFO  21:38:54,797 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  21:38:54,843 - #2 program
+INFO  21:38:54,843 - #20 test301
+INFO  21:38:54,843 - #20 int
+INFO  21:38:54,843 - #20 a
+INFO  21:38:54,843 - #40 ;
+INFO  21:38:54,843 - #47 {
+INFO  21:38:54,843 - #20 int
+INFO  21:38:54,843 - #20 fun
+INFO  21:38:54,843 - #43 (
+INFO  21:38:54,843 - #20 int
+INFO  21:38:54,843 - #20 x
+INFO  21:38:54,843 - #41 ,
+INFO  21:38:54,843 - #20 int
+INFO  21:38:54,843 - #20 y
+INFO  21:38:54,843 - #44 )
+INFO  21:38:54,843 - #47 {
+INFO  21:38:54,843 - #15 return
+INFO  21:38:54,843 - #20 x
+INFO  21:38:54,843 - #24 +
+INFO  21:38:54,859 - #20 y
+INFO  21:38:54,859 - #40 ;
+INFO  21:38:54,859 - #48 }
+INFO  21:38:54,859 - #16 void
+INFO  21:38:54,859 - #20 main
+INFO  21:38:54,859 - #43 (
+INFO  21:38:54,859 - #44 )
+INFO  21:38:54,859 - #47 {
+INFO  21:38:54,859 - #20 a
+INFO  21:38:54,859 - #37 =
+INFO  21:38:54,859 - #20 fun
+INFO  21:38:54,859 - #43 (
+INFO  21:38:54,859 - #21 2
+INFO  21:38:54,859 - #41 ,
+INFO  21:38:54,859 - #21 3
+INFO  21:38:54,859 - #44 )
+INFO  21:38:54,859 - #40 ;
+INFO  21:38:54,859 - #48 }
+INFO  21:38:54,859 - #48 }
+INFO  21:38:54,859 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  21:38:54,859 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             a
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamMulti(
+            ParamSingle(
+              ParamNormal(
+                Type(
+                 int
+                ) [Type]
+               x
+              ) [ParamNormal]
+            ) [ParamSingle]
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamMulti]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprAddop(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         x
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                  AddopPlus(
+                  ) [AddopPlus]
+                  TermSingle(
+                    FactorDesignator(
+                      DesignatorSimple(
+                       y
+                      ) [DesignatorSimple]
+                    ) [FactorDesignator]
+                  ) [TermSingle]
+                ) [ExprAddop]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorAssignment(
+              DesignatorSimple(
+               a
+              ) [DesignatorSimple]
+              AssignmentExpr(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FuncCallParams(
+                        DesignatorSimple(
+                         fun
+                        ) [DesignatorSimple]
+                        ActParsMulti(
+                          ActParsSingle(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorNumConst(
+                                   2
+                                  ) [FactorNumConst]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [ActParsSingle]
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorNumConst(
+                                 3
+                                ) [FactorNumConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [ActParsMulti]
+                      ) [FuncCallParams]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [AssignmentExpr]
+            ) [DesignatorAssignment]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  21:38:54,859 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  21:38:54,875 - Deklarisana globalna promenljiva 'a' na liniji 4
+INFO  21:38:54,875 - Formalni parametar funkcije fun: 'x' na liniji 6
+INFO  21:38:54,875 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  21:38:54,875 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  21:38:54,881 - ===================================
+INFO  21:38:54,881 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  21:38:54,881 - Parsiranje uspesno zavrseno!
+INFO  21:41:23,986 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  21:41:24,071 - #2 program
+INFO  21:41:24,071 - #20 test301
+INFO  21:41:24,071 - #20 int
+INFO  21:41:24,071 - #20 a
+INFO  21:41:24,071 - #40 ;
+INFO  21:41:24,071 - #47 {
+INFO  21:41:24,071 - #20 int
+INFO  21:41:24,071 - #20 fun
+INFO  21:41:24,071 - #43 (
+INFO  21:41:24,071 - #20 int
+INFO  21:41:24,071 - #20 x
+INFO  21:41:24,071 - #41 ,
+INFO  21:41:24,071 - #20 int
+INFO  21:41:24,071 - #20 y
+INFO  21:41:24,071 - #44 )
+INFO  21:41:24,071 - #47 {
+INFO  21:41:24,071 - #15 return
+INFO  21:41:24,071 - #20 x
+INFO  21:41:24,071 - #24 +
+INFO  21:41:24,071 - #20 y
+INFO  21:41:24,071 - #40 ;
+INFO  21:41:24,071 - #48 }
+INFO  21:41:24,071 - #16 void
+INFO  21:41:24,071 - #20 main
+INFO  21:41:24,071 - #43 (
+INFO  21:41:24,071 - #44 )
+INFO  21:41:24,071 - #47 {
+INFO  21:41:24,071 - #20 fun
+INFO  21:41:24,071 - #43 (
+INFO  21:41:24,071 - #21 2
+INFO  21:41:24,087 - #41 ,
+INFO  21:41:24,087 - #21 3
+INFO  21:41:24,087 - #44 )
+INFO  21:41:24,087 - #40 ;
+INFO  21:41:24,087 - #48 }
+INFO  21:41:24,087 - #48 }
+INFO  21:41:24,087 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  21:41:24,087 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             a
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamMulti(
+            ParamSingle(
+              ParamNormal(
+                Type(
+                 int
+                ) [Type]
+               x
+              ) [ParamNormal]
+            ) [ParamSingle]
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamMulti]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprAddop(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         x
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                  AddopPlus(
+                  ) [AddopPlus]
+                  TermSingle(
+                    FactorDesignator(
+                      DesignatorSimple(
+                       y
+                      ) [DesignatorSimple]
+                    ) [FactorDesignator]
+                  ) [TermSingle]
+                ) [ExprAddop]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorMethodCallParams(
+              DesignatorSimple(
+               fun
+              ) [DesignatorSimple]
+              ActParsMulti(
+                ActParsSingle(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FactorNumConst(
+                         2
+                        ) [FactorNumConst]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [ActParsSingle]
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FactorNumConst(
+                       3
+                      ) [FactorNumConst]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [ActParsMulti]
+            ) [DesignatorMethodCallParams]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  21:41:24,087 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  21:41:24,102 - Deklarisana globalna promenljiva 'a' na liniji 4
+INFO  21:41:24,102 - Formalni parametar funkcije fun: 'x' na liniji 6
+INFO  21:41:24,102 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  21:41:24,102 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  21:41:24,102 - ===================================
+INFO  21:41:24,102 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  21:41:24,118 - Parsiranje uspesno zavrseno!
+INFO  23:44:52,570 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  23:44:52,623 - #2 program
+INFO  23:44:52,623 - #20 test301
+INFO  23:44:52,623 - #20 int
+INFO  23:44:52,623 - #20 a
+INFO  23:44:52,623 - #40 ;
+INFO  23:44:52,623 - #47 {
+INFO  23:44:52,623 - #20 int
+INFO  23:44:52,623 - #20 fun
+INFO  23:44:52,623 - #43 (
+INFO  23:44:52,623 - #20 int
+INFO  23:44:52,623 - #20 x
+INFO  23:44:52,623 - #41 ,
+INFO  23:44:52,623 - #20 int
+INFO  23:44:52,623 - #20 y
+INFO  23:44:52,623 - #44 )
+INFO  23:44:52,623 - #47 {
+INFO  23:44:52,623 - #15 return
+INFO  23:44:52,623 - #20 x
+INFO  23:44:52,623 - #24 +
+INFO  23:44:52,623 - #20 y
+INFO  23:44:52,623 - #40 ;
+INFO  23:44:52,623 - #48 }
+INFO  23:44:52,623 - #16 void
+INFO  23:44:52,623 - #20 main
+INFO  23:44:52,623 - #43 (
+INFO  23:44:52,623 - #44 )
+INFO  23:44:52,623 - #47 {
+INFO  23:44:52,623 - #20 a
+INFO  23:44:52,623 - #37 =
+INFO  23:44:52,623 - #20 fun
+INFO  23:44:52,623 - #43 (
+INFO  23:44:52,623 - #21 2
+INFO  23:44:52,623 - #41 ,
+INFO  23:44:52,623 - #21 3
+INFO  23:44:52,623 - #44 )
+INFO  23:44:52,623 - #40 ;
+INFO  23:44:52,623 - #48 }
+INFO  23:44:52,623 - #48 }
+INFO  23:44:52,623 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  23:44:52,623 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             a
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamMulti(
+            ParamSingle(
+              ParamNormal(
+                Type(
+                 int
+                ) [Type]
+               x
+              ) [ParamNormal]
+            ) [ParamSingle]
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamMulti]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprAddop(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         x
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                  AddopPlus(
+                  ) [AddopPlus]
+                  TermSingle(
+                    FactorDesignator(
+                      DesignatorSimple(
+                       y
+                      ) [DesignatorSimple]
+                    ) [FactorDesignator]
+                  ) [TermSingle]
+                ) [ExprAddop]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementSingle(
+          StmtDesign(
+            DesignatorAssignment(
+              DesignatorSimple(
+               a
+              ) [DesignatorSimple]
+              AssignmentExpr(
+                ExprOne(
+                  ExprSingle(
+                    TermSingle(
+                      FuncCallParams(
+                        DesignatorSimple(
+                         fun
+                        ) [DesignatorSimple]
+                        ActParsMulti(
+                          ActParsSingle(
+                            ExprOne(
+                              ExprSingle(
+                                TermSingle(
+                                  FactorNumConst(
+                                   2
+                                  ) [FactorNumConst]
+                                ) [TermSingle]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [ActParsSingle]
+                          ExprOne(
+                            ExprSingle(
+                              TermSingle(
+                                FactorNumConst(
+                                 3
+                                ) [FactorNumConst]
+                              ) [TermSingle]
+                            ) [ExprSingle]
+                          ) [ExprOne]
+                        ) [ActParsMulti]
+                      ) [FuncCallParams]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                ) [ExprOne]
+              ) [AssignmentExpr]
+            ) [DesignatorAssignment]
+          ) [StmtDesign]
+        ) [StatementSingle]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  23:44:52,623 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  23:44:52,639 - Deklarisana globalna promenljiva 'a' na liniji 4
+INFO  23:44:52,639 - Formalni parametar funkcije fun: 'x' na liniji 6
+INFO  23:44:52,639 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  23:44:52,639 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  23:44:52,639 - ===================================
+INFO  23:44:52,639 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  23:44:52,655 - Parsiranje uspesno zavrseno!
+INFO  23:46:29,762 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  23:46:29,795 - #2 program
+INFO  23:46:29,795 - #20 test301
+INFO  23:46:29,795 - #20 int
+INFO  23:46:29,795 - #20 a
+INFO  23:46:29,795 - #40 ;
+INFO  23:46:29,795 - #47 {
+INFO  23:46:29,795 - #20 int
+INFO  23:46:29,795 - #20 fun
+INFO  23:46:29,810 - #43 (
+INFO  23:46:29,810 - #20 int
+INFO  23:46:29,810 - #20 x
+INFO  23:46:29,810 - #41 ,
+INFO  23:46:29,810 - #20 int
+INFO  23:46:29,810 - #20 y
+INFO  23:46:29,810 - #44 )
+INFO  23:46:29,810 - #47 {
+INFO  23:46:29,810 - #15 return
+INFO  23:46:29,810 - #20 x
+INFO  23:46:29,810 - #24 +
+INFO  23:46:29,810 - #20 y
+INFO  23:46:29,810 - #40 ;
+INFO  23:46:29,810 - #48 }
+INFO  23:46:29,810 - #16 void
+INFO  23:46:29,810 - #20 main
+INFO  23:46:29,810 - #43 (
+INFO  23:46:29,810 - #44 )
+INFO  23:46:29,810 - #47 {
+INFO  23:46:29,810 - #20 a
+INFO  23:46:29,810 - #37 =
+INFO  23:46:29,810 - #20 fun
+INFO  23:46:29,810 - #43 (
+INFO  23:46:29,810 - #21 2
+INFO  23:46:29,810 - #24 +
+INFO  23:46:29,810 - #21 3
+INFO  23:46:29,810 - #41 ,
+INFO  23:46:29,810 - #21 3
+INFO  23:46:29,810 - #26 *
+INFO  23:46:29,810 - #21 10
+INFO  23:46:29,810 - #44 )
+INFO  23:46:29,810 - #40 ;
+INFO  23:46:29,810 - #13 print
+INFO  23:46:29,810 - #43 (
+INFO  23:46:29,810 - #20 a
+INFO  23:46:29,810 - #44 )
+INFO  23:46:29,810 - #40 ;
+INFO  23:46:29,810 - #48 }
+INFO  23:46:29,810 - #48 }
+INFO  23:46:29,810 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  23:46:29,810 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             a
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamMulti(
+            ParamSingle(
+              ParamNormal(
+                Type(
+                 int
+                ) [Type]
+               x
+              ) [ParamNormal]
+            ) [ParamSingle]
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamMulti]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprAddop(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         x
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                  AddopPlus(
+                  ) [AddopPlus]
+                  TermSingle(
+                    FactorDesignator(
+                      DesignatorSimple(
+                       y
+                      ) [DesignatorSimple]
+                    ) [FactorDesignator]
+                  ) [TermSingle]
+                ) [ExprAddop]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorSimple(
+                 a
+                ) [DesignatorSimple]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FuncCallParams(
+                          DesignatorSimple(
+                           fun
+                          ) [DesignatorSimple]
+                          ActParsMulti(
+                            ActParsSingle(
+                              ExprOne(
+                                ExprAddop(
+                                  ExprSingle(
+                                    TermSingle(
+                                      FactorNumConst(
+                                       2
+                                      ) [FactorNumConst]
+                                    ) [TermSingle]
+                                  ) [ExprSingle]
+                                  AddopPlus(
+                                  ) [AddopPlus]
+                                  TermSingle(
+                                    FactorNumConst(
+                                     3
+                                    ) [FactorNumConst]
+                                  ) [TermSingle]
+                                ) [ExprAddop]
+                              ) [ExprOne]
+                            ) [ActParsSingle]
+                            ExprOne(
+                              ExprSingle(
+                                TermMulop(
+                                  TermSingle(
+                                    FactorNumConst(
+                                     3
+                                    ) [FactorNumConst]
+                                  ) [TermSingle]
+                                  MulopMul(
+                                  ) [MulopMul]
+                                  FactorNumConst(
+                                   10
+                                  ) [FactorNumConst]
+                                ) [TermMulop]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [ActParsMulti]
+                        ) [FuncCallParams]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     a
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  23:46:29,810 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  23:46:29,826 - Deklarisana globalna promenljiva 'a' na liniji 4
+INFO  23:46:29,826 - Formalni parametar funkcije fun: 'x' na liniji 6
+INFO  23:46:29,826 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  23:46:29,826 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  23:46:29,826 - ===================================
+INFO  23:46:29,826 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  23:46:29,842 - Parsiranje uspesno zavrseno!
+INFO  23:47:18,454 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  23:47:18,516 - #2 program
+INFO  23:47:18,516 - #20 test301
+INFO  23:47:18,516 - #20 int
+INFO  23:47:18,516 - #20 a
+INFO  23:47:18,516 - #40 ;
+INFO  23:47:18,532 - #47 {
+INFO  23:47:18,532 - #20 int
+INFO  23:47:18,532 - #20 fun
+INFO  23:47:18,532 - #43 (
+INFO  23:47:18,532 - #20 int
+INFO  23:47:18,532 - #20 x
+INFO  23:47:18,532 - #41 ,
+INFO  23:47:18,532 - #20 int
+INFO  23:47:18,532 - #20 y
+INFO  23:47:18,532 - #44 )
+INFO  23:47:18,532 - #47 {
+INFO  23:47:18,532 - #48 }
+INFO  23:47:18,532 - #16 void
+INFO  23:47:18,532 - #20 main
+INFO  23:47:18,532 - #43 (
+INFO  23:47:18,532 - #44 )
+INFO  23:47:18,532 - #47 {
+INFO  23:47:18,532 - #20 a
+INFO  23:47:18,532 - #37 =
+INFO  23:47:18,532 - #20 fun
+INFO  23:47:18,532 - #43 (
+INFO  23:47:18,532 - #21 2
+INFO  23:47:18,532 - #24 +
+INFO  23:47:18,532 - #21 3
+INFO  23:47:18,532 - #41 ,
+INFO  23:47:18,539 - #21 3
+INFO  23:47:18,539 - #26 *
+INFO  23:47:18,539 - #21 10
+INFO  23:47:18,539 - #44 )
+INFO  23:47:18,539 - #40 ;
+INFO  23:47:18,539 - #13 print
+INFO  23:47:18,539 - #43 (
+INFO  23:47:18,539 - #20 a
+INFO  23:47:18,539 - #44 )
+INFO  23:47:18,539 - #40 ;
+INFO  23:47:18,539 - #48 }
+INFO  23:47:18,539 - #48 }
+INFO  23:47:18,539 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  23:47:18,539 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             a
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType3(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamMulti(
+            ParamSingle(
+              ParamNormal(
+                Type(
+                 int
+                ) [Type]
+               x
+              ) [ParamNormal]
+            ) [ParamSingle]
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamMulti]
+        ) [MethodType3]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorSimple(
+                 a
+                ) [DesignatorSimple]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FuncCallParams(
+                          DesignatorSimple(
+                           fun
+                          ) [DesignatorSimple]
+                          ActParsMulti(
+                            ActParsSingle(
+                              ExprOne(
+                                ExprAddop(
+                                  ExprSingle(
+                                    TermSingle(
+                                      FactorNumConst(
+                                       2
+                                      ) [FactorNumConst]
+                                    ) [TermSingle]
+                                  ) [ExprSingle]
+                                  AddopPlus(
+                                  ) [AddopPlus]
+                                  TermSingle(
+                                    FactorNumConst(
+                                     3
+                                    ) [FactorNumConst]
+                                  ) [TermSingle]
+                                ) [ExprAddop]
+                              ) [ExprOne]
+                            ) [ActParsSingle]
+                            ExprOne(
+                              ExprSingle(
+                                TermMulop(
+                                  TermSingle(
+                                    FactorNumConst(
+                                     3
+                                    ) [FactorNumConst]
+                                  ) [TermSingle]
+                                  MulopMul(
+                                  ) [MulopMul]
+                                  FactorNumConst(
+                                   10
+                                  ) [FactorNumConst]
+                                ) [TermMulop]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [ActParsMulti]
+                        ) [FuncCallParams]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     a
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  23:47:18,539 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  23:47:18,554 - Deklarisana globalna promenljiva 'a' na liniji 4
+INFO  23:47:18,554 - Formalni parametar funkcije fun: 'x' na liniji 6
+INFO  23:47:18,554 - Formalni parametar funkcije fun: 'y' na liniji 6
+ERROR 23:47:18,554 - Semanticka greska - metoda 'fun' treba da ima povratnu vrednost!
+INFO  23:47:18,554 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  23:47:18,554 - ===================================
+ERROR 23:47:18,554 - Parsiranje nije uspesno zavrseno!
+INFO  23:47:46,912 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  23:47:46,966 - #2 program
+INFO  23:47:46,966 - #20 test301
+INFO  23:47:46,966 - #20 int
+INFO  23:47:46,966 - #20 a
+INFO  23:47:46,966 - #40 ;
+INFO  23:47:46,966 - #47 {
+INFO  23:47:46,966 - #20 int
+INFO  23:47:46,966 - #20 fun
+INFO  23:47:46,966 - #43 (
+INFO  23:47:46,966 - #20 int
+INFO  23:47:46,966 - #20 x
+INFO  23:47:46,966 - #41 ,
+INFO  23:47:46,966 - #20 int
+INFO  23:47:46,966 - #20 y
+INFO  23:47:46,966 - #44 )
+INFO  23:47:46,966 - #47 {
+INFO  23:47:46,966 - #48 }
+INFO  23:47:46,966 - #16 void
+INFO  23:47:46,966 - #20 main
+INFO  23:47:46,966 - #43 (
+INFO  23:47:46,966 - #44 )
+INFO  23:47:46,966 - #47 {
+INFO  23:47:46,966 - #20 a
+INFO  23:47:46,966 - #37 =
+INFO  23:47:46,966 - #20 fun
+INFO  23:47:46,966 - #43 (
+INFO  23:47:46,966 - #21 2
+INFO  23:47:46,966 - #24 +
+INFO  23:47:46,966 - #21 3
+INFO  23:47:46,966 - #41 ,
+INFO  23:47:46,966 - #21 3
+INFO  23:47:46,966 - #26 *
+INFO  23:47:46,966 - #21 10
+INFO  23:47:46,966 - #44 )
+INFO  23:47:46,966 - #40 ;
+INFO  23:47:46,966 - #13 print
+INFO  23:47:46,966 - #43 (
+INFO  23:47:46,966 - #20 a
+INFO  23:47:46,966 - #44 )
+INFO  23:47:46,966 - #40 ;
+INFO  23:47:46,966 - #48 }
+INFO  23:47:46,966 - #48 }
+INFO  23:47:46,966 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  23:47:46,966 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             a
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType3(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamMulti(
+            ParamSingle(
+              ParamNormal(
+                Type(
+                 int
+                ) [Type]
+               x
+              ) [ParamNormal]
+            ) [ParamSingle]
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamMulti]
+        ) [MethodType3]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorSimple(
+                 a
+                ) [DesignatorSimple]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FuncCallParams(
+                          DesignatorSimple(
+                           fun
+                          ) [DesignatorSimple]
+                          ActParsMulti(
+                            ActParsSingle(
+                              ExprOne(
+                                ExprAddop(
+                                  ExprSingle(
+                                    TermSingle(
+                                      FactorNumConst(
+                                       2
+                                      ) [FactorNumConst]
+                                    ) [TermSingle]
+                                  ) [ExprSingle]
+                                  AddopPlus(
+                                  ) [AddopPlus]
+                                  TermSingle(
+                                    FactorNumConst(
+                                     3
+                                    ) [FactorNumConst]
+                                  ) [TermSingle]
+                                ) [ExprAddop]
+                              ) [ExprOne]
+                            ) [ActParsSingle]
+                            ExprOne(
+                              ExprSingle(
+                                TermMulop(
+                                  TermSingle(
+                                    FactorNumConst(
+                                     3
+                                    ) [FactorNumConst]
+                                  ) [TermSingle]
+                                  MulopMul(
+                                  ) [MulopMul]
+                                  FactorNumConst(
+                                   10
+                                  ) [FactorNumConst]
+                                ) [TermMulop]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [ActParsMulti]
+                        ) [FuncCallParams]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     a
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  23:47:46,966 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  23:47:46,981 - Deklarisana globalna promenljiva 'a' na liniji 4
+INFO  23:47:46,981 - Formalni parametar funkcije fun: 'x' na liniji 6
+INFO  23:47:46,981 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  23:47:46,981 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  23:47:46,981 - ===================================
+INFO  23:47:46,981 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  23:47:46,981 - Parsiranje uspesno zavrseno!
+INFO  23:48:42,471 - Kompajliranje ulaznog fajla C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.mj
+INFO  23:48:42,517 - #2 program
+INFO  23:48:42,517 - #20 test301
+INFO  23:48:42,517 - #20 int
+INFO  23:48:42,517 - #20 a
+INFO  23:48:42,517 - #40 ;
+INFO  23:48:42,517 - #47 {
+INFO  23:48:42,517 - #20 int
+INFO  23:48:42,517 - #20 fun
+INFO  23:48:42,517 - #43 (
+INFO  23:48:42,517 - #20 int
+INFO  23:48:42,517 - #20 x
+INFO  23:48:42,517 - #41 ,
+INFO  23:48:42,517 - #20 int
+INFO  23:48:42,517 - #20 y
+INFO  23:48:42,517 - #44 )
+INFO  23:48:42,517 - #47 {
+INFO  23:48:42,517 - #15 return
+INFO  23:48:42,524 - #20 x
+INFO  23:48:42,524 - #24 +
+INFO  23:48:42,524 - #20 y
+INFO  23:48:42,524 - #40 ;
+INFO  23:48:42,524 - #48 }
+INFO  23:48:42,524 - #16 void
+INFO  23:48:42,524 - #20 main
+INFO  23:48:42,524 - #43 (
+INFO  23:48:42,524 - #44 )
+INFO  23:48:42,524 - #47 {
+INFO  23:48:42,524 - #20 a
+INFO  23:48:42,524 - #37 =
+INFO  23:48:42,524 - #20 fun
+INFO  23:48:42,524 - #43 (
+INFO  23:48:42,524 - #21 2
+INFO  23:48:42,524 - #24 +
+INFO  23:48:42,524 - #21 3
+INFO  23:48:42,524 - #41 ,
+INFO  23:48:42,524 - #21 3
+INFO  23:48:42,524 - #26 *
+INFO  23:48:42,524 - #21 10
+INFO  23:48:42,524 - #44 )
+INFO  23:48:42,524 - #40 ;
+INFO  23:48:42,524 - #13 print
+INFO  23:48:42,524 - #43 (
+INFO  23:48:42,524 - #20 a
+INFO  23:48:42,524 - #44 )
+INFO  23:48:42,524 - #40 ;
+INFO  23:48:42,524 - #48 }
+INFO  23:48:42,524 - #48 }
+INFO  23:48:42,524 - 
+
+================SINTAKSNO STABLO====================
+
+
+INFO  23:48:42,524 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  ProgramDeclMulti(
+    ProgramDeclEps(
+    ) [ProgramDeclEps]
+    PartVarDeclaration(
+      GlobalVarDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVarSingle(
+          GlobalVar(
+            VarNormal(
+             a
+            ) [VarNormal]
+          ) [GlobalVar]
+        ) [GlobalVarSingle]
+      ) [GlobalVarDeclaration]
+    ) [PartVarDeclaration]
+  ) [ProgramDeclMulti]
+  MethodDecMulti(
+    MethodDeclSingle(
+      MethodTypeDeclaration(
+        MethodType2(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           fun
+          ) [MethodTypeName]
+          ParamMulti(
+            ParamSingle(
+              ParamNormal(
+                Type(
+                 int
+                ) [Type]
+               x
+              ) [ParamNormal]
+            ) [ParamSingle]
+            ParamNormal(
+              Type(
+               int
+              ) [Type]
+             y
+            ) [ParamNormal]
+          ) [ParamMulti]
+          StatementSingle(
+            StmtReturnExpr(
+              ExprOne(
+                ExprAddop(
+                  ExprSingle(
+                    TermSingle(
+                      FactorDesignator(
+                        DesignatorSimple(
+                         x
+                        ) [DesignatorSimple]
+                      ) [FactorDesignator]
+                    ) [TermSingle]
+                  ) [ExprSingle]
+                  AddopPlus(
+                  ) [AddopPlus]
+                  TermSingle(
+                    FactorDesignator(
+                      DesignatorSimple(
+                       y
+                      ) [DesignatorSimple]
+                    ) [FactorDesignator]
+                  ) [TermSingle]
+                ) [ExprAddop]
+              ) [ExprOne]
+            ) [StmtReturnExpr]
+          ) [StatementSingle]
+        ) [MethodType2]
+      ) [MethodTypeDeclaration]
+    ) [MethodDeclSingle]
+    MethodVoidDeclaration(
+      MethodVoid6(
+        MethodVoidName(
+         main
+        ) [MethodVoidName]
+        StatementMulti(
+          StatementSingle(
+            StmtDesign(
+              DesignatorAssignment(
+                DesignatorSimple(
+                 a
+                ) [DesignatorSimple]
+                AssignmentExpr(
+                  ExprOne(
+                    ExprSingle(
+                      TermSingle(
+                        FuncCallParams(
+                          DesignatorSimple(
+                           fun
+                          ) [DesignatorSimple]
+                          ActParsMulti(
+                            ActParsSingle(
+                              ExprOne(
+                                ExprAddop(
+                                  ExprSingle(
+                                    TermSingle(
+                                      FactorNumConst(
+                                       2
+                                      ) [FactorNumConst]
+                                    ) [TermSingle]
+                                  ) [ExprSingle]
+                                  AddopPlus(
+                                  ) [AddopPlus]
+                                  TermSingle(
+                                    FactorNumConst(
+                                     3
+                                    ) [FactorNumConst]
+                                  ) [TermSingle]
+                                ) [ExprAddop]
+                              ) [ExprOne]
+                            ) [ActParsSingle]
+                            ExprOne(
+                              ExprSingle(
+                                TermMulop(
+                                  TermSingle(
+                                    FactorNumConst(
+                                     3
+                                    ) [FactorNumConst]
+                                  ) [TermSingle]
+                                  MulopMul(
+                                  ) [MulopMul]
+                                  FactorNumConst(
+                                   10
+                                  ) [FactorNumConst]
+                                ) [TermMulop]
+                              ) [ExprSingle]
+                            ) [ExprOne]
+                          ) [ActParsMulti]
+                        ) [FuncCallParams]
+                      ) [TermSingle]
+                    ) [ExprSingle]
+                  ) [ExprOne]
+                ) [AssignmentExpr]
+              ) [DesignatorAssignment]
+            ) [StmtDesign]
+          ) [StatementSingle]
+          StmtPrint(
+            ExprOne(
+              ExprSingle(
+                TermSingle(
+                  FactorDesignator(
+                    DesignatorSimple(
+                     a
+                    ) [DesignatorSimple]
+                  ) [FactorDesignator]
+                ) [TermSingle]
+              ) [ExprSingle]
+            ) [ExprOne]
+          ) [StmtPrint]
+        ) [StatementMulti]
+      ) [MethodVoid6]
+    ) [MethodVoidDeclaration]
+  ) [MethodDecMulti]
+) [Program]
+INFO  23:48:42,524 - 
+
+================SEMANTICKA OBRADA====================
+
+
+INFO  23:48:42,540 - Deklarisana globalna promenljiva 'a' na liniji 4
+INFO  23:48:42,540 - Formalni parametar funkcije fun: 'x' na liniji 6
+INFO  23:48:42,540 - Formalni parametar funkcije fun: 'y' na liniji 6
+INFO  23:48:42,540 - Pronadjen poziv funkcije 'fun' na liniji 12
+INFO  23:48:42,540 - ===================================
+INFO  23:48:42,540 - Generisanje MJ bajtkoda: C:\Users\Anja\Desktop\PP1 projekat\workspace\MJCompiler\test\program.obj
+INFO  23:48:42,555 - Parsiranje uspesno zavrseno!

@@ -158,37 +158,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     	declarationVariables.clear();
 	}
-	
-    // GlobalVarPart
-//    public void visit(GlobalVarNormal globalVarNormal) {
-//		if (Tab.find(globalVarNormal.getVarName()) == Tab.noObj) {
-//			String varName = globalVarNormal.getVarName();
-//			for (Variable var : declarationVariables) {
-//				if(var.getName().equals(varName)) {
-//					report_error("Semanticka greska - '" + globalVarNormal.getVarName() + "' je vec deklarisano", globalVarNormal);
-//					return;
-//				}
-//			}
-//			declarationVariables.add(new Variable(globalVarNormal.getVarName(), false, null));			
-//		} else { 			
-//			report_error("Semanticka greska - '" + globalVarNormal.getVarName() + "' je vec deklarisano", globalVarNormal);
-//		}
-//	}
-//    
-//	public void visit(GlobalVarArray globalVarArray) { 
-//		if (Tab.find(globalVarArray.getVarName()) == Tab.noObj) { 
-//			String varName = globalVarArray.getVarName();
-//			for (Variable var : declarationVariables) {
-//				if(var.getName().equals(varName)) {
-//					report_error("Semanticka greska - '" + globalVarArray.getVarName() + "' je vec deklarisano", globalVarArray);
-//					return;
-//				}
-//			}
-//			declarationVariables.add(new Variable(globalVarArray.getVarName(), true, null));			
-//		} else { 
-//			report_error("Semanticka greska - '" + globalVarArray.getVarName() + "' je vec deklarisano", globalVarArray);
-//		}
-//	}
     
 	// ConstDecl
     public void visit(ConstDeclaration constDeclaration) {	
@@ -256,9 +225,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	// MethodTypeDecl
 	public void visit(MethodTypeDeclaration methodTypeDeclaration) { 
-		if (!returnValue) {
-			report_error("Semanticka greska - metoda '" + currentMethod.getName() + "' treba da ima povratnu vrednost!", null);
-		}
+//		if (!returnValue) { // bez ovoga jer treba da bude Runtime error - TRAP
+//			report_error("Semanticka greska - metoda '" + currentMethod.getName() + "' treba da ima povratnu vrednost!", null);
+//		}
 		Tab.chainLocalSymbols(currentMethod);
 		Tab.closeScope();
 		currentMethod = null;
