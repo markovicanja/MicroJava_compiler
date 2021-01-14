@@ -15,7 +15,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	private int nVars;
 	private boolean errorDetected = false;
-	private boolean returnValue = false;
 	private boolean mainMethodDefined = false;
 	private int doWhileDepth = 0;
 	private Obj outerScopeObj = null;
@@ -55,6 +54,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	public Obj getOuterScope() {
 		return outerScopeObj;
+	}
+	
+	public boolean methodContains(String paramName) {
+		for(Obj o : currentMethod.getLocalSymbols()) {
+			if (o.getName() == paramName) return true;
+		}
+		return false;
 	}
 	
 	// *** VISIT METODE ***
@@ -100,12 +106,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		for (Variable var : declarationVariables) {
 	    	if (var.getArray()) {
 	    		report_info("Deklarisan niz '" + var.getName() + "'", varDeclaration); 
-	    		Obj obj = Tab.insert(Obj.Var, var.getName(), new Struct(Struct.Array, type));
-//	    		obj.setFpPos(-1); // redni broj argumenta u definiciji metode? samo nivo C?
+	    		Tab.insert(Obj.Var, var.getName(), new Struct(Struct.Array, type));
 	    	} else {
 	    		report_info("Deklarisana promenljiva '" + var.getName() + "'", varDeclaration);
-	    		Obj obj = Tab.insert(Obj.Var, var.getName(), type);
-//	    		obj.setFpPos(-1);
+	    		Tab.insert(Obj.Var, var.getName(), type);
 	    	}    	
     	}
     	declarationVariables.clear();
@@ -113,7 +117,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	// VarPart
 	public void visit(VarNormal varNormal) {
-		if (Tab.find(varNormal.getVarName()) == Tab.noObj || Tab.find(varNormal.getVarName()).getLevel() != 1) {
+		if (Tab.find(varNormal.getVarName()) == Tab.noObj) {
 			String varName = varNormal.getVarName();
 			for (Variable var : declarationVariables) {
 				if(var.getName().equals(varName)) {
@@ -128,7 +132,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	
 	public void visit(VarArray varArray) { 
-		if (Tab.find(varArray.getVarName()) == Tab.noObj || Tab.find(varArray.getVarName()).getLevel() != 1) {
+		if (Tab.find(varArray.getVarName()) == Tab.noObj) {
 			String varName = varArray.getVarName();
 			for (Variable var : declarationVariables) {
 				if(var.getName().equals(varName)) {
@@ -148,12 +152,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		for (Variable var : declarationVariables) {
 	    	if (var.getArray()) {
 	    		report_info("Deklarisan globalni niz '" + var.getName() + "'", globalVarDeclaration); 
-	    		Obj obj = Tab.insert(Obj.Var, var.getName(), new Struct(Struct.Array, type));
-//	    		obj.setFpPos(-1); // redni broj argumenta u definiciji metode?
+	    		Tab.insert(Obj.Var, var.getName(), new Struct(Struct.Array, type));
 	    	} else {
 	    		report_info("Deklarisana globalna promenljiva '" + var.getName() + "'", globalVarDeclaration);
-	    		Obj obj = Tab.insert(Obj.Var, var.getName(), type);
-//	    		obj.setFpPos(-1);
+	    		Tab.insert(Obj.Var, var.getName(), type);
 	    	}    	
     	}
     	declarationVariables.clear();
@@ -213,7 +215,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		Tab.chainLocalSymbols(currentMethod);
 		Tab.closeScope();
 		currentMethod = null;
-		returnValue = false;
 	}
 	
 	// MethTypeName
@@ -225,28 +226,22 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	// MethodTypeDecl
 	public void visit(MethodTypeDeclaration methodTypeDeclaration) { 
-//		if (!returnValue) { // bez ovoga jer treba da bude Runtime error - TRAP
-//			report_error("Semanticka greska - metoda '" + currentMethod.getName() + "' treba da ima povratnu vrednost!", null);
-//		}
 		Tab.chainLocalSymbols(currentMethod);
 		Tab.closeScope();
 		currentMethod = null;
-		returnValue = false;
 	}
-	
+		
 	// FormParam
 	public void visit(ParamNormal paramNormal) {
-		if (Tab.find(paramNormal.getParamName()) == Tab.noObj || Tab.find(paramNormal.getParamName()).getLevel() != 1) {
+		if (Tab.find(paramNormal.getParamName()) == Tab.noObj || !methodContains(paramNormal.getParamName())) {
 	    	Obj obj = Tab.insert(Obj.Var, paramNormal.getParamName(), paramNormal.getType().struct);
 	    	if (methods.size() > 0) {
 				methods.get(methods.size() - 1).getParameters().add(obj.getType());
 			}	
-//	    	obj.setFpPos(currentMethod.getLevel());
 	    	if (currentMethod.getName().equals("main")) {
 	    		mainMethodDefined = false;
 	    	}
-	    	// currentMethod.setLevel(currentMethod.getLevel() + 1);
-	    	currentMethod.setLevel(1);
+	    	currentMethod.setLevel(currentMethod.getLevel() + 1);
 	    	report_info("Formalni parametar funkcije " + currentMethod.getName() + ": '" + paramNormal.getParamName() + "'", paramNormal);
 		} else {
 			report_error("Semanticka greska - '" + paramNormal.getParamName() + "' vec postoji", paramNormal);
@@ -254,16 +249,15 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 	
 	public void visit(ParamArray paramArray) {
-		if (Tab.find(paramArray.getParamName()) == Tab.noObj || Tab.find(paramArray.getParamName()).getLevel() != 1) {
+		if (Tab.find(paramArray.getParamName()) == Tab.noObj || !methodContains(paramArray.getParamName())) {
 			Obj obj = Tab.insert(Obj.Var, paramArray.getParamName(), new Struct(Struct.Array, paramArray.getType().struct));
 			if (methods.size() > 0) {
 				methods.get(methods.size() - 1).getParameters().add(obj.getType());
 			}			
-//			obj.setFpPos(currentMethod.getLevel()); // ne kapiram??
 			if (currentMethod.getName().equals("main")) {
 	    		mainMethodDefined = false;
 	    	}
-			currentMethod.setLevel(1);
+	    	currentMethod.setLevel(currentMethod.getLevel() + 1);
 			report_info("Formalni parametar funkcije " + currentMethod.getName() + ": '" + paramArray.getParamName() + "'", paramArray);
 		} else {
 			report_error("Semanticka greska - '" + paramArray.getParamName() + "' vec postoji", paramArray);
@@ -296,7 +290,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
    }
 	
     public void visit(StmtReturnExpr stmtReturnExpr) {
-    	returnValue = true;
     	if (currentMethod.getType() == Tab.noType) {
     		report_error("Semanticka greska - return naredba u funkciji koja nema povratnu vrednost", stmtReturnExpr);
     		return;
@@ -338,7 +331,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	Obj func = designatorMethodCallParams.getDesignator().obj;
     	if (Obj.Meth == func.getKind()) {
     		report_info("Pronadjen poziv funkcije '" + func.getName() + "'", designatorMethodCallParams);
-//    		designatorMethodCallParams.struct = func.getType();
     		Method method = null;
 			for (Method m : methods) {
 				if (m.getMethodName().equals(func.getName()))
@@ -349,7 +341,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
     	} else {
     		report_error("Semanticka greska - ime '" + func.getName() + "' nije funkcija", designatorMethodCallParams);
-//    		designatorMethodCallParams.struct = Tab.noType;
     	}
     	currentMethodParams.clear();
     }
@@ -358,7 +349,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	Obj func = designatorMethodCall.getDesignator().obj;
     	if (Obj.Meth == func.getKind()) {
 			report_info("Pronadjen poziv funkcije '" + func.getName() + "'", designatorMethodCall);
-//			designatorMethodCall1.struct = func.getType(); // kako ovde uzima tip??
 			Method method = null;
 			for (Method m : methods) {
 				if (m.getMethodName().equals(func.getName()))
@@ -369,7 +359,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
     	} else {
 			report_error("Semanticka greska - ime '" + func.getName() + "' nije funkcija", designatorMethodCall);
-//			designatorMethodCall1.struct = Tab.noType;
     	}
     	currentMethodParams.clear();
     }
@@ -425,7 +414,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
    		condSingle.struct = condSingle.getCondTerm().struct;
    	}
    	
-   	public void visit(CondOr condOr) { // Jel ovde getCondition ili getCondTerm??
+   	public void visit(CondOr condOr) { // getCondition ili getCondTerm
    		condOr.struct = condOr.getCondTerm().struct;
    	}
    	
@@ -434,7 +423,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
    		condTermSingle.struct = condTermSingle.getCondFact().struct;
    	}
    	
-   	public void visit(CondTermAnd condTermAnd) { // CondFact ili condTerm??
+   	public void visit(CondTermAnd condTermAnd) { // CondFact ili condTerm
    		condTermAnd.struct = condTermAnd.getCondFact().struct;
    	}
    	
@@ -474,7 +463,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
   	}
   	
   	// TernaryExpr
-  	public void visit(TerExpr1 terExpr1) { // PROVERI OVO - MENJALA SAM!!!
+  	public void visit(TerExpr1 terExpr1) {
   		terExpr1.struct = terExpr1.getExpr1().struct;
   	}
   	

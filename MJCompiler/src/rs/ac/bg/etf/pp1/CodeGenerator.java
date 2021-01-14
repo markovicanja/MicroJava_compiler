@@ -26,7 +26,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	private LinkedList<ArrayList<CondJcc>> ifCondsStack = new LinkedList<ArrayList<CondJcc>>();
 	private LinkedList<Integer> ifPcStack = new LinkedList<Integer>(); 
-	private LinkedList<Integer> retWhilePcStack = new LinkedList<Integer>(); //povratna adresa do do-while;
+	private LinkedList<Integer> retWhilePcStack = new LinkedList<Integer>();
 	private LinkedList<ArrayList<Integer>> breakPcStack = new LinkedList<ArrayList<Integer>>();
 	private LinkedList<ArrayList<Integer>> continuePcStack = new LinkedList<ArrayList<Integer>>();
 	private LinkedList<ArrayList<CondJcc>> whileCondsStack = new LinkedList<ArrayList<CondJcc>>();
@@ -45,7 +45,6 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void report_error(String message, SyntaxNode info) {
-//		errorDetected = true;
 		StringBuilder msg = new StringBuilder(message);
 		int line = (info == null) ? 0 : info.getLine();
 		if (line != 0) {
@@ -158,7 +157,6 @@ public class CodeGenerator extends VisitorAdaptor {
 	// Program
 	public void visit(Program program) {		
 		Code.dataSize = outerScope.getLocalSymbols().size();
-//		errorDetected = errorDetected || Code.greska;		
 	}
 	
 	// ConstDecl
@@ -573,6 +571,10 @@ public class CodeGenerator extends VisitorAdaptor {
 			int offset = method.getAdr() - Code.pc;
 			Code.put(Code.call);
 			Code.put2(offset);
+			return;
+		}
+		if (method.getName().equals("len")) {
+			Code.put(Code.arraylength);
 		}
 	}
 

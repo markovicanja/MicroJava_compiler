@@ -50,7 +50,6 @@ public class Compiler {
             SemanticAnalyzer semanticAnalyzer = new SemanticAnalyzer();
             prog.traverseBottomUp(semanticAnalyzer);
             
-            // log.info("\n\n================TABELA SIMBOLA====================\n\n");
             tsdump();
 			log.info("===================================");
 			

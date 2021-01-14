@@ -20,13 +20,8 @@ public class MySymbolTableVisitor extends SymbolTableVisitor {
 			currentIndent.setLength(currentIndent.length()-indent.length());
 	}
 	
-	
-	/* (non-Javadoc)
-	 * @see rs.etf.pp1.symboltable.test.SymbolTableVisitor#visitObjNode(symboltable.Obj)
-	 */
 	@Override
 	public void visitObjNode(Obj objToVisit) {
-		//output.append("[");
 		switch (objToVisit.getKind()) {
 		case Obj.Con:  output.append("Con "); break;
 		case Obj.Var:  output.append("Var "); break;
@@ -62,15 +57,9 @@ public class MySymbolTableVisitor extends SymbolTableVisitor {
 		}
 		
 		if (objToVisit.getKind() == Obj.Prog || objToVisit.getKind() == Obj.Meth) 
-			previousIndentationLevel();
-
-		//output.append("]");
-		
+			previousIndentationLevel();		
 	}
 
-	/* (non-Javadoc)
-	 * @see rs.etf.pp1.symboltable.test.SymbolTableVisitor#visitScopeNode(symboltable.Scope)
-	 */
 	@Override
 	public void visitScopeNode(Scope scope) {
 		for (Obj o : scope.values()) {
@@ -79,9 +68,6 @@ public class MySymbolTableVisitor extends SymbolTableVisitor {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see rs.etf.pp1.symboltable.test.SymbolTableVisitor#visitStructNode(symboltable.Struct)
-	 */
 	@Override
 	public void visitStructNode(Struct structToVisit) {
 		switch (structToVisit.getKind()) {
