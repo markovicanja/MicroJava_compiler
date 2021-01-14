@@ -1,15 +1,26 @@
-// Test301
+// Test sakrivanje imena promenljive
 
-program test301
-	int a;
+program test
+	int x, niz[];
 {
-	int fun(int x, int y) {
+	int fun(int x, int y)
+		int niz[];
+	{
 		return x + y;
+	}
+	
+	int funx(int x) 
+		int niz[], y;
+	{
+		return x + x;
 	}
 	
 	void main()	
 	{
-		a = fun(2+3, 3*10);
-		print(a);
+		x = funx(2*2);
+		print(x);
+		
+		x = fun(2*2, 2*10); // ne radi??
+		print(x);
 	}
 }

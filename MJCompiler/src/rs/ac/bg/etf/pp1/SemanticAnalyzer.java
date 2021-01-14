@@ -113,7 +113,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	// VarPart
 	public void visit(VarNormal varNormal) {
-		if (Tab.find(varNormal.getVarName()) == Tab.noObj) {
+		if (Tab.find(varNormal.getVarName()) == Tab.noObj || Tab.find(varNormal.getVarName()).getLevel() != 1) {
 			String varName = varNormal.getVarName();
 			for (Variable var : declarationVariables) {
 				if(var.getName().equals(varName)) {
@@ -128,7 +128,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	
 	public void visit(VarArray varArray) { 
-		if (Tab.find(varArray.getVarName()) == Tab.noObj) {
+		if (Tab.find(varArray.getVarName()) == Tab.noObj || Tab.find(varArray.getVarName()).getLevel() != 1) {
 			String varName = varArray.getVarName();
 			for (Variable var : declarationVariables) {
 				if(var.getName().equals(varName)) {
@@ -236,7 +236,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	// FormParam
 	public void visit(ParamNormal paramNormal) {
-		if (Tab.find(paramNormal.getParamName()) == Tab.noObj) { // isto kao i gore
+		if (Tab.find(paramNormal.getParamName()) == Tab.noObj || Tab.find(paramNormal.getParamName()).getLevel() != 1) {
 	    	Obj obj = Tab.insert(Obj.Var, paramNormal.getParamName(), paramNormal.getType().struct);
 	    	if (methods.size() > 0) {
 				methods.get(methods.size() - 1).getParameters().add(obj.getType());
@@ -245,7 +245,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	    	if (currentMethod.getName().equals("main")) {
 	    		mainMethodDefined = false;
 	    	}
-	    	currentMethod.setLevel(currentMethod.getLevel() + 1);
+	    	// currentMethod.setLevel(currentMethod.getLevel() + 1);
+	    	currentMethod.setLevel(1);
 	    	report_info("Formalni parametar funkcije " + currentMethod.getName() + ": '" + paramNormal.getParamName() + "'", paramNormal);
 		} else {
 			report_error("Semanticka greska - '" + paramNormal.getParamName() + "' vec postoji", paramNormal);
@@ -253,7 +254,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 	
 	public void visit(ParamArray paramArray) {
-		if (Tab.find(paramArray.getParamName()) == Tab.noObj){ // ovo treba da se trazi samo u trenutnom opsegu, jer moze da se sakriva ime iz spoljasnjeg opsega
+		if (Tab.find(paramArray.getParamName()) == Tab.noObj || Tab.find(paramArray.getParamName()).getLevel() != 1) {
 			Obj obj = Tab.insert(Obj.Var, paramArray.getParamName(), new Struct(Struct.Array, paramArray.getType().struct));
 			if (methods.size() > 0) {
 				methods.get(methods.size() - 1).getParameters().add(obj.getType());
@@ -262,7 +263,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			if (currentMethod.getName().equals("main")) {
 	    		mainMethodDefined = false;
 	    	}
-			currentMethod.setLevel(currentMethod.getLevel() + 1); // ??
+			currentMethod.setLevel(1);
 			report_info("Formalni parametar funkcije " + currentMethod.getName() + ": '" + paramArray.getParamName() + "'", paramArray);
 		} else {
 			report_error("Semanticka greska - '" + paramArray.getParamName() + "' vec postoji", paramArray);

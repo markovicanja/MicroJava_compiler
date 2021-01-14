@@ -75,9 +75,6 @@ public class Compiler {
 	}
 	
 	public static void tsdump() {
-//		Izvedi novu klasu za SymbolTableVisitor
-//		SymbolTableVisitor stv = new SimpleSymbolTableVisitor(false);
-//      Tab.dump(stv);
 		Tab.dump();
 	}
 	
