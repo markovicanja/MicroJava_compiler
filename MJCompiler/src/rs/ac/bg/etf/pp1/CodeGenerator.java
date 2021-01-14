@@ -221,7 +221,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		currentMethod.setAdr(Code.pc);
         Code.put(Code.enter);
         Code.put(currentMethod.getLevel());
-        Code.put(currentMethod.getLocalSymbols().size());               
+        Code.put(currentMethod.getLocalSymbols().size());
 	}
 	
 	// Value	

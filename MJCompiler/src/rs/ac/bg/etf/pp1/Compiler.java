@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import java_cup.runtime.Symbol;
 import rs.ac.bg.etf.pp1.ast.Program;
 import rs.etf.pp1.symboltable.Tab;
+import rs.etf.pp1.symboltable.visitors.SymbolTableVisitor;
 import rs.etf.pp1.mj.runtime.Code;
 
 public class Compiler {
@@ -75,7 +76,8 @@ public class Compiler {
 	}
 	
 	public static void tsdump() {
-		Tab.dump();
+		SymbolTableVisitor stv = new MySymbolTableVisitor();
+        Tab.dump(stv);
 	}
 	
 }
