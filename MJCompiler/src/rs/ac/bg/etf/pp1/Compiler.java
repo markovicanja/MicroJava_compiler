@@ -4,7 +4,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+
+import org.apache.log4j.FileAppender;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+
 import java_cup.runtime.Symbol;
 import rs.ac.bg.etf.pp1.ast.Program;
 import rs.etf.pp1.symboltable.Tab;
@@ -13,7 +17,23 @@ import rs.etf.pp1.mj.runtime.Code;
 
 public class Compiler {
 
-	private static Logger log = Logger.getLogger(Compiler.class);
+	private static Logger log = Logger.getLogger("info");
+	private static Logger logError = Logger.getLogger("error");
+	private static FileAppender fileAppender, fileAppenderError;
+	
+	static {
+		fileAppender = new FileAppender();
+		fileAppender.setLayout(new PatternLayout(PatternLayout.DEFAULT_CONVERSION_PATTERN));
+		fileAppender.setFile("test/info.out");
+		fileAppender.activateOptions();
+		log.addAppender(fileAppender);
+		
+		fileAppenderError = new FileAppender();
+		fileAppenderError.setLayout(new PatternLayout(PatternLayout.DEFAULT_CONVERSION_PATTERN));
+		fileAppenderError.setFile("test/error.err");
+		fileAppenderError.activateOptions();
+		logError.addAppender(fileAppenderError);
+	}
 	
 	public static void main(String[] args) throws Exception {
 		if (args.length < 2) {

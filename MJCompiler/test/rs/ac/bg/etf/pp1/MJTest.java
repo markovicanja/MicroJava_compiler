@@ -21,7 +21,8 @@ public class MJTest {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		Logger log = Logger.getLogger(MJTest.class);
+		Logger log = Logger.getLogger("info");
+		
 		Reader br = null;
 		try {
 			

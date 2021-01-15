@@ -10,7 +10,8 @@ parser code {:
 	private Symbol currSymbol = null;		
 	private Symbol errorSymbol = null;
 	
-	Logger log = Logger.getLogger(getClass());
+	private static Logger log = Logger.getLogger("info");
+	private static Logger logError = Logger.getLogger("error");
    
     // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
      
@@ -39,7 +40,7 @@ parser code {:
 			}			
 			msg.append("!");
 		}
-        log.error(msg.toString());
+        logError.error(msg.toString());
     }
     
     public void report_info(String message, Object info) {

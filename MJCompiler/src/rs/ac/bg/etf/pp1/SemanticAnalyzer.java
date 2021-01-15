@@ -25,7 +25,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	private Obj currentMethod = null;
 	private Struct assignmentRight = null;
 	 
-	Logger log = Logger.getLogger(getClass());
+	private static Logger log = Logger.getLogger("info");
+	private static Logger logError = Logger.getLogger("error");
 	
 	public void report_error(String message, SyntaxNode info) {
 		errorDetected = true;
@@ -33,7 +34,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		int line = (info == null) ? 0: info.getLine();
 		if (line != 0)
 			msg.append (" na liniji ").append(line);
-		log.error(msg.toString());
+		logError.error(msg.toString());
 	}
 
 	public void report_info(String message, SyntaxNode info) {

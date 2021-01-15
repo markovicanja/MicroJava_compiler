@@ -23,7 +23,7 @@ public class MJParserTest {
 	
 	public static void main(String[] args) throws Exception {
 		
-		Logger log = Logger.getLogger(MJParserTest.class);
+		Logger log = Logger.getLogger("info");
 		
 		Reader br = null;
 		try {

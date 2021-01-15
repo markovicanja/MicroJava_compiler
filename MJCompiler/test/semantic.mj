@@ -1,0 +1,73 @@
+// Test za semanticku analizu
+
+program MJProgram
+	abc a; // Semanticka greska - nije pronadjen tip 'abc' u tabeli simbola!
+	const int cnst = 1;
+{
+	int fun(int x) {
+		// nema return - Runtime greska
+	}
+	
+	// error - mora da postoji void main();
+	// void main(int x); 
+	// int main();
+	
+	void main() 
+	int b; char b; // Semanticka greska - 'b' je vec deklarisano
+	int num; char character; bool boolean;
+	int niz[], niz1[];
+	{
+		
+		
+		// Semanticka greska - nekompatibilni tipovi za dodelu vrednosti
+		num = 'a'; 
+		num = true;
+		character = 1;
+		character = true;
+		boolean = 1;
+		boolean = 'a';
+		
+		// Semanticka greska - vrednost moze da se dodeli samo promenljivoj, elementu niza ili polju objekta
+		cnst = 2;
+		
+		// Semanticka greska - tip za inkrement i dekrement moze biti jedino int
+		character++;
+		boolean--;
+		
+		//  Semanticka greska - argumenti funkcije nisu odgovarajuci
+		fun(1, 2); 
+		fun(true);
+		
+		// Semanticka greska - tip mora da bude int
+		character = -'a';
+		
+		// Semanticka greska - tip za alociranje niza moze biti jedino int
+		niz = new int['a'];
+		
+		do {
+			num++;
+			break;
+			continue;
+		} while(num < 10);
+		
+		break; // Semanticka greska - break iskaz van petlje
+		continue; // Semanticka greska - continue iskaz van petlje
+		
+		if (niz < niz1) { // Semanticka greska - relacioni izraz sa referentnim tipovima moze koristiti samo '==' i '!='
+			num = 1;
+		}
+		
+		if (num) { // Semanticka greska - if uslov nije tipa bool
+			num = 2;
+		}
+		
+		do {
+			niz[true] = 1; // Semanticka greska - nevalidan pristup elementu niza
+		} while(num); // Semanticka greska - while uslov nije tipa bool
+		
+		num = num + 'a'; // Semanticka greska - clanovi izraza nisu tipa int i nisu kompatibilni
+		num = num * 'a'; // Semanticka greska - clanovi izraza nisu tipa int
+		
+		num = boolean ? 1 : 'a'; // Semanticka greska - drugi i treci izraz moraju biti istog tipa
+	}
+}

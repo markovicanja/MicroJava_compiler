@@ -1,0 +1,26 @@
+Semanticka greska - nije pronadjen tip 'abc' u tabeli simbola!
+Semanticka greska - 'b' je vec deklarisano na liniji 16
+Semanticka greska - nekompatibilni tipovi za dodelu vrednosti na liniji 20
+Semanticka greska - nekompatibilni tipovi za dodelu vrednosti na liniji 23
+Semanticka greska - nekompatibilni tipovi za dodelu vrednosti na liniji 24
+Semanticka greska - nekompatibilni tipovi za dodelu vrednosti na liniji 25
+Semanticka greska - nekompatibilni tipovi za dodelu vrednosti na liniji 26
+Semanticka greska - nekompatibilni tipovi za dodelu vrednosti na liniji 27
+Semanticka greska - nekompatibilni tipovi za dodelu vrednosti na liniji 28
+Semanticka greska - vrednost moze da se dodeli samo promenljivoj, elementu niza ili polju objekta na liniji 31
+Semanticka greska - tip za inkrement moze biti jedino int na liniji 34
+Semanticka greska - tip za dekrement moze biti jedino int na liniji 35
+Semanticka greska - argumenti funkcije nisu odgovarajuci na liniji 38
+Semanticka greska - argumenti funkcije nisu odgovarajuci na liniji 39
+Semanticka greska - tip mora da bude int na liniji 42
+Semanticka greska - tip za alociranje niza moze biti jedino int na liniji 45
+Semanticka greska - break iskaz van petlje
+Semanticka greska - continue iskaz van petlje
+Semanticka greska - relacioni izraz sa referentnim tipovima moze koristiti samo '==' i '!=' operatore na liniji 56
+Semanticka greska - if uslov nije tipa bool na liniji 60
+Semanticka greska - nevalidan pristup elementu niza na liniji 65
+Semanticka greska - while uslov nije tipa bool na liniji 64
+Semanticka greska - clanovi izraza nisu tipa int na liniji 68
+Semanticka greska - clanovi izraza nisu kompatibilni na liniji 68
+Semanticka greska - clanovi izraza nisu tipa int na liniji 69
+Semanticka greska - drugi i treci izraz moraju biti istog tipa na liniji 71

@@ -1,0 +1,33 @@
+// Test za sintaksnu analizu i oporavak od gresaka
+
+program MJProgram
+	int ; // Oporavak od greske za globalne promenljive
+	int a;
+	int a +; // Sintaksna greska za simbol "+"
+	int a, b;
+	abc b;
+	bool b = true; // Sintaksna greska za simbol "="
+	abc 22; // ok (NE UBACI U STABLO)
+{
+
+	int sum(int z, int d + )  // Oporavak od greske u definiciji formalnih parametara funkcije
+	{
+	 	return z + d;
+	}
+	
+	void main() 
+	int a;
+	{
+		a = 1 + ; // greska u konstrukciji iskaza dodele
+		
+		if (a < b + ) { // greska logickog izraza unutar if konstrukcije
+			a = 1;
+		}
+		
+		if (a < b +;) // greska logickog izraza unutar if konstrukcije
+			a = 1;
+		else 
+			a = 2;
+			
+	}
+}
